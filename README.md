@@ -12,3 +12,11 @@
 * 第 10 集 - 编程史话   https://www.bilibili.com/video/av13582556/ 
 * 第 11 集 - 编程语言   https://www.bilibili.com/video/av14228148/ 
 * 11~29 正在翻译，想加入字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 可以加 Q 群 305631757
+
+### 关于
+我是前几集的校对者@糖醋陈皮
+
+### 特别感谢
+两位主要译者 ZireHao 和 膨胀的小R
+* 膨胀的小R：https://space.bilibili.com/5385034#!/video
+* ZireHao：http://space.bilibili.com/27167876#!/
