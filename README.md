@@ -11,7 +11,8 @@
 * 第 9 集 -  高级CPU设计  https://www.bilibili.com/video/av11867964/ 
 * 第 10 集 - 编程史话   https://www.bilibili.com/video/av13582556/ 
 * 第 11 集 - 编程语言   https://www.bilibili.com/video/av14228148/ 
-* 11~29 正在翻译，想加入字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 可以加 Q 群 305631757
+* 第 12 集 - 编程原理：语句和函数 https://www.bilibili.com/video/av14885759/
+* 13~29 正在翻译，加入字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 可以加 Q 群 305631757
 
 ### 关于
 [https://www.v2ex.com/t/392595](https://www.v2ex.com/t/392595) 之前在 v2ex 宣传了一发有 4k 访问量。觉得不错所以建个 git 库。  
