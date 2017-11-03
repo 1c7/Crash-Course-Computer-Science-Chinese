@@ -1,6 +1,6 @@
 
-## 目前更新到第 11 集
-* 第 1 集 - 早期的计算  https://www.bilibili.com/video/av8861057/
+## 计算机科学速成班 | 双语中英字幕
+* 第 1 集 - 早期的计算 https://www.bilibili.com/video/av8861057/
 * 第 2 集 - 电子运算 https://www.bilibili.com/video/av9066628/ 
 * 第 3 集 - 布尔逻辑与逻辑电路    https://www.bilibili.com/video/av11557339/ 
 * 第 4 集 - 二进制  https://www.bilibili.com/video/av11592079/ 
