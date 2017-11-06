@@ -14,7 +14,8 @@
 * 第 12 集 - 编程原理：语句和函数 https://www.bilibili.com/video/av14885759/
 * 第 13 集 - 算法初步 https://www.bilibili.com/video/av15987761/ 
 * 第 14 集 - 数据结构 https://www.bilibili.com/video/av15987774/
-* 15~34 正在翻译，加入字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 可以加 Q 群 305631757
+* 第 15 集 - 阿兰·图灵 https://www.bilibili.com/video/av16090115/
+* 16~34 正在翻译，加入字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 可以加 Q 群 305631757
 
 ### 关于
 [https://www.v2ex.com/t/392595](https://www.v2ex.com/t/392595) 之前在 v2ex 宣传了一发有 4k 访问量。觉得不错所以建个 git 库。  
