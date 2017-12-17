@@ -16,6 +16,12 @@
 * 第 14 集 - 数据结构 https://www.bilibili.com/video/av15987774/
 * 第 15 集 - 阿兰·图灵 https://www.bilibili.com/video/av16090115/
 * 第 16 集 - 软件工程 https://www.bilibili.com/video/av16751202/
+* 第 17 集 -  集成电路、摩尔定律 https://www.bilibili.com/video/av17186768
+* 第 18 集 -  操作系统    https://www.bilibili.com/video/av17192468
+* 第 19 集 -  内存&储存介质   https://www.bilibili.com/video/av17192483/
+* 第 20 集 -  文件系统    https://www.bilibili.com/video/av17209268/
+* 第 21 集 -  压缩 https://www.bilibili.com/video/av17192511/
+
 * 其余的集数正在翻译，加入字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 可以加 Q 群 305631757
 
 ### 关于
