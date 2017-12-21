@@ -21,6 +21,8 @@
 * 第 19 集 -  内存&储存介质   https://www.bilibili.com/video/av17192483/
 * 第 20 集 -  文件系统    https://www.bilibili.com/video/av17209268/
 * 第 21 集 -  压缩 https://www.bilibili.com/video/av17192511/
+* 第 22 集 - 命令行界面 https://www.bilibili.com/video/av17451718/
+
 
 * 其余的集数正在翻译，加入字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 可以加 Q 群 305631757
 
