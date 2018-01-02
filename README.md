@@ -1,5 +1,5 @@
 
-## 计算机科学速成班 | 双语中英字幕
+## 计算机科学速成班 | 中英双语
 * 第 1 集 - 早期的计算 https://www.bilibili.com/video/av8861057/
 * 第 2 集 - 电子运算 https://www.bilibili.com/video/av9066628/ 
 * 第 3 集 - 布尔逻辑与逻辑电路    https://www.bilibili.com/video/av11557339/ 
@@ -22,7 +22,8 @@
 * 第 20 集 -  文件系统    https://www.bilibili.com/video/av17209268/
 * 第 21 集 -  压缩 https://www.bilibili.com/video/av17192511/
 * 第 22 集 - 命令行界面 https://www.bilibili.com/video/av17451718/
-
+* 第 23 集 - 屏幕 & 2D 图形显示 https://www.bilibili.com/video/av17476087/ 
+* 第 24 集 - 冷战和消费主义 https://www.bilibili.com/video/av15637307/ 
 
 * 其余的集数正在翻译，加入字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 可以加 Q 群 305631757
 
