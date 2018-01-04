@@ -1,5 +1,5 @@
 
-## 计算机科学速成班 | 中英双语
+## 计算机科学速成班 | 中英双语 | 
 * 第 1 集 - 早期的计算 https://www.bilibili.com/video/av8861057/
 * 第 2 集 - 电子运算 https://www.bilibili.com/video/av9066628/ 
 * 第 3 集 - 布尔逻辑与逻辑电路    https://www.bilibili.com/video/av11557339/ 
@@ -25,16 +25,17 @@
 * 第 23 集 - 屏幕 & 2D 图形显示 https://www.bilibili.com/video/av17476087/ 
 * 第 24 集 - 冷战和消费主义 https://www.bilibili.com/video/av15637307/ 
 
-* 其余的集数正在翻译，加入字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 可以加 Q 群 305631757
-
-### 关于
-[https://www.v2ex.com/t/392595](https://www.v2ex.com/t/392595) 之前在 v2ex 宣传了一发有 4k 访问量。觉得不错所以建个 git 库。  
-我是前几集的校对者@糖醋陈皮.
-
+进度：24/40
 
 ### 特别感谢
 两位主要译者 ZireHao 和 膨胀的小R
 * 膨胀的小R：https://space.bilibili.com/5385034#!/video
 * ZireHao：http://space.bilibili.com/27167876#!/
 
-我是 [@糖醋陈皮](https://weibo.com/u/2004104451/home?wvr=5)
+### 备注
+想加入字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 加 Q 群 305631757
+
+### 关于
+[https://www.v2ex.com/t/392595](https://www.v2ex.com/t/392595) 之前在 v2ex 宣传了一发有 4k 访问量。觉得不错所以建个 Github 库
+（v2ex 更新帖子是没有通知的呢）       
+我是校对 [@糖醋陈皮](https://weibo.com/u/2004104451/home?wvr=5)         
