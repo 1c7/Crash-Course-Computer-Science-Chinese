@@ -1,5 +1,5 @@
 
-## 计算机科学速成班 | 中英双语 | 
+## 计算机科学速成班 | 中英双语 | :fire: 最新更新：25，26，27
 * 第 1 集 - 早期的计算 https://www.bilibili.com/video/av8861057/
 * 第 2 集 - 电子运算 https://www.bilibili.com/video/av9066628/ 
 * 第 3 集 - 布尔逻辑与逻辑电路    https://www.bilibili.com/video/av11557339/ 
