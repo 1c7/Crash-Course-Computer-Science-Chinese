@@ -24,8 +24,11 @@
 * 第 22 集 - 命令行界面 https://www.bilibili.com/video/av17451718/
 * 第 23 集 - 屏幕 & 2D 图形显示 https://www.bilibili.com/video/av17476087/ 
 * 第 24 集 - 冷战和消费主义 https://www.bilibili.com/video/av15637307/ 
+* 第 25 集 - 个人计算机革命 https://www.bilibili.com/video/av18789303/ 
+* 第 26 集 - 图形用户界面 https://www.bilibili.com/video/av19035296/ 
+* 第 27 集 - 3D 图形 https://www.bilibili.com/video/av19164942/
 
-进度：24/40
+进度：27/40
 
 ### 特别感谢
 两位主要译者 ZireHao 和 膨胀的小R
