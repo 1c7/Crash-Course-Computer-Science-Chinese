@@ -44,14 +44,14 @@
 * 第 40 集 - 奇点，天网，计算机的未来 (The Singularity, Skynet, and the Future of Computing)
 
 
-## 原出处
+### 原视频出处
 **Crash Course Computer Science**：https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a            
 
-感谢 Crash Course 团队。               
+万分感谢 Crash Course 团队！               
 在 Patron 上支持 Crash Course：https://www.patreon.com/crashcourse         
 Crash Course 官网：https://thecrashcourse.com/       
 
-## 感谢所有参与翻译中英双语的人员    
+### 感谢所有参与翻译中英双语的人员    
 翻译/校对/时间轴/压制/等    
 （英文/拼音首字母排序）      
 
