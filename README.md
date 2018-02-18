@@ -29,8 +29,10 @@
 * 第 27 集 - 3D 图形 https://www.bilibili.com/video/av19164942/
 
 
-### 感谢所有参与人员（翻译/校对/时间轴/压制/等）
-（按英文/拼音首字母排序）
+### 感谢所有参与人员
+翻译/校对/时间轴/压制/等    
+（英文/拼音首字母排序）      
+
 * 不想膨胀的小R: [B 站空间](https://space.bilibili.com/5385034#!/video) [新浪微博](https://weibo.com/u/2207493917)
 * 糖醋陈皮: [新浪微博](https://weibo.com/2004104451)
 * ZireHao: [B 站空间](http://space.bilibili.com/27167876#!/)
