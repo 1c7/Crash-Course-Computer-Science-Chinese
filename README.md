@@ -35,23 +35,24 @@
 * 第 31 集 - 网络安全 (Cybersecurity)
 * 第 32 集 - 黑客与攻击 (Hackers & Cyber Attacks)
 * 第 33 集 - 加密 (Cryptography)
-* 第 34 集 - 机器学习与人工智能(Machine Learning & Artificial Intelligence:)
-* 第 35 集 - 计算机视觉(Computer Vision)
-* 第 36 集 - 自然语言处理
-* 第 37 集 - 机器人
-* 第 38 集 - 计算机中的心理学
-* 第 39 集 - 教育型科技
-* 第 40 集 - 奇点，天网，计算机的未来
+* 第 34 集 - 机器学习与人工智能 (Machine Learning & Artificial Intelligence:)
+* 第 35 集 - 计算机视觉 (Computer Vision)
+* 第 36 集 - 自然语言处理 (Natural Language Processing) 
+* 第 37 集 - 机器人 (Robots)
+* 第 38 集 - 计算机中的心理学 (Psychology of Computing)
+* 第 39 集 - 教育型科技 (Educational Technology)
+* 第 40 集 - 奇点，天网，计算机的未来 (The Singularity, Skynet, and the Future of Computing)
 
 
 
-### 英文原出处
-Crash Course Computer Science：https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a     
-感谢 Crash Course 团队制作 Computer Science 系列             
-可以在 Patron 上支持 Crash Course：https://www.patreon.com/crashcourse         
-Crash Course 官网：https://thecrashcourse.com/       
+## 原出处
+**Crash Course Computer Science**：https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a            
 
-### 感谢所有参与翻译中英双语的人员
+感谢 Crash Course 团队。               
+在 Patron 上支持 Crash Course：https://www.patreon.com/crashcourse         
+Crash Course 官网：https://thecrashcourse.com/       
+
+## 感谢所有参与翻译中英双语的人员
 翻译/校对/时间轴/压制/等    
 （英文/拼音首字母排序）      
 
