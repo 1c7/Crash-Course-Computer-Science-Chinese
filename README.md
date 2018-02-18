@@ -1,5 +1,5 @@
-# Crash Course 字幕组出品
-## 计算机速成课 | 中英双语 | :fire: 最新更新：25，26，27 | 进度：27/40
+## Crash Course 字幕组出品： 计算机速成课
+:fire: 最新更新：25，26，27
 * 第 1 集 - 早期的计算 https://www.bilibili.com/video/av8861057/
 * 第 2 集 - 电子运算 https://www.bilibili.com/video/av9066628/ 
 * 第 3 集 - 布尔逻辑与逻辑电路    https://www.bilibili.com/video/av11557339/ 
@@ -29,10 +29,12 @@
 * 第 27 集 - 3D 图形 https://www.bilibili.com/video/av19164942/
 
 
-### 感谢所有参与人员（翻译/校对/时间轴/压制/等）（按英文/拼音首字母排序）
-* 不想膨胀的小R：[B 站空间](https://space.bilibili.com/5385034#!/video) [新浪微博](https://weibo.com/u/2207493917)
-* ZireHao：[B 站空间](http://space.bilibili.com/27167876#!/)
+### 感谢所有参与人员（翻译/校对/时间轴/压制/等）
+（按英文/拼音首字母排序）
+* 不想膨胀的小R: [B 站空间](https://space.bilibili.com/5385034#!/video) [新浪微博](https://weibo.com/u/2207493917)
+* 糖醋陈皮: [新浪微博](https://weibo.com/2004104451)
+* ZireHao: [B 站空间](http://space.bilibili.com/27167876#!/)
 
-### 备注
+### 注
 想加入 Crash Course 字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 请加 Q 群 305631757
  
