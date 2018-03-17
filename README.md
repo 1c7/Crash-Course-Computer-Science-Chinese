@@ -1,5 +1,5 @@
 ## Crash Course 字幕组出品： 计算机速成课
-:fire: 最新更新：28
+:fire: 最新更新：33
 * 第 1 集 - 早期的计算 https://www.bilibili.com/video/av8861057/
 * 第 2 集 - 电子运算 https://www.bilibili.com/video/av9066628/ 
 * 第 3 集 - 布尔逻辑与逻辑电路    https://www.bilibili.com/video/av11557339/ 
@@ -27,11 +27,11 @@
 * 第 25 集 - 个人计算机革命 https://www.bilibili.com/video/av18789303/ 
 * 第 26 集 - 图形用户界面 https://www.bilibili.com/video/av19035296/ 
 * 第 27 集 - 3D 图形 https://www.bilibili.com/video/av19164942/
-* 第 28 集 - 计算机网络 https://www.bilibili.com/video/av19209394/
-* 第 29 集 - 互联网 (The Internet)
-* 第 30 集 - 万维网 (The World Wide Web)
-* 第 31 集 - 网络安全 (Cybersecurity)
-* 第 32 集 - 黑客与攻击 (Hackers & Cyber Attacks)
+* 第 28 集 - [计算机网络](https://www.bilibili.com/video/av19209394/)
+* 第 29 集 - [互联网 - The Internet](https://www.bilibili.com/video/av20716104/)
+* 第 30 集 - [万维网 - The World Wide Web](https://www.bilibili.com/video/av20767130/)
+* 第 31 集 - [网络安全 - Cybersecurity](https://www.bilibili.com/video/av20785456/)
+* 第 32 集 - [黑客与攻击 (Hackers & Cyber Attacks)](https://www.bilibili.com/video/av20831479/)
 ---
 制作中
 * 第 33 集 - 加密 (Cryptography)
@@ -65,6 +65,6 @@ Crash Course 官网：https://thecrashcourse.com/  <br/>
 * 欢迎转发！:fire::fire::fire:
 * 想加入 Crash Course 字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 请加 Q 群 305631757       
 * 若发现有错误，欢迎 Pull Request 或开新 Issue。翻译人员也是人类，请和善沟通 :D
-
+* 这个库的所有者 1c7 就是新浪微博@糖醋陈皮，参与了这个计算机系列的译制
 
  
