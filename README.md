@@ -17,14 +17,14 @@ Crash Course 字幕组出品
 * 第 14 集 - [数据结构](https://www.bilibili.com/video/av15987774/)
 * 第 15 集 - [阿兰·图灵](https://www.bilibili.com/video/av16090115/)
 * 第 16 集 - [软件工程](https://www.bilibili.com/video/av16751202/)
-* 第 17 集 - 集成电路、摩尔定律 https://www.bilibili.com/video/av17186768
-* 第 18 集 - 操作系统    https://www.bilibili.com/video/av17192468
-* 第 19 集 - 内存&储存介质   https://www.bilibili.com/video/av17192483/
-* 第 20 集 - 文件系统    https://www.bilibili.com/video/av17209268/
-* 第 21 集 - 压缩 https://www.bilibili.com/video/av17192511/
-* 第 22 集 - 命令行界面 https://www.bilibili.com/video/av17451718/
-* 第 23 集 - 屏幕 & 2D 图形显示 https://www.bilibili.com/video/av17476087/ 
-* 第 24 集 - 冷战和消费主义 https://www.bilibili.com/video/av15637307/ 
+* 第 17 集 - [集成电路、摩尔定律](https://www.bilibili.com/video/av17186768)
+* 第 18 集 - [操作系统](https://www.bilibili.com/video/av17192468)
+* 第 19 集 - [内存&储存介质](https://www.bilibili.com/video/av17192483/)
+* 第 20 集 - [文件系统](https://www.bilibili.com/video/av17209268/)
+* 第 21 集 - [压缩] https://www.bilibili.com/video/av17192511/)
+* 第 22 集 - [命令行界面](https://www.bilibili.com/video/av17451718/)
+* 第 23 集 - [屏幕 & 2D 图形显示](https://www.bilibili.com/video/av17476087/)
+* 第 24 集 - [冷战和消费主义](https://www.bilibili.com/video/av15637307/)
 * 第 25 集 - [个人计算机革命](https://www.bilibili.com/video/av18789303/)
 * 第 26 集 - [图形用户界面](https://www.bilibili.com/video/av19035296/)
 * 第 27 集 - [3D 图形](https://www.bilibili.com/video/av19164942/)
@@ -52,6 +52,7 @@ Crash Course 字幕组出品
 Crash Course 官网：https://thecrashcourse.com/  <br/>
 
 **Thanks to Carrie Anne，John Green, Hank Green, and the rest of the Crash Course team!** <br/>
+
 
 ### 感谢所有参与人员 
 翻译/校对/时间轴/压制/等    
