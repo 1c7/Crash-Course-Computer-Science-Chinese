@@ -24,9 +24,9 @@
 * 第 22 集 - 命令行界面 https://www.bilibili.com/video/av17451718/
 * 第 23 集 - 屏幕 & 2D 图形显示 https://www.bilibili.com/video/av17476087/ 
 * 第 24 集 - 冷战和消费主义 https://www.bilibili.com/video/av15637307/ 
-* 第 25 集 - 个人计算机革命 https://www.bilibili.com/video/av18789303/ 
-* 第 26 集 - 图形用户界面 https://www.bilibili.com/video/av19035296/ 
-* 第 27 集 - 3D 图形 https://www.bilibili.com/video/av19164942/
+* 第 25 集 - [个人计算机革命](https://www.bilibili.com/video/av18789303/)
+* 第 26 集 - [图形用户界面](https://www.bilibili.com/video/av19035296/)
+* 第 27 集 - [3D 图形](https://www.bilibili.com/video/av19164942/)
 * 第 28 集 - [计算机网络](https://www.bilibili.com/video/av19209394/)
 * 第 29 集 - [互联网 - The Internet](https://www.bilibili.com/video/av20716104/)
 * 第 30 集 - [万维网 - The World Wide Web](https://www.bilibili.com/video/av20767130/)
@@ -44,27 +44,28 @@
 * 第 40 集 - 奇点，天网，计算机的未来 (The Singularity, Skynet, and the Future of Computing)
 
 
-### 原视频出处
-**Crash Course Computer Science**：https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a            
-
-感谢 Crash Course 团队! <br/>
-在 Patron 上支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
+### 英文视频出处
+[Crash Course Computer Science](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)         
+感谢 Crash Course! <br>
+在 Patron 支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
 Crash Course 官网：https://thecrashcourse.com/  <br/>
 
 **Thanks to Carrie Anne，John Green, Hank Green, and the rest of the Crash Course team!** <br/>
 
-### 感谢所有参与翻译中英双语的人员 
+### 感谢所有参与人员 
 翻译/校对/时间轴/压制/等    
-（英文/拼音首字母排序）      
+（按英文/拼音首字母排序） 
 
-* 不想膨胀的小R: [B 站空间](https://space.bilibili.com/5385034#!/video)，[新浪微博](https://weibo.com/u/2207493917)
-* 糖醋陈皮: [新浪微博](https://weibo.com/2004104451)
-* ZireHao: [B 站空间](http://space.bilibili.com/27167876#!/)
+* 不想膨胀的小R: [B 站](https://space.bilibili.com/5385034#!/video)，[微博](https://weibo.com/u/2207493917)
+* 糖醋陈皮: [微博](https://weibo.com/2004104451)
+* ZireHao: [B 站](http://space.bilibili.com/27167876#!/)
 
 ### 注
 * 欢迎转发！:fire::fire::fire:
-* 想加入 Crash Course 字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 请加 Q 群 305631757       
-* 若发现有错误，欢迎 Pull Request 或开新 Issue。翻译人员也是人类，请和善沟通 :D
-* 这个库的所有者 1c7 就是新浪微博@糖醋陈皮，参与了这个计算机系列的译制
+* 加入 Crash Course 字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 请加 Q 群 305631757       
+* 若发现错误，欢迎 Pull Request 或开 Issue。翻译人员也是人，请和善沟通 :D
+
+### 关于我
+这个库的所有者 1c7 就是新浪微博@糖醋陈皮，参与了这个计算机系列的译制
 
  
