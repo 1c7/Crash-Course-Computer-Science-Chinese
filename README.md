@@ -1,4 +1,5 @@
-## Crash Course 字幕组出品： 计算机速成课
+## 计算机速成课 - Crash Course Computer Science
+Crash Course 字幕组出品
 :fire: 最新更新：33
 * 第 1 集 - [早期的计算](https://www.bilibili.com/video/av8861057/)
 * 第 2 集 - [电子运算](https://www.bilibili.com/video/av9066628/)
@@ -8,11 +9,11 @@
 * 第 6 集 - [寄存器&内存](https://www.bilibili.com/video/av12881796/)
 * 第 7 集 - [CPU&时钟频率](https://www.bilibili.com/video/av12881976/)
 * 第 8 集 - [指令和程序](https://www.bilibili.com/video/av9875360/)
-* 第 9 集 -  高级CPU设计  https://www.bilibili.com/video/av11867964/ 
-* 第 10 集 - 编程史话   https://www.bilibili.com/video/av13582556/ 
-* 第 11 集 - 编程语言   https://www.bilibili.com/video/av14228148/ 
-* 第 12 集 - 编程原理：语句和函数 https://www.bilibili.com/video/av14885759/
-* 第 13 集 - 算法初步 https://www.bilibili.com/video/av15987761/ 
+* 第 9 集 -  [高级CPU设计](https://www.bilibili.com/video/av11867964/)
+* 第 10 集 - [编程史话](https://www.bilibili.com/video/av13582556/)
+* 第 11 集 - [编程语言](https://www.bilibili.com/video/av14228148/)
+* 第 12 集 - [编程原理：语句和函数](https://www.bilibili.com/video/av14885759/)
+* 第 13 集 - [算法初步](https://www.bilibili.com/video/av15987761/)
 * 第 14 集 - 数据结构 https://www.bilibili.com/video/av15987774/
 * 第 15 集 - 阿兰·图灵 https://www.bilibili.com/video/av16090115/
 * 第 16 集 - 软件工程 https://www.bilibili.com/video/av16751202/
