@@ -14,9 +14,9 @@ Crash Course 字幕组出品
 * 第 11 集 - [编程语言](https://www.bilibili.com/video/av14228148/)
 * 第 12 集 - [编程原理：语句和函数](https://www.bilibili.com/video/av14885759/)
 * 第 13 集 - [算法初步](https://www.bilibili.com/video/av15987761/)
-* 第 14 集 - 数据结构 https://www.bilibili.com/video/av15987774/
-* 第 15 集 - 阿兰·图灵 https://www.bilibili.com/video/av16090115/
-* 第 16 集 - 软件工程 https://www.bilibili.com/video/av16751202/
+* 第 14 集 - [数据结构](https://www.bilibili.com/video/av15987774/)
+* 第 15 集 - [阿兰·图灵](https://www.bilibili.com/video/av16090115/)
+* 第 16 集 - [软件工程](https://www.bilibili.com/video/av16751202/)
 * 第 17 集 - 集成电路、摩尔定律 https://www.bilibili.com/video/av17186768
 * 第 18 集 - 操作系统    https://www.bilibili.com/video/av17192468
 * 第 19 集 - 内存&储存介质   https://www.bilibili.com/video/av17192483/
@@ -33,10 +33,10 @@ Crash Course 字幕组出品
 * 第 30 集 - [万维网 - The World Wide Web](https://www.bilibili.com/video/av20767130/)
 * 第 31 集 - [网络安全 - Cybersecurity](https://www.bilibili.com/video/av20785456/)
 * 第 32 集 - [黑客与攻击 (Hackers & Cyber Attacks)](https://www.bilibili.com/video/av20831479/)
+* 第 33 集 - [加密 (Cryptography)](https://www.bilibili.com/video/av20882310/)
 ---
 制作中
-* 第 33 集 - 加密 (Cryptography)
-* 第 34 集 - 机器学习与人工智能 (Machine Learning & Artificial Intelligence:)
+* 第 34 集 - 机器学习与人工智能 (Machine Learning & Artificial Intelligence)
 * 第 35 集 - 计算机视觉 (Computer Vision)
 * 第 36 集 - 自然语言处理 (Natural Language Processing) 
 * 第 37 集 - 机器人 (Robots)
