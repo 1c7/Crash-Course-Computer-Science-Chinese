@@ -21,7 +21,7 @@ Crash Course 字幕组出品
 * 第 18 集 - [操作系统](https://www.bilibili.com/video/av17192468)
 * 第 19 集 - [内存&储存介质](https://www.bilibili.com/video/av17192483/)
 * 第 20 集 - [文件系统](https://www.bilibili.com/video/av17209268/)
-* 第 21 集 - [压缩] https://www.bilibili.com/video/av17192511/)
+* 第 21 集 - [压缩](https://www.bilibili.com/video/av17192511/)
 * 第 22 集 - [命令行界面](https://www.bilibili.com/video/av17451718/)
 * 第 23 集 - [屏幕 & 2D 图形显示](https://www.bilibili.com/video/av17476087/)
 * 第 24 集 - [冷战和消费主义](https://www.bilibili.com/video/av15637307/)
@@ -45,7 +45,7 @@ Crash Course 字幕组出品
 * 第 40 集 - 奇点，天网，计算机的未来 (The Singularity, Skynet, and the Future of Computing)
 
 
-### 英文视频出处
+### 视频出处
 [Crash Course Computer Science](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)         
 感谢 Crash Course! <br>
 在 Patron 支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
@@ -61,6 +61,15 @@ Crash Course 官网：https://thecrashcourse.com/  <br/>
 * 不想膨胀的小R: [B 站](https://space.bilibili.com/5385034#!/video)，[微博](https://weibo.com/u/2207493917)
 * 糖醋陈皮: [微博](https://weibo.com/2004104451)
 * ZireHao: [B 站](http://space.bilibili.com/27167876#!/)
+
+### 时间
+官方英文版：    
+第 1 集发布时间：  2017年2月22号    
+第 40 集发布时间：2017年12月21号     
+
+Crash Course 字幕组中文版：     
+第 1 集发布时间：2017年2月27号      
+全部 40 集完成：2018年3月11号（虽然没全部压制出来，但翻译是完成了）      
 
 ### 注
 * 欢迎转发！:fire::fire::fire:
