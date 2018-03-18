@@ -1,6 +1,8 @@
 ## 计算机速成课 - Crash Course Computer Science
 Crash Course 字幕组出品
 :fire: 最新更新：33
+![中文字幕 B 站截图](/image/chinese.png)   
+
 * 第 1 集 - [早期的计算 (Early Computing)](https://www.bilibili.com/video/av8861057/)
 * 第 2 集 - [电子运算 (Electronic Computing)](https://www.bilibili.com/video/av9066628/)
 * 第 3 集 - [布尔逻辑与逻辑电路 (Boolean Logic & Logic Gates)](https://www.bilibili.com/video/av11557339/)
@@ -46,7 +48,8 @@ Crash Course 字幕组出品
 
 
 ### 1. 视频出处
-[Crash Course Computer Science](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)         
+[Crash Course Computer Science](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)     
+![英文 Crash Course CS](/image/english.png)       
 感谢 Crash Course! <br>
 在 Patron 支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
 Crash Course 官网：https://thecrashcourse.com/  <br/>
