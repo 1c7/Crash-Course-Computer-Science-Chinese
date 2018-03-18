@@ -8,11 +8,11 @@ Crash Course 字幕组出品
 * 第 5 集 - [算术逻辑单元 (How Computers Calculate - the ALU)](https://www.bilibili.com/video/av12742941/)
 * 第 6 集 - [寄存器&内存 (Registers and RAM)](https://www.bilibili.com/video/av12881796/)
 * 第 7 集 - [CPU (The Central Processing Unit (CPU))](https://www.bilibili.com/video/av12881976/)
-* 第 8 集 - [指令和程序](https://www.bilibili.com/video/av9875360/)
-* 第 9 集 -  [高级CPU设计](https://www.bilibili.com/video/av11867964/)
-* 第 10 集 - [编程史话](https://www.bilibili.com/video/av13582556/)
-* 第 11 集 - [编程语言](https://www.bilibili.com/video/av14228148/)
-* 第 12 集 - [编程原理：语句和函数](https://www.bilibili.com/video/av14885759/)
+* 第 8 集 - [指令和程序 (Instructions & Programs)](https://www.bilibili.com/video/av9875360/)
+* 第 9 集 -  [高级CPU设计 (Advanced CPU Designs)](https://www.bilibili.com/video/av11867964/)
+* 第 10 集 - [编程史话 (Early Programming)](https://www.bilibili.com/video/av13582556/)
+* 第 11 集 - [编程语言 (The First Programming Languages)](https://www.bilibili.com/video/av14228148/)
+* 第 12 集 - [编程原理：语句和函数 (Programming Basics: Statements & Functions)](https://www.bilibili.com/video/av14885759/)
 * 第 13 集 - [算法初步](https://www.bilibili.com/video/av15987761/)
 * 第 14 集 - [数据结构](https://www.bilibili.com/video/av15987774/)
 * 第 15 集 - [阿兰·图灵](https://www.bilibili.com/video/av16090115/)
@@ -60,7 +60,8 @@ Crash Course 官网：https://thecrashcourse.com/  <br/>
 
 * 不想膨胀的小R: [B 站](https://space.bilibili.com/5385034#!/video)，[微博](https://weibo.com/u/2207493917)
 * 糖醋陈皮: [微博](https://weibo.com/2004104451)
-* ZireHao: [B 站](http://space.bilibili.com/27167876#!/)
+* ZireHao: [B 站](http://space.bilibili.com/27167876#!/)     
+
 还没列全，之后会补
 
 ### 3. 时间
