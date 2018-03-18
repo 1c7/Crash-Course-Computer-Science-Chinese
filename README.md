@@ -1,10 +1,10 @@
 ## 计算机速成课 - Crash Course Computer Science
 Crash Course 字幕组出品
 :fire: 最新更新：33
-* 第 1 集 - [早期的计算](https://www.bilibili.com/video/av8861057/)
-* 第 2 集 - [电子运算](https://www.bilibili.com/video/av9066628/)
-* 第 3 集 - [布尔逻辑与逻辑电路](https://www.bilibili.com/video/av11557339/)
-* 第 4 集 - [二进制](https://www.bilibili.com/video/av11592079/)
+* 第 1 集 - [早期的计算(Early Computing)](https://www.bilibili.com/video/av8861057/)
+* 第 2 集 - [电子运算(Electronic Computing)](https://www.bilibili.com/video/av9066628/)
+* 第 3 集 - [布尔逻辑与逻辑电路(Boolean Logic & Logic Gates)](https://www.bilibili.com/video/av11557339/)
+* 第 4 集 - [二进制(Representing Numbers and Letters with Binary)](https://www.bilibili.com/video/av11592079/)
 * 第 5 集 - [算术逻辑单元(ALU)](https://www.bilibili.com/video/av12742941/)
 * 第 6 集 - [寄存器&内存](https://www.bilibili.com/video/av12881796/)
 * 第 7 集 - [CPU&时钟频率](https://www.bilibili.com/video/av12881976/)
@@ -45,7 +45,7 @@ Crash Course 字幕组出品
 * 第 40 集 - 奇点，天网，计算机的未来 (The Singularity, Skynet, and the Future of Computing)
 
 
-### 视频出处
+### 1. 视频出处
 [Crash Course Computer Science](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)         
 感谢 Crash Course! <br>
 在 Patron 支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
@@ -54,15 +54,16 @@ Crash Course 官网：https://thecrashcourse.com/  <br/>
 **Thanks to Carrie Anne，John Green, Hank Green, and the rest of the Crash Course team!** <br/>
 
 
-### 感谢所有参与人员 
+### 2. 感谢所有参与人员 
 翻译/校对/时间轴/压制/等    
 （按英文/拼音首字母排序） 
 
 * 不想膨胀的小R: [B 站](https://space.bilibili.com/5385034#!/video)，[微博](https://weibo.com/u/2207493917)
 * 糖醋陈皮: [微博](https://weibo.com/2004104451)
 * ZireHao: [B 站](http://space.bilibili.com/27167876#!/)
+还没列全，之后会补
 
-### 时间
+### 3. 时间
 官方英文版：    
 第 1 集发布时间：  2017年2月22号    
 第 40 集发布时间：2017年12月21号     
@@ -71,12 +72,12 @@ Crash Course 字幕组中文版：
 第 1 集发布时间：2017年2月27号      
 全部 40 集完成：2018年3月11号（虽然没全部压制出来，但翻译是完成了）      
 
-### 注
+### 4. 注
 * 欢迎转发！:fire::fire::fire:
 * 加入 Crash Course 字幕组 (http://weibo.com/u/5237129097/home?wvr=5) 请加 Q 群 305631757       
 * 若发现错误，欢迎 Pull Request 或开 Issue。翻译人员也是人，请和善沟通 :D
 
-### 关于我
+### 5. 关于我
 这个库的所有者 1c7 就是新浪微博@糖醋陈皮，参与了这个计算机系列的译制
 
  
