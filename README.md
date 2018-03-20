@@ -36,11 +36,11 @@ Crash Course 字幕组出品
 * 第 31 集 - [网络安全 - Cybersecurity](https://www.bilibili.com/video/av20785456/)
 * 第 32 集 - [黑客与攻击 (Hackers & Cyber Attacks)](https://www.bilibili.com/video/av20831479/)
 * 第 33 集 - [加密 (Cryptography)](https://www.bilibili.com/video/av20882310/)
+* 第 34 集 - [机器学习与人工智能 (Machine Learning & Artificial Intelligence)](https://www.bilibili.com/video/av20922906)
+* 第 35 集 - [计算机视觉 (Computer Vision)](https://www.bilibili.com/video/av20974735)
+* 第 36 集 - [自然语言处理 (Natural Language Processing)](https://www.bilibili.com/video/av21004070)
 ---
 制作中
-* 第 34 集 - 机器学习与人工智能 (Machine Learning & Artificial Intelligence)
-* 第 35 集 - 计算机视觉 (Computer Vision)
-* 第 36 集 - 自然语言处理 (Natural Language Processing) 
 * 第 37 集 - 机器人 (Robots)
 * 第 38 集 - 计算机中的心理学 (Psychology of Computing)
 * 第 39 集 - 教育型科技 (Educational Technology)
