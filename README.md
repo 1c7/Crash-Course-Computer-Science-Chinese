@@ -1,7 +1,7 @@
 ## 计算机速成课 - Crash Course Computer Science
 Crash Course 字幕组出品
-:fire: 最新更新：37
-![中文字幕 B 站截图](/image/chinese.png)   
+:fire: 最新更新：38/40 （还差2集就40集完结了）
+![中文字幕 B 站截图](/image/chinese.png)   
 
 * 第 1 集 - [早期的计算 (Early Computing)](https://www.bilibili.com/video/av8861057/)
 * 第 2 集 - [电子运算 (Electronic Computing)](https://www.bilibili.com/video/av9066628/)
@@ -40,9 +40,9 @@ Crash Course 字幕组出品
 * 第 35 集 - [计算机视觉 (Computer Vision)](https://www.bilibili.com/video/av20974735)
 * 第 36 集 - [自然语言处理 (Natural Language Processing)](https://www.bilibili.com/video/av21004070)
 * 第 37 集 - [机器人 (Robots)](https://www.bilibili.com/video/av21043523)
+* 第 38 集 - [计算机中的心理学 (Psychology of Computing)](https://www.bilibili.com/video/av21066931)
 ---
 制作中
-* 第 38 集 - 计算机中的心理学 (Psychology of Computing)
 * 第 39 集 - 教育型科技 (Educational Technology)
 * 第 40 集 - 奇点，天网，计算机的未来 (The Singularity, Skynet, and the Future of Computing)
 
