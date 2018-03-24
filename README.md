@@ -1,4 +1,4 @@
-## 计算机速成课 - Crash Course Computer Science :fire: 完结撒花
+## 计算机科学速成课 :fire: 完结撒花
 翻译：[Crash Course 字幕组](http://weibo.com/u/5237129097/home?wvr=5)    
 
 ---
@@ -76,7 +76,7 @@
 * 加入 [Crash Course 字幕组](http://weibo.com/u/5237129097/home?wvr=5) 请加 Q 群 305631757       
 -->
 
-### 4. 视频出处
+### 2. 视频出处
 [Crash Course Computer Science](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)     
 ![英文 Crash Course CS](/image/english.png)       
 
