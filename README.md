@@ -48,7 +48,7 @@
 * 39 - [教育型科技 - Educational Technology](https://www.bilibili.com/video/av21103744)
 * 40 - [奇点，天网，计算机的未来 - The Singularity, Skynet, and the Future of Computing](https://www.bilibili.com/video/av21126704)
 
-### 1. 感谢所有参与人员！
+### 1. 感谢所有翻译人员！
 * 不想膨胀的小R: [B 站](https://space.bilibili.com/5385034#!/video)，[微博](https://weibo.com/u/2207493917)
 * 糖醋陈皮: [微博](https://weibo.com/2004104451)
 * ZireHao: [B 站](http://space.bilibili.com/27167876#!/)     
@@ -60,7 +60,7 @@
 * TMC - RN
 * LCAR979（推特 `_lincr_`）
 
-
+<!--
 ### 2. 时间
 英文版：    
 第 1 集发布： 2017年2月22号    
@@ -74,7 +74,7 @@
 ### 3. 注
 * 欢迎转发！:fire::fire::fire:
 * 加入 [Crash Course 字幕组](http://weibo.com/u/5237129097/home?wvr=5) 请加 Q 群 305631757       
-
+-->
 
 ### 4. 视频出处
 [Crash Course Computer Science](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)     
