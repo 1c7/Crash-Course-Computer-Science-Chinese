@@ -8,9 +8,9 @@
 ---
 
 * 1 - [早期的计算 - Early Computing](https://www.bilibili.com/video/av8861057/)
-* 2 - [电子运算 (Electronic Computing)](https://www.bilibili.com/video/av9066628/)
-* 第 3 集 - [布尔逻辑与逻辑电路 (Boolean Logic & Logic Gates)](https://www.bilibili.com/video/av11557339/)
-* 第 4 集 - [二进制 (Representing Numbers and Letters with Binary)](https://www.bilibili.com/video/av11592079/)
+* 2 - [电子计算 - Electronic Computing)](https://www.bilibili.com/video/av9066628/)
+* 3 - [布尔逻辑与逻辑电路 - Boolean Logic & Logic Gates](https://www.bilibili.com/video/av11557339/)
+* 4 - [二进制 - Representing Numbers and Letters with Binary](https://www.bilibili.com/video/av11592079/)
 * 第 5 集 - [算术逻辑单元 (How Computers Calculate - the ALU)](https://www.bilibili.com/video/av12742941/)
 * 第 6 集 - [寄存器&内存 (Registers and RAM)](https://www.bilibili.com/video/av12881796/)
 * 第 7 集 - [CPU (The Central Processing Unit (CPU))](https://www.bilibili.com/video/av12881976/)
@@ -61,7 +61,7 @@
 * Cindy
 * 出门去
 * TMC - RN
-* LCAR979
+* LCAR979（推特 `_lincr_`）
 
 
 ### 3. 时间
