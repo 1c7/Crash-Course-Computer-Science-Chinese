@@ -11,8 +11,8 @@
 * 2 - [电子计算 - Electronic Computing)](https://www.bilibili.com/video/av9066628/)
 * 3 - [布尔逻辑与逻辑电路 - Boolean Logic & Logic Gates](https://www.bilibili.com/video/av11557339/)
 * 4 - [二进制 - Representing Numbers and Letters with Binary](https://www.bilibili.com/video/av11592079/)
-* 5 - [算术逻辑单元 - How Computers Calculate - the ALU)](https://www.bilibili.com/video/av12742941/)
-* 6 - [寄存器 & 内存 - Registers and RAM)](https://www.bilibili.com/video/av12881796/)
+* 5 - [算术逻辑单元 - How Computers Calculate - the ALU](https://www.bilibili.com/video/av12742941/)
+* 6 - [寄存器 & 内存 - Registers and RAM](https://www.bilibili.com/video/av12881796/)
 * 7 - [中央处理器 - The Central Processing Unit(CPU)](https://www.bilibili.com/video/av12881976/)
 * 8 - [指令和程序 - Instructions & Programs](https://www.bilibili.com/video/av9875360/)
 * 9 -  [高级 CPU 设计 - Advanced CPU Designs](https://www.bilibili.com/video/av11867964/)
@@ -31,22 +31,22 @@
 * 22 - [命令行界面 - Keyboards & Command Line Interfaces](https://www.bilibili.com/video/av17451718/)
 * 23 - [屏幕 & 2D 图形显示 - Screens & 2D Graphics](https://www.bilibili.com/video/av17476087/)
 * 24 - [冷战和消费主义 - The Cold War and Consumerism](https://www.bilibili.com/video/av15637307/)
-* 25 集 - [个人计算机革命 - The Personal Computer Revolution](https://www.bilibili.com/video/av18789303/)
-* 26 集 - [图形用户界面 - Graphical User Interfaces](https://www.bilibili.com/video/av19035296/)
-* 27 集 - [3D 图形 - 3D Graphics](https://www.bilibili.com/video/av19164942/)
-* 28 集 - [计算机网络 - Computer Networks](https://www.bilibili.com/video/av19209394/)
-* 第 29 集 - [互联网 - The Internet](https://www.bilibili.com/video/av20716104/)
-* 第 30 集 - [万维网 - The World Wide Web](https://www.bilibili.com/video/av20767130/)
-* 第 31 集 - [网络安全 - Cybersecurity](https://www.bilibili.com/video/av20785456/)
-* 第 32 集 - [黑客与攻击 - Hackers & Cyber Attacks](https://www.bilibili.com/video/av20831479/)
-* 第 33 集 - [加密 - Cryptography](https://www.bilibili.com/video/av20882310/)
-* 第 34 集 - [机器学习与人工智能 - Machine Learning & Artificial Intelligence](https://www.bilibili.com/video/av20922906)
-* 第 35 集 - [计算机视觉 - Computer Vision](https://www.bilibili.com/video/av20974735)
-* 第 36 集 - [自然语言处理 - Natural Language Processing](https://www.bilibili.com/video/av21004070)
-* 第 37 集 - [机器人 - Robots)](https://www.bilibili.com/video/av21043523)
-* 第 38 集 - [计算机中的心理学 - Psychology of Computing)](https://www.bilibili.com/video/av21066931)
-* 第 39 集 - [教育型科技 - Educational Technology)](https://www.bilibili.com/video/av21103744)
-* 第 40 集 - [奇点，天网，计算机的未来 - The Singularity, Skynet, and the Future of Computing)](https://www.bilibili.com/video/av21126704)
+* 25 - [个人计算机革命 - The Personal Computer Revolution](https://www.bilibili.com/video/av18789303/)
+* 26 - [图形用户界面 - Graphical User Interfaces](https://www.bilibili.com/video/av19035296/)
+* 27 - [3D 图形 - 3D Graphics](https://www.bilibili.com/video/av19164942/)
+* 28 - [计算机网络 - Computer Networks](https://www.bilibili.com/video/av19209394/)
+* 29 - [互联网 - The Internet](https://www.bilibili.com/video/av20716104/)
+* 30 - [万维网 - The World Wide Web](https://www.bilibili.com/video/av20767130/)
+* 31 - [网络安全 - Cybersecurity](https://www.bilibili.com/video/av20785456/)
+* 32 - [黑客与攻击 - Hackers & Cyber Attacks](https://www.bilibili.com/video/av20831479/)
+* 33 - [加密 - Cryptography](https://www.bilibili.com/video/av20882310/)
+* 34 - [机器学习与人工智能 - Machine Learning & Artificial Intelligence](https://www.bilibili.com/video/av20922906)
+* 35 - [计算机视觉 - Computer Vision](https://www.bilibili.com/video/av20974735)
+* 36 - [自然语言处理 - Natural Language Processing](https://www.bilibili.com/video/av21004070)
+* 37 - [机器人 - Robots)](https://www.bilibili.com/video/av21043523)
+* 38 - [计算机中的心理学 - Psychology of Computing](https://www.bilibili.com/video/av21066931)
+* 39 - [教育型科技 - Educational Technology](https://www.bilibili.com/video/av21103744)
+* 40 - [奇点，天网，计算机的未来 - The Singularity, Skynet, and the Future of Computing](https://www.bilibili.com/video/av21126704)
 
 ### 2. 感谢所有参与人员！
 翻译/校对/时间轴/压制/等  
@@ -86,5 +86,5 @@
 
 # Thank you Crash Course!
 感谢 Crash Course! <br>
-在 Patron 支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
-Crash Course 官网：https://thecrashcourse.com/  <br/>
+Patron 支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
+Crash Course：https://thecrashcourse.com/
