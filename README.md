@@ -23,30 +23,30 @@
 * 14 - [数据结构 - Data Structures](https://www.bilibili.com/video/av15987774/)
 * 15 - [阿兰·图灵 - Alan Turing](https://www.bilibili.com/video/av16090115/)
 * 16 - [软件工程 - Software Engineering](https://www.bilibili.com/video/av16751202/)
-* 第 17 集 - [集成电路、摩尔定律](https://www.bilibili.com/video/av17186768)
-* 第 18 集 - [操作系统](https://www.bilibili.com/video/av17192468)
-* 第 19 集 - [内存&储存介质](https://www.bilibili.com/video/av17192483/)
-* 第 20 集 - [文件系统](https://www.bilibili.com/video/av17209268/)
-* 第 21 集 - [压缩](https://www.bilibili.com/video/av17192511/)
-* 第 22 集 - [命令行界面](https://www.bilibili.com/video/av17451718/)
-* 第 23 集 - [屏幕 & 2D 图形显示](https://www.bilibili.com/video/av17476087/)
-* 第 24 集 - [冷战和消费主义](https://www.bilibili.com/video/av15637307/)
-* 第 25 集 - [个人计算机革命](https://www.bilibili.com/video/av18789303/)
-* 第 26 集 - [图形用户界面](https://www.bilibili.com/video/av19035296/)
-* 第 27 集 - [3D 图形](https://www.bilibili.com/video/av19164942/)
-* 第 28 集 - [计算机网络](https://www.bilibili.com/video/av19209394/)
+* 17 - [集成电路、摩尔定律 - Integrated Circuits & Moore’s Law](https://www.bilibili.com/video/av17186768)
+* 18 - [操作系统 - Operating Systems](https://www.bilibili.com/video/av17192468)
+* 19 - [内存 & 储存介质 - Memory & Storage](https://www.bilibili.com/video/av17192483/)
+* 20 - [文件系统 - Files & File Systems](https://www.bilibili.com/video/av17209268/)
+* 21 - [压缩 - Compression](https://www.bilibili.com/video/av17192511/)
+* 22 - [命令行界面 - Keyboards & Command Line Interfaces](https://www.bilibili.com/video/av17451718/)
+* 23 - [屏幕 & 2D 图形显示 - Screens & 2D Graphics](https://www.bilibili.com/video/av17476087/)
+* 24 - [冷战和消费主义 - The Cold War and Consumerism](https://www.bilibili.com/video/av15637307/)
+* 25 集 - [个人计算机革命 - The Personal Computer Revolution](https://www.bilibili.com/video/av18789303/)
+* 26 集 - [图形用户界面 - Graphical User Interfaces](https://www.bilibili.com/video/av19035296/)
+* 27 集 - [3D 图形 - 3D Graphics](https://www.bilibili.com/video/av19164942/)
+* 28 集 - [计算机网络 - Computer Networks](https://www.bilibili.com/video/av19209394/)
 * 第 29 集 - [互联网 - The Internet](https://www.bilibili.com/video/av20716104/)
 * 第 30 集 - [万维网 - The World Wide Web](https://www.bilibili.com/video/av20767130/)
 * 第 31 集 - [网络安全 - Cybersecurity](https://www.bilibili.com/video/av20785456/)
-* 第 32 集 - [黑客与攻击 (Hackers & Cyber Attacks)](https://www.bilibili.com/video/av20831479/)
-* 第 33 集 - [加密 (Cryptography)](https://www.bilibili.com/video/av20882310/)
-* 第 34 集 - [机器学习与人工智能 (Machine Learning & Artificial Intelligence)](https://www.bilibili.com/video/av20922906)
-* 第 35 集 - [计算机视觉 (Computer Vision)](https://www.bilibili.com/video/av20974735)
-* 第 36 集 - [自然语言处理 (Natural Language Processing)](https://www.bilibili.com/video/av21004070)
-* 第 37 集 - [机器人 (Robots)](https://www.bilibili.com/video/av21043523)
-* 第 38 集 - [计算机中的心理学 (Psychology of Computing)](https://www.bilibili.com/video/av21066931)
-* 第 39 集 - [教育型科技 (Educational Technology)](https://www.bilibili.com/video/av21103744)
-* 第 40 集 - [奇点，天网，计算机的未来 (The Singularity, Skynet, and the Future of Computing)](https://www.bilibili.com/video/av21126704)
+* 第 32 集 - [黑客与攻击 - Hackers & Cyber Attacks](https://www.bilibili.com/video/av20831479/)
+* 第 33 集 - [加密 - Cryptography](https://www.bilibili.com/video/av20882310/)
+* 第 34 集 - [机器学习与人工智能 - Machine Learning & Artificial Intelligence](https://www.bilibili.com/video/av20922906)
+* 第 35 集 - [计算机视觉 - Computer Vision](https://www.bilibili.com/video/av20974735)
+* 第 36 集 - [自然语言处理 - Natural Language Processing](https://www.bilibili.com/video/av21004070)
+* 第 37 集 - [机器人 - Robots)](https://www.bilibili.com/video/av21043523)
+* 第 38 集 - [计算机中的心理学 - Psychology of Computing)](https://www.bilibili.com/video/av21066931)
+* 第 39 集 - [教育型科技 - Educational Technology)](https://www.bilibili.com/video/av21103744)
+* 第 40 集 - [奇点，天网，计算机的未来 - The Singularity, Skynet, and the Future of Computing)](https://www.bilibili.com/video/av21126704)
 
 ### 2. 感谢所有参与人员！
 翻译/校对/时间轴/压制/等  
@@ -82,8 +82,9 @@
 ### 6. 视频出处
 [Crash Course Computer Science](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)     
 ![英文 Crash Course CS](/image/english.png)       
+
+
+# Thank you Crash Course!
 感谢 Crash Course! <br>
 在 Patron 支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
 Crash Course 官网：https://thecrashcourse.com/  <br/>
-
-# Thank you Crash Course!
