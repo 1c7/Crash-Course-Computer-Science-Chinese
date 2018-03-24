@@ -1,7 +1,11 @@
 ## 计算机速成课 - Crash Course Computer Science :fire: 完结撒花
 翻译：[Crash Course 字幕组](http://weibo.com/u/5237129097/home?wvr=5)    
 
+---
 
+![中文字幕 B 站截图](/image/chinese.png)   
+
+---
 
 * 第 1 集 - [早期的计算 (Early Computing)](https://www.bilibili.com/video/av8861057/)
 * 第 2 集 - [电子运算 (Electronic Computing)](https://www.bilibili.com/video/av9066628/)
@@ -82,4 +86,4 @@
 在 Patron 支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
 Crash Course 官网：https://thecrashcourse.com/  <br/>
 
-## Thank you Crash Course!
+# Thank you Crash Course!
