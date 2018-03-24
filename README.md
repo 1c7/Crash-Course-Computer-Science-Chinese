@@ -7,8 +7,8 @@
 
 ---
 
-* 第 1 集 - [早期的计算 (Early Computing)](https://www.bilibili.com/video/av8861057/)
-* 第 2 集 - [电子运算 (Electronic Computing)](https://www.bilibili.com/video/av9066628/)
+* 1 - [早期的计算 - Early Computing](https://www.bilibili.com/video/av8861057/)
+* 2 - [电子运算 (Electronic Computing)](https://www.bilibili.com/video/av9066628/)
 * 第 3 集 - [布尔逻辑与逻辑电路 (Boolean Logic & Logic Gates)](https://www.bilibili.com/video/av11557339/)
 * 第 4 集 - [二进制 (Representing Numbers and Letters with Binary)](https://www.bilibili.com/video/av11592079/)
 * 第 5 集 - [算术逻辑单元 (How Computers Calculate - the ALU)](https://www.bilibili.com/video/av12742941/)
