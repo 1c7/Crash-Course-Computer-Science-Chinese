@@ -49,7 +49,7 @@
 * 37 - [机器人 - Robots](https://www.bilibili.com/video/av21043523)
 * 38 - [计算机中的心理学 - Psychology of Computing](https://www.bilibili.com/video/av21066931)
 * 39 - [教育型科技 - Educational Technology](https://www.bilibili.com/video/av21103744)
-* 40 - [奇点，天网，计算机的未来 - The Singularity, Skynet, and the Future of Computing](https://www.bilibili.com/video/av21126704)
+* 40 - [(完结) 奇点，天网，计算机的未来 - The Singularity, Skynet, and the Future of Computing](https://www.bilibili.com/video/av21126704)
 
 ### 1. 感谢所有翻译人员！
 * 不想膨胀的小R：[B 站](https://space.bilibili.com/5385034#!/video)，[微博](https://weibo.com/u/2207493917)
