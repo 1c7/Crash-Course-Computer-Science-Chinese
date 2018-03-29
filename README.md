@@ -1,15 +1,19 @@
 ## 计算机科学速成课 :fire: 40集完结撒花
 * 翻译：[Crash Course 字幕组](http://weibo.com/u/5237129097/home?wvr=5)    
-* 近况：（2018年3月26号）       
-接下来会精校，提升质量（修正错别字，改进时间轴，分句，统一格式等等）      
-然后做成 B 站合集，然后宣传一下，这个系列就算完全结束了   
+* 近况：（2018年3月26号）          
+接下来会精校 -> 做成 B 站合集 -> 宣传一下 -> 这个系列就算完全结束了      
+
+精校版请点这里：     
+https://www.bilibili.com/video/av21376839/       
+进度：1/40      
+精校版好在哪里：字幕风格统一，字体更大更好看清，解决之前犯的错别字和其他类型的错误。改进时间轴，视频中出现的动画都会标上中文。基本就这些     
 
 ---
 
 ![中文字幕 B 站截图](/image/chinese.png)   
 
 ---
-
+以下是第一版翻译：（精校版本请在上面找）
 * 1 - [早期的计算 - Early Computing](https://www.bilibili.com/video/av8861057/)
 * 2 - [电子计算 - Electronic Computing)](https://www.bilibili.com/video/av9066628/)
 * 3 - [布尔逻辑与逻辑电路 - Boolean Logic & Logic Gates](https://www.bilibili.com/video/av11557339/)
