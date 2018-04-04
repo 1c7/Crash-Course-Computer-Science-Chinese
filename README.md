@@ -5,7 +5,7 @@
 
 精校版请点这里：     
 https://www.bilibili.com/video/av21376839/       
-进度：1/40      
+进度：8/40      
 精校版好在哪里：字幕风格统一，字体更大更好看清，解决之前犯的错别字和其他类型的错误。改进时间轴，视频中出现的动画都会标上中文。基本就这些     
 
 ---
@@ -15,7 +15,7 @@ https://www.bilibili.com/video/av21376839/
 ---
 以下是第一版翻译：（精校版本请在上面找）
 * 1 - [早期的计算 - Early Computing](https://www.bilibili.com/video/av8861057/)
-* 2 - [电子计算 - Electronic Computing)](https://www.bilibili.com/video/av9066628/)
+* 2 - [电子计算 - Electronic Computing](https://www.bilibili.com/video/av9066628/)
 * 3 - [布尔逻辑与逻辑电路 - Boolean Logic & Logic Gates](https://www.bilibili.com/video/av11557339/)
 * 4 - [二进制 - Representing Numbers and Letters with Binary](https://www.bilibili.com/video/av11592079/)
 * 5 - [算术逻辑单元 - How Computers Calculate - the ALU](https://www.bilibili.com/video/av12742941/)
