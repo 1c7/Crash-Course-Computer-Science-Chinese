@@ -1,11 +1,12 @@
 ## 计算机科学速成课 :fire: 40集完结撒花
-* 翻译：[Crash Course 字幕组](http://weibo.com/u/5237129097/home?wvr=5)    
-* 近况：（2018年4月22号）精校 -> 做成合集 -> 宣传一下 -> 系列就算完全结束了      
+
+### 当前状态
+40集的第一版翻译已完成。近期（2018年4月22号）在更新精校版。精校结束后这个系列就算完全结束了。多谢支持。
 
 ### 精校版：     
 https://www.bilibili.com/video/av21376839/       
 进度：20/40      
-精校版的优点：字幕风格统一，字体更大更好看清，解决之前犯的错别字和其他类型的错误。改进时间轴，视频中出现的动画都会标上中文。 
+精校版的优点：字幕风格统一，字体更大更容易看清，修复错别字和其他错误。改进时间轴，视频动画标上中文。 
 
 ---
 
@@ -14,7 +15,6 @@ https://www.bilibili.com/video/av21376839/
 ---
 
 ### 第一版翻译：
-（精校版本请在上面找）
 * 1 - [早期的计算 - Early Computing](https://www.bilibili.com/video/av8861057/)
 * 2 - [电子计算 - Electronic Computing](https://www.bilibili.com/video/av9066628/)
 * 3 - [布尔逻辑与逻辑电路 - Boolean Logic & Logic Gates](https://www.bilibili.com/video/av11557339/)
@@ -58,7 +58,7 @@ https://www.bilibili.com/video/av21376839/
 
 ### 1. 感谢所有翻译人员！
 * 不想膨胀的小R：[B 站](https://space.bilibili.com/5385034#!/video)，[微博](https://weibo.com/u/2207493917)
-* 糖醋陈皮：[微博](https://weibo.com/2004104451)
+* 糖醋陈皮：[微博](https://weibo.com/2004104451), [Github@1c7](https://github.com/1c7)
 * ZireHao：[B 站](http://space.bilibili.com/27167876#!/)     
 * gilot
 * 晴空
@@ -77,14 +77,10 @@ https://www.bilibili.com/video/av21376839/
 中文版：     
 第 1 集发布：   2017年2月27号       
 全部 40 集完成：2018年3月11号（翻译完成了，没全部发出去）        
-全部 40 集发布：2018年3月24号（全部发出去了）       
-
-### 3. 注
-* 欢迎转发！:fire::fire::fire:
-* 加入 [Crash Course 字幕组](http://weibo.com/u/5237129097/home?wvr=5) 请加 Q 群 305631757       
+全部 40 集发布：2018年3月24号（全部发出去了）          
 -->
 
-### 2. 视频出处
+### 2. 原视频出处
 [Crash Course Computer Science](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)     
 ![英文 Crash Course CS](/image/english.png)       
 
