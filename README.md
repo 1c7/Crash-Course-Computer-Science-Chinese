@@ -71,13 +71,13 @@ https://www.bilibili.com/video/av21376839/
 第 40 集发布：2017年12月21号     
 
 中文版：     
-第 1 集发布：   2017年2月27号       
-全部 40 集完成：2018年3月24号
-全部 40 集精校：暂未完成
+第 1 集发布：  2017年2月27号       
+全 40 集完成：2018年3月24号         
+全 40 集精校：暂未完成
 
 
 ### 2. 原视频
-[Crash Course Computer Science](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)     
+[Youtube - Crash Course Computer Science Playlist](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)     
 ![Crash Course CS screenshoht](/image/english.png)       
 
 
