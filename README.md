@@ -7,7 +7,7 @@ https://www.bilibili.com/video/av21376839/
 
 ---
 
-![中文字幕 B 站截图](/image/chinese.png)   
+![精校版 B 站截图](/image/cs.jpg)   
 
 ---
 
@@ -65,7 +65,7 @@ https://www.bilibili.com/video/av21376839/
 * TMC - RN
 * LCAR979（推特 `_lincr_`）
 
-### 2. 时间
+### 2. 翻译时间
 英文版：    
 第 1 集发布： 2017年2月22号    
 第 40 集发布：2017年12月21号     
@@ -76,9 +76,9 @@ https://www.bilibili.com/video/av21376839/
 全部 40 集精校：暂未完成
 
 
-### 2. 原视频出处
+### 2. 原视频
 [Crash Course Computer Science](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)     
-![英文 Crash Course CS](/image/english.png)       
+![Crash Course CS screenshoht](/image/english.png)       
 
 
 # Thank you Crash Course!
