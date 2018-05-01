@@ -1,7 +1,8 @@
 ## 计算机科学速成课 :fire: 40集完结撒花
 
 ### 精校版（推荐）： 
-https://www.bilibili.com/video/av21376839/    
+https://www.bilibili.com/video/av21376839/  
+![bilibili](/image/cs40.jpg)    
 
 ### 1. 感谢所有翻译人员！
 * 不想膨胀的小R - [Github](https://github.com/coolralf), [微博](https://weibo.com/u/2207493917), [B站](https://space.bilibili.com/5385034#!/video)
