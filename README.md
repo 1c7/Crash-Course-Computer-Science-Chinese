@@ -76,7 +76,10 @@ https://www.bilibili.com/video/av21376839/
 ![Crash Course CS screenshoht](/image/english.png)       
 
 
-# Thank you Crash Course!
-感谢 Crash Course! <br>
-Patron 支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
-Crash Course：https://thecrashcourse.com/
+# Thank you Crash Course & Carrie Anne!
+* Patron support Crash Course：https://www.patreon.com/crashcourse  <br/>
+* Crash Course website：https://thecrashcourse.com/
+
+# 感谢速成课！感谢 Carrie Anne！
+* Patron 支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
+* Crash Course 官方网站：https://thecrashcourse.com/
