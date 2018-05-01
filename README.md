@@ -4,7 +4,7 @@
 https://www.bilibili.com/video/av21376839/    
 
 ### 1. 感谢所有翻译人员！
-* 不想膨胀的小R - [Github](https://github.com/coolralf), [微博](https://weibo.com/u/2207493917), [B站](https://space.bilibili.com/5385034#!/video)，
+* 不想膨胀的小R - [Github](https://github.com/coolralf), [微博](https://weibo.com/u/2207493917), [B站](https://space.bilibili.com/5385034#!/video)
 * 糖醋陈皮 - [Github](https://github.com/1c7), [微博](https://weibo.com/2004104451), [博客](http://1c7.me/)
 * ZireHao - [B站](http://space.bilibili.com/27167876#!/)     
 * gilot
