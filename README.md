@@ -1,17 +1,9 @@
 ## 计算机科学速成课 :fire: 40集完结撒花
 
-### 精校版：     
+### 精校版（推荐）： 
 https://www.bilibili.com/video/av21376839/       
-进度：39/40      
-精校版优点：字幕风格统一，字体更大更容易看清，修复错别字和其他错误。改进时间轴，视频动画标上中文。 
 
----
-
-![精校版 B 站截图](/image/cs.jpg)   
-
----
-
-### 第一版翻译：
+### 第一版：
 * 1 - [早期的计算 - Early Computing](https://www.bilibili.com/video/av8861057/)
 * 2 - [电子计算 - Electronic Computing](https://www.bilibili.com/video/av9066628/)
 * 3 - [布尔逻辑与逻辑电路 - Boolean Logic & Logic Gates](https://www.bilibili.com/video/av11557339/)
@@ -52,6 +44,9 @@ https://www.bilibili.com/video/av21376839/
 * 38 - [计算机中的心理学 - Psychology of Computing](https://www.bilibili.com/video/av21066931)
 * 39 - [教育型科技 - Educational Technology](https://www.bilibili.com/video/av21103744)
 * 40 - [(完结) 奇点，天网，计算机的未来 - The Singularity, Skynet, and the Future of Computing](https://www.bilibili.com/video/av21126704)
+精校版质量更好，建议看精校版，之所以第一版目录不删：
+1. 方便快速扫视，看都聊什么话题
+2. 方便翻阅到之前的版本（如果有需要）
 
 ### 1. 感谢所有翻译人员！
 * 不想膨胀的小R：[B 站](https://space.bilibili.com/5385034#!/video)，[微博](https://weibo.com/u/2207493917)
@@ -71,9 +66,9 @@ https://www.bilibili.com/video/av21376839/
 第 40 集发布：2017年12月21号     
 
 中文版：     
-第 1 集发布：  2017年2月27号       
-全 40 集完成：2018年3月24号         
-全 40 集精校：暂未完成
+第 1 集发布：  2017年2月27号    
+全 40 集翻译完成：2018年3月24号         
+全 40 集精校完成：2018年5月1号
 
 
 ### 2. 原视频
