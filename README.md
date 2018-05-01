@@ -4,16 +4,16 @@
 https://www.bilibili.com/video/av21376839/    
 
 ### 1. 感谢所有翻译人员！
-* 不想膨胀的小R：[B 站](https://space.bilibili.com/5385034#!/video)，[微博](https://weibo.com/u/2207493917)
-* 糖醋陈皮：[微博](https://weibo.com/2004104451), [Github@1c7](https://github.com/1c7)
-* ZireHao：[B 站](http://space.bilibili.com/27167876#!/)     
+* 不想膨胀的小R - [B 站](https://space.bilibili.com/5385034#!/video)，[微博](https://weibo.com/u/2207493917)
+* 糖醋陈皮 - [微博](https://weibo.com/2004104451), [Github@1c7](https://github.com/1c7), [博客](http://1c7.me/)
+* ZireHao - [B 站](http://space.bilibili.com/27167876#!/)     
 * gilot
 * 晴空
 * Crazycat
 * Cindy
 * 出门去
 * TMC - RN
-* LCAR979（推特 `_lincr_`）
+* LCAR979（推特 `_lincr_`）  
 
 ### 第一版：
 * 1 - [早期的计算 - Early Computing](https://www.bilibili.com/video/av8861057/)
@@ -59,7 +59,9 @@ https://www.bilibili.com/video/av21376839/
 
 精校版质量更好，建议看精校版，之所以第一版目录不删：      
 1. 方便快速扫视，看都聊什么话题     
-2. 方便翻阅之前的版本（如果有需要）  
+2. 方便翻阅之前的版本（如果有需要）        
+
+备注：精校负责人是 @糖醋陈皮
 
 ### 2. 翻译时间
 英文版：    
