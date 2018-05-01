@@ -43,10 +43,11 @@ https://www.bilibili.com/video/av21376839/
 * 37 - [机器人 - Robots](https://www.bilibili.com/video/av21043523)
 * 38 - [计算机中的心理学 - Psychology of Computing](https://www.bilibili.com/video/av21066931)
 * 39 - [教育型科技 - Educational Technology](https://www.bilibili.com/video/av21103744)
-* 40 - [(完结) 奇点，天网，计算机的未来 - The Singularity, Skynet, and the Future of Computing](https://www.bilibili.com/video/av21126704)
-精校版质量更好，建议看精校版，之所以第一版目录不删：
-1. 方便快速扫视，看都聊什么话题
-2. 方便翻阅到之前的版本（如果有需要）
+* 40 - [(完结) 奇点，天网，计算机的未来 - The Singularity, Skynet, and the Future of Computing](https://www.bilibili.com/video/av21126704)      
+
+精校版质量更好，建议看精校版，之所以第一版目录不删：      
+1. 方便快速扫视，看都聊什么话题     
+2. 方便翻阅到之前的版本（如果有需要）  
 
 ### 1. 感谢所有翻译人员！
 * 不想膨胀的小R：[B 站](https://space.bilibili.com/5385034#!/video)，[微博](https://weibo.com/u/2207493917)
@@ -79,7 +80,9 @@ https://www.bilibili.com/video/av21376839/
 # Thank you Crash Course & Carrie Anne!
 * Patron support Crash Course：https://www.patreon.com/crashcourse  <br/>
 * Crash Course website：https://thecrashcourse.com/
+* Youtube Crash Course: https://www.youtube.com/user/crashcourse
 
 # 感谢速成课！感谢 Carrie Anne！
 * Patron 支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
 * Crash Course 官方网站：https://thecrashcourse.com/
+* Youtube Crash Course: https://www.youtube.com/user/crashcourse
