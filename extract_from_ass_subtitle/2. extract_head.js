@@ -4,11 +4,13 @@ const common = require('./common.js');
 const path = require('path')
 
 /*
+2018-6-8 周五 03:42
+
 1. 是什么：
-  从 .ass 字幕文件中提取片头文字（共2行字幕）
+  从 40 个 .ass 字幕文件中提取片头文字（共2行字幕，字幕样式名统一）
   仅针对 [计算机科学速成课] Crash Course Computer Science
 
-2. 如何使用：
+2. 使用方法：
   node 2.\ extract_head.js
 
 3. 备注：

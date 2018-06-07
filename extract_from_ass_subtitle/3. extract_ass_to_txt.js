@@ -1,11 +1,13 @@
+// ass to txt
+// 不写注释了，参考 2. extract_head.js 即可
+
 const assParser = require('ass-parser');
 const fs = require('fs');
 const common = require('./common.js');
 const path = require('path')
 
 var result = ''
-
-var folder = '/Users/remote_edit/Desktop/ass/'
+var folder = '/Users/remote_edit/Desktop/ass/' // 40 集字幕文件的文件夹
 
 function loop_current_folder_ass_file_in_order(){
   fs.readdir(folder, (err, files) => {
@@ -15,7 +17,6 @@ function loop_current_folder_ass_file_in_order(){
         var ext = path.extname(file);   // ext == ass
         if (parseInt(number) === i && ext === '.ass'){
           extract_main_point(folder+file, number);
-          // console.log(file);
         }
       });
     }
@@ -36,16 +37,10 @@ function extract_main_point(file, number){
         text = common.remove_curly_brace_keep_text(text);
         result = result + text.trim() + '\n';
       }
-    }
-  }
-
-  for (var i = 0; i <= body.length-1; i++) {
-    var element = body[i];
-    if (element.key == 'Dialogue') {
       if (element.value.Style == 'zh - 黄色'){
         var text = element.value.Text;
         text = common.remove_curly_brace_keep_text(text);
-        result = result + text.trim() + '\n';
+        result = result + text.trim() + '\n\n';
       }
     }
   }
