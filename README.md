@@ -89,3 +89,18 @@ https://www.bilibili.com/video/av21376839/
 * Patron 支持 Crash Course：https://www.patreon.com/crashcourse  <br/>
 * Crash Course 官方网站：https://thecrashcourse.com/
 * Youtube Crash Course: https://www.youtube.com/user/crashcourse
+
+## 片头总结
+
+## 第 1 集：计算机早期历史
+提到的设备：算盘 → 步进计算器 → 差分机 → 分析机 → 打孔卡片制表机  
+提到的人名：Charles Babbage, Ada Lovelace  
+
+02:27  最早的计算设备是算盘，举例如何使用    
+04:31  Computer 从指代职业变成指代机器   
+04:57  机器里有名的是：步进计算器。第一个可以做加减乘除的机器    
+06:44  炮弹为了精准，要计算弹道，二战是查表来做。但每次改设计了就需要做一张新表    
+07:30  Charles Babbage 提出了 "差分机", 在构造差分机期间，想出了分析机, 分析机是通用计算机 
+08:50  Lovelace 给分析机写了假想程序，因此成为了第一位程序员    
+09:25  人口普查 10 年一次.  Herman Hollerith 的打孔卡片制表机大大提升了效率
+
