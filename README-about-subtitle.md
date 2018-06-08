@@ -35,8 +35,9 @@ https://weibo.com/5237129097/FyfXvdVp8?from=page_1005055237129097_profile&wvr=6&
 
 ## 总结
 为了方便大家学习 + 防止抄袭者拿走然后低成本就变成自己的视频，所以放 txt 格式的文件     
+这里写这一堆只是为了给没做过字幕的同学一些小科普 + 解释为什么这么做    
 
 ## 最后
-我们出于热爱 Crash Course 花费了大量的个人时间免费翻译这些视频并且免费公布出去       
-希望大家好好学习~~~     
-Don't forget to be Awesome! DFTBA!  
+参与字幕翻译的所有翻译君都是出于热爱 Crash Course，花费了大量个人时间免费翻译           
+希望大家好好学习~~  努力让整个世界变得更美好 ;)       
+Don't forget to be Awesome!    
