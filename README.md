@@ -1,7 +1,10 @@
 ## 计算机科学速成课 :fire: 2018年5月1号 - 全40集完结撒花
 
-### 精校版（推荐）：
-https://www.bilibili.com/video/av21376839/  
+### 精校版：      
+https://www.bilibili.com/video/av21376839/     
+
+<br/>
+
 ![bilibili](/image/cs40.jpg)    
 
 ## 字幕文件也放出来了   
