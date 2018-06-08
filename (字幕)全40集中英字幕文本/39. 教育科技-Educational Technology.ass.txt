@@ -1,0 +1,690 @@
+Hi, I’m Carrie Anne, and welcome to Crash Course Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne \N 欢迎收看计算机科学速成课！\N
+
+One of the most dramatic changes enabled by computing technology
+计算机带来的最大改变之一  \N 是信息的创造和传播能力
+
+has been the creation and widespread availability of information.
+计算机带来的最大改变之一  \N 是信息的创造和传播能力
+
+There are currently 1.3 billion websites on the internet.
+目前有13亿个网站在互联网上
+
+Wikipedia alone has five million English language articles,
+仅维基百科就有500万篇英文文章
+
+spanning everything from the Dancing Plague of 1518
+涵盖从"1518年的舞蹈瘟疫"
+
+to proper toilet paper roll orientation.
+到"正确的纸卷方向"
+
+Every day, Google serves up four billion searches to access this information.
+每天，Google提供40亿次搜索来访问这些信息
+
+And every minute, 3.5 million videos are viewed on Youtube,
+Youtube上每分钟有350万个视频被观看.
+
+and 400 hours of NEW video get uploaded by users.
+每分钟用户上传400小时的新视频
+
+Lots of these views are people watching Gangnam Style and Despacito.
+很多观看量都是 Gangnam Style 和 Despacito
+
+But another large percentage could be considered educational,
+但剩下的 大部分是教育型内容
+
+like what you’re doing right now.
+就像你现在看的这个.
+
+This amazing treasure trove of information can be accessed
+如今只要手机上点几下 就能访问到这些宝藏
+
+with just a few taps on your smartphone.
+如今只要手机上点几下 就能访问到这些宝藏
+
+Anywhere, anytime.
+任何时间，任何地点
+
+But, having information available isn’t the same as learning from it.
+但能获取到信息和学习不是一回事
+
+To be clear, we here at Crash Course we are big fans of interactive in-class learning,
+先说清楚，我们 Crash Course 喜欢互动式课堂学习
+
+directed conversations, and hands-on experiences as powerful tools for learning.
+课上提问，以及上手实践，它们是很棒的学习途径
+
+But we also believe in the additive power of educational technology
+但我们也相信教育型技术在课内课外带来的帮助
+
+both inside and outside the classroom.
+但我们也相信教育型技术在课内课外带来的帮助
+
+So today we’re going to go a little meta,
+今天我们要在这个教育型视频里 \N 聊教育型科技
+
+and talk specifically about how computer science
+具体讲解计算机怎么帮助我们学习
+
+can support learning with educational technology.
+具体讲解计算机怎么帮助我们学习
+
+Technology, from paper and pencil to recent machine-learning-based intelligent systems,
+从纸和笔 到用机器学习的智能系统，
+
+has been supporting education for millennia -
+科技几千年来一直在辅助教育
+
+even as early as humans drawing cave paintings
+甚至早期人类 在洞穴里画狩猎场景也是为了后代
+
+to record hunting scenes for posterity.
+甚至早期人类 在洞穴里画狩猎场景也是为了后代
+
+Teaching people at a distance has long been a driver of educational technology.
+远距离教育一直推动着教育科技的发展
+
+For example, around 50 CE, St. Paul was sending epistles
+例如公元前50年左右，圣保罗就发书信 \N 给亚洲设立的新教堂提供宗教课程
+
+that offered lessons on religious teachings
+例如公元前50年左右，圣保罗就发书信 \N 给亚洲设立的新教堂提供宗教课程
+
+for new churches being set up in Asia.
+例如公元前50年左右，圣保罗就发书信 \N 给亚洲设立的新教堂提供宗教课程
+
+Since then, several major waves of technological advances
+从那以后，有几大技术浪潮，自称要改变教育
+
+have each promised to revolutionize education,
+从那以后，有几大技术浪潮，自称要改变教育
+
+from radio and television, to DVDs and laserdiscs.
+从广播和电视，到DVD和光碟
+
+In fact, as far back as 1913, Thomas Edison predicted,
+事实上，在1913年 托马斯·爱迪生 预测说
+
+"Books will soon be obsolete in the schools…
+"书籍很快会过时.. 用影片来教授所有知识是可能的
+
+It is possible to teach every branch of human knowledge with the motion picture.
+"书籍很快会过时.. 用影片来教授所有知识是可能的
+
+Our school system will be completely changed in the next ten years."
+学校体系将在未来十年彻底改变"
+
+Of course, you know that didn’t happen.
+当然，他的预测没有成真
+
+But distributing educational materials in formats like video has become more and more popular.
+但发布教育视频变得越来越流行
+
+Before we discuss what educational technology research can do for you,
+在讨论教育技术可以帮你做什么之前
+
+there are some simple things research has shown you can do,
+有研究表明 有些简单事情 \N 可以显著提高学习效率
+
+while watching an educational video like this one,
+有研究表明 有些简单事情 \N 可以显著提高学习效率
+
+significantly increase what you learn and retain.
+有研究表明 有些简单事情 \N 可以显著提高学习效率
+
+First, video is naturally adjustable, so make sure the pacing is right for you,
+1. 把速度调整到适合你，YouTube 的速度设置在右下角
+
+by using the video speed controls.
+1. 把速度调整到适合你，YouTube 的速度设置在右下角
+
+On YouTube, you can do that in the right hand corner of the screen.
+1. 把速度调整到适合你，YouTube 的速度设置在右下角
+
+You should be able to understand the video and have enough time to reflect on the content.
+让你能理解视频  有足够的时间思考
+
+Second, pause!
+2. 暂停！在困难的部分暂停
+
+You learn more if you stop the video at the difficult parts.
+2. 暂停！在困难的部分暂停
+
+When you do, ask yourself questions about what you’ve watched, and see if you can answer.
+问自己一些问题，看能不能回答
+
+Or ask yourself questions about what might be coming up next,
+或想想视频接下来可能讲什么 \N 然后继续播放，看猜对没有
+
+and then play the video to see if you’re right.
+或想想视频接下来可能讲什么 \N 然后继续播放，看猜对没有
+
+Third, try any examples or exercises that are presented in the video on your own.
+3. 做视频中的提供的练习
+
+Even if you aren’t a programmer, write pseudocode on paper,
+即使不是程序员，你也可以在纸上写伪代码，或试试学编程
+
+and maybe even give coding a try.
+即使不是程序员，你也可以在纸上写伪代码，或试试学编程
+
+Active learning techniques like these
+这些主动学习的技巧已被证明 \N 可以把学习效率提升10倍或以上
+
+have been shown to increase learning by a factor of ten.
+这些主动学习的技巧已被证明 \N 可以把学习效率提升10倍或以上
+
+And if you want more information like this - we’ve got a whole course on it here.
+如果想学学习技巧，有整个系列专门讲这个
+
+The idea of video as a way to spread quality education
+把高质量教育内容做成视频传播 \N 在过去一个世纪吸引了很多人
+
+has appealed to a lot of people over the last century.
+把高质量教育内容做成视频传播 \N 在过去一个世纪吸引了很多人
+
+What’s just the latest incarnation of this idea
+这个老想法的新化身
+
+came in the form of Massive Open Online Courses, or MOOCs.
+以"大型开放式在线课程"（MOOC）的形式出现
+
+In fact, the New York Times declared 2012 the Year of the MOOC!
+纽约时报宣称 2012 年是 MOOC 年！
+
+A lot of the early forms were just videos of lectures from famous professors.
+很多早期视频 直接录制著名教授上课
+
+But for a while, some people thought this might mean the end of universities as we know them.
+有段时间，有些人以为大学要终结了
+
+Whether you were worried about this idea or excited by it,
+不管你是担心还是开心，这暂时还没成为现实
+
+that future also hasn’t really come to pass
+不管你是担心还是开心，这暂时还没成为现实
+
+and most of the hype has dissipated.
+现在热度也淡去了
+
+This is probably mostly because when you try to scale up learning
+这可能是因为加大规模时 同时教百万名学生
+
+using technology to include millions of students simultaneously
+这可能是因为加大规模时 同时教百万名学生
+
+with small numbers of instructional staff - or even none
+但老师数量很少，甚至完全没有老师
+
+- you run into a lot of problems.
+- 会遇到很多问题
+
+Fortunately, these problems have intrigued computer scientists and more specifically,
+幸运的是，这引起了计算机科学家，\N 或具体一点 "教育科技家"的兴趣
+
+educational technologists, who are finding ways to solve them.
+他们在想办法解决这些问题
+
+For example, effective learning involves getting timely and relevant feedback
+比如，为了有效学习，学生要及时获得反馈
+
+but how do you give good feedback
+但如果有几百万学生，只有一名老师，
+
+when you have millions of learners and only one teacher?
+怎么提供好的反馈？
+
+For that matter, how does a teacher grade a million assignments?
+一个老师怎么给一百万份作业打成绩？
+
+Solving many of these problems means creating hybrid, human-technology systems.
+为了解决问题，很多时候需要把科技和人类都用上
+
+A useful, but controversial insight,
+一种有用 但有些争议的做法是
+
+was that students could be a great resource to give each other feedback.
+学生互相之间提供反馈
+
+Unfortunately, they’re often pretty bad at doing so –
+不幸的是，学生一般做不好
+
+they’re neither experts in the subject matter, nor teachers.
+他们既不是专家也不是老师
+
+However, we can support their efforts with technology.
+但我们可以用技术来帮助他们
+
+Like, by using algorithms, we can match perfect learning partners together,
+比如通过算法，从数百万个选择里 \N 匹配出最完美的学习伙伴
+
+out of potentially millions of groupings.
+比如通过算法，从数百万个选择里 \N 匹配出最完美的学习伙伴
+
+Also, parts of the grading can be done with automated systems while humans do the rest.
+另外，有些部分可以机器打分，剩下的让人类打分
+
+For instance, computer algorithms that grade the
+例如，给 SAT 写作部分打分的电脑算法
+
+writing portions of the SATs have been found to be
+已被证实和人工打分一样准确
+
+just as accurate  as humans hired to grade them by hand.
+已被证实和人工打分一样准确
+
+Other algorithms are being developed that provide personalized learning experiences,
+还有些算法提供个性化学习体验
+
+much like Netflix’s personalized movie recommendations or Google’s personalized search results.
+类似于 Netflix 的电影推荐 \N 或 Google 的个性化搜索结果
+
+To achieve this, the software needs to understand what a learner knows and doesn’t know.
+为了个性化推荐，\N 软件需要了解用户知道什么，不知道什么
+
+With that understanding, the software can present the right material, at the right time,
+在正确的时间提供正确的资料，
+
+to give each particular learner practice on the things that are hardest for them,
+让用户练习没理解的难的部分
+
+rather than what they’re already good at.
+而不是给出用户已经学会的内容
+
+Such systems – most often powered by Artificial Intelligence –
+这种系统一般用 AI 实现
+
+are broadly called Intelligent Tutoring Systems.
+泛称叫法是"智能辅导系统"
+
+Let’s break down a hypothetical system that follows common conventions.
+我们现在讲一个假想的辅导系统
+
+So, imagine a student is working on this algebra problem in our hypothetical tutoring software.
+假设学生在这个假想的辅导系统中，研究一个代数问题
+
+The correct next step to solve it, is to subtract both sides by 7.
+正确的下一步是两边-7
+
+The knowledge required to do this step can be represented by something called a production rule.
+我们可以用 "判断规则" 来表示这一步
+
+These describe procedures as IF-THEN statements.
+用 IF-THEN 语句来描述
+
+The pseudo code of a production rule for this step would say
+伪代码是
+
+IF there is a constant on the same side as the variable,
+*如果* 变量和常数在同一边
+
+THEN subtract that constant from both sides.
+*那么* 两侧都减去这个常数
+
+The cool thing about production rules is that they can also be used
+"判断规则" 酷的地方是也可以用来
+
+to represent common mistakes a student might make.
+代表学生的常犯错误
+
+These production rules are called "buggy rules".
+这些"判断规则"叫"错误规则"
+
+For example, instead of subtracting the constant,
+例如，学生可能不去减常数
+
+the student might mistakenly try to subtract the coefficient.
+而是去减系数
+
+No can do!
+这不行！
+
+It’s totally possible that multiple competing production rules
+学生做完一个步骤后可能触发多个"判断规则"
+
+are triggered after a student completes a step –
+学生做完一个步骤后可能触发多个"判断规则"
+
+it may not be entirely clear what misconception has led to a student’s answer.
+系统不能完全弄清 是什么原因让学生选了那个答案
+
+So, production rules are combined with an algorithm that selects the most likely one.
+所以"判断规则"会和算法结合使用，判断可能原因
+
+That way, the student can be given a helpful piece of feedback.
+让学生得到有用反馈
+
+These production rules, and the selection algorithm,
+"判断规则"+选择算法，组合在一起成为 "域模型"
+
+combine to form what’s called a Domain Model,
+"判断规则"+选择算法，组合在一起成为 "域模型"
+
+which is a formal representation of the knowledge,
+它给知识，解决步骤和一门学科 比如代数，\N 用一种"正式写法"来表示
+
+procedures and skills of a particular discipline - like algebra.
+它给知识，解决步骤和一门学科 比如代数，\N 用一种"正式写法"来表示
+
+Domain models can be used to assist learners on any individual problem,
+域模型可以用来 帮助学习者解决特定问题
+
+but they’re insufficient for helping learners move through a whole curriculum
+但它无法带着学习者 \N 以正确顺序搞定整个学科该上的所有课程
+
+because they don’t track any progress over time.
+因为域模型不记录进度
+
+For that, intelligent tutoring systems build and maintain a student model
+因此智能辅导系统 负责创建和维护学生模型
+
+– one that tracks, among other things, what production rules a student has mastered,
+- 记录学生已经掌握的判断规则
+
+and where they still need practice.
+以及还需练习的生疏部分
+
+This is exactly what we need to properly personalize the tutor.
+这正是个性化辅导系统需要的。
+
+That doesn’t sound so hard,
+听起来好像不难，
+
+but it’s actually a big challenge to figure out what a student knows and doesn’t know
+但只靠学生对一些问题的回答，\N 来弄清学生知道什么，不知道什么，是很大的挑战
+
+based only on their answers to problems.
+但只靠学生对一些问题的回答，\N 来弄清学生知道什么，不知道什么，是很大的挑战
+
+A common technique for figuring this out is Bayesian knowledge tracing.
+"贝叶斯知识追踪" 常用来解决这个问题
+
+The algorithm treats student knowledge as a set of latent variables,
+这个算法把学生的知识 当成一组隐藏变量
+
+which are variables whose true value is hidden from
+这些变量的值，对外部是不可见的
+
+an outside observer, like our software.
+比如我们的软件
+
+This is also true in the physical world,
+这在现实中也是一样的
+
+where a teacher would not know for certain whether
+老师无法知道 学生是否完全掌握了某个知识点
+
+a student knows something completely.
+老师无法知道 学生是否完全掌握了某个知识点
+
+Instead, they might probe that knowledge using a test
+老师会出考题，测试学生能否答对
+
+to see if the student gets the right answer.
+老师会出考题，测试学生能否答对
+
+Similarly, Bayesian knowledge tracing updates its estimate of the students’ knowledge
+同样，"贝叶斯知识追踪" \N 会看学生答题的正确度，更新学生掌握程度的估算值
+
+by observing the correctness of each interaction using that skill.
+同样，"贝叶斯知识追踪" \N 会看学生答题的正确度，更新学生掌握程度的估算值
+
+To do this, the software maintains four probabilities..
+它会记录四个概率
+
+First is the probability that a student has learned how to do a particular skill.
+首先是 "学生已经学会的概率"
+
+For example, the skill of subtracting constants from both sides of an algebraic equation.
+比如从代数方程的两边减去常数
+
+Let’s say our student correctly subtracts both sides by 7.
+假设学生正确将两边-7
+
+Because she got the problem correct,
+做对了
+
+we might assume she knows how to do this step.
+我们可以假设她知道怎么做
+
+But there’s also the possibility that the student got it correct by accident,
+但也有可能她是瞎蒙的
+
+and doesn’t actually understand how to solve the problem.
+没有真的学会怎么解决问题
+
+This is the probability of guess.
+这叫 "瞎猜的概率"
+
+Similarly, if the student gets it wrong,
+类似的，如果学生答错了，
+
+you might assume that she doesn’t know how to do the step.
+你可能会假设她不会做
+
+But, there’s also the possibility that she knows it,
+但她可能知道答案，只是不小心犯了个错
+
+but made a careless error or other slip-up.
+但她可能知道答案，只是不小心犯了个错
+
+This is called the probability of slip.
+这叫 "失误的概率"
+
+The last probability that Bayesian knowledge tracing calculates
+最后一个概率
+
+is the probability that the student started off the problem
+是学生一开始不会做，\N 但是在解决问题的过程中，学会了怎么做
+
+not knowing how to do the step, but learned how to do
+是学生一开始不会做，\N 但是在解决问题的过程中，学会了怎么做
+
+it as a result of working through the problem.
+是学生一开始不会做，\N 但是在解决问题的过程中，学会了怎么做
+
+This is called the probability of transit.
+这叫 "做题过程中学会的概率"
+
+These four probabilities are used in a set of equations that update the student model,
+有一组方程，会用这四个概率，更新学生模型
+
+keeping a running assessment for each skill the student is supposed to know.
+对学生应该学会的每项技能进行持续评估
+
+The first equation asks:
+第一个等式问：
+
+what’s the probability that the student has learned a particular skill
+学生已经知道某技能的概率是多少？
+
+which takes into account the probability that it was
+等式里有
+
+already learned previously and the probability of transit.
+"之前已经学会的概率"和"做题过程中学会的概率"
+
+Like a teacher, our estimate of this probability that it was already learned previously
+就像老师一样，"之前已经学会的概率"
+
+depends on whether we observe a student getting a question correct or incorrect,
+取决于学生回答问题正确与否，
+
+and so we have these two equations to pick from.
+回答正确和错误分别有2个公式
+
+After we compute the right value, we plug it into our first equation,
+算出结果之后，我们把结果放到第一个方程
+
+updating the probability that a student has learned a particular skill,
+更新"之前已经学会的概率"
+
+which then gets stored in their student model.
+然后存到学生模型里.
+
+Although there are other approaches,
+虽然存在其他方法，
+
+intelligent tutoring systems often use Bayesian knowledge tracing
+但"智能辅导系统"通常用 贝叶斯知识追踪
+
+to support what’s called mastery learning, where students practice skills,
+让学生练习技能，直到掌握
+
+until they’re deeply understood.
+让学生练习技能，直到掌握
+
+To do this most efficiently, the software selects the
+为了高效做到这点，软件要选择合适的问题
+
+best problems to present to the student to achieve mastery,
+呈现给学生，让学生学
+
+what’s called adaptive sequencing,
+这叫：自适应式程序
+
+which is one form of personalization.
+个性化算法的形式之一
+
+But, our example is still just dealing with data from one student.
+但我们的例子只是一个学生的数据
+
+Internet-connected educational apps or sites
+现在有 App 或网站
+
+now allow teachers and researchers the ability
+让教师和研究人员 收集上百万学习者的数据
+
+to collect data from millions of learners.
+让教师和研究人员 收集上百万学习者的数据
+
+From that data, we can discover things like common pitfalls and where students get frustrated.
+从数据中可以发现常见错误\N 一般哪里难倒学生
+
+Beyond student responses to questions,
+除了学生的回答，还可以看回答前暂停了多久
+
+this can be done by looking at how long they pause
+除了学生的回答，还可以看回答前暂停了多久
+
+before entering an answer, where they speed up a video,
+哪个部分加速视频，
+
+and how they interact with other students on discussion forums.
+以及学生如何在论坛和其他人互动
+
+This field is called Educational Data Mining,
+这个领域叫 "教育数据挖掘"
+
+and it has the ability to use all those face palms and "ah ha" moments
+它能用上学生所有的"捂脸"和"啊哈"时刻
+
+to help improve personalized learning in the future.
+帮助改善未来的个性化学习
+
+Speaking of the future, educational technologists have often
+谈到未来，教育技术人员经常从科幻小说中获得灵感
+
+drawn inspiration for their innovations from science fiction.
+谈到未来，教育技术人员经常从科幻小说中获得灵感
+
+In particular, many researchers were inspired by the future envisioned in the book
+具体来说，Neal Stephenson 的"钻石时代"这本书\N 激励了很多研究人员
+
+"The Diamond Age" by Neal Stephenson.
+具体来说，Neal Stephenson 的"钻石时代"这本书\N 激励了很多研究人员
+
+It describes a young girl who learns from a book
+里面说一个年轻女孩从书中学习
+
+that has a set of virtual agents who interact with her
+书中有一些虚拟助手会和她互动，教她知识
+
+in natural language acting as coaches, teachers,
+书中有一些虚拟助手会和她互动，教她知识
+
+and mentors who grow and change with her as she grows up.
+这些助手和她一起成长
+
+They can detect what she knows and how’s she’s feeling,
+直到她学会了什么，以及感觉如何，
+
+and give just the right feedback and support to help her learn.
+给她正确的反馈和支持，帮助她学习
+
+Today, there are non-science-fiction researchers, such as Justine Cassell,
+如今 有非科幻小说研究者，比如 贾斯汀卡塞尔，
+
+crafting pedagogical virtual agents
+在制作虚拟教学助手
+
+that can "exhibit the verbal and bodily behaviors found in
+助手可以"像人类一样沟通 有人类一样的行为
+
+conversation among humans, and in doing so, build trust,
+在陪伴过程中和学习者建立信任，
+
+rapport and even friendship with their human students."
+相处融洽，甚至和人类学生成为朋友"
+
+Maybe Crash Course in 2040 will have a little John Green A.I. that lives on your iPhone 30.
+2040年的"速成课" \N 可能会有一个 John Green AI，活在你的 iPhone 30 上
+
+Educational technology and devices are now moving off of laptop and desktop computers,
+教育科技和设备 \N如今在逐渐扩展到笔记本和台式电脑之外
+
+onto huge tabletop surfaces, where students can collaborate in groups,
+比如巨大桌面设备，让学生可以团队合作
+
+and also tiny mobile devices, where students can learn on the go.
+以及小型移动设备，让学生路上也能学习
+
+Virtual reality and augmented reality are also getting people excited
+"虚拟现实"和"增强现实"也让人们兴奋不已
+
+and enabling new educational experiences for learners –
+它们可以为学习者提供全新的体验 -
+
+diving deep under the oceans, exploring outer space,
+深潜海洋，探索太空，
+
+traveling through the human body, or interacting with cultures
+漫游人体，或是和现实中难以遇见的生物互动
+
+they might never encounter in their real lives.
+漫游人体，或是和现实中难以遇见的生物互动
+
+If we look far into the future, educational interfaces might disappear entirely,
+如果猜想遥远的未来，教育可能会完全消失，
+
+and instead happen through direct brain learning,
+直接在大脑层面进行
+
+where people can be uploaded with new skills, directly into their brains.
+把新技能直接下载到大脑
+
+This might seem really far fetched,
+这看起来可能很遥远，
+
+but scientists are making inroads already - such as detecting
+但科学家们已经在摸索 - 比如
+
+whether someone knows something just from their brain signals.
+仅仅通过检测大脑信号，得知某人是否知道什么
+
+That leads to an interesting question:
+这带来了一个有趣的问题：
+
+if we can download things INTO our brains,
+如果我们可以把东西下载到大脑里
+
+could we also upload the contents of our brains?
+我们能不能上传大脑里的东西？
+
+We’ll explore that in our series finale next week about the far future of computing.
+下周的最后一集，我们会讨论计算的未来
+
+I'll see you then.
+到时见
+

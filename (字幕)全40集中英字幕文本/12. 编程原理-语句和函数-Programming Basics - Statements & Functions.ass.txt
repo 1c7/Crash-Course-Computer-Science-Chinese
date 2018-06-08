@@ -1,0 +1,636 @@
+Hi, I’m Carrie Anne, and welcome to CrashCourse Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+Last episode we discussed how writing programs in native machine code,
+上集讲到用机器码写程序,
+
+and having to contend with so many low level details, was a huge impediment to writing complex programs.
+还要处理那么多底层细节  对写大型程序是个巨大障碍
+
+To abstract away many of these low-level details, Programming Languages were developed that
+为了脱离底层细节，开发了编程语言
+
+let programmers concentrate on solving a problem with computation, and less on nitty gritty hardware details.
+让程序员专心解决问题，不用管硬件细节
+
+So today, we’re going to continue that discussion, and introduce some fundamental building blocks
+今天我们讨论  大多数编程语言都有的基本元素
+
+that almost all programming languages provide.
+今天我们讨论  大多数编程语言都有的基本元素
+
+Just like spoken languages, programming languages have statements.
+就像口语一样，编程语言有"语句"
+
+These are individual complete thoughts, like "I want tea" or "it is raining".
+语句表达单个完整思想，比如"我想要茶"或者"在下雨"
+
+By using different words, we can change the meaning;
+用不同词汇可以代表不同含义 \N 比如"我想要茶"变成"我想要独角兽"
+
+for example, "I want tea" to "I want unicorns".
+用不同词汇可以代表不同含义 \N 比如"我想要茶"变成"我想要独角兽"
+
+But we can’t change "I want tea" to "I want raining" - that doesn’t make grammatical sense.
+但没法把"我想要茶"改成"我想要雨"- 语法毫无意义
+
+The set of rules that govern the structure and composition of statements in a language
+规定句子结构的一系列规则 叫语法
+
+is called syntax.
+规定句子结构的一系列规则 叫语法
+
+The English language has syntax, and so do all programming languages.
+英语有语法，所有编程语言也都有语法
+
+"a = 5" is a programming language statement.
+a=5 是一个编程语言语句
+
+In this case, the statement says a variable named A has the number 5 stored in it.
+意思是创建一个叫 a 的变量，把数字 5 放里面.
+
+This is called an assignment statement because we're assigning a value to a variable.
+这叫"赋值语句"，把一个值赋给一个变量
+
+To express more complex things, we need a series of statements,
+为了表达更复杂的含义，需要更多语句
+
+like "A is 5, B is 10, C equals A plus B"
+比如 \Na=5 \N b=10 \Nc=a+b
+
+This program tells the computer to set variable ‘A’ equal to 5, variable ‘B’ to 10,
+意思是，变量 a 设为5，变量 b 设为10
+
+and finally to add ‘A’ and ‘B’ together, and put that result, which is 15, into -- you guessed it -- variable C.
+把 a 和 b 加起来，把结果 15 放进变量 c
+
+Note that we can call variables whatever we want.
+注意，变量名可以随意取
+
+Instead of A, B and C, it could be apples, pears, and fruits.
+除了 a b c，也可以叫苹果、梨、水果
+
+The computer doesn’t care, as long as variables are uniquely named.
+计算机不在乎你取什么名，只要不重名就行
+
+But it’s probably best practice to name them things that make sense
+当然取名最好还是有点意义，方便别人读懂
+
+in case someone else is trying to understand your code.
+当然取名最好还是有点意义，方便别人读懂
+
+A program, which is a list of instructions, is a bit like a recipe:
+程序由一个个指令组成，有点像菜谱：
+
+boil water, add noodles, wait 10 minutes, drain and enjoy.
+烧水、加面，等10分钟，捞出来就可以吃了
+
+In the same way, the program starts at the first statement
+程序也是这样，从第一条语句开始
+
+and runs down one at a time until it hits the end.
+一句一句运行到结尾
+
+So far, we’ve added two numbers together.
+刚才我们只是把两个数字加在一起
+
+Boring.
+无聊
+
+Let’s make a video game instead!
+我们来做一款游戏吧
+
+Of course, it’s way too early to think about coding an entire game,
+当然，现在这个学习阶段 \N来编写一整个游戏还太早了
+
+so instead, we’ll use our example to write little snippets of code
+所以我们只写一小段一小段的代码
+
+that cover some programming fundamentals.
+来讲解一些基础知识
+
+Imagine we’re building an old-school arcade game where Grace Hopper has to capture bugs
+假设我们在写一款老派街机游戏：Grace Hopper 拍虫子
+
+before they get into the Harvard Mark 1 and crash the computer!
+阻止虫子飞进计算机造成故障
+
+On every level, the number of bugs increases.
+关卡越高，虫子越多
+
+Grace has to catch them before they wear out any relays in the machine.
+Grace 要在虫子损坏继电器之前  抓住虫子
+
+Fortunately, she has a few extra relays for repairs.
+好消息是  她有几个备用继电器
+
+To get started, we’ll need to keep track of a bunch of values that are important for gameplay
+开始编写时，我们需要一些值 来保存游戏数据
+
+like what level the player is on, the score, the number of bugs remaining,
+比如当前关卡数、分数、剩余虫子数、
+
+as well as the number of spare relays in Grace’s inventory.
+Grace 还剩几个备用继电器
+
+So, we must "initialize" our variables, that is, set their initial value:
+所以我们要"初始化"变量 \N "初始化"的意思是设置最开始的值.
+
+"level equals 1, score equals 0, bugs equals 5, spare relays equals 4, and player name equals "Andre".
+关卡=1  分数=0  虫子数=5 \N 备用继电器=4   玩家名=Andre
+
+To create an interactive game, we need to control the flow of the program
+为了做成交互式游戏，程序的执行顺序要更灵活
+
+beyond just running from top to bottom.
+不只是从上到下执行
+
+To do this, we use Control Flow Statements.
+因此用 "控制流语句"
+
+There are several types, but If Statements are the most common.
+控制流语句有好几种，最常见的是 if 语句
+
+You can think of them as "If X is true, then do Y".
+可以想成是 "如果 X 为真，那么执行 Y"
+
+An English language example is: "If I am tired, then get tea"
+用英语举例就是 "如果累了, 就去喝茶"
+
+So if "I am tired" is a true statement, then I will go get tea
+如果 "累了" 为真，就去喝茶
+
+If "I am tired" is false, then I will not go get tea.
+如果 "累了" 为假，就不喝茶
+
+An IF statement is like a fork in the road.
+if 语句就像岔路口
+
+Which path you take is conditional on whether the expression is true or false
+走哪条路  取决于 "表达式" 的真假，
+
+so these expressions are called Conditional Statements.
+因此这些表达式又叫 "条件语句"
+
+In most programming languages, an if statement looks something like
+在大多数编程语言中，if 语句看起来像这样：
+
+"If, expression, then, some code, then end the if statement".
+if [条件], then [一些代码]，结束 if 语句.
+
+For example, if "level" is 1, then we set the score to zero, because the player is just starting.
+比如，if [第一关]，then [分数设为0] \N 因为玩家才刚开始游戏
+
+We also set the number of bugs to 1, to keep it easy for now.
+同时把虫子数设为 1，让游戏简单些
+
+Notice the lines of code that are conditional on the if-statement are nested between the
+注意, 依赖于 if 条件的代码，要放在 IF 和 END IF 之间
+
+IF and END IF.
+注意, 依赖于 if 条件的代码，要放在 IF 和 END IF 之间
+
+Of course, we can change the conditional expression to whatever we want to test, like
+当然，条件表达式 可以改成别的，比如：
+
+"is score greater than 10"  or "is bugs less than 1".
+"分数 >10" 或者 "虫子数 <1"
+
+And If-Statements can be combined with an ELSE statement, which acts as a catch-all if the expression is false.
+if 还可以和 else 结合使用 \N 条件为假会执行 else 里的代码
+
+If the level is not 1, the code inside the ELSE block will be executed instead, and the
+如果不是第1关，else 里的指令就会被执行
+
+number of bugs that Grace has to battle is set to 3 times the level number.
+Grace 要抓的虫子数，是当前关卡数 * 3
+
+So on level 2, it would be six bugs, and on level 3 there’s 9, and so on.
+所以第 2 关有 6 个虫子，第 3 关有 9 个虫子，以此类推
+
+Score isn’t modified in the ELSE block, so Grace gets to keep any points earned.
+else 中没有改分数，所以 Grace 的分数不会变
+
+Here are some examples of if-then-else statements from some popular programming languages
+这里列了一些热门编程语言  if-then-else 的具体语法
+
+-- you can see the syntax varies a little, but the underlying structure is roughly the same.
+具体语法略有不同，但主体结构一样
+
+If-statements are executed once, a conditional path is chosen, and the program moves on.
+if 语句 根据条件执行一次
+
+To repeat some statements many times, we need to create a conditional loop.
+如果希望根据条件执行多次，需要"条件循环"
+
+One way is a while statement, also called a while loop.
+比如 while 语句，也叫 "while 循环"
+
+As you might have guessed, this loops a piece of code "while" a condition is true.
+当 while 条件为真，代码会重复执行
+
+Regardless of the programming language, they look something like this:
+不管是哪种编程语言，结构都是这样
+
+In our game, let’s say at certain points, a friendly colleague restocks Grace with relays!
+假设到达一定分数会冒出一个同事，给 Grace 补充继电器
+
+Hooray!
+棒极了！
+
+To animate him replenishing our stock back up to a maximum of 4, we can use a while loop.
+把继电器补满到最大数 4 个 \N 我们可以用 while 语句来做
+
+Let’s walk through this code.
+来过一遍代码
+
+First we’ll assume that Grace only has 1 tube left when her colleague enters.
+假设同事入场时， Grace 只剩一个继电器
+
+When we enter the while loop, the first thing the computer does is test its conditional…
+当执行 while 循环，第一件事是检查条件
+
+is relays less than 4?
+继电器数量<4?
+
+Well, relays is currently 1, so yes.
+继电器数量现在是1，所以是真
+
+Now we enter the loop!
+进入循环！
+
+Then, we hit the line of code: "relays equals relays plus 1".
+碰到这一行：继电器数量=继电器数量+1
+
+This is a bit confusing because the variable is using itself in an assignment statement,
+看起来有点怪，变量的赋值用到了自己
+
+so let's unpack it.
+我们讲下这个
+
+You always start by figuring out the right side of the equals sign first,
+总是从等号右边开始，
+
+so what does "relays plus 1" come out to be?
+"继电器数量+1" 是多少？
+
+Well, relays is currently the value 1, so 1 plus 1 equals 2.
+当前值是1，所以 1+1=2
+
+Then, this result gets saved back into the variable relays, writing over the old value,
+结果存到"继电器数量"，覆盖旧的值
+
+so now relays stores the value 2.
+所以现在继电器数量是 2
+
+We’ve hit the end of the while loop, which jumps the program back up.
+现在到了结尾，跳回开始点
+
+Just as before, we test the conditional to see if we’re going to enter the loop.
+和之前一样，先判断条件，看要不要进入循环
+
+Is relays less than 4?
+继电器数量<4？
+
+Well, yes, relays now equals 2, so we enter the loop again!
+是，继电器数量是2，所以再次进入循环!
+
+2 plus 1 equals 3.
+2+1=3
+
+so 3 is saved into relays.
+3 存入"继电器数量"
+
+Loop again.
+回到开头
+
+Is 3 less than 4?
+3<4？
+
+Yes it is!
+是!
+
+Into the loop again.
+进入循环
+
+3 plus 1 equals 4.
+3+1=4
+
+So we save 4 into relays.
+4 存入"继电器数量"
+
+Loop again.
+回到开头
+
+Is 4 less than 4?....
+4<4?
+
+No!
+不！
+
+So the condition is now false, and thus we exit the loop and move on to any remaining code
+现在条件为假，退出循环，执行后面的代码
+
+That’s how a while loop works!
+while 循环就是这样运作的!
+
+There’s also the common For Loop.
+另一种常见的叫 "for 循环"
+
+Instead of being a condition-controlled loop that can repeat forever until the condition is false
+不判断条件，判断次数，会循环特定次数
+
+a FOR loop is count-controlled; it repeats a specific number of times.
+不判断条件，判断次数，会循环特定次数
+
+They look something like this:
+看起来像上图
+
+Now, let’s put in some real values.
+现在放些真正的值进去
+
+This example loops 10 times, because we’ve specified that variable ‘i’
+上图例子会循环10次，因为设了变量 i
+
+starts at the value 1 and goes up to 10.
+从 1 开始，一直到 10
+
+The unique thing about a FOR loop is that each time it hits NEXT, it adds one to ‘i’.
+for 的特点是，每次结束， i 会 +1
+
+When ‘i’ equals 10, the computer knows it’s been looped 10 times, and the loop exits
+当 i 等于10，就知道循环了10次，然后退出.
+
+We can set the number to whatever we want -- 10, 42, or a billion -- it’s up to us.
+我们可以用任何数字，10, 42, 10 亿
+
+Let’s say we want to give the player a bonus at the end of each level
+假设每关结束后  给玩家一些奖励分
+
+for the number of vacuum relays they have left over.
+奖励分多少取决于 继电器剩余数量
+
+As the game gets harder, it takes more skill to have unused relays,
+随着难度增加，剩下继电器会越来越难
+
+so we want the bonus to go up exponentially based on the level.
+因此奖励分会根据当前关卡数，指数级增长
+
+We need to write a piece of code that calculates exponents -
+我们要写一小段代码来算指数
+
+that is, multiplying a number by itself a specific number of times.
+指数是一个数乘自己，乘特定次数
+
+A loop is perfect for this!
+用循环来实现简直完美!
+
+First lets initialize a new variable called "bonus" and set it to 1.
+首先，创建一个叫"奖励分"的新变量，设为 1 （看上图）
+
+Then, we create a FOR loop starting at 1, and looping up to the level number.
+然后 for 循环，从 1 到 [当前关卡数]
+
+Inside that loop, we multiply bonus times the number of relays,
+[奖励分] x [继电器剩余数]，结果存入 [奖励分]
+
+and save that new value back into bonus.
+[奖励分] x [继电器剩余数]，结果存入 [奖励分]
+
+For example, let’s say relays equals 2, and level equals 3.
+比如继电器数是2，关卡数是3
+
+So the FOR loop will loop three times, which means bonus is going to get multiplied by
+for 会循环3次，奖励分会乘
+
+relays... by relays... by relays.
+继电器数量 x 继电器数量 x 继电器数量
+
+Or in this case, times 2, times 2, times 2, which is a bonus of 8!
+也就是1×2×2×2，奖励分是8，2的3次方
+
+That’s 2 to the 3rd power!
+也就是1×2×2×2，奖励分是8，2的3次方
+
+This exponent code is useful, and we might want to use it in other parts of our code.
+这个指数代码很实用，其他地方可能会用到
+
+It’d be annoying to copy and paste this everywhere, and have to update the variable names each time.
+如果每次想用就复制粘贴，会很麻烦，每次都要改变量名
+
+Also, if we found a bug, we’d have to hunt around and update every place we used it.
+如果代码发现问题，要补漏洞时 \N 要把每一个复制黏贴过的地方都找出来改
+
+It also makes code more confusing to look at.
+而且会让代码更难懂
+
+Less is more!
+少即是多！
+
+What we want is a way to package up our exponent code so we can use it, get the result, and
+我们想要某种方法，把代码"打包" \N 可以直接使用，得出结果，
+
+not have to see all the internal complexity.
+不用管内部复杂度.
+
+We’re once again moving up a new level of abstraction!
+这又提升了一层抽象！
+
+To compartmentalize and hide complexity,
+为了隐藏复杂度
+
+programming languages can package pieces of code into named functions,
+可以把代码打包成 "函数"
+
+also called methods or subroutines in different programming languages.
+也叫 "方法" 或 "子程序"\N（有些编程语言这么叫）
+
+These functions can then be used by any other part of that program just by calling its name.
+其他地方想用这个函数，直接写函数名就可以了
+
+Let’s turn our exponent code into a function! First, we should name it.
+现在我们把指数代码变成函数.  第一步，取名.
+
+We can call it anything we want, like HappyUnicorn,
+叫什么都行，比如"快乐独角兽"
+
+but since our code calculates exponents, let’s call it exponent.
+但因为是算指数,  直接叫"指数"合适一些
+
+Also, instead of using specific variable names, like "relays" and "levels",
+还有，与其用特定变量名，比如 "继电器" 和 "关卡数"
+
+we specify generic variable names, like Base and Exp,
+用更通用的名字，比如 底数(Base) 和 指数(Exp)
+
+whose initial values are going to be "passed" into our function from some other part of the program.
+Base 和 Exp 的初始值需要外部传入
+
+The rest of our code is the same as before
+剩余代码和之前一样
+
+Now tucked into our function and with new variable names.
+现在完成了，有函数名和新变量名.
+
+Finally, we need to send the result of our exponent code back to the part of the program that requested it.
+最后, 我们还需要把结果 交给使用这个函数的代码
+
+For this, we use a RETURN statement, and specify that the value in ‘result’ be returned.
+所以用 RETURN 语句，指明返回什么.
+
+So our full function code looks like this:
+完整版代码是这样
+
+Now we can use this function anywhere in our program,
+现在可以随意用这个函数
+
+simply by calling its name and passing in two numbers.
+只需要写出名字 然后传入2个数字  就可以了
+
+For example, if we want to calculate 2 to the 44th power, we can just call "exponent 2 comma 44."
+如果要算 2 的 44 次方，写 exponent(2,44)
+
+and like 18 trillion comes back.
+结果是 18 万亿左右
+
+Behind the scenes, 2 and 44 get saved into variables Base and Exp inside the function,
+幕后原理是，2 和 44 存进 Base 和 Exp
+
+it does all its loops as necessary, and then the function returns with the result.
+跑循环，然后返回结果
+
+Let’s use our newly minted function to calculate a score bonus.
+我们来用这个新函数 算奖励分
+
+First, we initialize bonus to 0.
+首先，奖励分初始化为 0
+
+Then we check if the player has any remaining relays with an if-statement.
+然后用 if 语句，看剩不剩继电器（看上图的 > 0）
+
+If they do, we call our exponent function, passing in relays and level,
+如果还剩，用指数函数，传入 [继电器数] 和 [关卡数]
+
+which calculates relays to the power of level, and returns the result, which we save into bonus.
+它会算 [继电器数]的[关卡数]次方,  存入奖励分
+
+This bonus calculating code might be useful later, so let’s wrap it up as a function too!
+这段算奖励分的代码，之后可能还会用，也打包成一个函数
+
+Yes, a function that calls a function!
+没错，这个函数 (CalcBonus) \N 会调用另一个函数 (Exponent)
+
+And then, wait for it…. we can use this function in an even more complex function.
+还有！这个 CalcBonus 函数，可以用在其他更复杂的函数
+
+Let’s write one that gets called everytime the player finishes a level.
+我们来写一个函数, 每一关结束后都会调用
+
+We’ll call it "LevelFinished"
+叫 LevelFinished (关卡结束)
+
+- it needs to know the number of relays left, what level it was, and the current score;
+需要传入 [剩余继电器数]  [关卡数] [当前分]
+
+those values have to get passed in.
+这些数据必须传入.
+
+Inside our function, we’ll calculate the bonus, using our CalcBonus function,
+里面用 CalcBonus 算奖励分，并加进总分
+
+and add that to the running score.
+里面用 CalcBonus 算奖励分，并加进总分
+
+Also, if the current score is higher than the game’s high score,
+还有，如果当前分 > 游戏最高分
+
+we save the new high score and the players name.
+把新高分和玩家名 存起来
+
+Now we’re getting pretty fancy.
+现在代码变得蛮"花哨"了
+
+Functions are calling functions are calling functions!
+函数调函数调函数
+
+When we call a single line of code, like this the complexity is hidden.
+我们写这样一行代码时，复杂度都隐藏起来了
+
+We don’t see all the internal loops and variables,
+不需要知道内部的循环和变量
+
+we just see the result come back as if by magic…. a total score of 53.
+只知道结果会像魔术一样返回，总分 53
+
+But it’s not magic, it’s the power of abstraction!
+但是这不是魔术，是抽象的力量
+
+If you understand this example, then you understand the power of functions,
+如果你理解了这个例子，就明白了函数的强大之处
+
+and the entire essence of modern programming.
+和现代编程的核心
+
+It’s not feasible to write, for example, a web browser as one gigantically long list of statements.
+比如浏览器这样的复杂程序，用一长串语句来写是不可能的
+
+It would be millions of lines long and impossible to comprehend!
+会有几百万行代码，没人能理解
+
+So instead, software consists of thousands of smaller functions,
+所以现代软件由上千个函数组成
+
+each responsible for different features.
+每个负责不同的事
+
+In modern programming, it’s uncommon to see functions longer than around 100 lines of code
+如今超过100行代码的函数很少见
+
+because by then, there’s probably something that
+如果多于 100 行，应该有东西可以拆出来做成一个函数
+
+should be pulled out and made into its own function.
+如果多于 100 行，应该有东西可以拆出来做成一个函数
+
+Modularizing programs into functions not only allows a single programmer to write an entire app
+模块化编程  不仅可以让单个程序员独立制作 App
+
+but also allows teams of people to work efficiently on even bigger programs.
+也让团队协作可以写更大型的程序
+
+Different programmers can work on different functions,
+不同程序员写不同函数
+
+and if everyone makes sure their code works correctly,
+只需要确保自己的代码工作正常
+
+then when everything is put together, the whole program should work too!
+把所有人的拼起来，整个程序也应该能正常运作！
+
+And in the real world, programmers aren’t wasting time writing things like exponents.
+现实中，程序员不会浪费时间写指数函数这种东西
+
+Modern programming languages come with huge bundles of pre-written functions, called Libraries.
+现代编程语言 有很多预先写好的函数集合，叫 "库"
+
+These are written by expert coders, made efficient and rigorously tested, and then given to everyone.
+由专业人员编写，不仅效率高，而且经过了仔细检查
+
+There are libraries for almost everything, including networking, graphics, and sound
+几乎做所有事情都有库，网络、图像、声音
+
+-- topics we’ll discuss in future episodes.
+我们之后会讲这些主题.
+
+But before we get to those, we need to talk about Algorithms.
+但在此之前，我们先讲算法
+
+Intrigued?
+好奇吗？
+
+You should be.
+你应该才是！
+
+I’ll see you next week.
+下周见
+

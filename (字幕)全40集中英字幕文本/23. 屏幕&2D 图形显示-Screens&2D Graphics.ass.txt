@@ -1,0 +1,591 @@
+Hi, I'm Carrie Anne, and welcome to Crash Course Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+This 1960 PDP-1 is a great example of early computing with graphics.
+这台 1960 年的 PDP-1 \N 是一个早期图形计算机的好例子
+
+You can see a cabinet-sized computer on the left,
+你可以看到 左边是柜子大小的电脑
+
+an electromechanical teletype machine in the middle,
+中间是电传打字机
+
+and a round screen on the right.
+右边是一个圆形的屏幕
+
+Note how they're separated.
+注意它们是分开的
+
+That's because text-based tasks and graphical tasks were often distinct back then.
+因为当时文本任务和图形任务是分开的.
+
+In fact, these early computer screens had a very hard time rendering crisp text, whereas
+事实上，早期的屏幕无法显示清晰的文字
+
+typed paper offered much higher contrast and resolution.
+而打印到纸上  有更高的对比度和分辨率
+
+The most typical use for early computer screens was to keep track of a program's operation,
+早期屏幕的典型用途 是跟踪程序的运行情况
+
+like values in registers.
+比如寄存器的值
+
+It didn't make sense to have a teletype machine print this on paper
+如果用打印机 \N 一遍又一遍打印出来没有意义
+
+over and over and over again -- that'd waste a lot of paper, and it was slow.
+不仅费纸而且慢
+
+On the other hand, screens were dynamic and quick to update -- perfect for temporary values.
+另一方面，屏幕更新很快，对临时值简直完美
+
+Computer screens were rarely considered for program output, though.
+但屏幕很少用于输出计算结果，结果一般都打印到纸上
+
+Instead, any results from a computation were typically written to paper
+但屏幕很少用于输出计算结果，结果一般都打印到纸上
+
+or some other more permanent medium.
+或其它更永久的东西上
+
+But, screens were so darn useful
+但屏幕超有用 \N 到1960年代，人们开始用屏幕做很多酷炫的事情
+
+that by the early 1960s, people started to use them for awesome things.
+但屏幕超有用 \N 到1960年代，人们开始用屏幕做很多酷炫的事情
+
+A lot of different display technologies have been created over the decades,
+几十年间出现了很多显示技术
+
+but the most influential, and also the earliest, were Cathode Ray Tubes, or CRT
+但最早最有影响力的是 阴极射线管（CRT）
+
+These work by shooting electrons out of an emitter at a phosphor-coated screen.
+原理是把电子发射到 有磷光体涂层的屏幕上
+
+When electrons hit the coating, it glows for a fraction of a second.
+当电子撞击涂层时 会发光几分之一秒
+
+Because electrons are charged particles,
+由于电子是带电粒子，路径可以用磁场控制
+
+their paths can be manipulated with electromagnetic fields.
+由于电子是带电粒子，路径可以用磁场控制
+
+Plates or coils are used inside to steer electrons to a desired position,
+屏幕内用板子或线圈  把电子引导到想要的位置
+
+both left-right and up-down.
+上下左右都行
+
+With this control, there are two ways you can draw graphics.
+既然可以这样控制，有 2 种方法绘制图形 \N 1. 引导电子束描绘出形状
+
+The first option is to direct the electron beam to trace out shapes.
+既然可以这样控制，有 2 种方法绘制图形 \N 1. 引导电子束描绘出形状
+
+This is called Vector Scanning.
+这叫"矢量扫描"
+
+Because the glow persists for a little bit, if you repeat the path quickly enough,
+因为发光只持续一小会儿 \N 如果重复得足够快 可以得到清晰的图像
+
+you create a solid image.
+因为发光只持续一小会儿 \N 如果重复得足够快 可以得到清晰的图像
+
+The other option is to repeatedly follow a fixed path, scanning line by line,
+2. 按固定路径，一行行来 \N 从上向下，从左到右，不断重复
+
+from top left to bottom right, and looping over and over again.
+2. 按固定路径，一行行来 \N 从上向下，从左到右，不断重复
+
+You only turn on the electron beam at certain points to create graphics.
+只在特定的点打开电子束，以此绘制图形
+
+This is called Raster Scanning.
+这叫 "光栅扫描"
+
+With this approach, you can display shapes... and even text... all made of little line segments.
+用这种方法，可以用很多小线段绘制形状  甚至文字
+
+Eventually, as display technologies improved,
+最后，因为显示技术的发展
+
+it was possible to render crisp dots onto the screen, aka pixels.
+我们终于可以在屏幕上显示清晰的点，叫"像素"
+
+The Liquid Crystal Displays, or LCDs,
+液晶显示器，简称 LCD
+
+that we use today are quite a different technology.
+和以前的技术相当不同
+
+But, they use raster scanning too,
+但 LCD 也用光栅扫描 \N 每秒更新多次 像素里红绿蓝的颜色
+
+updating the brightness of little tiny red, green and blue pixels many times a second.
+但 LCD 也用光栅扫描 \N 每秒更新多次 像素里红绿蓝的颜色
+
+Interestingly, most early computers didn't use pixels
+有趣的是，很多早期计算机不用像素
+
+-- not because they couldn't physically,
+- 不是技术做不到, 而是因为像素占太多内存
+
+but because it consumed way too much memory for computers of the time.
+- 不是技术做不到, 而是因为像素占太多内存
+
+A 200 by 200 pixel image contains 40,000 pixels.
+200像素×200像素的图像，有 40,000 个像素
+
+Even if you use just one bit of data for each pixel,
+哪怕每个像素只用一个 bit 表示 \N 代表黑色或白色，连灰度都没有！
+
+that's black OR white -- not grayscale!
+哪怕每个像素只用一个 bit 表示 \N 代表黑色或白色，连灰度都没有！
+
+-- the image would consume 40,000 bits of memory.
+- 会占 40,000 bit 内存 \N 比 PDP-1 全部内存的一半还多
+
+That would have gobbled up more than half of a PDP-1's entire RAM.
+- 会占 40,000 bit 内存 \N 比 PDP-1 全部内存的一半还多
+
+So, computer scientists and engineers had to come up with clever tricks to render graphics
+所以计算机科学家和工程师，得想一些技巧来渲染图形 \N 等内存发展到足够用
+
+until memory sizes caught up to our pixelicious ambitions.
+所以计算机科学家和工程师，得想一些技巧来渲染图形 \N 等内存发展到足够用
+
+Instead of storing tens of thousands of pixels,
+所以早期计算机不存大量像素值 \N 而是存符号，80x25个符号最典型
+
+early computers stored a much smaller grid of letters, most typically 80 by 25 characters.
+所以早期计算机不存大量像素值 \N 而是存符号，80x25个符号最典型
+
+That's 2000 characters in total.
+总共 2000 个字符
+
+And if each is encoded in 8 bits, using something like ASCII,
+如果每个字符用 8 位表示，比如用 ASCII
+
+it would consume 16,000 bits of memory for an entire screen full of text,
+总共才 16000 位，这种大小更合理
+
+which is way more reasonable.
+总共才 16000 位，这种大小更合理
+
+To pull this off, computers needed an extra piece of hardware that
+为此，计算机需要额外硬件
+
+could read characters out of RAM, and convert them into raster graphics to be drawn onto the screen.
+来从内存读取字符，转换成光栅图形 \N 这样才能显示到屏幕上
+
+This was called a character generator, and they were basically the first graphics cards.
+这个硬件叫 "字符生成器"，基本算是第一代显卡
+
+Inside, they had a little piece of Read Only Memory, a ROM,
+它内部有一小块只读存储器，简称 ROM
+
+that stored graphics for each character, called a dot matrix pattern.
+存着每个字符的图形，叫"点阵图案"
+
+If the graphics card saw the 8-bit code for the letter "K",
+如果图形卡看到一个 8 位二进制，发现是字母 K
+
+then it would raster scan the 2D pattern for the letter K onto the screen, in the appropriate position.
+那么会把字母 K 的点阵图案 \N光栅扫描显示到屏幕的适当位置
+
+To do this, the character generator had special access to a portion of a computer's memory
+为了显示，"字符生成器" 会访问内存中一块特殊区域 \N 这块区域专为图形保留，叫 屏幕缓冲区
+
+reserved for graphics, a region called the screen buffer.
+为了显示，"字符生成器" 会访问内存中一块特殊区域 \N 这块区域专为图形保留，叫 屏幕缓冲区
+
+Computer programs wishing to render text to the screen
+程序想显示文字时，修改这块区域里的值就行
+
+simply manipulated the values stored in this region,
+程序想显示文字时，修改这块区域里的值就行
+
+just as they could with any other data in RAM.
+程序想显示文字时，修改这块区域里的值就行
+
+This scheme required much less memory,
+这个方案用的内存少得多 \N 但也意味着 只能画字符到屏幕上
+
+but it also meant the only thing you could draw was text.
+这个方案用的内存少得多 \N 但也意味着 只能画字符到屏幕上
+
+Even still, people got pretty inventive with ASCII art!
+即使有这样限制 \N 人们用 ASCII 艺术发挥了很多创意！
+
+People also tried to make rudimentary, pseudo-graphical interfaces out of this basic set of characters
+也有人用字符模仿图形界面
+
+using things like underscores and plus signs to create boxes, lines and other primitive shapes.
+用下划线和加号来画盒子，线，和其他简单形状
+
+But, the character set was really too small to do anything terribly sophisticated.
+但字符集实在太小，做不了什么复杂的事
+
+So, various extensions to ASCII were made that added new semigraphical characters,
+因此对 ASCII 进行了各种扩展，加新字符
+
+like IBM's CP437 character set, seen here, which was used in DOS.
+比如上图的 IBM CP437 字符集，用于 DOS.
+
+On some systems, the text color and background color could be defined with a few extra bits.
+某些系统上 \N 可以用额外的 bit 定义字体颜色和背景颜色
+
+That allowed glorious interfaces like this DOS example,
+做出这样的 DOS 界面 \N 这界面只用了刚刚提到的字符集
+
+which is built entirely out the character set you just saw.
+做出这样的 DOS 界面 \N 这界面只用了刚刚提到的字符集
+
+Character generators were a clever way to save memory.
+字符生成器 是一种省内存的技巧 \N 但没办法绘制任意形状
+
+But, they didn't provide any way to draw arbitrary shapes.
+字符生成器 是一种省内存的技巧 \N 但没办法绘制任意形状
+
+And that's important if you want to draw content like electrical circuits, architectural
+绘制任意形状很重要 \N 因为电路设计，建筑平面图，地图，好多东西都不是文字！
+
+plans, maps, and... well pretty much everything that isn't text!
+绘制任意形状很重要 \N 因为电路设计，建筑平面图，地图，好多东西都不是文字！
+
+To do this, without resorting to memory-gobbling pixels,
+为了绘制任意形状，同时不吃掉所有内存
+
+computer scientists used the vector mode available on CRTs.
+计算机科学家用 CRT 上的"矢量模式"
+
+The idea is pretty straightforward: all content to be drawn on screen is defined by a series of lines.
+概念非常简单：所有东西都由线组成
+
+There's no text.
+没有文字这回事
+
+If you need to draw text, you have to draw it out of lines.
+如果要显示文字，就用线条画出来
+
+Don't read between the lines here. There is only lines!
+只有线条，没有别的
+
+Got it? Alright, no more word play.
+明白了吗？好，我们举个实例吧
+
+I'm drawing the line here.
+明白了吗？好，我们举个实例吧
+
+Let's pretend this video is a cartesian plane, 200 units wide and 100 tall, with the
+假设这个视频是一个 笛卡尔平面 \N 200个单位宽，100个单位高
+
+origin that's the zero-zero point in the upper left corner.
+原点 (0,0) 在左上角
+
+We can draw a shape with the following vector commands,
+我们可以画形状，用如下矢量命令
+
+which we've borrowed from the Vectrex, an early vector display system.
+这些命令来自 Vectrex，一个早期矢量显示系统
+
+First, we reset, which clears the screen,
+首先，reset ，这个命令会清空屏幕
+
+moves the drawing point of the electron gun to zero-zero,
+把电子枪的绘图点移动到坐标 (0,0)
+
+and sets the brightness of lines to zero.
+并把线的亮度设为 0
+
+Then we move the drawing point down to 50 50,
+MOVE_TO 50 50 \N 把绘图点移动到坐标 (50,50)
+
+and set the line intensity to 100%.
+INTENSITY 100 \N 把强度设为 100
+
+With the intensity up, now we move to 100, 50, then 60, 75 and then back to 50,50.
+现在亮度提高了\N 移动到 (100,50)  然后 (60,75)  然后 (50,50)
+
+The last thing to do is set our line intensity back to 0%.
+最后把强度设回 0
+
+Cool! We've got a triangle!
+酷，我们画了一个三角形！
+
+This sequence of commands would consume on the order of 160 bits, which is way more efficient
+这些命令占 160 bit  \N 比存一个庞大的像素矩阵更好
+
+than keeping a huge matrix of pixel values!
+这些命令占 160 bit  \N 比存一个庞大的像素矩阵更好
+
+Just like how characters were stored in memory and turned into graphics by a character generator,
+就像之前的"字符生成器" \N把内存里的字符转成图形一样
+
+these vector instructions were also stored in memory, and rendered to a screen using
+这些矢量指令也存在内存中 \N 通过矢量图形卡画到屏幕上
+
+a vector graphics card.
+这些矢量指令也存在内存中 \N 通过矢量图形卡画到屏幕上
+
+Hundreds of commands could be packed together, sequentially, in the screen buffer,
+数百个命令可以按序存在屏幕缓冲区
+
+and used to build up complex graphics. All made of lines!
+画出复杂图形，全是线段组成的！
+
+Because all these vectors are stored in memory, computer programs can update the values freely,
+由于这些矢量都在内存中 \N 程序可以更新这些值
+
+allowing for graphics that change over time -- Animation!
+让图形随时间变化 - 动画！
+
+One of the very earliest video games, Spacewar!,
+最早的电子游戏之一, Spacewar!
+
+was built on a PDP-1 in 1962 using vector graphics.
+是 1962 年在 PDP-1 上用矢量图形制作的.
+
+It's credited with inspiring many later games, like Asteroids,
+它启发了许多后来的游戏，比如 爆破彗星(Asteroids)
+
+and even the first commercial arcade video game: Computer Space.
+甚至第一个商业街机游戏：太空大战
+
+1962 was also a huge milestone because of Sketchpad,
+1962 年是一个大里程碑 \N  Sketchpad 诞生
+
+an interactive graphical interface
+一个交互式图形界面，用途是计算机辅助设计 (CAD)
+
+that offered Computer-Aided Design -- called CAD Software today.
+一个交互式图形界面，用途是计算机辅助设计 (CAD)
+
+It's widely considered the earliest example of a complete graphical application.
+它被广泛认为是第一个完整的图形程序
+
+And its inventor, Ivan Sutherland, later won the Turing Award for this breakthrough.
+发明人 伊万·萨瑟兰 后来因此获得图灵奖
+
+To interact with graphics,
+为了与图形界面交互 \N Sketchpad 用了当时发明不久的输入设备 光笔
+
+Sketchpad used a recently invented input device called a light pen,
+为了与图形界面交互 \N Sketchpad 用了当时发明不久的输入设备 光笔
+
+which was a stylus tethered to a computer with a wire.
+就是一个有线连着电脑的触控笔
+
+By using a light sensor in the tip, the pen detected the refresh of the computer monitor.
+笔尖用光线传感器，可以检测到显示器刷新
+
+Using the timing of the refresh,
+通过判断刷新时间，电脑可以知道笔的位置
+
+the computer could actually figure out the pen's position on the screen!
+通过判断刷新时间，电脑可以知道笔的位置
+
+With this light pen, and various buttons on a gigantic computer,
+有了光笔和各种按钮 \N 用户可以画线和其他简单形状
+
+users could draw lines and other simple shapes.
+有了光笔和各种按钮 \N 用户可以画线和其他简单形状
+
+Sketchpad could do things like make lines perfectly parallel, the same length, straighten
+Sketchpad 可以让线条完美平行，长度相同 \N 完美垂直90度，甚至动态缩放
+
+corners into perfect 90 degree intersections, and even scale shapes up and down dynamically.
+Sketchpad 可以让线条完美平行，长度相同 \N 完美垂直90度，甚至动态缩放
+
+These things that were laborious on paper, a computer now did with a press of a button!
+这些在纸上很费力，在计算机上非常简单！
+
+Users were also able to save complex designs they created,
+用户还可以保存设计结果，方便以后再次使用 \N 甚至和其他人分享
+
+and then paste them into later designs, and even share with other people.
+用户还可以保存设计结果，方便以后再次使用 \N 甚至和其他人分享
+
+You could have whole libraries of shapes, like electronic components and pieces of furniture
+你可以有一整个库 \N 里面有电子元件和家具之类的
+
+that you could just plop in and manipulate in your creations.
+可以直接拖进来用
+
+This might all sound pretty routine from today's perspective.
+从如今的角度来看 好像很普通
+
+But in 1962, when computers were still cabinet-sized behemoths chugging through punch cards,
+但在1962年 \N 计算机还是吃纸带的大怪兽，有柜子般大小
+
+Sketchpad and light pens were equal parts eye opening and brain melting.
+Sketchpad 和光笔让人大开眼界
+
+They represented a key turning point in how computers could be used.
+它们代表了人机交互方式的关键转折点
+
+They were no longer just number crunching math machines that hummed along behind closed doors.
+电脑不再是关在门后 负责算数的机器了
+
+Now, they were potential assistants, interactively augmenting human tasks.
+可以当助手 帮人类做事
+
+The earliest computers and displays with true pixel graphics emerged in the late 1960s.
+最早用真正像素的计算机和显示器\N 出现于 1960 年代末
+
+Bits in memory directly "mapped" to pixels on the screen,
+内存中的位(Bit) 对应屏幕上的像素
+
+what are called bitmapped displays.
+这叫 位图显示
+
+With full pixel control, totally arbitrary graphics were possible.
+现在我们可以绘制任意图形了
+
+You can think of a screen's graphics as a huge matrix of pixel values .
+你可以把图形想成一个巨大像素值矩阵
+
+As before,
+就像之前
+
+computers reserve a special region of memory for pixel data, called the frame buffer.
+计算机把像素数据存在内存中一个特殊区域 \N 叫"帧缓冲区"
+
+In the early days, the computer's RAM was used,
+早期时，这些数据存在内存里\N 后来存在高速视频内存里，简称 VRAM
+
+but later systems used special high speed Video RAM, or VRAM,
+早期时，这些数据存在内存里\N 后来存在高速视频内存里，简称 VRAM
+
+which was located on the graphics card itself for high speed access.
+VRAM 在显卡上，这样访问更快 \N 如今就是这样做的.
+
+This is how it's done today.
+VRAM 在显卡上，这样访问更快 \N 如今就是这样做的.
+
+On an 8-bit grayscale screen, we can set values from 0 intensity, which is black,
+在 8 位灰度屏幕上，我们可用的颜色范围是 0 强度（黑色）
+
+to 255 intensity, which is white.
+到 255 强度(白色)
+
+Well actually, it might be green... or orange, as many early displays couldn't do white.
+其实更像绿色或橙色 \N 因为许多早期显示器不能显示白色
+
+Let's pretend this video is a really low resolution bitmapped screen,
+我们假设 这个视频在低分辨率的位图屏幕上
+
+with a resolution of 60 by 35 pixels.
+分辨率 60x35像素
+
+If we wanted to set the pixel at 10 10 to be white,
+如果我们想把 (10,10) 的像素设为白色 \N 可以用这样的代码
+
+we could do it with a piece of code like this.
+如果我们想把 (10,10) 的像素设为白色 \N 可以用这样的代码
+
+If we wanted to draw a line, let's say from 30, 0 to 30, 35, we can use a loop, like so.
+如果想画一条线  假设从(30,0)到(30,35) \N 可以用这样一个循环
+
+.And this changes a whole line of pixels to white.
+把整列像素变成白色
+
+If we want to draw something more complicated, let's say a rectangle,
+如果想画更复杂的图形，比如矩形，那么需要四个值
+
+we need to know four values.
+如果想画更复杂的图形，比如矩形，那么需要四个值
+
+The X and Y coordinate of its starting corner, and its width and height.
+1. 起始点X坐标  \N2. 起始点Y坐标 \N 3. 宽度 \N 4. 高度
+
+So far, we've drawn everything in white, so let's specify this rectangle to be grey.
+目前只试了白色，这次画矩形试下灰色
+
+Grey is halfway between 0 and 255, so that's a color value of 127.
+灰色介于0到255中间 \N 所以我们用 127 (255/2=127.5)
+
+Then, with two loops C one nested in the other,
+然后用两个循环，一个套另一个
+
+so that the inner loop runs once for every iteration of the outer loop,
+这样外部每跑一次，内部会循环多次 \N 可以画一个矩形
+
+we can draw a rectangle.
+这样外部每跑一次，内部会循环多次 \N 可以画一个矩形
+
+When the computer executes our code as part of its draw routine, it colors in all the
+计算机绘图时会用指定的颜色 127
+
+pixels we specified.
+计算机绘图时会用指定的颜色 127
+
+Let's wrap this up into a "draw rectangle function", like this:
+我们来包装成 "画矩形函数"，就像这样：
+
+Now, to draw a second rectangle on the other side of the screen, maybe in black this time,
+假设要在屏幕的另一边 画第二个矩形 \N 这次可能是黑色矩形
+
+we can just call our rectangle drawing function. Voila!!
+可以直接调用 "画矩形函数", 超棒！
+
+Just like the other graphics schemes we've discussed,
+就像之前说的其他方案
+
+programs can manipulate pixel data in the frame buffer, creating interactive graphics.
+程序可以操纵"帧缓冲区"中的像素数据，实现交互式图形
+
+Pong time!
+乒乓球时间！
+
+Of course, programmers aren't wasting time writing drawing functions from scratch.
+当然，程序员不会浪费时间从零写绘图函数 \N 而是用预先写好的函数来做，画直线，曲线，图形，文字等
+
+They use graphics libraries with ready-to-go functions
+当然，程序员不会浪费时间从零写绘图函数 \N 而是用预先写好的函数来做，画直线，曲线，图形，文字等
+
+for drawing lines, curves, shapes, text, and other cool stuff.
+当然，程序员不会浪费时间从零写绘图函数 \N 而是用预先写好的函数来做，画直线，曲线，图形，文字等
+
+Just a new level of abstraction!
+一层新抽象！
+
+The flexibility of bitmapped graphics opened up a whole new world of possibilities for
+位图的灵活性，为交互式开启了全新可能 \N 但它的高昂成本持续了十几年
+
+interactive computing, but it remained expensive for decades.
+位图的灵活性，为交互式开启了全新可能 \N 但它的高昂成本持续了十几年
+
+As I mentioned last episode, by as late as 1971,
+上集提到，1971 年 \N 整个美国也只有大约 7 万个电传打字机和 7 万个终端
+
+it was estimated there were around 70,000 electro-mechanical teletype machines
+上集提到，1971 年 \N 整个美国也只有大约 7 万个电传打字机和 7 万个终端
+
+and 70,000 terminals in use, in the United States.
+上集提到，1971 年 \N 整个美国也只有大约 7 万个电传打字机和 7 万个终端
+
+Amazingly, there were only around 1,000 computers in the US that had interactive graphical screens.
+令人惊讶的是 \N 只有大约 1000 台电脑有交互式图形屏幕
+
+That's not a lot!
+这可不多！
+
+But the stage was set helped along by pioneering efforts like Sketchpad and Space Wars
+Sketchpad 和 太空大战 这样的先驱  \N 推动了图形界面发展
+
+for computer displays to become ubiquitous,
+帮助普及了计算机显示器 \N 由此，图形界面的曙光初现
+
+and with them, the dawn of graphical user interfaces,
+帮助普及了计算机显示器 \N 由此，图形界面的曙光初现
+
+which we'll cover in a few episodes!
+接下来讲图形界面
+
+I'll see you next week.
+下周见
+

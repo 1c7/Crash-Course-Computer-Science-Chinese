@@ -1,0 +1,684 @@
+Hi, I’m Carrie Anne, and welcome to Crash Course Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+The internet is amazings
+互联网太棒啦
+
+In just a few keystrokes, we can stream videos on Youtube -- Hello!
+键盘敲几下就能在 Youtube 直播--哈喽！
+
+- read articles on Wikipedia,
+在维基百科上阅读文章
+
+order supplies on amazon, video chat with friends, and tweet about the weather.
+在亚马逊买东西  和朋友视频  发一条天气推特
+
+Without a doubt, the ability for computers, and their users, to send and receive information
+毫无疑问，\N 用户在全球网络中发送和接收信息的能力
+
+over a global telecommunications network forever changed the world.
+永远改变了这个世界
+
+150 years ago, sending a letter from London to California would have taken two to three
+150年前 发一封信件从伦敦到加州 要花2~3周
+
+weeks, and that’s if you paid for express mail.
+而且还是特快邮件
+
+Today, that email takes a fraction of a second.
+如今 电子邮件只要几分之一秒.
+
+This million fold improvement in latency, that’s the time it takes for a message to
+"时延"改善了上百万倍 \N (时延指传播一条信息所需的时间)
+
+transfer, juiced up the global economy helping the modern world to
+振兴了全球经济 \N 帮助现代世界在遍布全球的光纤中快速发展
+
+move at the speed of light on fiber optic cables spanning the globe.
+振兴了全球经济 \N 帮助现代世界在遍布全球的光纤中快速发展
+
+You might think that computers and networks always went hand in hand, but actually most
+你可能觉得计算机和网络密切相关，但事实上，
+
+computers pre-1970 were humming away all alone.
+1970年以前 大多数计算机是独立运行的
+
+However, as big computers began popping up everywhere,
+然而 因为大型计算机开始随处可见
+
+and low cost machines started to show up on people’s desks,
+廉价机器开始出现在书桌上
+
+it became increasingly useful to share data and resources,
+分享数据和资源渐渐变得有用起来
+
+and the first networks of computers appeared.
+首个计算机网络出现了
+
+Today, we’re going to start a three-episode arc on how computer networks came into being
+今天起，我们花3集视频讲网络是如何发展成现在的样子
+
+and the fundamental principles and techniques that power them.
+以及支撑它们的基础原理和技术
+
+The first computer networks appeared in the 1950s and 60s.
+第一个计算机网络出现在1950~1960年代
+
+They were generally used within an organization – like a company or research lab
+通常在公司或研究室内部使用，为了方便信息交换
+
+to facilitate the exchange of information between different people and computers.
+通常在公司或研究室内部使用，为了方便信息交换
+
+This was faster and more reliable than the previous method of having someone walk a pile
+比把纸卡或磁带送到另一栋楼里更快速可靠
+
+of punch cards, or a reel of magnetic tape, to a computer on the other side of a building
+比把纸卡或磁带送到另一栋楼里更快速可靠
+
+‒ which was later dubbed a sneakernet.
+这叫"球鞋网络"
+
+A second benefit of networks was the ability to share physical resources.
+第二个好处是能共享物理资源
+
+For example, instead of each computer having its own printer,
+举个例子，与其每台电脑配一台打印机
+
+everyone could share one attached to the network.
+大家可以共享一台联网的打印机
+
+It was also common on early networks to have large, shared, storage drives,
+早期网络也会共享存储空间
+
+ones too expensive to have attached to every machine.
+因为每台电脑都配存储器太贵了
+
+These relatively small networks of close-by computers
+计算机近距离构成的小型网络 \N 叫局域网， 简称LAN
+
+are called Local Area Networks, or LANs.
+计算机近距离构成的小型网络 \N 叫局域网， 简称LAN
+
+A LAN could be as small as two machines in the same room,
+局域网能小到是同一个房间里的两台机器
+
+or as large as a university campus with thousands of computers.
+或大到校园里的上千台机器
+
+Although many LAN technologies were developed and deployed,
+尽管开发和部署了很多不同 LAN 技术
+
+the most famous and successful was Ethernet, developed in the
+其中最著名和成功的是"以太网"  , 开发于1970年代 \N 在施乐的"帕洛阿尔托研究中心"诞生, 今日仍被广泛使用
+
+early 1970s at Xerox PARC, and still widely used today.
+其中最著名和成功的是"以太网"  , 开发于1970年代 \N 在施乐的"帕洛阿尔托研究中心"诞生, 今日仍被广泛使用
+
+In its simplest form, a series of computers are connected to a single, common ethernet cable.
+以太网的最简单形式是：一条以太网电线连接数台计算机
+
+When a computer wants to transmit data to another computer,
+当一台计算机要传数据给另一台计算机时
+
+it writes the data, as an electrical signal, onto the cable.
+它以电信号形式，将数据传入电缆
+
+Of course, because the cable is shared, every computer plugged into the network sees the
+当然 因为电缆是共享的  \N 连在同一个网络里的其他计算机也看得到数据
+
+transmission, but doesn’t know if data is intended for them or another computer.
+但不知道数据是给它们的，还是给其他计算机的
+
+To solve this problem, Ethernet requires that each computer has a unique
+为了解决这个问题 以太网需要每台计算机有唯一的 \N 媒体访问控制地址 简称 MAC地址
+
+Media Access Control address, or MAC address.
+为了解决这个问题 以太网需要每台计算机有唯一的 \N 媒体访问控制地址 简称 MAC地址
+
+This unique address is put into a header that prefixes any data sent over the network.
+这个唯一的地址放在头部，作为数据的前缀发送到网络中
+
+So, computers simply listen to the ethernet cable,
+所以，计算机只需要监听以太网电缆 \N 只有看到自己的 MAC 地址，才处理数据
+
+and only process data when they see their address in the header.
+所以，计算机只需要监听以太网电缆 \N 只有看到自己的 MAC 地址，才处理数据
+
+This works really well; every computer made today comes with its own unique MAC address
+这运作得很好 现在制造的每台计算机都自带唯一的MAC地址
+
+for both Ethernet and WiFi.
+用于以太网和无线网络
+
+The general term for this approach is Carrier Sense Multiple Access, or CSMA for short.
+多台电脑共享一个传输媒介，\N 这种方法叫 "载波侦听多路访问" 简称"CSMA"
+
+The "carrier", in this case, is any shared transmission medium that carries data
+载体(carrier)指运输数据的共享媒介
+
+copper wire in the case of ethernet, and the air carrying radio waves for WiFi.
+以太网的"载体"是铜线 \N  WiFi 的"载体"是传播无线电波的空气
+
+Many computers can simultaneously sense the carrier,
+很多计算机同时侦听载体
+
+hence the "Sense" and "Multiple Access",
+所以叫"侦听"和"多路访问"
+
+and the rate at which a carrier can transmit data is called its Bandwidth.
+而载体传输数据的速度 叫"带宽"
+
+Unfortunately, using a shared carrier has one big drawback.
+不幸的是 使用共享载体有个很大的弊端
+
+When network traffic is light, computers can simply wait for silence on the carrier,
+当网络流量较小时 计算机可以等待载体清空
+
+and then transmit their data.
+然后传送数据
+
+But, as network traffic increases, the probability that
+但随着网络流量上升 两台计算机想同时写入数据的概率也会上升
+
+two computers will attempt to write data at the same time also increases.
+但随着网络流量上升 两台计算机想同时写入数据的概率也会上升
+
+This is called a collision, and the data gets all garbled up,
+这叫冲突 数据全都乱套了
+
+like two people trying to talk on the phone at the same time.
+就像两个人同时在电话里讲话
+
+Fortunately, computers can detect these collisions by listening to the signal on the wire.
+幸运的是 计算机能够通过监听电线中的信号检测这些冲突
+
+The most obvious solution is for computers to stop transmitting,
+最明显的解决办法是停止传输
+
+wait for silence, then try again.
+等待网络空闲, 然后再试一遍
+
+Problem is, the other computer is going to try that too,
+问题是 其他计算机也打算这样做
+
+and other computers on the network that have been waiting for the
+其他等着的计算机可能在任何停顿间隙闯入
+
+carrier to go silent will try to jump in during any pause.
+其他等着的计算机可能在任何停顿间隙闯入
+
+This just leads to more and more collisions.
+导致越来越多冲突
+
+Soon, everyone is talking over one another and has a backlog of things they need to say,
+很快，每个人都一个接一个地讲话 而且有一堆事要说
+
+like breaking up with a boyfriend over a family holiday dinner.
+就像在家庭聚餐中和男朋友分手一样
+
+Terrible idea!
+馊主意！
+
+Ethernet had a surprisingly simple and effective fix.
+以太网有个超简单有效的解决方法
+
+When transmitting computers detect a collision,
+当计算机检测到冲突 就会在重传之前等待一小段时间
+
+they wait for a brief period before attempting to re-transmit.
+当计算机检测到冲突 就会在重传之前等待一小段时间
+
+As an example, let’s say 1 second.
+因为要举例，假设是 1 秒好了
+
+Of course, this doesn’t work if all the computers use the same wait duration
+当然 如果所有计算机用同样的等待时间 是不行的
+
+-- they’ll just collide again one second later.
+它们会在一秒后再次冲突
+
+So, a random period is added: one computer might wait 1.3 seconds,
+所以加入一个随机时间 一台计算机可能等1.3秒
+
+while another waits 1.5 seconds.
+另一台计算机等待1.5秒
+
+With any luck, the computer that waited 1.3 seconds will wake up,
+要是运气好 等1.3秒的计算机会醒来
+
+find the carrier to be silent, and start transmitting.
+发现载体是空闲的 然后开始传输
+
+When the 1.5 second computer wakes up a moment later, it’ll see the carrier is in use,
+当1.5秒的计算机醒来后 会发现载体被占用 \N 会等待其他计算机完成
+
+and will wait for the other computer to finish.
+当1.5秒的计算机醒来后 会发现载体被占用 \N 会等待其他计算机完成
+
+This definitely helps, but doesn’t totally solve the problem, so an extra trick is used.
+这有用 但不能完全解决问题 所以要用另一个小技巧
+
+As I just explained, if a computer detects a collision while transmitting,
+正如我刚才说的 \N如果一台计算机在传输数据期间检测到冲突
+
+it will wait 1 second, plus some random extra time.
+会等一秒+随机时间
+
+However, if it collides again, which suggests network congestion,
+然而 如果再次发生冲突 表明有网络拥塞
+
+instead of waiting another 1 second, this time it will wait 2 seconds.
+这次不等1秒，而是等2秒
+
+If it collides again, it’ll wait 4 seconds, and then 8, and then 16,
+如果再次发生冲突 等4秒 然后8秒 16秒等等
+
+and so on, until it’s successful.
+直到成功传输
+
+With computers backing off, the rate of collisions goes down,
+因为计算机的退避 冲突次数降低了 \N 数据再次开始流动起来 网络变得顺畅
+
+and data starts moving again, freeing up the network.
+因为计算机的退避 冲突次数降低了 \N 数据再次开始流动起来 网络变得顺畅
+
+Family dinner saved!
+家庭晚餐有救啦！
+
+This "backing off" behavior using an exponentially growing wait time is called
+这种指数级增长等待时间的方法叫：
+
+Exponential Backoff.
+指数退避
+
+Both Ethernet and WiFi use it, and so do many transmission protocols.
+以太网和WiFi都用这种方法 很多其他传输协议也用
+
+But even with clever tricks like Exponential Backoff,
+但即便有了"指数退避"这种技巧
+
+you could never have an entire university’s
+想用一根网线链接整个大学的计算机还是不可能的
+
+worth of computers on one shared ethernet cable.
+想用一根网线链接整个大学的计算机还是不可能的
+
+To reduce collisions and improve efficiency,
+为了减少冲突+提升效率
+
+we need to shrink the number of devices on any given shared carrier
+我们需要减少同一载体中设备的数量 \N 载体和其中的设备总称 "冲突域"
+
+-- what’s called the Collision Domain.
+我们需要减少同一载体中设备的数量 \N 载体和其中的设备总称 "冲突域"
+
+Let go back to our earlier Ethernet example, where we had six computers on one shared cable,
+让我们回到之前以太网的例子  一根电缆连6台计算机
+
+a.k.a. one collision domain.
+也叫一个冲突域
+
+To reduce the likelihood of collisions, we can break this network
+为了减少冲突  我们可以用交换机把它拆成两个冲突域
+
+into two collision domains by using a Network Switch.
+为了减少冲突  我们可以用交换机把它拆成两个冲突域
+
+It sits between our two smaller networks, and only passes data between them if necessary.
+交换机位于两个更小的网络之间 \N 必要时才在两个网络间传数据
+
+It does this by keeping a list of what MAC addresses are on what side of the network.
+交换机会记录一个列表 \N 写着哪个 MAC 地址在哪边网络
+
+So if A wants to transmit to C, the switch doesn’t forward the data to the other network
+如果A想传数据给C \N 交换机不会把数据转发给另一边的网络
+
+– there’s no need.
+没必要
+
+This means if E wants to transmit to F at the same time, the network is wide open, and
+如果E想同一时间传数据给F，网络仍然是空的
+
+two transmissions can happen at once.
+两个传输可以同时发生
+
+But, if F wants to send data to A, then the switch passes it through,
+但如果F想发数据给A  数据会通过交换机
+
+and the two networks are both briefly occupied.
+两个网络都会被短暂占用
+
+This is essentially how big computer networks are constructed,
+大的计算机网络也是这样构建的
+
+including the biggest one of all – The Internet –
+包括最大的网络 - 互联网
+
+which literally inter-connects a bunch of smaller networks,
+也是多个连在一起的稍小一点网络
+
+allowing inter-network communication.
+使不同网络间可以传递信息
+
+What’s interesting about these big networks,
+这些大型网络有趣之处是
+
+is that there’s often multiple paths to
+从一个地点到另一个地点通常有多条路线
+
+get data from one location to another.
+从一个地点到另一个地点通常有多条路线
+
+And this brings us to another fundamental networking topic, routing.
+这就带出了另一个话题 路由
+
+The simplest way to connect two distant computers, or networks,
+连接两台相隔遥远的计算机或网路，最简单的办法 \N 是分配一条专用的通信线路
+
+is by allocating a communication line for their exclusive use.
+连接两台相隔遥远的计算机或网路，最简单的办法 \N 是分配一条专用的通信线路
+
+This is how early telephone systems worked.
+早期电话系统就是这样运作的
+
+For example, there might be 5 telephone lines running between Indianapolis and Missoula.
+假设"印第安纳波利斯"和"米苏拉"之间，有五条电话线
+
+If John picked up the phone wanting to call Hank, in the 1910s,
+如果在1910年代，John 想打电话给 Hank
+
+John would tell a human operator where he wanted to call,
+John要告诉操作员他想打到什么地方
+
+and they’d physically connect John’s phone line into
+然后工作人员手动将 John 的电话连到 \N 通往米苏拉的未使用线路
+
+an unused line running to Missoula.
+然后工作人员手动将 John 的电话连到 \N 通往米苏拉的未使用线路
+
+For the length of the call, that line was occupied, and if all 5 lines were already
+通话期间 这条线就被占用了 如果五条线都被占用了 \N John 要等待某条线空出来
+
+in use, John would have to wait for one to become free.
+通话期间 这条线就被占用了 如果五条线都被占用了 \N John 要等待某条线空出来
+
+This approach is called Circuit Switching,
+这叫 "电路交换"\N因为是把电路连接到正确目的地
+
+because you’re literally switching whole
+这叫 "电路交换"\N因为是把电路连接到正确目的地
+
+circuits to route traffic to the correct destination.
+这叫 "电路交换"\N因为是把电路连接到正确目的地
+
+It works fine, but it’s relatively inflexible and expensive,
+能用倒是能用 \N 但不灵活而且价格昂贵 因为总有闲置的线路
+
+because there’s often unused capacity.
+能用倒是能用 \N 但不灵活而且价格昂贵 因为总有闲置的线路
+
+On the upside, once you have a line to yourself – or if you have the money to buy one for
+好处是 如果有一条专属于自己的线路 \N 你可以最大限度地随意使用，无需共享
+
+your private use – you can use it to its full capacity, without having to share.
+好处是 如果有一条专属于自己的线路 \N 你可以最大限度地随意使用，无需共享
+
+For this reason, the military, banks and other high importance operations
+因此军队, 银行和其他一些机构
+
+still buy dedicated circuits to connect their data centers.
+依然会购买专用线路来连接数据中心
+
+Another approach for getting data from one place to another is Message Switching,
+传输数据的另一个方法是 "报文交换"
+
+which is sort of like how the postal system works.
+"报文交换" 就像邮政系统一样
+
+Instead of dedicated route from A to B, messages are passed through several stops.
+不像之前A和B有一条专有线路 \N 消息会经过好几个站点
+
+So if John writes a letter to Hank,
+如果 John 写一封信给 Hank
+
+it might go from Indianapolis to Chicago, and then
+信件可能从"印第安纳波利斯"到"芝加哥"
+
+hop to Minneapolis, then Billings, and then finally make it to Missoula.
+然后"明尼阿波利斯" 然后"比林斯" 最后到"米苏拉"
+
+Each stop knows where to send it next
+每个站点都知道下一站发哪里 \N 因为站点有表格，记录到各个目的地，信件该怎么传
+
+because they keep a table of where to pass letters given a destination address.
+每个站点都知道下一站发哪里 \N 因为站点有表格，记录到各个目的地，信件该怎么传
+
+What’s neat about Message Switching is that it can use different routes,
+报文交换的好处是 可以用不同路由 \N 使通信更可靠更能容错
+
+making communication more reliable and fault-tolerant.
+报文交换的好处是 可以用不同路由 \N 使通信更可靠更能容错
+
+Sticking with our mail example,
+回到邮件的例子
+
+if there’s a blizzard in Minneapolis grinding things to a halt,
+如果"明尼阿波利斯"有暴风雪中断了通信 \N "芝加哥"可以传给"奥马哈"
+
+the Chicago mail hub can decide to route the letter through Omaha instead.
+如果"明尼阿波利斯"有暴风雪中断了通信 \N "芝加哥"可以传给"奥马哈"
+
+In our example, cities are acting like network routers.
+在这个例子里，城市就像路由器一样
+
+The number of hops a message takes along a route is called the hop count.
+消息沿着路由跳转的次数 \N 叫"跳数"(hop count)
+
+Keeping track of the hop count is useful because it can help identify routing problems.
+记录跳数很有用，因为可以分辨出路由问题
+
+For example, let’s say Chicago thinks the fastest route to Missoula is through Omaha,
+举例，假设芝加哥认为 \N 去米苏拉的最快路线是 奥马哈
+
+but Omaha thinks the fastest route is through Chicago.
+但奥马哈认为 \N 去米苏拉的最快路线是 芝加哥
+
+That's bad, because both cities are going to look at the destination address, Missoula,
+这就糟糕了\N 因为2个城市看到目的地是米苏拉
+
+and end up passing the message back and forth between them, endlessly.
+结果报文会在2个城市之间\N不停传来传去
+
+Not only is this wasting bandwidth, but it’s a routing error that needs to get fixed!
+不仅浪费带宽 而且这个路由错误需要修复!
+
+This kind of error can be detected because the hop count is
+这种错误会被检测到，因为跳数记录在消息中 \N 而且传输时会更新跳数
+
+stored with the message and updated along its journey.
+这种错误会被检测到，因为跳数记录在消息中 \N 而且传输时会更新跳数
+
+If you start seeing messages with high hop counts,
+如果看到某条消息的跳数很高 \N 就知道路由肯定哪里错了
+
+you can bet something has gone awry in the routing!
+如果看到某条消息的跳数很高 \N 就知道路由肯定哪里错了
+
+This threshold is the Hop Limit.
+这叫"跳数限制"
+
+A downside to Message Switching is that messages are sometimes big.
+报文交换的缺点之一是有时候报文比较大
+
+So, they can clog up the network, because the whole message has to be transmitted from
+会堵塞网络 因为要把整个报文从一站传到下一站后 \N 才能继续传递其他报文
+
+one stop to the next before continuing on its way.
+会堵塞网络 因为要把整个报文从一站传到下一站后 \N 才能继续传递其他报文
+
+While a big file is transferring, that whole link is tied up.
+传输一个大文件时  整条路都阻塞了
+
+Even if you have a tiny, one kilobyte email trying to get through,
+即便你只有一个1KB的电子邮件要传输 \N 也只能等大文件传完，或是选另一条效率稍低的路线
+
+it either has to wait for the big file transfer to finish or take a less efficient route.
+即便你只有一个1KB的电子邮件要传输 \N 也只能等大文件传完，或是选另一条效率稍低的路线
+
+That’s bad.
+这就糟了
+
+The solution is to chop up big transmissions into many small pieces, called packets.
+解决方法是 将大报文分成很多小块，叫"数据包"
+
+Just like with Message Switching, each packet contains a destination address on the network,
+就像报文交换 每个数据包都有目标地址 \N 因此路由器知道发到哪里
+
+so routers know where to forward them.
+就像报文交换 每个数据包都有目标地址 \N 因此路由器知道发到哪里
+
+This format is defined by the "Internet Protocol", or IP for short,
+报文具体格式由"互联网协议"定义，简称 IP \N 这个标准创建于 1970 年代
+
+a standard created in the 1970s.
+报文具体格式由"互联网协议"定义，简称 IP \N 这个标准创建于 1970 年代
+
+Every computer connected to a network gets an IP Address.
+每台联网的计算机都需要一个IP地址
+
+You’ve probably seen these as four, 8-bit numbers written with dots in between.
+你可能见过，以点分隔的4组数字
+
+For example,172.217.7.238 is an IP Address for one of Google’s servers.
+例如 172.217.7.238 是 Google 其中一个服务器的IP地址
+
+With millions of computers online, all exchanging data,
+数百万台计算机在网络上不断交换数据 \N 瓶颈的出现和消失是毫秒级的
+
+bottlenecks can appear and disappear in milliseconds.
+数百万台计算机在网络上不断交换数据 \N 瓶颈的出现和消失是毫秒级的
+
+Network routers are constantly trying to balance the load across whatever routes they know
+路由器会平衡与其他路由器之间的负载 \N 以确保传输可以快速可靠，这叫"阻塞控制"
+
+to ensure speedy and reliable delivery, which is called congestion control.
+路由器会平衡与其他路由器之间的负载 \N 以确保传输可以快速可靠，这叫"阻塞控制"
+
+Sometimes different packets from the same message take different routes through a network.
+有时，同一个报文的多个数据包 \N 会经过不同线路
+
+This opens the possibility of packets arriving at their destination out of order,
+到达顺序可能会不一样，这对一些软件是个问题
+
+which is a problem for some applications.
+到达顺序可能会不一样，这对一些软件是个问题
+
+Fortunately, there are protocols that run on top of IP,
+幸运的是，在 IP 之上还有其他协议
+
+like TCP/IP, that handle this issue.
+比如 TCP/IP, 可以解决乱序问题
+
+We’ll talk more about that next week.
+我们下周会讲
+
+Chopping up data into small packets,
+将数据拆分成多个小数据包，然后通过灵活的路由传递
+
+and passing these along flexible routes with spare capacity,
+将数据拆分成多个小数据包，然后通过灵活的路由传递
+
+is so efficient and fault-tolerant, it’s what the whole internet runs on today.
+非常高效且可容错，如今互联网就是这么运行的
+
+This routing approach is called Packet Switching.
+这叫"分组交换"
+
+It also has the nice property of being decentralized,
+有个好处是 它是去中心化的
+
+with no central authority or single point of failure.
+没有中心权威机构  没有单点失败问题
+
+In fact, the threat of nuclear attack is why
+事实上 因为冷战期间有核攻击的威胁，所以创造了分组交换
+
+packet switching was developed during the cold war!
+事实上 因为冷战期间有核攻击的威胁，所以创造了分组交换
+
+Today, routers all over the globe work cooperatively to find efficient routings,
+如今，全球的路由器协同工作，找出最高效的线路
+
+exchanging information with each other using special protocols,
+用各种标准协议运输数据
+
+like the Internet Control Message Protocol (ICMP)
+比如 "因特网控制消息协议"(ICMP)
+
+and the Border Gateway Protocol (BGP).
+和 "边界网关协议"(BGP)
+
+The world's first packet-switched network,
+世界上第一个分组交换网络
+
+and the ancestor to the modern internet, was the ARPANET,
+以及现代互联网的祖先是 ARPANET
+
+named after the US agency that funded it,
+名字来源于赞助这个项目的机构，美国高级研究计划局
+
+the Advanced Research Projects Agency.
+名字来源于赞助这个项目的机构，美国高级研究计划局
+
+Here’s what the entire ARPANET looked like in 1974.
+这是 1974 年整个 ARPANET 的样子
+
+Each smaller circle is a location,
+每个小圆表示一个地点 \N 比如大学或实验室，那里运行着一个路由器
+
+like a university or research lab, that operated a router.
+每个小圆表示一个地点 \N 比如大学或实验室，那里运行着一个路由器
+
+They also plugged in one or more computers
+并且有一台或多台计算机
+
+– you can see PDP-1’s, IBM System 360s,
+能看到 "PDP-1" 和"IBM 360系统"
+
+and even an ATLAS in London connected over a satellite link.
+甚至还有一个伦敦的 ATLAS \N 是通过卫星连到网络里的
+
+Obviously the internet has grown by leaps and bounds in the decades since.
+显然 互联网在这几十年间发展迅速
+
+Today, instead of a few dozen computers online, it’s estimated to be nearing 10 billion.
+如今不再只有几十台计算机联网 \N 据估计 有接近100亿台联网设备
+
+And it continues to grow rapidly,
+而且互联网会继续快速发展
+
+especially with the advent of wifi-connected refrigerators, thermostat
+特别是如今各种智能设备层出不穷 \N 比如联网冰箱，恒温器
+
+and other smart appliances, forming an "internet of things".
+以及其他智能家电，它们组成了"物联网"
+
+So that’s part one – an overview of computer networks.
+第一部分到此结束  \N 我们对计算机网络进行了概览
+
+Is it a series of tubes?
+网络是一堆管子组成的吗？
+
+Well, sort of.
+额 算是吧
+
+Next week we’ll tackle some higher-level transmission protocols,
+下周我们会讨论一些高级传输协议
+
+slowly working our way up to the World Wide Web.
+然后讲万维网
+
+I’ll see you then!
+到时见啦
+

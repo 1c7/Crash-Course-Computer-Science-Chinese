@@ -1,0 +1,699 @@
+Hi, I’m Carrie Anne, and welcome to Crash Course Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne \N 欢迎收看计算机科学速成课！
+
+So, over the course of this series,
+在这个系列中，
+
+we’ve focused almost exclusively on computers –
+我们聊的话题几乎全是计算机-比如电路和算法
+
+the circuits and algorithms that make them tick.
+我们聊的话题几乎全是计算机-比如电路和算法
+
+Because...this is Crash Course Computer Science.
+毕竟这是*计算机*速成课
+
+But ultimately, computers are tools employed by people.
+但归根结底，计算机只是给人用的工具
+
+And humans are… well… messy.
+而人类有点... 乱
+
+We haven’t been designed by human engineers from the ground up
+人类不是被工程师设计的，没有具体性能规格
+
+with known performance specifications.
+人类不是被工程师设计的，没有具体性能规格
+
+We can be logical one moment and irrational the next.
+我们一会儿是理性的，一会儿是不理性的
+
+Have you ever gotten angry at your navigation system? Surfed wikipedia aimlessly?
+你有没有对导航生过气？或是漫无目的的刷维基百科？
+
+Begged your internet browser to load faster?
+求浏览器加载快点？
+
+Nicknamed your roomba?
+给扫地机器人取名？
+
+These behaviors are quintessentially human!
+这些是人类行为！
+
+To build computer systems that are useful, usable and enjoyable,
+为了做出使用愉快的计算机
+
+we need to understand the strengths and weaknesses of both computers and humans.
+我们需要了解计算机和人类的优缺点
+
+And for this reason, when good system designers are creating software,
+优秀的系统设计师在创造软件时
+
+they employ social, cognitive, behavioral, and perceptual psychology principles.
+会运用社会心理学，认知心理学，\N 行为心理学，感知心理学的原理
+
+No doubt you’ve encountered a physical or computer interface
+你肯定见过难用的物理界面/计算机界面 \N 阻碍你做事
+
+that was frustrating to use, impeding your progress.
+你肯定见过难用的物理界面/计算机界面 \N 阻碍你做事
+
+Maybe it was so badly designed that you couldn’t figure it out and just gave up.
+甚至糟糕到放弃使用
+
+That interface had poor usability.
+那个界面的"易用度"很差
+
+Usability is the degree to which a human-made artifact – like software
+"易用度"指的是人造物体，比如软件 \N 达到目的的效率有多高
+
+– can be used to achieve an objective effectively and efficiently.
+"易用度"指的是人造物体，比如软件 \N 达到目的的效率有多高
+
+To facilitate human work, we need to understand humans
+为了帮助人类工作，我们需要了解人类 \N  - 怎么看，思考，反应和互动
+
+- from how they see and think, to how they react and interact.
+为了帮助人类工作，我们需要了解人类 \N  - 怎么看，思考，反应和互动
+
+For instance, the human visual system has been well studied by Psychologists.
+举个例子，心理学家已经对 \N 人类的视觉系统做了全面的研究
+
+Like, we know that people are good at ordering intensities of colors.
+我们知道人类擅长给颜色强度排序
+
+Here are three.
+这里有三个颜色
+
+Can you arrange these from lightest to darkest?
+你能从浅色到深色排序吗？
+
+You probably don’t have to think too much about it.
+你可以轻易做到
+
+Because of this innate ability, color intensity is a great choice
+所以颜色强度很适合显示连续值
+
+for displaying data with continuous values.
+所以颜色强度很适合显示连续值
+
+On the other hand, humans are terrible at ordering colors.
+另一方面，人类很不擅长排序颜色
+
+Here’s another example for you to put in order.
+这是另一个例子
+
+is orange before blue, or after blue?
+把橙色放到蓝色前面还是后面？绿色放哪里？
+
+Where does green go?
+把橙色放到蓝色前面还是后面？绿色放哪里？
+
+You might be thinking we could order this by wavelength of light,
+你可能想通过光的波长排序 \N 就像彩虹一样，但这样太累了
+
+like a rainbow, but that’s a lot more to think about.
+你可能想通过光的波长排序 \N 就像彩虹一样，但这样太累了
+
+Most people are going to be much slower and error-prone at ordering.
+大部分人会很慢而且容易出错
+
+Because of this innate ineptitude of your visual system,
+由于视觉系统天生是这样
+
+displaying continuous data using colors can be a disastrous design choice.
+所以用不同颜色显示连续性数据，是个糟糕的选择
+
+You’ll find yourself constantly referring back to a color legend to compare items.
+你得经常看表格来对比数据
+
+However, colors are perfect for when the data is discrete with no ordering,
+然而，如果数据没有顺序，用不同颜色就很合适
+
+like categorical data.
+比如分类数据
+
+This might seem obvious, but you’d be amazed at
+也许这些看起来很明显 \N 但你会惊讶有多少设计把这些基本事情搞错
+
+how many interfaces get basic things like this wrong.
+也许这些看起来很明显 \N 但你会惊讶有多少设计把这些基本事情搞错
+
+Beyond visual perception, understanding human cognition helps us
+除了视觉 \N 理解人类的认知系统能帮我们设计更好的界面
+
+design interfaces that align with how the mind works.
+除了视觉 \N 理解人类的认知系统能帮我们设计更好的界面
+
+Like, humans can read, remember and process information more effectively
+比如，如果信息分块了 \N 会更容易读，更容易记
+
+when it's chunked–that is, when items are put together into small, meaningful groups.
+分块是指把信息分成更小，更有意义的块
+
+Humans can generally juggle seven items, plus-or-minus two, in short-term memory.
+人类的短期记忆能记住5到9个东西
+
+To be conservative, we typically see groupings of five or less.
+保守一点，分组一般是5个或更少
+
+That’s why telephone numbers are broken into chunks, like 317, 555, 3897.
+所以电话号码一般分块，比如 317-555-3897
+
+Instead of being ten individual digits that we’d likely forget, it’s three chunks,
+10个连续数可能会忘，分成3块更好记
+
+which we can handle better.
+10个连续数可能会忘，分成3块更好记
+
+From a computer's standpoint, this needlessly takes more time and space,
+从计算机的角度来看，分块更费时费空间
+
+so it's less efficient.
+效率更低
+
+But, it’s way more efficient for us humans –
+但这对人类更有效率
+
+a tradeoff we almost always make in our favor,
+- 碰到这种抉择时，我们总是以人类优先
+
+since we’re the ones running the show...for now.
+现在我们还是老大.. 暂时啦
+
+Chunking has been applied to computer interfaces for things
+界面设计用了分块 \N 比如下拉菜单 和带按钮的菜单栏
+
+like drop-down menu items and menu bars with buttons.
+界面设计用了分块 \N 比如下拉菜单 和带按钮的菜单栏
+
+It’d be more efficient for computers to just pack all those together, edge to edge
+对电脑来说，全部挤在一起更有效率
+
+– it’s wasted memory and screen real estate.
+分块浪费内存 浪费屏幕
+
+But designing interfaces in this way makes them much easier
+但这样设计更容易扫视，记住和访问
+
+to visually scan, remember and access.
+但这样设计更容易扫视，记住和访问
+
+Another central concept used in interface design is affordances.
+界面设计中另一个重点概念是"直观功能"
+
+According to Don Norman, who popularized the term in computing,
+Don Norman 让这个词在计算机界流行起来，根据他的说法
+
+"affordances provide strong clues to the operations of things.
+"直观功能 为如何操作物体提供线索
+
+Plates are for pushing.
+平板用来推
+
+Knobs are for turning.
+旋钮用来转
+
+Slots are for inserting things into.
+插槽用来插东西
+
+[...] When affordances are taken advantage of, the user knows what to do just by looking:
+[...]直观功能做的好，用户只需要看一眼就知道怎么做：
+
+no picture, label, or instruction needed."
+不需要图片，标签或指南来说明"
+
+If you’ve ever tried to pull a door handle, only to realize that you have to push it open,
+如果你拉过门把手打不开，然后意识到要推开才对
+
+you’ve discovered a broken affordance.
+那么你发现了一个坏掉的"直观功能"
+
+On the other hand, a door plate is a better design
+平板是更好的设计
+
+because it only gives you the option to push.
+因为只能推开
+
+Doors are pretty straightforward – if you need to put written instructions on them,
+门是简单的东西，如果你要贴指示让人们明白怎么用.
+
+you should probably go back to the drawing board.
+那么也许你应该重新设计
+
+Affordances are used extensively in graphical user interfaces,
+"直观功能"广泛用于图形界面
+
+which we discussed in episode 26.
+我们在第26集讨论过
+
+It’s one of the reasons why computers became so much easier to use than with command lines.
+这是图形界面比命令行更容易用的原因之一
+
+You don’t have to guess what things on-screen are clickable, because they look like buttons.
+你不用猜测屏幕上什么东西是可点的，\N 可点的会看起来像按钮
+
+They pop out, just waiting for you to press them!
+他们弹出来，只是等着你压他们！
+
+One of my favorite affordances, which suggests to users that an on-screen element is draggable,
+我最喜欢的"直观功能"之一，是向用户表明元素是可拖动的
+
+is knurling – that texture added to objects
+"滚花" - 一种视觉纹理
+
+to improve grip and show you where to best grab them.
+告诉用户哪里可以拖动
+
+This idea and pattern was borrowed from real world physical tools.
+这个点子来自现实世界中的工具
+
+Related to the concept of affordances is the psychology of recognition vs recall.
+和"直观功能"相关的一个心理学概念是 "认出与回想"
+
+You know this effect well from tests –
+如果你考过试，肯定感受过这个
+
+it's why multiple choice questions are easier than fill-in-the-blank ones.
+这就是为什么选择题比填空题容易
+
+In general, human memory is much better when it’s triggered by a sensory cue,
+一般来说，用感觉来触发记忆会容易得多
+
+like a word, picture or sound.
+比如文字，图片或声音
+
+That’s why interfaces use icons – pictorial representations of functions
+所以我们用图标代表功能
+
+– like a trash can for where files go to be deleted.
+- 比如"垃圾桶"图标 代表里面放着被删除的文件
+
+We don’t have to recall what that icon does, we just have to recognise the icon.
+我们不用去回想图标的功能是什么，只要能认出来就行了
+
+This was also a huge improvement over command line interfaces,
+比命令行好得多
+
+where you had to rely on your memory for what commands to use.
+命令行得依靠记忆来输命令
+
+Do I have to type "delete", or "remove", or... "trash", or… shoot, it could be anything!
+到底是输入"删除""移除""垃圾"还是"射出"？\N 可能是任何命令！
+
+It’s actually "rm" in linux,
+顺带一说，在 Linux 里删除文件的命令是 "rm"
+
+but anyway, making everything easy to discover and learn sometimes means slow to access,
+回到正题，\N 让所有菜单选项好找好记，有时候意味着用的时候会慢一些
+
+which conflicts with another psychology concept: expertise.
+这与另一个心理学概念冲突："专业知识"
+
+As you gain experience with interfaces, you get faster,
+当你用界面熟悉之后，速度会更快一些
+
+building mental models of how to do things efficiently.
+建立如何高效完成事情的"心理模型"
+
+So, good interfaces should offer multiple paths to accomplish goals.
+所以 好的界面应该提供多种方法来实现目标
+
+A great example of this is copy and paste, which can be found in the edit dropdown menu
+一个好例子是复制粘贴，可以在"编辑"的下拉菜单中找到
+
+of word processors, and is also triggered with keyboard shortcuts.
+也可以用快捷键
+
+One approach caters to novices, while the other caters to experts, slowing down neither.
+一种适合新手，一种适合专家，两者都不耽误
+
+So, you can have your cake and eat it too!
+鱼和熊掌兼得！
+
+In addition to making humans more efficient,
+除了让人类做事更高效，
+
+we'd also like computers to be emotionally intelligent –
+我们也希望电脑能有一点情商
+
+adapting their behavior to respond appropriately
+能根据用户的状态做出合适地反应
+
+to their users' emotional state – also called affect.
+能根据用户的状态做出合适地反应
+
+That could make experiences more empathetic, enjoyable, or even delightful.
+让使用电脑更加愉快
+
+This vision was articulated by Rosalind Picard in her 1995 paper on Affective Computing,
+Rosalind Picard 在 1995 年关于"情感计算"的论文中，阐述了这一愿景
+
+which kickstarted an interdisciplinary field combining aspects
+这篇论文开创了心理学，社会科学和计算机科学的跨学科结合
+
+of psychology, social and computer sciences.
+这篇论文开创了心理学，社会科学和计算机科学的跨学科结合
+
+It spurred work on computing systems that could recognize,
+促进了让计算机理解人类情感的研究
+
+interpret, simulate and alter human affect.
+促进了让计算机理解人类情感的研究
+
+This was a huge deal, because we know emotion influences cognition and perception
+这很重要，因为情绪会影响日常活动
+
+in everyday tasks like learning, communication, and decision making.
+比如学习，沟通和决策
+
+Affect-aware systems use sensors, sometimes worn, that capture things like speech and
+情感系统会用传感器，录声音，
+
+video of the face, as well as biometrics, like sweatiness and heart rate.
+录像（你的脸）以及生物指标，比如出汗和心率
+
+This multimodal sensor data is used in conjunction with computational models that represent how
+得到的数据和计算模型结合使用
+
+people develop and express affective states, like happiness and frustration,
+模型会写明人类如何表达情感，怎么是快乐 怎么是沮丧
+
+and social states, like friendship and trust.
+以及社交状态，比如友谊和信任
+
+These models estimate the likelihood of a user being in a particular state,
+模型会估算用户的情绪
+
+and figure out how to best respond to that state,
+以及怎样以最好的回应用户
+
+in order to achieve the goals of the system.
+以达到目标
+
+This might be to calm the user down, build trust, or help them get their homework done.
+比如让用户冷静下来，建立信任，或帮忙完成作业
+
+A study, looking at user affect, was conducted by Facebook in 2012.
+Facebook 在 2012 年进行了一项"影响用户"的研究
+
+For one week, data scientists altered the content
+数据科学家在一个星期内
+
+on hundreds of thousands of users' feeds.
+修改了很多用户 时间线上显示的内容
+
+Some people were shown more items with positive content,
+有些人会看到更多积极向上的内容
+
+while others were presented with more negative content.
+有些人会看到更多负面消极的内容
+
+The researchers analyzed people's posts during that week,
+研究人员分析了那一周内人们的发帖
+
+and found that users who were shown more positive content,
+发现看到积极向上内容的用户，
+
+tended to also post more positive content.
+发的帖子往往更正面
+
+On the other hand, users who saw more negative content, tended to have more negative posts.
+另一方面，看到负面内容的用户，发的内容也更负面
+
+Clearly, what Facebook and other services show you
+显然，Facebook和其他网站向你展示的内容
+
+can absolutely have an affect on you.
+绝对会对你有影响
+
+As gatekeepers of content, that’s a huge opportunity and responsibility.
+作为信息的守门人，这是巨大的机会 同时也是责任
+
+Which is why this study ended up being pretty controversial.
+研究结果相当有争议性.
+
+Also, it raises some interesting questions about
+而且它还产生了一个有趣的问题：
+
+how computer programs should respond to human communication.
+计算机程序如何回应人类
+
+If the user is being negative, maybe the computer shouldn’t be
+如果用户的情绪比较负面，也许电脑不应该
+
+annoying by responding in a cheery, upbeat manner.
+以一种烦人的 "你要振作起来呀" 的态度回答问题.
+
+Or, maybe the computer should attempt to evoke a positive response,
+或者，也许电脑应该试着积极正面的回应用户
+
+even if it's a bit awkward.
+即使这有点尴尬.
+
+The "correct" behavior is very much an open research question.
+什么行为是"正确的"，是个开放性的研究问题
+
+Speaking of Facebook, it’s a great example of computer-mediated communication, or CMC,
+既然说到Facebook，\N 这是一个"以计算机为媒介沟通"的好例子，简称 "CMC"
+
+another large field of research.
+也是一个很大的研究领域
+
+This includes synchronous communication – like video calls, where all participants are online
+这包括同步通信 - 所有参与者同时在线进行视频通话
+
+simultaneously – as well as asynchronous communication – like tweets, emails, and
+以及异步通信 - 比如推特，邮件，
+
+text messages, where people respond whenever they can or want.
+短信，人们可以随时随地回复信息
+
+Researchers study things like the use of emoticons, rules such as turn-taking,
+研究人员还研究用户怎么用表情包，怎么轮换发言，
+
+and language used in different communication channels.
+以及用不同沟通渠道时，用词有什么区别.
+
+One interesting finding is that people exhibit higher levels of self-disclosure
+一个有趣的发现是，比起面对面沟通，
+
+– that is, reveal personal information –in computer-mediated conversations,
+人们更愿意在网上透露自己的信息
+
+as opposed to face-to-face interactions.
+人们更愿意在网上透露自己的信息
+
+So if you want to build a system that knows how many hours a user truly spent
+所以如果想知道用户 \N 真正花了多少小时看"大英烘培大赛"(电视节目)
+
+watching The Great British Bakeoff, it might be better to build a chatbot
+比起做个带脸的虚拟助理 \N 做 聊天机器人 是个更好的选择
+
+than a virtual agent with a face.
+比起做个带脸的虚拟助理 \N 做 聊天机器人 是个更好的选择
+
+Psychology research has also demonstrated that eye gaze is
+心理学研究也表明，如果想说服，讲课，或引起注意 \N 眼神注视非常重要
+
+extremely important in persuading, teaching and getting people's attention.
+心理学研究也表明，如果想说服，讲课，或引起注意 \N 眼神注视非常重要
+
+Looking at others while talking is called mutual gaze.
+在谈话时看着别人叫 相互凝视
+
+This has been shown to boost engagement and help achieve the goals of a conversation,
+这被证明可以促进参与感 帮助实现谈话目标，
+
+whether that’s learning, making a friend, or closing a business deal.
+不管是学习，交朋友，还是谈生意
+
+In settings like a videotaped lecture, the instructor rarely, if ever, looks into the
+在录像讲座中，老师很少直视相机 \N 一般是看在场学生
+
+camera, and instead generally looks at the students who are physically present.
+在录像讲座中，老师很少直视相机 \N 一般是看在场学生
+
+That’s ok for them, but it means people who
+对他们没问题，但这会让在线看视频的人  没什么参与感
+
+watch the lectures online have reduced engagement.
+对他们没问题，但这会让在线看视频的人  没什么参与感
+
+In response, researchers have developed computer vision
+为此，研究人员开发了计算机视觉和图形软件 \N 来纠正头部和眼睛
+
+and graphics software that can warp the head and eyes,
+为此，研究人员开发了计算机视觉和图形软件 \N 来纠正头部和眼睛
+
+making it appear as though the instructor is looking into the camera
+视频时会觉得对方在直视摄像头，看着他们
+
+– right at the remote viewer.
+视频时会觉得对方在直视摄像头，看着他们
+
+This technique is called augmented gaze.
+这叫"增强凝视"
+
+Similar techniques have also been applied to video conference calls, to correct for
+类似技术也用于视频会议
+
+the placement of webcams, which are almost always located above screens.
+纠正摄像头位置，因为摄像头几乎总在屏幕上方
+
+Since you’re typically looking at the video of your conversation partner,
+因为你一般会盯着屏幕上的另一方 \N 而不是盯着摄像头
+
+rather than directly into the webcam,
+因为你一般会盯着屏幕上的另一方 \N 而不是盯着摄像头
+
+you'll always appear to them as though you're looking downwards –
+所以视频里看起来像在向下看
+
+breaking mutual gaze – which can create all kinds of
+没有相互凝视 - 这会导致各种不幸的副作用，比如权力不平衡
+
+unfortunate social side effects, like a power imbalance.
+没有相互凝视 - 这会导致各种不幸的副作用，比如权力不平衡
+
+Fortunately, this can be corrected digitally, and appear to participants
+幸运的是  可以用软件修正
+
+as though you're lovingly gazing into their eyes.
+看起来像在凝视着对方的眼睛
+
+Humans also love anthropomorphizing objects, and computers are no exception,
+人类也喜欢"拟人化"的物体，对计算机也不例外
+
+especially if they move, like our Robots from last episode.
+特别是会动的计算机，比如上集说的机器人
+
+Beyond industrial uses that prevailed over the last century,
+在过去一个世纪，除了工业用途机器人
+
+robots are used increasingly in medical, education, and entertainment settings,
+有越来越多机器人用于医疗，教育和娱乐 \N 它们经常和人类互动
+
+where they frequently interact with humans.
+有越来越多机器人用于医疗，教育和娱乐 \N 它们经常和人类互动
+
+Human-Robot Interaction – or HRI
+人机交互，简称 HRI
+
+– is a field dedicated to studying these interactions,
+- 是一个研究人类和机器人交互的领域，
+
+like how people perceive different robots behaviors and forms,
+比如人类如何感受 机器人的不同形式和不同行为
+
+or how robots can interpret human social cues to blend in and not be super awkward.
+或是机器人如何明白人类暗示来社交，而不是尴尬的互动
+
+As we discussed last episode, there’s an ongoing quest to make
+正如上集说的，我们有追求
+
+robots as human-like in their appearance and interactions as possible.
+把机器人的外表和行为，做得尽可能像人一样
+
+When engineers first made robots in the 1940s and 50s, they didn’t look very human at all.
+工程师在1940 1950年代刚开始做机器人时，\N 看起来完全不像人
+
+They were almost exclusively industrial machines with no human-likeness.
+是完完全全的工业机器
+
+Over time, engineers got better and better at making human-like robots
+随着时间的推移，工程师越来越擅长做类人机器人
+
+– they gained heads and walked around on two legs,
+它们有头，而且用两条腿走路
+
+but… they couldn't exactly go to restaurants and masquerade as humans.
+但它们做不到伪装成人类去餐馆点餐
+
+As people pushed closer and closer to human likeness,
+随着机器人可以做得越来越像人类
+
+replacing cameras with artificial eyeballs, and covering metal chassis with synthetic flesh,
+用人造眼球代替摄像头，用人工肌肉盖住金属骨架
+
+things started to get a bit... uncanny...
+事情会开始变得有些.. 奇怪.. \N 引起一种怪异不安的感觉
+
+eliciting an eerie and unsettling feeling.
+事情会开始变得有些.. 奇怪.. \N 引起一种怪异不安的感觉
+
+This dip in realism between almost-human and actually-human became known as the uncanny valley.
+这个"几乎像人类"和"真的人类"之间的小曲线，叫 "恐怖谷"
+
+There’s debate over whether robots should act like humans too.
+对于机器人是否应该有人类一样的行为，也存在争议
+
+Lots of evidence already suggests that even if robots don’t act like us,
+很多证据表明，即使机器人的行为不像人类
+
+people will treat them as though they know our social conventions.
+人类也会用社交习俗对待它们
+
+And when they violate these rules – such as not apologizing if they cut in front of
+而当机器人违反习俗时 - 比如插队或踩了脚不道歉 \N 人们会很生气！
+
+you or roll over your foot – people get really mad!
+而当机器人违反习俗时 - 比如插队或踩了脚不道歉 \N 人们会很生气！
+
+Without a doubt, psychology and computer science are a potent combination,
+毫无疑问，心理学+计算机科学是强大的组合
+
+and have tremendous potential to affect our everyday lives.
+可以影响日常生活的巨大潜力
+
+Which leaves us with a lot of question, like you might lie to your laptop,
+这也带来了很多开放式问题，比如你可能会对计算机撒谎
+
+but should your laptop lie to you?
+但计算机应不应该对你撒谎？
+
+What if it makes you more efficient or happy?
+如果撒谎能让你更高效更快乐呢？
+
+Or should social media companies curate the content they show you to
+或社交媒体公司 \N 是否应该精心挑选展示给你的内容
+
+make you stay on their site longer to make you buy more products?
+让你在网站上多待一会儿，买更多东西？
+
+They do by the way.
+顺带一说，他们的确有这样做
+
+These types of ethical considerations aren’t easy to answer, but psychology can at least
+这类道德问题不容易回答，但心理学至少可以
+
+help us understand the effects and implications of design choices in our computing systems.
+帮助我们理解不同选择 带来的影响和意义
+
+But, on the positive side, understanding the psychology behind design
+但从积极的方面来说，了解设计背后的心理学
+
+might lead to increased accessibility.
+能增加易用性
+
+A greater number of people can understand and use computers
+让更多人可以明白和使用电脑，如今计算机比以往更加直观
+
+now that they're more intuitive than ever.
+让更多人可以明白和使用电脑，如今计算机比以往更加直观
+
+Conference calls and virtual classrooms are becoming more agreeable experiences.
+线上会议和虚拟教室的体验越来越好
+
+As robot technology continues to improve, the population
+随着机器人技术不断提高，互动也会越来越舒适
+
+will grow more comfortable in those interactions.
+随着机器人技术不断提高，互动也会越来越舒适
+
+Plus, thanks to psychology, we can all bond over our love of knurling.
+另外，感谢心理学，让我们能分享对"滚花"的热爱
+
+I’ll see you next week.
+我们下周见
+

@@ -1,0 +1,578 @@
+Hi, I'm Carrie Ann and this is Crash Course Computer Science.
+嗨，我是 Carrie Anne，欢迎收看计算机科学速成课
+
+So last episode, we talked about how numbers can be represented in binary.
+上集，我们谈了如何用二进制表示数字
+
+Representing Like, 00101010 is 42 in decimal.
+比如二进制 00101010 是十进制的 42
+
+Representing and storing numbers is an important function of a computer,
+表示和存储数字是计算机的重要功能
+
+but the real goal is computation, or manipulating numbers in a structured and purposeful way,
+但真正的目标是计算，有意义的处理数字
+
+like adding two numbers together.
+比如把两个数字相加
+
+These operations are handled by a computer's Arithmetic and Logic Unit,
+这些操作由计算机的 "算术逻辑单元 "处理
+
+but most people call it by its street name:
+但大家会简称：ALU
+
+the ALU.
+但大家会简称：ALU
+
+The ALU is the mathematical brain of a computer.
+ALU 是计算机的数学大脑
+
+When you understand an ALU's design and function,
+等你理解了 ALU 的设计和功能之后
+
+you'll understand a fundamental part of modern computers.
+你就理解了现代计算机的基石
+
+It is THE thing that does all of the computation in a computer,
+ALU *就是* 计算机里负责运算的组件\N 基本其他所有部件都用到了它
+
+so basically everything uses it.
+ALU *就是* 计算机里负责运算的组件\N 基本其他所有部件都用到了它
+
+First though, look at this beauty.
+先来看看这个美人
+
+This is perhaps the most famous ALU ever, the Intel 74181.
+这可能是最著名的 ALU，英特尔 74181
+
+When it was released in 1970,
+1970 年发布时，它是第一个封装在单个芯片内的完整 ALU
+
+it was It was the first complete ALU that fit entirely inside of a single chip -
+1970 年发布时，它是第一个封装在单个芯片内的完整 ALU
+
+Which was a huge engineering feat at the time.
+这在当时是惊人的工程壮举
+
+So today we're going to take those Boolean logic gates we learned about last week
+今天我们用上周学的布尔逻辑门
+
+to build a simple ALU circuit with much of the same functionality as the 74181.
+做一个简单的 ALU 电路，功能和 74181 一样
+
+And over the next few episodes we'll use this to construct a computer from scratch.
+然后接下来几集，用它从头做出一台电脑
+
+So it's going to get a little bit complicated,
+所以会有点复杂
+
+but I think you guys can handle it.
+但我觉得你们搞的定
+
+An ALU is really two units in one
+ALU 有 2 个单元，1 个算术单元和 1 个逻辑单元
+
+-- there's an arithmetic unit and a logic unit.
+ALU 有 2 个单元，1 个算术单元和 1 个逻辑单元
+
+Let's start with the arithmetic unit,
+我们先讲"算术单元"，它负责计算机里的所有数字操作
+
+which is responsible for handling all numerical operations in a computer,
+我们先讲"算术单元"，它负责计算机里的所有数字操作
+
+like addition and subtraction.
+比如加减法
+
+It also does a bunch of other simple things like add one to a number,
+它还做很多其他事情，比如给某个数字+1
+
+which is called an increment operation, but we'll talk about those later.
+这叫增量运算，我们之后会说
+
+Today, we're going to focus on the piece of rsistance, the crme de la crme of operations
+今天的重点是一切的根本 - "把两个数字相加"
+
+that underlies almost everything else a computer does - adding two numbers together.
+今天的重点是一切的根本 - "把两个数字相加"
+
+We could build this circuit entirely out of individual transistors,
+我们可以用单个晶体管一个个拼，把这个电路做出来，\N 但很快就会复杂的难以理解
+
+but that would get confusing really fast.
+我们可以用单个晶体管一个个拼，把这个电路做出来，\N 但很快就会复杂的难以理解
+
+So instead as we talked about in Episode 3
+所以与其用晶体管，我们会像第 3 集
+
+- we can use a high-level of abstraction and build our components out of logic gates,
+- 用更高层的抽象，用逻辑门来做
+
+in this case: AND, OR, NOT and XOR gates.
+我们会用到 AND，OR，NOT 和 XOR 逻辑门
+
+The simplest adding circuit that we can build takes two binary digits, and adds them together.
+最简单的加法电路， \N 是拿 2 个 bit 加在一起（bit 是 0 或 1）
+
+So we have two inputs, A and B, and one output, which is the sum of those two digits.
+有 2 个输入：A 和 B， 1 个输出：就是两个数字的和
+
+Just to clarify: A, B and the output are all single bits.
+需要注意的是：A, B, 输出，这3个都是单个 Bit （ 0 或 1 ）
+
+There are only four possible input combinations.
+输入只有四种可能
+
+The first three are: 0+0 = 0
+前三个是\N 0 + 0 = 0 \N 1 + 0 = 1 \N 0 + 1 = 1
+
+1+0 = 1 0+1 = 1
+前三个是\N 0 + 0 = 0 \N 1 + 0 = 1 \N 0 + 1 = 1
+
+Remember that in binary, 1 is the same as true, and 0 is the same as false.
+记住二进制里，1 与 true 相同，0 与 false 相同
+
+So this set of inputs exactly matches the boolean logic of an XOR gate,
+这组输入和输出，和 XOR 门的逻辑完全一样
+
+and we can use it as our 1-bit adder.
+所以我们可以把 XOR 用作 1 位加法器（adder）
+
+But the fourth input combination, 1 + 1, is a special case. 1 + 1 is 2 (obviously)
+但第四个输入组合，1+1，是个特例 \N 1+1=2（显然）
+
+but there's no 2 digit in binary,
+但二进制里没有 2
+
+so as we talked about last episode, the result is 0 and the 1 is carried to the next column.
+上集说过，二进制 1+1 的结果是0，1进到下一位
+
+So the sum is really 10 in binary.
+和是 10 (二进制)
+
+Now, the output of our XOR gate is partially correct - 1 plus 1, outputs 0.
+XOR 门的输出，只对了一部分， 1+1 输出 0
+
+But, we need an extra output wire for that carry bit.
+但我们需要一根额外的线代表 "进位"
+
+The carry bit is only "true" when the inputs are 1 AND 1,
+只有输入是 1 和 1 时，进位才是 "true"
+
+because that's the only time when the result (two) is bigger than 1 bit can store
+因为算出来的结果用 1 个 bit 存不下
+
+and conveniently we have a gate for that!
+方便的是，我们刚好有个逻辑门能做这个事！
+
+It's not that complicated - just two logic gates -
+没那么复杂 - 就两个逻辑门而已
+
+but let's abstract away even this level of detail
+让我们抽象化
+
+and encapsulate our newly minted half adder as its own component,
+把 "半加器" 封装成一个单独组件
+
+with two inputs - bits A and B - and two outputs, the sum and the carry bits.
+两个输入   A 和 B 都是 1 位 \N 两个输出  "总和" 与 "进位"
+
+This takes us to another level of abstraction
+这进入了另一层抽象
+
+heh I feel like I say that a lot.
+我好像说了很多次，说不定会变成一个梗
+
+I wonder if this is going to become a thing.
+我好像说了很多次，说不定会变成一个梗
+
+Anyway, If you want to add more than 1 + 1
+如果想处理超过 1+1 的运算，我们需要"全加器"
+
+we're going to need a "Full Adder."
+如果想处理超过 1+1 的运算，我们需要"全加器"
+
+That half-adder left us with a carry bit as output.
+半加器 输出了进位
+
+That means that when we move on to the next column in a multi-column addition,
+意味着，我们算下一列的时候
+
+and every column after that, we are going to have to add three bits together, no two.
+还有之后的每一列，我们得加 3 个位在一起，并不是 2 个
+
+A full adder is a bit more complicated
+全加器复杂了一点点
+
+全加器表格
+
+- it takes three bits as inputs: A, B and C.
+有 3 个输入：A, B, C （都是 1 个 bit)
+
+So the maximum possible input is 1 + 1 + 1,
+所以最大的可能是 1 + 1 + 1
+
+which equals 1 carry out 1, so we still only need two output wires: sum and carry.
+"总和"1 "进位"1 \N 所以要两条输出线： "总和"和"进位"
+
+We can build a full adder using half adders.
+我们可以用 半加器 做 全加器
+
+To do this, we use a half adder to add A plus B
+我们先用半加器将 A 和 B 相加
+
+just like before - but then feed that result and input C into a second half adder.
+然后把 C 输入到第二个半加器
+
+Lastly, we need a OR gate to check if either one of the carry bits was true.
+最后用一个 OR 门检查进位是不是 true
+
+That's it, we just made a full adder!
+这样就做出了一个全加器！
+
+Again,we can go up a level of abstraction and wrap up this full adder as its own component.
+我们可以再提升一层抽象，把全加器作为独立组件
+
+It takes three inputs, adds them, and outputs the sum and the carry, if there is one.
+全加器会把 A，B，C 三个输入加起来 \N 输出 "总和" 和 "进位"
+
+Armed with our new components, we can now build a circuit that takes two, 8-bit numbers
+现在有了新组件，我们可以相加两个 8 位数字
+
+Let's call them A and B  and adds them together.
+叫两个数字叫 A 和 B 好了
+
+Let's start with the very first bit of A and B,
+我们从 A  和 B 的第一位开始
+
+which we'll call A0 and B0.
+叫 A0 和 B0 好了
+
+At this point, there is no carry bit to deal with,
+现在不用处理任何进位，因为是第一次加法
+
+because this is our first addition.
+现在不用处理任何进位，因为是第一次加法
+
+So we can use our half adder to add these two bits together.
+所以我们可以用半加器，来加这2个数字
+
+The output is sum0.
+输出叫 sum0
+
+Now we want to add A1 and B1 together.
+现在加 A1 和 B1
+
+It's possible there was a carry from the previous addition of A0 and B0,
+因为 A0 和 B0 的结果有可能进位
+
+so this time we need to use a full adder that also inputs the carry bit.
+所以这次要用全加器，除了 A1 和 B1，还要连上进位
+
+We output this result as sum1.
+输出叫 sum1
+
+Then, we take any carry from this full adder,
+然后，把这个全加器的进位 \N 连到下个全加器的输入，处理 A2 和 B2
+
+and run it into the next full adder that handles A2 and B2.
+然后，把这个全加器的进位 \N 连到下个全加器的输入，处理 A2 和 B2
+
+And we just keep doing this in a big chain until all 8 bits have been added.
+以此类推，把 8 个 bit 都搞定
+
+Notice how the carry bits ripple forward to each subsequent adder.
+注意每个进位是怎么连到下一个全加器的
+
+For this reason, this is called an 8-bit ripple carry adder.
+所以叫 "8位行波进位加法器"
+
+Notice how our last full adder has a carry out.
+注意最后一个全加器有 "进位" 的输出
+
+If there is a carry into the 9th bit, it means the sum of the two numbers is too large to fit into 8-bits.
+如果第 9 位有进位，代表着 2 个数字的和太大了，超过了 8 位
+
+This is called an overflow.
+这叫 "溢出" (overflow)
+
+In general, an overflow occurs when the result of an addition is too large
+一般来说 "溢出" 的意思是, 两个数字的和太大了
+
+to be represented by the number of bits you are using.
+超过了用来表示的位数
+
+This can usually cause errors and unexpected behavior.
+这会导致错误和不可预期的结果
+
+Famously, the original PacMan arcade game used 8 bits to keep track of what level you were on.
+著名的例子是，吃豆人用 8 位存当前关卡数
+
+This meant that if you made it past level 255 - the largest number storablein 8 bits - to level 256,
+如果你玩到了第 256 关（ 8 位 bit 最大表示 255）
+
+the ALU overflowed.
+ALU 会溢出
+
+This caused a bunch of errors and glitches making the level unbeatable.
+造成一连串错误和乱码，使得该关卡无法进行
+
+The bug became a rite of passage for the greatest PacMan players.
+这个 bug 成了厉害吃豆人玩家的代表
+
+So if we want to avoid overflows,
+如果想避免溢出
+
+we can extend our circuit with more full adders, allowing us to add 16 or 32 bit numbers.
+我们可以加更多全加器，可以操作 16 或 32 位数字
+
+This makes overflows less likely to happen, but at the expense of more gates.
+让溢出更难发生，但代价是更多逻辑门
+
+An additional downside is that it takes a little bit of time for each of the carries to ripple forward.
+另外一个缺点是，每次进位都要一点时间
+
+Admittedly, not very much time, electrons move pretty fast,
+当然时间不久，因为电子移动的很快
+
+so we're talking about billionths of a second,
+但如今的量级是每秒几十亿次运算，所以会造成影响
+
+but that's enough to make a difference in today's fast computers.
+但如今的量级是每秒几十亿次运算，所以会造成影响
+
+For this reason, modern computers use a slightly different adding circuit
+所以，现代计算机用的加法电路有点不同
+
+called a 'carry-look-ahead' adder
+叫 "超前进位加法器"
+
+which is faster, but ultimately does exactly the same thing
+它更快，做的事情是一样的 - 把二进制数相加
+
+-- adds binary numbers.
+它更快，做的事情是一样的 - 把二进制数相加
+
+The ALU's arithmetic unit also has circuits for other math operations
+ALU 的算术单元，也能做一些其他数学运算
+
+and in general these 8 operations are always supported.
+一般支持这 8 个操作
+
+And like our adder, these other operations are built from individual logic gates.
+就像加法器一样，这些操作也是由逻辑门构成的
+
+Interestingly, you may have noticed that there are no multiply and divide operations.
+有趣的是，你可能注意到没有乘法和除法
+
+That's because simple ALUs don't have a circuit for this,
+因为简单的 ALU 没有专门的电路来处理
+
+and instead just perform a series of additions.
+而是把乘法用多次加法来实现
+
+Let's say you want to multiply 12 by 5.
+假设想算 12x5
+
+That's the same thing as adding 12 to itself 5 times.
+这和把 "12" 加 5 次是一样的
+
+So it would take 5 passes through the ALU to do this one multiplication.
+所以要 5 次 ALU 操作来实现这个乘法
+
+And this is how many simple processors,
+很多简单处理器都是这样做的
+
+like those in your thermostat, TV remote, and microwave, do multiplication.
+比如恒温器，电视遥控器和微波炉
+
+It's slow, but it gets the job done.
+慢是慢，但是搞的定
+
+However, fancier processors, like those in your laptop or smartphone,
+然而笔记本和手机有更好的处理器
+
+have arithmetic units with dedicated circuits for multiplication.
+有专门做乘法的算术单元
+
+And as you might expect, the circuit is more complicated than addition
+你可能猜到了，乘法电路比加法复杂
+
+-- there's no magic, it just takes a lot more logic gates
+- 没什么魔法，只是更多逻辑门
+
+which is why less expensive processors don't have this feature.
+所以便宜的处理器没有.
+
+Ok, let's move on to the other half of the ALU:
+好了，我们现在讲 ALU 的另一半：逻辑单元
+
+the Logic Unit.
+好了，我们现在讲 ALU 的另一半：逻辑单元
+
+Instead of arithmetic operations, the Logic Unit performs well...
+逻辑单元执行逻辑操作
+
+logical operations, like AND, OR and NOT, which we've talked about previously.
+比如之前讨论过的 AND，OR 和 NOT 操作
+
+It also performs simple numerical tests,
+它也能做简单的数值测试
+
+like checking if a number is negative.
+比如一个数字是不是负数
+
+For example, here's a circuit that tests if the output of the ALU is zero.
+例如，这是检查 ALU 输出是否为 0 的电路
+
+It does this using a bunch of OR gates to see if any of the bits are 1.
+它用一堆 OR 门检查其中一位是否为 1
+
+Even if one single bit is 1,
+哪怕只有一个 Bit (位) 是1，
+
+we know the number can't be zero and then we use a final NOT gate to flip this input
+我们就知道那个数字肯定不是 0，然后用一个 NOT 门取反
+
+so the output is 1 only if the input number is 0.
+所以只有输入的数字是 0，输出才为 1
+
+So that's a high level overview of what makes up an ALU.
+以上就是 ALU 的一个高层次概括
+
+We even built several of the main components from scratch, like our ripple adder.
+我们甚至从零做了几个主要组件，比如行波进位加法器
+
+As you saw, it's just a big bunch of logic gates connected in clever ways.
+它们只是一大堆逻辑门巧妙的连在一起而已.
+
+Which brings us back to that ALU you admired so much at the beginning of the episode.
+让我们回到视频开始时的 ALU，英特尔 74181
+
+The Intel 74181.
+让我们回到视频开始时的 ALU，英特尔 74181
+
+Unlike the 8-bit ALU we made today, the 74181 could only handle 4-bit inputs,
+和我们刚刚做的 8 位 ALU 不同，74181 只能处理 4 位输入
+
+which means
+也就是说
+
+YOU BUILT AN ALU THAT'S LIKE TWICE AS GOOD AS THAT SUPER FAMOUS ONE. WITH YOUR MIND!
+你刚做了一个比英特尔 74181 还好的 ALU ！
+
+Well.. sort of.
+其实 差不多啦..
+
+We didn't build the whole thing
+我们虽然没有全部造出来
+
+but you get the idea.
+但你理解了整体概念
+
+The 74181 used about 70 logic gates, and it couldn't multiply or divide.
+74181 用了大概 70 个逻辑门，但不能执行乘除.
+
+But it was a huge step forward in miniaturization,
+但它向小型化迈出了一大步
+
+opening the doors to more capable and less expensive computers.
+让计算机可以更强大更便宜
+
+This 4-bit ALU circuit is already a lot to take in,
+4 位 ALU 已经要很多逻辑门了
+
+but our 8-bit ALU would require hundreds of logic gates to fully build
+但我们的 8 位 ALU 会需要数百个逻辑门
+
+and engineers don't want to see all that complexity when using an ALU,
+工程师不想在用 ALU 时去想那些事情,
+
+so they came up with a special symbol to wrap it all up, which looks like a big V'.
+所以想了一个特殊符号来代表它，看起来像一个大 "V"
+
+Just another level of abstraction!
+又一层抽象！
+
+Our 8-bit ALU has two inputs, A and B, each with 8 bits.
+我们的 8 位  ALU 有两个输入，A和B，都是 8 位 (bits)
+
+We also need a way to specify what operation the ALU should perform,
+我们还需要告诉 ALU 执行什么操作
+
+for example, addition or subtraction.
+例如加法或减法
+
+For that, we use a 4-bit operation code.
+所以我们用 4 位的操作代码
+
+We'll talk about this more in a later episode,
+我们之后的视频会再细说
+
+but in brief, 1000 might be the command to add, while 1100 is the command for subtract.
+简言之,"1000"可能代表加法命令 \N "1100"代表减法命令
+
+Basically, the operation code tells the ALU what operation to perform.
+操作代码告诉 ALU 执行什么操作
+
+And the result of that operation on inputs A and B is an 8-bit output.
+输出结果是 8 位的
+
+ALUs also output a series of Flags,
+ALU 还会输出一堆标志（Flag）
+
+which are 1-bit outputs for particular states and statuses.
+"标志"是1位的，代表特定状态.
+
+For example, if we subtract two numbers, and the result is 0,
+比如相减两个数字，结果为 0
+
+our zero-testing circuit, the one we made earlier, sets the Zero Flag to True (1).
+我们的零测试电路（前面做的）\N 会将零标志设为 True（1）
+
+This is useful if we are trying to determine if two numbers are are equal.
+如果想知道两个数字是否相等，这个非常有用
+
+If we wanted to test if A was less than B,
+如果想知道： A 是否小于 B
+
+we can use the ALU to calculate A subtract B and look to see if the Negative Flag was set to true.
+可以用 ALU 来算 A 减 B，看负标志是否为 true
+
+If it was, we know that A was smaller than B.
+如果是 true，我们就知道 A 小于 B
+
+And finally, there's also a wire attached to the carry out on the adder we built,
+最后，还有一条线连到加法器的进位
+
+so if there is an overflow, we'll know about it.
+如果有溢出，我们就知道
+
+This is called the Overflow Flag.
+这叫溢出标志
+
+Fancier ALUs will have more flags,
+高级 ALU 有更多标志
+
+but these three flags are universal and frequently used.
+但这 3 个标志是 ALU 普遍用的
+
+In fact, we'll be using them soon in a future episode.
+其实，我们之后的视频会用到它们
+
+So now you know how your computer does all its basic mathematical operations digitally
+现在你知道了\N 计算机是怎样在没有齿轮或杠杆的情况下 进行运算
+
+with no gears or levers required.
+现在你知道了\N 计算机是怎样在没有齿轮或杠杆的情况下 进行运算
+
+We're going to use this ALU when we construct our CPU two episodes from now.
+接下来两集  我们会用 ALU 做 CPU
+
+But before that, our computer is going to need some memory!
+但在此之前，计算机需要一些 "记忆" ！
+
+We'll talk about that next week.
+我们下周会讲
+

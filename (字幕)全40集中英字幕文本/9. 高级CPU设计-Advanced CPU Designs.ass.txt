@@ -1,0 +1,609 @@
+Hi, I’m Carrie Anne and welcome to CrashCourse Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+As we’ve discussed throughout the series, computers have come a long way from mechanical devices
+随着本系列进展，我们知道计算机进步巨大
+
+capable of maybe one calculation per second,
+从 1 秒 1 次运算，到现在有千赫甚至兆赫的CPU
+
+to CPUs running at kilohertz and megahertz speeds.
+从 1 秒 1 次运算，到现在有千赫甚至兆赫的CPU
+
+The device you’re watching this video on right now is almost certainly running at Gigahertz speeds
+你现在看视频的设备八成也有 GHz 速度
+
+- that’s billions of instructions executed every second.
+1 秒十亿条指令
+
+Which, trust me, is a lot of computation!
+这是很大的计算量！
+
+In the early days of electronic computing, processors were typically made faster by
+早期计算机的提速方式是  减少晶体管的切换时间.
+
+improving the switching time of the transistors inside the chip
+早期计算机的提速方式是  减少晶体管的切换时间.
+
+- the ones that make up all the logic gates, ALUs
+晶体管组成了逻辑门，ALU 以及前几集的其他组件
+
+and other stuff we’ve talked about over the past few episodes.
+晶体管组成了逻辑门，ALU 以及前几集的其他组件
+
+But just making transistors faster and more efficient only went so far, so processor designers
+但这种提速方法最终会碰到瓶颈，所以处理器厂商
+
+have developed various techniques to boost performance allowing not only simple instructions
+发明各种新技术来提升性能，不但让简单指令运行更快
+
+to run fast, but also performing much more sophisticated operations.
+也让它能进行更复杂的运算
+
+Last episode, we created a small program for our CPU that allowed us to divide two numbers.
+上集我们写了个做除法的程序，给 CPU 执行
+
+We did this by doing many subtractions in a row... so, for example, 16 divided by 4
+方法是做一连串减法，比如16除4 会变成
+
+could be broken down into the smaller problem of 16 minus 4, minus 4, minus 4, minus 4.
+16-4 -4 -4 -4
+
+When we hit zero, or a negative number, we knew that we we’re done.
+碰到 0 或负数才停下.
+
+But this approach gobbles up a lot of clock cycles, and isn’t particularly efficient.
+但这种方法要多个时钟周期，很低效
+
+So most computer processors today have divide as one of the instructions
+所以现代 CPU 直接在硬件层面设计了除法 \N 可以直接给 ALU 除法指令
+
+that the ALU can perform in hardware.
+所以现代 CPU 直接在硬件层面设计了除法 \N 可以直接给 ALU 除法指令
+
+Of course, this extra circuitry makes the ALU bigger and more complicated to design,
+这让 ALU 更大也更复杂一些
+
+but also more capable - a complexity-for-speed tradeoff that
+但也更厉害 - \N  复杂度 vs 速度 的平衡在计算机发展史上经常出现
+
+has been made many times in computing history.
+但也更厉害 - \N  复杂度 vs 速度 的平衡在计算机发展史上经常出现
+
+For instance, modern computer processors now have special circuits for things like
+举例，现代处理器有专门电路来处理 \N 图形操作, 解码压缩视频, 加密文档 等等
+
+graphics operations, decoding compressed video, and encrypting files
+举例，现代处理器有专门电路来处理 \N 图形操作, 解码压缩视频, 加密文档 等等
+
+all of which are operations that would take many many many clock cycles to perform with standard operations.
+如果用标准操作来实现，要很多个时钟周期.
+
+You may have even heard of processors with MMX, 3DNow!, or SSE.
+你可能听过某些处理器有 MMX, 3DNOW, SEE
+
+These are processors with additional, fancy circuits that allow them to
+它们有额外电路做更复杂的操作
+
+execute additional fancy instructions - for things like gaming and encryption.
+用于游戏和加密等场景
+
+These extensions to the instruction set have grown, and grown over time, and once people
+指令不断增加，人们一旦习惯了它的便利就很难删掉
+
+have written programs to take advantage of them, it’s hard to remove them.
+指令不断增加，人们一旦习惯了它的便利就很难删掉
+
+So instruction sets tend to keep getting larger and larger keeping all the old opcodes around for backwards compatibility.
+所以为了兼容旧指令集，指令数量越来越多
+
+The Intel 4004, the first truly integrated CPU, had 46 instructions
+英特尔 4004，第一个集成CPU，有 46 条指令
+
+- which was enough to build a fully functional computer.
+足够做一台能用的计算机
+
+But a modern computer processor has thousands of different instructions,
+但现代处理器有上千条指令，有各种巧妙复杂的电路
+
+which utilize all sorts of clever and complex internal circuitry.
+但现代处理器有上千条指令，有各种巧妙复杂的电路
+
+Now, high clock speeds and fancy instruction sets lead to another problem
+超高的时钟速度带来另一个问题
+
+- getting data in and out of the CPU quickly enough.
+- 如何快速传递数据给 CPU
+
+It’s like having a powerful steam locomotive, but no way to shovel in coal fast enough.
+就像有强大的蒸汽机  但无法快速加煤
+
+In this case, the bottleneck is RAM.
+RAM 成了瓶颈
+
+RAM is typically a memory module that lies outside the CPU.
+RAM 是 CPU 之外的独立组件
+
+This means that data has to be transmitted to and from RAM along sets of data wires,
+意味着数据要用线来传递，叫"总线"
+
+called a bus.
+意味着数据要用线来传递，叫"总线"
+
+This bus might only be a few centimeters long,
+总线可能只有几厘米
+
+and remember those electrical signals are traveling near the speed of light,
+别忘了电信号的传输接近光速
+
+but when you are operating at gigahertz speeds
+但 CPU 每秒可以处理上亿条指令
+
+– that’s billionths of a second – even this small delay starts to become problematic.
+很小的延迟也会造成问题
+
+It also takes time for RAM itself to lookup the address, retrieve the data
+RAM 还需要时间找地址 \N 取数据，配置，输出数据
+
+and configure itself for output.
+RAM 还需要时间找地址 \N 取数据，配置，输出数据
+
+So a “load from RAM” instruction might take dozens of clock cycles to complete, and during
+一条"从内存读数据"的指令可能要多个时钟周期
+
+this time the processor is just sitting there idly waiting for the data.
+CPU 空等数据
+
+One solution is to put a little piece of RAM right on the CPU -- called a cache.
+解决延迟的方法之一是 \N 给 CPU 加一点 RAM - 叫"缓存"
+
+There isn’t a lot of space on a processor’s chip,
+因为处理器里空间不大，所以缓存一般只有 KB 或 MB
+
+so most caches are just kilobytes or maybe megabytes in size,
+因为处理器里空间不大，所以缓存一般只有 KB 或 MB
+
+where RAM is usually gigabytes.
+而 RAM 都是 GB 起步
+
+Having a cache speeds things up in a clever way.
+缓存提高了速度
+
+When the CPU requests a memory location from RAM, the RAM can transmit
+CPU 从 RAM 拿数据时 \N RAM 不用传一个，可以传一批
+
+not just one single value, but a whole block of data.
+CPU 从 RAM 拿数据时 \N RAM 不用传一个，可以传一批
+
+This takes only a little bit more time,
+虽然花的时间久一点，但数据可以存在缓存
+
+but it allows this data block to be saved into the cache.
+虽然花的时间久一点，但数据可以存在缓存
+
+This tends to be really useful because computer data is often arranged and processed sequentially.
+这很实用，因为数据常常是一个个按顺序处理
+
+For example, let say the processor is totalling up daily sales for a restaurant.
+举个例子，算餐厅的当日收入
+
+It starts by fetching the first transaction from RAM at memory location 100.
+先取 RAM 地址 100 的交易额
+
+The RAM, instead of sending back just that one value, sends a block of data, from memory
+RAM 与其只给1个值，直接给一批值
+
+location 100 through 200, which are then all copied into the cache.
+把地址100到200都复制到缓存
+
+Now, when the processor requests the next transaction to add to its running total, the
+当处理器要下一个交易额时
+
+value at address 101, the cache will say “Oh, I’ve already got that value right here,
+地址 101，缓存会说："我已经有了，现在就给你"
+
+so I can give it to you right away!”
+地址 101，缓存会说："我已经有了，现在就给你"
+
+And there’s no need to go all the way to RAM.
+不用去 RAM 取数据
+
+Because the cache is so close to the processor,
+因为缓存离 CPU 近, 一个时钟周期就能给数据 - CPU 不用空等！
+
+it can typically provide the data in a single clock cycle -- no waiting required.
+因为缓存离 CPU 近, 一个时钟周期就能给数据 - CPU 不用空等！
+
+This speeds things up tremendously over having to go back and forth to RAM every single time.
+比反复去 RAM 拿数据快得多
+
+When data requested in RAM is already stored in the cache like this it’s called a
+如果想要的数据已经在缓存，叫 缓存命中
+
+cache hit,
+如果想要的数据已经在缓存，叫 缓存命中
+
+and if the data requested isn’t in the cache, so you have to go to RAM, it’s a called
+如果想要的数据不在缓存，叫 缓存未命中
+
+a cache miss.
+如果想要的数据不在缓存，叫 缓存未命中
+
+The cache can also be used like a scratch space,
+缓存也可以当临时空间，存一些中间值，适合长/复杂的运算
+
+storing intermediate values when performing a longer, or more complicated calculation.
+缓存也可以当临时空间，存一些中间值，适合长/复杂的运算
+
+Continuing our restaurant example, let’s say the processor has finished totalling up
+继续餐馆的例子，假设 CPU 算完了一天的销售额
+
+all of the sales for the day, and wants to store the result in memory address 150.
+想把结果存到地址 150
+
+Like before, instead of going back all the way to RAM to save that value,
+就像之前，数据不是直接存到 RAM
+
+it can be stored in cached copy, which is faster to save to,
+而是存在缓存，这样不但存起来快一些
+
+and also faster to access later if more calculations are needed.
+如果还要接着算，取值也快一些
+
+But this introduces an interesting problem -
+但这样带来了一个有趣的问题
+
+- the cache’s copy of the data is now different to the real version stored in RAM.
+缓存和 RAM 不一致了.
+
+This mismatch has to be recorded, so that at some point everything can get synced up.
+这种不一致必须记录下来，之后要同步
+
+For this purpose, the cache has a special flag for each block of memory it stores, called
+因此缓存里每块空间  有一个特殊标记
+
+the dirty bit
+叫 "脏位"
+
+-- which might just be the best term computer scientists have ever invented.
+- 这可能是计算机科学家取的最贴切的名字
+
+Most often this synchronization happens when the cache is full,
+同步一般发生在 当缓存满了而 CPU 又要缓存时
+
+but a new block of memory is being requested by the processor.
+同步一般发生在 当缓存满了而 CPU 又要缓存时
+
+Before the cache erases the old block to free up space, it checks its dirty bit,
+在清理缓存腾出空间之前，会先检查 "脏位"
+
+and if it’s dirty, the old block of data is written back to RAM before loading in the new block.
+如果是"脏"的, 在加载新内容之前, 会把数据写回 RAM
+
+Another trick to boost cpu performance is called instruction pipelining.
+另一种提升性能的方法叫 "指令流水线"
+
+Imagine you have to wash an entire hotel’s worth of sheets,
+想象下你要洗一整个酒店的床单
+
+but you’ve only got one washing machine and one dryer.
+但只有 1 个洗衣机, 1 个干燥机
+
+One option is to do it all sequentially: put a batch of sheets in the washer
+选择1：按顺序来，放洗衣机等 30 分钟洗完
+
+and wait 30 minutes for it to finish.
+选择1：按顺序来，放洗衣机等 30 分钟洗完
+
+Then take the wet sheets out and put them in the dryer and wait another 30 minutes for that to finish.
+然后拿出湿床单，放进干燥机等 30 分钟烘干
+
+This allows you to do one batch of sheets every hour.
+这样1小时洗一批
+
+Side note: if you have a dryer that can dry a load of laundry in 30 minutes,
+另外一说：如果你有 30 分钟就能烘干的干燥机
+
+Please tell me the brand and model in the comments, because I’m living with 90 minute dry times, minimum.
+请留言告诉我是什么牌子，我的至少要 90 分钟.
+
+But, even with this magic clothes dryer,
+即使有这样的神奇干燥机,  \N 我们可以用"并行处理"进一步提高效率
+
+you can speed things up even more if you parallelize your operation.
+即使有这样的神奇干燥机,  \N 我们可以用"并行处理"进一步提高效率
+
+As before, you start off putting one batch of sheets in the washer.
+就像之前，先放一批床单到洗衣机
+
+You wait 30 minutes for it to finish.
+等 30 分钟洗完
+
+Then you take the wet sheets out and put them in the dryer.
+然后把湿床单放进干燥机
+
+But this time, instead of just waiting 30 minutes for the dryer to finish,
+但这次，与其干等 30 分钟烘干，\N 可以放另一批进洗衣机
+
+you simultaneously start another load in the washing machine.
+但这次，与其干等 30 分钟烘干，\N 可以放另一批进洗衣机
+
+Now you’ve got both machines going at once.
+让两台机器同时工作
+
+Wait 30 minutes, and one batch is now done, one batch is half done,
+30 分钟后，一批床单完成, 另一批完成一半
+
+and another is ready to go in.
+另一批准备开始
+
+This effectively doubles your throughput.
+效率x2！
+
+Processor designs can apply the same idea.
+处理器也可以这样设计
+
+In episode 7, our example processor performed the fetch-decode-execute cycle sequentially
+第7集，我们演示了 CPU 按序处理
+
+and in a continuous loop: Fetch-decode-execute, fetch-decode-execute, fetch-decode-execute, and so on
+取指 → 解码 → 执行, 不断重复
+
+This meant our design required three clock cycles to execute one instruction.
+这种设计，三个时钟周期执行 1 条指令
+
+But each of these stages uses a different part of the CPU,
+但因为每个阶段用的是 CPU 的不同部分
+
+meaning there is an opportunity to parallelize!
+意味着可以并行处理！
+
+While one instruction is getting executed, the next instruction could be getting decoded,
+"执行"一个指令时，同时"解码"下一个指令
+
+and the instruction beyond that fetched from memory.
+"读取"下下个指令
+
+All of these separate processes can overlap
+不同任务重叠进行，同时用上 CPU 里所有部分.
+
+so that all parts of the CPU are active at any given time.
+不同任务重叠进行，同时用上 CPU 里所有部分.
+
+In this pipelined design, an instruction is executed every single clock cycle
+这样的流水线  每个时钟周期执行1个指令
+
+which triples the throughput.
+吞吐量 x 3
+
+But just like with caching this can lead to some tricky problems.
+和缓存一样，这也会带来一些问题
+
+A big hazard is a dependency in the instructions.
+第一个问题是 指令之间的依赖关系
+
+For example, you might fetch something that the currently executing instruction is just about to modify,
+举个例子，你在读某个数据 \N 而正在执行的指令会改这个数据
+
+which means you’ll end up with the old value in the pipeline.
+也就是说拿的是旧数据
+
+To compensate for this, pipelined processors have to look ahead for data dependencies,
+因此流水线处理器  要先弄清数据依赖性
+
+and if necessary, stall their pipelines to avoid problems.
+必要时停止流水线，避免出问题
+
+High end processors, like those found in laptops and smartphones,
+高端 CPU，比如笔记本和手机里那种
+
+go one step further and can dynamically reorder instructions with dependencies
+会更进一步，动态排序 有依赖关系的指令
+
+in order to minimize stalls and keep the pipeline moving,
+最小化流水线的停工时间
+
+which is called out-of-order execution.
+这叫 "乱序执行"
+
+As you might imagine, the circuits that figure this all out are incredibly complicated.
+和你猜的一样，这种电路非常复杂
+
+Nonetheless, pipelining is tremendously effective and almost all processors implement it today.
+但因为非常高效，几乎所有现代处理器都有流水线
+
+Another big hazard are conditional jump instructions -- we talked about one example, a JUMP NEGATIVE,last episode.
+第二个问题是 "条件跳转"，比如上集的 JUMP NEGATIVE
+
+These instructions can change the execution flow of a program depending on a value.
+这些指令会改变程序的执行流
+
+A simple pipelined processor will perform a long stall when it sees a jump instruction,
+简单的流水线处理器，看到 JUMP 指令会停一会儿 \N 等待条件值确定下来
+
+waiting for the value to be finalized.
+简单的流水线处理器，看到 JUMP 指令会停一会儿 \N 等待条件值确定下来
+
+Only once the jump outcome is known, does the processor start refilling its pipeline.
+一旦 JUMP 的结果出了，处理器就继续流水线
+
+But, this can produce long delays, so high-end processors have some tricks to deal with this problem too.
+因为空等会造成延迟，所以高端处理器会用一些技巧
+
+Imagine an upcoming jump instruction as a fork in a road - a branch.
+可以把 JUMP 想成是 "岔路口"
+
+Advanced CPUs guess which way they are going to go, and start filling their pipeline with
+高端 CPU 会猜哪条路的可能性大一些
+
+instructions based off that guess – a technique called speculative execution.
+然后提前把指令放进流水线，这叫 "推测执行"
+
+When the jump instruction is finally resolved, if the CPU guessed correctly,
+当 JUMP 的结果出了，如果 CPU 猜对了
+
+then the pipeline is already full of the correct instructions and it can motor along without delay.
+流水线已经塞满正确指令，可以马上运行
+
+However, if the CPU guessed wrong, it has to discard all its speculative results and
+如果 CPU 猜错了，就要清空流水线
+
+perform a pipeline flush - sort of like when you miss a turn and have to do a u-turn to
+就像走错路掉头
+
+get back on route, and stop your GPS’s insistent shouting.
+让 GPS 不要再！叫！了！
+
+To minimize the effects of these flushes, CPU manufacturers have developed sophisticated
+为了尽可能减少清空流水线的次数，CPU 厂商开发了复杂的方法
+
+ways to guess which way branches will go, called branch prediction.
+来猜测哪条分支更有可能，叫"分支预测"
+
+Instead of being a 50/50 guess, today’s processors can often guess with over 90% accuracy!
+现代 CPU 的正确率超过 90%
+
+In an ideal case, pipelining lets you complete one instruction every single clock cycle,
+理想情况下，流水线一个时钟周期完成 1 个指令
+
+but then superscalar processors came along
+然后"超标量处理器"出现了，一个时钟周期完成多个指令
+
+which can execute more than one instruction per clock cycle.
+然后"超标量处理器"出现了，一个时钟周期完成多个指令
+
+During the execute phase even in a pipelined design,
+即便有流水线设计，在指令执行阶段
+
+whole areas of the processor might be totally idle.
+处理器里有些区域还是可能会空闲
+
+For example, while executing an instruction that fetches a value from memory,
+比如，执行一个 "从内存取值" 指令期间
+
+the ALU is just going to be sitting there, not doing a thing.
+ALU 会闲置
+
+So why not fetch-and-decode several instructions at once, and whenever possible, execute instructions
+所以一次性处理多条指令（取指令+解码） 会更好.
+
+that require different parts of the CPU all at the same time
+如果多条指令要 ALU 的不同部分，就多条同时执行
+
+But we can take this one step further and add duplicate circuitry
+我们可以再进一步，加多几个相同的电路 \N 执行出现频次很高的指令
+
+for popular instructions.
+我们可以再进一步，加多几个相同的电路 \N 执行出现频次很高的指令
+
+For example, many processors will have four, eight or more identical ALUs,
+举例，很多 CPU 有四个, 八个甚至更多 完全相同的ALU
+
+so they can execute many mathematical instructions all in parallel!
+可以同时执行多个数学运算
+
+Ok, the techniques we’ve discussed so far primarily optimize the execution throughput
+好了，目前说过的方法，都是优化 1 个指令流的吞吐量
+
+of a single stream of instructions,
+好了，目前说过的方法，都是优化 1 个指令流的吞吐量
+
+but another way to increase performance is to run several streams of instructions at once
+另一个提升性能的方法是 同时运行多个指令流
+
+with multi-core processors.
+用多核处理器
+
+You might have heard of dual core or quad core processors.
+你应该听过双核或四核处理器
+
+This means there are multiple independent processing units inside of a single CPU chip.
+意思是一个 CPU 芯片里，有多个独立处理单元
+
+In many ways, this is very much like having multiple separate CPUs,
+很像是有多个独立 CPU
+
+but because they’re tightly integrated, they can share some resources,
+但因为它们整合紧密，可以共享一些资源
+
+like cache, allowing the cores to work together on shared computations.
+比如缓存，使得多核可以合作运算
+
+But, when more cores just isn’t enough, you can build computers with multiple independent CPUs!
+但多核不够时，可以用多个 CPU
+
+High end computers, like the servers streaming this video from YouTube’s datacenter, often
+高端计算机，比如现在给你传视频的 Youtube 服务器
+
+need the extra horsepower to keep it silky smooth for the hundreds of people watching simultaneously.
+需要更多马力，让上百人能同时流畅观看
+
+Two- and four-processor configuration are the most common right now,
+2个或4个CPU是最常见的
+
+but every now and again even that much processing power isn’t enough.
+但有时人们有更高的性能要求
+
+So we humans get extra ambitious and build ourselves a supercomputer!
+所以造了超级计算机！
+
+If you’re looking to do some really monster calculations
+如果要做怪兽级运算
+
+– like simulating the formation of the universe - you’ll need some pretty serious compute power.
+比如模拟宇宙形成，你需要强大的计算能力
+
+A few extra processors in a desktop computer just isn’t going to cut it.
+给普通台式机加几个 CPU 没什么用
+
+You’re going to need a lot of processors.
+你需要很多处理器！
+
+No.. no... even more than that.
+不…不…还要更多
+
+A lot more!
+更多
+
+When this video was made, the world’s fastest computer was located in
+截止至视频发布，世上最快的计算机在
+
+The National Supercomputing Center in Wuxi, China.
+中国无锡的国家超算中心
+
+The Sunway TaihuLight contains a brain-melting 40,960 CPUs, each with 256 cores!
+神威·太湖之光有 40960 个CPU，每个 CPU 有 256 个核心
+
+Thats over ten million cores in total... and each one of those cores runs at 1.45 gigahertz.
+总共超过1千万个核心，每个核心的频率是 1.45GHz
+
+In total, this machine can process 93 Quadrillion -- that’s 93 million-billions
+每秒可以进行 9.3 亿亿次浮点数运算
+
+floating point math operations per second, knows as FLOPS.
+也叫 每秒浮点运算次数 (FLOPS)
+
+And trust me, that’s a lot of FLOPS!!
+相信我  这个速度很可怕
+
+No word on whether it can run Crysis at max settings, but I suspect it might.
+没人试过跑最高画质的《孤岛危机》但我估计没问题
+
+So long story short, not only have computer processors gotten a lot faster over the years,
+长话短说，这些年处理器不但大大提高了速度
+
+but also a lot more sophisticated, employing all sorts of clever tricks to squeeze out
+而且也变得更复杂，用各种技巧
+
+more and more computation per clock cycle.
+榨干每个时钟周期 做尽可能多运算
+
+Our job is to wield that incredible processing power to do cool and useful things.
+我们的任务是利用这些运算能力，做又酷又实用的事
+
+That’s the essence of programming, which we’ll start discussing next episode.
+编程就是为了这个，我们下集说
+
+See you next week.
+下周见
+

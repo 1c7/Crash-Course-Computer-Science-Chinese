@@ -1,0 +1,780 @@
+Hi, I'm Carrie Anne and welcome to Crash Course computer science.
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+Over the past a few episodes,
+前几集我们聊了基础，比如函数，算法和数据结构
+
+we've been building up our understanding of computer science fundamentals,
+前几集我们聊了基础，比如函数，算法和数据结构
+
+such as functions, algorithms and data structures.
+前几集我们聊了基础，比如函数，算法和数据结构
+
+Today, we're going to take a step back and look at the person
+今天，我们来看一位对计算机理论 贡献巨大的人
+
+who formulated many of the theoretical concepts that underline modern computation.
+今天，我们来看一位对计算机理论 贡献巨大的人
+
+The father of computer science
+计算机科学之父
+
+and not quite Benedict Cumberbatch lookalike, Alan Turing.
+长得不怎么像 本尼 的 阿兰·图灵
+
+Alan Mathison Turing was born in London in 1912
+阿兰·马蒂森·图灵 于 1921 年出生在伦敦，\N 从小就表现出惊人数学和科学能力
+
+and showed an incredible aptitude for maths and science throughout his early education.
+阿兰·马蒂森·图灵 于 1921 年出生在伦敦，\N 从小就表现出惊人数学和科学能力
+
+His first brush of what we now call computer science came in 1935
+他对计算机科学的建树始于 1935 年
+
+while he was a master student at King's College in Cambridge.
+当时他是剑桥国王学院的硕士生
+
+He set out to solve a problem posed by German Mathematician David Hilbert
+他开始解决德国数学家 大卫·希尔伯特 提出的问题
+
+known as the Entscheidungsproblem
+叫 Entscheidungsproblem （德语）
+
+or decision problem,
+即"可判定性问题":
+
+which asked the following:
+即"可判定性问题":
+
+is there an algorithm that takes, as input, a statement written in formal logic,
+是否存在一种算法，输入正式逻辑语句 \N 输出准确的"是"或"否"答案？
+
+and produces a "yes" or "no" answer that's always accurate?
+是否存在一种算法，输入正式逻辑语句 \N 输出准确的"是"或"否"答案？
+
+If such an algorithm existed,
+如果这样的算法存在， \N 可以回答比如 "是否有一个数大于所有数"
+
+we could use it to answer questions like, "Is there a number bigger than all numbers?"
+如果这样的算法存在， \N 可以回答比如 "是否有一个数大于所有数"
+
+No, there's not. We know the answer to that one,
+不, 没有.  我们知道答案
+
+but there are many other questions in mathematics that we'd like to know the answer too.
+但有很多其他数学问题，我们想知道答案
+
+So if this algorithm existed, we'd want to know it.
+所以如果这种算法存在,  我们想知道
+
+The American mathematician Alonzo Church first presented a solution to this problem in 1935.
+美国数学家 阿隆佐·丘奇  \N 于 1935年 首先提出解决方法
+
+He developed a system of mathematical expressions called Lambda Calculus
+开发了一个叫"Lambda 算子"的数学表达系统
+
+and demonstrated that no such universal algorithm could exist.
+证明了这样的算法不存在
+
+Although Lambda Calculus was capable of representing any computation,
+虽然"Lambda 算子"能表示任何计算
+
+the mathematical technique was difficult to apply and understand.
+但它使用的数学技巧 难以理解和使用
+
+At pretty much the same time on the other side of the Atlantic,
+同时在大西洋另一边
+
+Alan Turing came up with his own approach to solve the decision problem.
+阿兰·图灵 想出了自己的办法来解决"可判定性问题"
+
+He proposed a hypothetical computing machine, which we now call a Turing Machine.
+提出了一种假想的计算机，现在叫"图灵机"
+
+Turing Machines provided a simple, yet powerful
+图灵机提供了简单又强大的数学计算模型
+
+mathematical model of computation.
+图灵机提供了简单又强大的数学计算模型
+
+Although using totally different mathematics,
+虽然用的数学不一样
+
+they were functionally equivalent to lambda calculus in terms of their computational power.
+但图灵机的计算能力和 Lambda 算子一样
+
+However their relative simplicity made them much more popular
+同时因为图灵机更简单，所以在新兴的计算机领域更受欢迎
+
+in the burgeoning field of computer science.
+同时因为图灵机更简单，所以在新兴的计算机领域更受欢迎
+
+In fact, they're simple enough that I'm going to explain it right now.
+因为它如此简单，我现在就给你解释
+
+A Turing Machine is a theoretical computing device
+图灵机是一台理论计算设备
+
+There's also a state variable in which we can hold a piece of information
+还有一个状态变量，保存当前状态
+
+about the current state of the machine.
+还有一个状态变量，保存当前状态
+
+And a set of rules that describes what the machine does.
+还有一组规则，描述机器做什么
+
+Given a state and the current symbol the head is reading,
+规则是根据 当前状态+读写头看到的符号，决定机器做什么
+
+the rule can be to write a symbol on the tape,
+结果可能是在纸带写入一个符号
+
+change the state of the machine, move the read/write head to the left or right by one spot
+或改变状态，或把读写头移动一格
+
+or any combination of these actions.
+或执行这些动作的组合
+
+To make this concrete, let's work through a simple example:
+为了更好理解，讲个简单例子：
+
+a Turing Machine that reads a string of ones ending in a zero
+让图灵机读一个以零结尾的字符串
+
+and computes whether there is an even number of ones.
+并计算 1 的出现次数  是不是偶数
+
+If that's true,
+如果是, 在纸带上写一个 1
+
+the machine will write a one to the tape
+如果是, 在纸带上写一个 1
+
+and if it's false, it'll write a zero.
+如果不是，在纸带上写一个 0
+
+First we need to define our Turing machine rules.
+首先要定义"图灵机"的规则
+
+If the state is even and the current symbol of the tape is one,
+如果当前状态是"偶数",  当前符号是1
+
+then we update the machine state to odd and move the head to the right.
+那么把状态更新为"奇数"，把读写头向右移动
+
+On the other hand if the state is even and the current symbol is zero,
+如果当前状态为偶数，当前符号是 0
+
+which means we've reached the end of the string of ones,
+意味着到了字符串结尾
+
+then we write one to the tape and change the state to halt,
+那么在纸带上写一个 1，并且把状态改成 停机(halt)
+
+as in we're finished and the Turing machine has completed the computation.
+状态改为"停机" 是因为图灵机已完成计算
+
+We also need rules for when the Turing machine is in an odd state,
+但我们还需要 2 条规则，来处理状态为奇数的情况
+
+one rule for the symbol on the tape is a zero and another for when it is one.
+一条处理 奇数 + 纸带是 0 的情况 \N 一条处理 奇数 + 纸带是 1 的情况
+
+Lastly we need to define a Starting state, which we'll set to be even.
+最后，要决定机器的初始状态，这里定成"偶数"
+
+Now we've defined the rules in the starting state of our Turing machine,
+定义好了 起始状态+规则
+
+which is comparable to a computer program, we can run it on some example input.
+就像写好了程序，现在可以输入了
+
+Let's say we store 1 1 0 onto tape.
+假设把"1 1 0"放在纸带上，有两个 1，是偶数
+
+That's two ones, which means there is an even number of ones,
+假设把"1 1 0"放在纸带上，有两个 1，是偶数
+
+and if that's news to you,
+如果"偶数"对你是新知识 \N 也许我们该开一门【十分钟速成课：数学】
+
+We should probably get working on crash course Math.
+如果"偶数"对你是新知识 \N 也许我们该开一门【十分钟速成课：数学】
+
+Notice that our rules only ever move their head to the right
+注意，规则只让 读写头 向右移动
+
+so the rest of the tape is irrelevant.
+其他部分无关紧要，为了简单所以留空
+
+We'll leave it blank for simplicity.
+其他部分无关紧要，为了简单所以留空
+
+Our Turing machine is all ready to go so let's start it.
+"图灵机"准备好了，开始吧
+
+Our state is even and the first number we see is one.
+机器起始状态为"偶数"，看到的第一个数是 1
+
+That matches our topmost rule and so we execute the effect,
+符合最上面那条规则，所以执行对应的步骤
+
+which is to update the state to odd and move the read/write head to the right by one spot.
+把状态更新到"奇数"， 读写头向右移动一格
+
+Okay, now we see another one on the tape, But this time our state is odd
+然后又看到 1, 但机器状态是"奇数"，所以执行第三条规则
+
+and so we execute our third rule
+然后又看到 1, 但机器状态是"奇数"，所以执行第三条规则
+
+which sets the state back to even and moves the head to the right.
+使机器状态变回"偶数"，读写头向右移动一格
+
+Now we see a 0 and our current state is even
+现在看到 0，并且机器状态是 偶数，所以执行第二条规则
+
+so we execute our second rule
+现在看到 0，并且机器状态是 偶数，所以执行第二条规则
+
+which is to write a 1 to the tape signifying that yes, it's true,
+在纸带上写 1，表示"真" 的确有偶数个 1
+
+there is an even number of ones,
+在纸带上写 1，表示"真" 的确有偶数个 1
+
+and finally the machine halts.
+然后机器停机
+
+That's how Turing machines work.
+这就是图灵机的原理，很简单对吧？
+
+Pretty simple, right?
+这就是图灵机的原理，很简单对吧？
+
+so you might be wondering why there's such a big deal.
+你可能想知道 有什么大不了的
+
+Well, Turing shows that this simple hypothetical machine
+图灵证明了这个简单假想机器
+
+can perform any computation if given enough time and memory.
+如果有足够时间和内存，可以执行任何计算
+
+It's a general-purpose computer.
+它是一台通用计算机
+
+Our program was a simple example.
+刚才的程序就是个简单例子
+
+But with enough rules, states and tape,
+只要有足够的规则，状态和纸带  可以创造任何东西
+
+you could build anything
+只要有足够的规则，状态和纸带  可以创造任何东西
+
+- a web browser, world of warcraft, whatever!
+浏览器, 魔兽世界 任何东西！
+
+Of course it would be ridiculously inefficient, but it is theoretically possible.
+当然 这样做效率很低，但理论上可行.
+
+And that's why, as a model of computing,
+所以图灵机是很强大的计算模型
+
+it's such a powerful idea.
+所以图灵机是很强大的计算模型
+
+In fact, in terms of what it can and cannot compute
+事实上，就可计算和不可计算而言
+
+there's no computer more powerful than a turing machine.
+没有计算机比图灵机更强大
+
+A computer that is as powerful is called Turing complete.
+和图灵机一样强大的，叫 "图灵完备"
+
+Every modern computing system, your laptop, your smartphone
+每个现代计算系统 比如笔记本电脑，智能手机
+
+and even the little computer inside your microwave and thermostat
+甚至微波炉和恒温器内部的小电脑
+
+are all Turing Complete.
+都是"图灵完备"的
+
+To answer Hilbert's decision problem,
+为了回答可判定性问题
+
+Turing applied these new Turing machines to an intriguing computational puzzle:
+他把图灵机用于一个有趣计算问题：
+
+the halting problem.
+"停机问题"
+
+Put simply this asks
+简单说就是
+
+"Is there an algorithm that can determine,
+"给定图灵机描述和输入纸带，是否有算法可以确定
+
+given a description of a turing machine and the input from its tape,
+"给定图灵机描述和输入纸带，是否有算法可以确定
+
+whether the Machine will run forever or halt?"
+机器会永远算下去还是到某一点会停机？
+
+For example we know our Turing machine will halt when given the input 1 1 0
+我们知道输入 1 1 0，图灵机会停机
+
+Because we literally walk through the example until it halted,
+因为刚做过这个例子，它最后停机了
+
+but what about a more complex problem?
+但如果是更复杂的问题呢？
+
+Is there a way to figure out if the program will halt without executing it?
+有没有办法在不执行的情况，弄清会不会停机？
+
+Some programs might take years to run
+一些程序可能要运行好几年
+
+so it would be useful to know before we run it
+所以在运行前知道 会不会出结果很有用
+
+and wait and wait and wait and then start getting worried and wonder
+否则就要一直等啊等，忧虑到底会不会出结果
+
+and then decades later when you're old and gray control-alt-delete.
+当几十年后变老了，再按强制结束
+
+So much sadness!
+好悲伤！
+
+Unfortunately, Turing came up with a proof that shows the halting problem was in fact unsolvable,
+图灵通过一个巧妙逻辑矛盾 \N 证明了停机问题是无法解决的
+
+through a clever logical contradiction.
+图灵通过一个巧妙逻辑矛盾 \N 证明了停机问题是无法解决的
+
+Let's follow his reasoning.
+我们来看看他的推理
+
+Imagine we have a hypothetical Turing machine that takes a description of a program
+想象有一个假想图灵机，\N 输入：问题的描述 + 纸带的数据
+
+and some input for his tape
+想象有一个假想图灵机，\N 输入：问题的描述 + 纸带的数据
+
+and always outputs either Yes, it halts, or no, it doesn't.
+输出 Yes 代表会"停机"，输出 No 代表不会
+
+And I'm going to give this machine a fun name
+我要给这台机器一个有趣的名字叫 H， \N 来自"停机"的第一个字母
+
+H for Halts.
+我要给这台机器一个有趣的名字叫 H， \N 来自"停机"的第一个字母
+
+Don't worry about how it works.
+不用担心它具体怎么工作
+
+Let's just assume such a machine exists.
+假设这样的机器存在就好  毕竟重点是推论
+
+We're talking theory here.
+假设这样的机器存在就好  毕竟重点是推论
+
+Turing reasons if there existed a program whose halting behavior was not decidable by H,
+图灵推理说： 如果有个程序， H 无法判断是否会"停机"
+
+it would mean the halting problem is unsolvable.
+意味着"停机问题"无法解决
+
+To find one, Turing designed another Turing machine that built on top of H.
+为了找到这样的程序，图灵用 H 设计了另一个图灵机
+
+If H says the program halts,
+如果 H 说程序会"停机"，那么新机器会永远运行（即不会停机）
+
+then we'll make our new machine loop forever.
+如果 H 说程序会"停机"，那么新机器会永远运行（即不会停机）
+
+If the answer is no, it doesn't the halt.
+如果 H 的结果为 No，代表不会停机
+
+That will have the new machine output no and halt.
+那么让新机器输出 No，然后"停机"
+
+In essence, we're building a machine that does the opposite of what H says.
+实质上是一台和 H 输出相反的机器
+
+Halt if the program doesn't halt
+如果程序不停机，就停机
+
+and run forever if the program halts.
+如果程序停机，就永远运行下去
+
+So this argument will also need to add a splitter to the front of our new machine.
+我们还需要在机器前面加一个分离器
+
+So it accepts only one input and passes that as both the program and input into H.
+让机器只接收一个输入，\N 这个输入既是程序，也是输入
+
+Let's call this new Machine Bizzaro.
+我们把这台新机器叫 异魔
+
+So far this seems like a plausible machine right.
+目前为止，这个机器不难理解
+
+Now it's going to get pretty complicated.
+但接下来马上会变复杂，会有点难懂
+
+But bear with me for a second.
+但接下来马上会变复杂，会有点难懂
+
+Look what happens when you pass bizzaro a description of itself as the input.
+如果把 异魔 的描述，作为本身的输入会怎样
+
+This means We're asking h what bizzaro will do when asked to evaluate itself.
+意味着在问 H ，当异魔的输入是自己时会怎样
+
+But if H says Bizzaro halts,
+但如果 H 说异魔会停机
+
+then Bizzaro enters its infinite loop and thus doesn't halt.
+那么异魔会进入无限循环，因此不会停机
+
+And if H says the Bizzaro doesn't halt, then Bizzaro outputs no and halt.
+如果 H 说异魔不会停机，那么异魔会输出 No 然后停机
+
+So H can't possibly decide the halting problem correctly
+所以 H 不能正确判定 停机问题
+
+because there is no answer.
+因为没有答案
+
+It's a paradox.
+这是一个悖论
+
+And this paradox means that the halting problem cannot be solved with Turing machines.
+意味着"停机问题"不能用图灵机解决
+
+Remember Turing proves that Turing machines could implement any computation.
+还记得刚刚说： 图灵证明了图灵机可以实现任何计算
+
+So this solution to the halting problem proves
+"停机问题"证明了，不是所有问题都能用计算解决
+
+that not all problems can be solved by computation.
+"停机问题"证明了，不是所有问题都能用计算解决
+
+Wow, that's some heavy stuff.
+哇，好难理解
+
+I might have to watch that again myself.
+我都可能要再看一遍
+
+Long story short, Church and Turing showed there were limits to the ability of computers.
+长话短说，丘奇和图灵证明了计算机的能力有极限
+
+No matter how much time or memory you have,
+无论有多少时间或内存，有些问题是计算机无法解决的
+
+there are just some problems that cannot be solved ever.
+无论有多少时间或内存，有些问题是计算机无法解决的
+
+The concurrent efforts by Church and Turing to determine the limits of computation,
+丘奇和图灵证明了计算是有极限的，
+
+and in general, formalize computability, are now called the Church-Turing Thesis.
+起步了可计算性理论，现在叫"丘奇-图灵论题"
+
+At this point in 1936, Turing was only 24 years old
+当时是1936年，图灵只有24岁
+
+and really only just beginning his career.
+他的职业生涯才刚刚开始
+
+From 1936 through 1938,
+从1936年到1938年 \N 在丘奇指导下，他在普林斯顿拿到博士学位
+
+he completed a PhD at Princeton University under the guidance of Church
+从1936年到1938年 \N 在丘奇指导下，他在普林斯顿拿到博士学位
+
+then after graduating he returned to Cambridge.
+毕业后回到剑桥
+
+Shortly after in 1939, Britain became embroiled in World War II.
+1939年后不久，英国卷入第二次世界大战
+
+Turing's genius was quickly applied for the war effort.
+图灵的才能很快被投入战争
+
+In fact, a year before the war started,
+事实上，在战争开始前一年
+
+he was already working part-time at the UK's government Code and Cypher school,
+他已经在英国政府的 密码破译学校兼职
+
+which was the British code breaking group based out of Bletchley Park.
+位于"布莱切利园"的一个密码破译组织
+
+One of his main efforts was figuring out how to decrypt German communications.
+他的工作内容之一是破解德国的通信加密
+
+Especially those that use the Enigma Machine.
+特别是"英格玛机"加密的信息
+
+In short, these machines scrambled text
+简单说，英格玛机会加密明文
+
+like you type the letters H-E-L-L-O
+如果输入字母 H-E-L-L-O
+
+and the letters X-W-D-B-J would come out.
+机器输出 X-W-D-B-J
+
+This process is called Encryption.
+这个过程叫"加密"
+
+The scrambling wasn't random.
+文字不是随便打乱的
+
+The behavior was defined by a series of real world rotors on the top of the enigma machine.
+加密由"英格玛机"顶部的齿轮组合决定
+
+Each were 26 possible rotational positions.
+每个齿轮有26个可能位置
+
+There was also a plug board at the front of the machine that allow pairs of letters to be swapped.
+机器前面还有插板，可以将两个字母互换
+
+In total, there were billions of possible settings.
+总共有上十亿种可能
+
+If you had your only enigma machine and you knew the correct rotor and plug board settings,
+如果你有"英格玛机"，并且知道正确的齿轮和插头设置
+
+you could type in X-W-D-B-J and "hello" would come out.
+输入X-W-D-B-J，机器会输出 hello
+
+In other words, you decrypted the message.
+解密了这条消息
+
+Of course, the German military wasn't sharing their enigma settings on Social Media.
+当然，德军不会把机器设置发到微博上
+
+So the allies had to break the code.
+盟军必须自己破译密码
+
+With billions of Rotor and plug board combinations,
+有数十亿种组合，根本没法手工尝试所有组合
+
+there was no way to check them all by hand.
+有数十亿种组合，根本没法手工尝试所有组合
+
+Fortunately for Turing, Enigma Machines and the people who operated them were not perfect.
+幸运的是，英格玛机和操作员不是完美的
+
+Like one key flaw was that a letter would never be encoded as itself,
+一个大缺陷是：字母加密后绝不会是自己
+
+as in an H was never encrypted as an H.
+H 加密后绝对不是 H
+
+Turing building on earlier work by Polish code breakers
+图灵接着之前波兰破译专家的成果继续工作
+
+designed a special-purpose electro-mechanical computer called the bombe
+设计了一个机电计算机，叫 Bombe
+
+that took advantages of this flaw.
+利用了这个缺陷，它对加密消息尝试多种组合
+
+It tried lots and lots of combinations of enigma settings for a given encrypted message.
+利用了这个缺陷，它对加密消息尝试多种组合
+
+If the bombe found a setting that led to a letter being encoded as itself
+如果发现字母解密后和原先一样
+
+which we know no enigma machines could do.
+我们知道英格玛机决不会这么做
+
+That combination was discarded then the machine moved on to try another combination.
+这个组合会被跳过，接着试另一个组合
+
+So bombe was used to greatly narrow the number of Possible enigma settings.
+Bombe 大幅减少了搜索量
+
+This allowed human code breakers to hone their efforts on the most probable solutions,
+让破译人员把精力花在更有可能的组合
+
+looking for things like common german words in fragments of decoded text.
+比如在解码文本中找常见的德语单词
+
+Periodically, the Germans would suspect someone was decoding their communications
+德国人时不时会怀疑有人在破解，然后升级英格玛机
+
+and upgrade the enigma machine,
+德国人时不时会怀疑有人在破解，然后升级英格玛机
+
+like they'd add another rotor creating many more combinations.
+比如加一个齿轮，创造更多可能组合
+
+They even built entirely new encryption machines.
+他们甚至还做了全新的加密机
+
+Throughout the war, Turing and his colleagues at Bletchley Park
+整个战争期间，图灵和同事在布莱切利园努力破解加密
+
+worked tirelessly to defeat these mechanisms.
+整个战争期间，图灵和同事在布莱切利园努力破解加密
+
+And overall, the intelligence gained from decrypted German communications
+解密得到的德国情报，为盟军赢得了很多优势
+
+gave the allies an edge in many theaters
+解密得到的德国情报，为盟军赢得了很多优势
+
+with some historians arguing is shortened the war by years.
+有些史学家认为他们把战争减短了好几年
+
+After the war, Turing return to academia
+战后，图灵回到学术界 \N 为许多早期计算机工作做出贡献
+
+and contributed to many early electronic computing efforts
+战后，图灵回到学术界 \N 为许多早期计算机工作做出贡献
+
+like the Manchester Mark 1, which was an early and influential stored-program computer.
+比如曼彻斯特 1 号，一个早期有影响力的存储程序计算机
+
+But his most famous post-war contribution was the Artificial Intelligence.
+但他最有名的战后贡献是"人工智能"
+
+A field's so new that it didn't get that name until 1956.
+这个领域很新，直到1956年才有名字
+
+It's a huge topic. So we'll get to it again in future episodes.
+这个话题很大，以后再谈（第34集）
+
+In 1950, Turing could envision a future where computers
+1950 年，图灵设想了未来的计算机
+
+were powerful enough to exhibit intelligence equivalent to
+拥有和人类一样的智力，或至少难以区分
+
+or at least indistinguishable from that of a human.
+拥有和人类一样的智力，或至少难以区分
+
+Turing postulated that a computer would deserve to be called intelligent
+图灵提出 \N 如果计算机能欺骗人类相信它是人类，才算是智能
+
+if it could deceive a human into believing that it was human.
+图灵提出 \N 如果计算机能欺骗人类相信它是人类，才算是智能
+
+This became the basis of a simple test, now called the Turing test.
+这成了智能测试的基础，如今叫"图灵测试"
+
+Imagine that you are having a conversation with two different people
+想像你在和两个人沟通 \N 不用嘴或面对面，而是来回发消息
+
+not by voice or in person, but by sending type notes back and forth,
+想像你在和两个人沟通 \N 不用嘴或面对面，而是来回发消息
+
+you can ask any questions you want and you get replies.
+可以问任何问题，然后会收到回答
+
+But one of those two people is actually a computer.
+但其中一个是计算机
+
+If you can't tell which one is human and which one is a computer,
+如果你分不出哪个是人类，哪个是计算机
+
+then the computer passes the test.
+那么计算机就通过了图灵测试
+
+There's a modern version of this test called
+这个测试的现代版叫
+
+a completely automated public turing test to tell computers and humans apart
+"公开全自动图灵测试，用于区分计算机和人类"
+
+or Captcha for short.
+简称"验证码"
+
+These are frequently used on the internet to prevent automated systems
+防止机器人发垃圾信息等
+
+from doing things like posting spam on websites.
+防止机器人发垃圾信息等
+
+I'll admit sometimes I can't read what those squiggly things say.
+我承认 有时我都认不出那些扭曲的东西是什么字
+
+Does that mean I'm a computer?
+这难道意味着我是计算机？
+
+Normally in this series, we don't delve into the personal lives of these historical figures.
+通常这个系列我们不会深入历史人物的个人生活
+
+But in Turing's case his name has been inextricably tied to tragedy
+但图灵与悲剧密不可分
+
+so his story is worth mentioning.
+所以他的故事值得一提
+
+Turing was gained a time when homosexuality was illegal in the United Kingdom and much of the world.
+图灵那个时代，同性恋是违法的，英国和大部分国家都是
+
+And an investigation into a 1952 Burglary at his home
+1952 年调查他家的入室盗窃案时，向当局暴露了他的性取向
+
+revealed his sexual orientation to the authorities,
+1952 年调查他家的入室盗窃案时，向当局暴露了他的性取向
+
+who charged him with gross indecency.
+被起诉 "行为严重不检点"
+
+Turing was convicted and given a choice between imprisonment,
+图灵被定罪，有2个选择： \N 1. 入狱  2. 接受激素来压制性欲
+
+or probation with hormonal treatments to suppress his sexuality.
+图灵被定罪，有2个选择： \N 1. 入狱  2. 接受激素来压制性欲
+
+He chose the latter in part to continue his academic work,
+他选了后者，部分原因是为了继续学术工作
+
+but it altered his mood and personality.
+但药物改变了他的情绪和性格
+
+Although the exact circumstances will never be known,
+虽然确切情况永远无法得知
+
+it's most widely accepted that Alan Turing took his own life by poison in 1954.
+图灵于1954年服毒自尽，年仅41岁
+
+He was only 41.
+图灵于1954年服毒自尽，年仅41岁
+
+Many things have been named in recognition of Turing's contributions to theoretical computer science
+由于图灵对计算机科学贡献巨大，许多东西以他命名
+
+But perhaps the most prestigious among them is the Turing award
+其中最出名的是"图灵奖"
+
+the highest distinction in the field of computer science.
+计算机领域的最高奖项
+
+Equivalent to a Nobel prize in Physics, chemistry or other sciences.
+相当于物理, 化学等其它领域的诺贝尔奖
+
+Despite a life cut short, Alan inspire the first generation of computer scientists
+虽然英年早逝，但图灵激励了第一代计算机科学家
+
+and lead key groundwork that enabled a digital era that we get to enjoy today.
+而且为如今便利的数字时代 做出了重要基石性工作
+
+I'll see you next week.
+我们下周见
+

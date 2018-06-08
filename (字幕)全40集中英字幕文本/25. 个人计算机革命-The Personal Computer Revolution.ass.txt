@@ -1,0 +1,552 @@
+Hi, I'm Carrie Anne, and welcome to CrashCourse Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne \N 欢迎收看计算机科学速成课！
+
+As we discussed last week, the idea of having a computer all to yourself a personal
+上周说过"个人计算机"的概念 \N 在计算机发展的头 30 年难以想象
+
+computer was elusive for the first three decades of electronic computing.
+上周说过"个人计算机"的概念 \N 在计算机发展的头 30 年难以想象
+
+It was just way too expensive for a computer to be owned and used by one single person.
+如果只让一个人用，成本实在太高
+
+But, by the early 1970s, all the required components had fallen into place to build
+但到 70 年代初，各种组件的成本都下降了 \N 可以做出低成本  同时性能足够强大的计算机
+
+a low cost, but still usefully powerful computer.
+但到 70 年代初，各种组件的成本都下降了 \N 可以做出低成本  同时性能足够强大的计算机
+
+Not a toy, but a tool.
+不是玩具级计算机，是真正能用的计算机
+
+Most influential in this transition was the advent of single-chip CPUs,
+这个转变中 \N 最有影响力的是 单芯片 CPU 的出现
+
+which were surprisingly powerful, yet small and inexpensive.
+强大 + 体积小 + 便宜
+
+Advances in integrated circuits also offered low-cost solid-state memory,
+集成电路的进步，也提供了低成本固态存储器
+
+both for computer RAM and ROM.
+可以用于计算机的 RAM 和 ROM
+
+Suddenly it was possible to have an entire computer on one circuit board,
+忽然间 \N 把整台计算机做到一张电路板上成为可能
+
+dramatically reducing manufacturing costs.
+大大地降低了制造成本
+
+Additionally, there was cheap and reliable computer storage,
+而且，那时有便宜可靠的储存介质 \N 比如磁带和软盘
+
+like magnetic tape cassettes and floppy disks.
+而且，那时有便宜可靠的储存介质 \N 比如磁带和软盘
+
+And finally, the last ingredient was low cost displays, often just repurposed televisions.
+最后是 低成本的显示器 \N 通常是电视机稍作改装而成
+
+If you blended these four ingredients together in the 1970s, you got,
+如果在 1970 年代 \N 将这四种原料混在一起
+
+what was called a microcomputer,
+就得到了"微型计算机"
+
+because these things were so tiny compared to "normal" computers of that era, the
+因为和那个时代的"普通"计算机相比 \N 这些计算机很小
+
+types you'd see in business or universities.
+"普通"计算机就是公司或大学里的那种
+
+But more important than their size was their cost.
+但比大小更重要的是成本
+
+These were, for the first time, sufficiently cheap.
+这是有史以来第一次，计算机的价格足够低
+
+It was practical to buy one and only have one person ever use it.
+"一个人专用"的想法变得可行
+
+No time sharing,
+不用划分时间和别人公用计算机
+
+no multi-user logins,  just a single owner and user.
+没有多用户登录，计算机只属于一个人，只有一个用户
+
+The personal computer era had arrived.
+个人计算机时代到来
+
+Computer cost and performance eventually reached the point
+计算机成本下降+性能提升, 让个人计算机成为可能
+
+where personal computing became viable.
+计算机成本下降+性能提升, 让个人计算机成为可能
+
+But, it's hard to define exactly when that happened.
+但这个时间点很难准确定义, 并没有一个具体时间点
+
+There's no one point in time.
+但这个时间点很难准确定义, 并没有一个具体时间点
+
+And as such, there are many contenders for the title of "first" personal computer,
+因此"第一台个人计算机"这个名号，有很多竞争者
+
+like the Kenback-1 and MCM/70.
+比如 Kenback-1 和 MCM/70
+
+Less disputed, however, is the first commercially successful personal computer: The Altair 8800.
+不过第一台取得商业成功的个人计算机 \N 争议较小：Altair 8800
+
+This machine debuted on the cover of Popular Electronics in 1975,
+首次亮相在 1975 年《Popular Electronics》封面
+
+and was sold as a $439 kit that you built yourself.
+售价 $439 美元，需要自己组装
+
+Inflation adjusted, that's about $2,000 today,
+计算通货膨胀后，相当如今的 2000 美元左右
+
+which isn't chump change, but extremely cheap for a computer in 1975.
+不算小钱，但比起 1975 年的其它计算机，算是非常便宜了
+
+Tens of thousands of kits were sold to computer hobbyists,
+各种需要自己组装的组件包  \N卖给了计算机爱好者
+
+and because of its popularity, there were soon all sorts of nifty add-ons available...
+因为买的人多，很快相关产品出现了
+
+things like extra memory, a paper tape reader and even a teletype interface.
+比如内存，纸带读取器，甚至电传接口
+
+This allowed you, for example, to load a longer, more complicated program from punch tape,
+让你可以从纸带上读取更长更复杂的程序
+
+and then interact with it using a teletype terminal.
+然后用电传终端交互
+
+However, these programs still had to be written in machine code,
+但程序还是要用 机器码 写
+
+which was really low level and nasty, even for hardcore computer enthusiasts.
+写起来很麻烦，即使计算机爱好者也讨厌写
+
+This problem didn't escape a young Bill Gates and Paul Allen,
+这没有吓跑年轻的比尔·盖茨和保罗·艾伦
+
+who were 19 and 22 respectively.
+他们当时是19岁和22岁
+
+They contacted MITS, the company making the Altair 8800,
+他们联系了制造 Altair 8800 的 MITS 公司
+
+suggesting the computer would be more attractive to hobbyists
+建议说，如果能运行 BASIC 程序 \N 会对爱好者更有吸引力
+
+if it could run programs written in BASIC,
+建议说，如果能运行 BASIC 程序 \N 会对爱好者更有吸引力
+
+a popular and simple programming language.
+BASIC 是一门更受欢迎更简单的编程语言
+
+To do this, they needed to write a program that converted BASIC instructions
+为此，他们需要一个程序 \N 把 BASIC 代码转成可执行机器码
+
+into native machine code, what's called an interpreter.
+这叫 解释器 (interpreter)
+
+This is very similar to a compiler,
+"解释器"和"编译器"类似
+
+but happens as the programs runs instead of beforehand.
+区别是"解释器"运行时转换\N而"编译器"提前转换
+
+Let's go to the thought bubble!
+让我们进入思想泡泡！
+
+MITS was interested,
+MITS 表示感兴趣
+
+and agreed to meet Bill and Paul for a demonstration.
+同意与 Bill 和 Paul 见个面，让他们演示一下
+
+Problem is, they hadn't written the interpreter yet.
+问题是，他们还没写好解释器
+
+So, they hacked it together in just a few weeks
+所以他们花了几个星期赶工 \N 而且还不是在 Altair 8800 上写的
+
+without even an Altair 8800 to develop on,
+所以他们花了几个星期赶工 \N 而且还不是在 Altair 8800 上写的
+
+finishing the final piece of code on the plane.
+最后在飞机上完成了代码
+
+The first time they knew their code worked was at MITS headquarters
+他们在墨西哥 阿尔伯克基（城市） \N 的 MITS 总部做演示时，才知道代码可以成功运行
+
+in Albuquerque, New Mexico, for the demo.
+他们在墨西哥 阿尔伯克基（城市） \N 的 MITS 总部做演示时，才知道代码可以成功运行
+
+Fortunately, it went well and MITS agreed to distribute their software.
+幸运的是进展顺利 \N MITS 同意在计算机上搭载他们的软件
+
+Altair BASIC became the newly formed Microsoft's first product.
+Altair BASIC 成了微软的第一个产品
+
+Although computer hobbyists existed prior to 1975,
+虽然1975年之前就有计算机爱好者
+
+the Altair 8800 really jump-started the movement.
+但 Altair 8800 大量催生了更多计算机爱好者
+
+Enthusiast groups formed, sharing knowledge and software and passion about computing.
+爱好者们组成各种小组 \N 分享知识，软件，以及对计算机的热爱
+
+Most legendary among these is the Homebrew Computer Club,
+最具传奇色彩的小组是"家酿计算机俱乐部"
+
+which met for the first time in March 1975
+第一次小组聚会在1975年3月
+
+to see a review unit of the Altair 8800, one of the first to ship to California.
+看一台第一批运来加州的 Altair 8800
+
+At that first meeting was 24-year-old Steve Wozniak, who was so inspired by
+第一次聚会上，24岁的 Steve Wozniak  \N 被 Altair 8800 大大激励
+
+the Altair 8800 that he set out to design his own computer.
+开始想设计自己的计算机
+
+In May 1976, he demonstrated his prototype to the Club
+1976年5月，他向小组展示了原型机
+
+and shared the schematics with interested members.
+并且把电路图分享给感兴趣的其他会员
+
+Unusual for the time, it was designed to connect to a TV and offered a text interface
+他的设计不同寻常 \N 要连到电视显示，并提供文本界面
+
+a first for a low-cost computer.
+在低成本计算机上还是第一次见
+
+Interest was high, and shortly after fellow club member and college friend Steve Jobs
+同是俱乐部成员和大学朋友的 史蒂夫·乔布斯
+
+suggested that instead of just sharing the designs for free,
+建议说与其免费分享设计，不如直接出售装好的主板
+
+they should just sell an assembled motherboard.
+建议说与其免费分享设计，不如直接出售装好的主板
+
+However, you still had to add your own keyboard, power supply, and enclosure.
+但用户依然需要自己加键盘，电源和机箱
+
+It went on sale in July 1976 with a price tag of $666.66.
+1976年7月开始发售，价格$666.66美元
+
+It was called the Apple-I, and it was Apple Computer's first product.
+它叫 Apple-I ，苹果计算机公司的第一个产品
+
+Thanks thought bubble!
+谢了 思想泡泡
+
+Like the Altair 8800, the Apple-I was sold as a kit.
+就像 Altair 8800 一样，Apple-I 也是作为套件出售
+
+It appealed to hobbyists,
+Apple-I 吸引了业余爱好者 \N 不介意机器买回来自己组装
+
+who didn't mind tinkering and soldering,
+Apple-I 吸引了业余爱好者 \N 不介意机器买回来自己组装
+
+but consumers and businesses weren't interested.
+但个人消费者和公司对 Apple-I 不感兴趣
+
+This changed in 1977,
+这在 1977 年发生变化 \N 市场上有了三款开箱即用的计算机
+
+with the release of three game-changing computers,  that could be used right out of the box.
+这在 1977 年发生变化 \N 市场上有了三款开箱即用的计算机
+
+First was the Apple II,
+第一款是 Apple-II
+
+Apple's earliest product that sold as a complete system
+苹果公司第一个提供全套设备的产品
+
+that was professionally designed and manufactured.
+设计和制造工艺都是专业的
+
+It also offered rudimentary color graphics and sound output,
+它还提供了简单彩色图形和声音输出
+
+amazing features for a low cost machine.
+这些功能对低成本机器非常了不起
+
+The Apple II series of computers sold by the millions and quickly
+Apple-II 卖了上百万套
+
+propelled Apple to the forefront of the personal computing industry.
+把苹果公司推到了个人计算机行业的前沿
+
+The second computer was the TRS-80 Model I,
+第二款是"TRS-80 1型"
+
+made by the Tandy Corporation
+由 Tandy 公司生产
+
+and sold by RadioShack hence the "TRS"
+由 Radioshack 销售，所以叫 TRS
+
+Although less advanced than the Apple II,
+虽然不如 Apple-II 先进 \N 但因为价格只有一半，所以卖得很火爆
+
+it was half the cost and sold like hot cakes.
+虽然不如 Apple-II 先进 \N 但因为价格只有一半，所以卖得很火爆
+
+Finally, there was the Commodore PET 2001,
+最后一款是 Commodore PET 2001
+
+with a unique all-in-one design
+有一体化设计
+
+that combined computer, monitor, keyboard and tape drive into one device,
+集成了计算机，显示器，键盘和磁带驱动器
+
+aimed to appeal to consumers.
+目标是吸引普通消费者
+
+It started to blur the line between computer and appliance.
+计算机和家用电器之间的界限开始变得模糊
+
+These three computers became known as the 1977 Trinity.
+这3台计算机被称为1977年的"三位一体"
+
+They all came bundled with BASIC interpreters,
+它们都自带了 BASIC 解释器
+
+allowing non-computer-wizards to create programs.
+让不那么精通计算机的人也能用 BASIC 写程序
+
+The consumer software industry also took off,
+针对消费者的软件行业 开始腾飞
+
+offering games and productivity tools for personal computers,
+市场上出现了各种 \N 针对个人计算机的游戏和生产力工具
+
+like calculators and word processors.
+比如计算器和文字处理器
+
+The killer app of the era was 1979's VisiCalc,
+最火的是 1979 年的 VisiCalc
+
+the first spreadsheet program
+第一个电子表格程序
+
+which was infinitely better than paper
+比纸好无数倍
+
+and the forbearer of programs like Microsoft Excel and Google Sheets.
+是微软 Excel 和 Google Sheets 的老祖先
+
+But perhaps the biggest legacy of these computers was their marketing,
+但这些计算机带来的最大影响 \N 也许是他们的营销策略
+
+they were the first to be targeted at households, and not just businesses and hobbyists.
+它们针对普通消费者 \N 而不是企业和爱好者
+
+And for the first time in a substantial way,
+这是第一次大规模地
+
+computers started to appear in homes, and also small businesses and schools.
+计算机出现在家庭，小公司，以及学校中
+
+This caught the attention of the biggest computer company on the planet, IBM, who had seen its
+这引起了全球最大计算机公司 IBM 的注意
+
+share of the overall computer market shrink from 60% in 1970 to around 30% by 1980.
+其市场份额从1970年的60％ \N 在1980年降到了30％左右
+
+This was mainly because IBM had ignored the microcomputer market,
+因为IBM忽略了增长的"微型计算机"市场
+
+which was growing at about 40% annually.
+这个市场每年增长约40％
+
+As microcomputers evolved into personal computers, IBM knew it needed to get in on the action.
+随着微型计算机演变成个人计算机 \N IBM 知道他们需要采取行动
+
+But to do this, it would have to radically rethink its computer strategy and design.
+但要做到这一点 \N 公司要从根本上重新思考战略和设计
+
+In 1980, IBM's least-expensive computer, the 5120, cost roughly ten thousand dollars,
+1980年 IBM 最便宜的计算机 \N "5120"的价格大概是一万美元
+
+which was never going to compete with the likes of the Apple II.
+永远也没法和 Apple-II 这样的计算机竞争
+
+This meant starting from scratch.
+意味着要从头开始
+
+A crack team of twelve engineers, later nicknamed the dirty dozen,
+一个由十二名工程师组成的精干团队（后来叫"肮脏十二人"）
+
+were sent off to offices in Boca Raton, Florida,
+被派往佛罗里达州的 \N 博卡拉顿（Boca Raton）办公室
+
+to be left alone and put their talents to work.
+让他们独立工作
+
+Shielded from IBM internal politics, they were able to design a machine as they desired.
+不受 IBM 内部的政治斗争干扰 \N 他们想怎么设计怎么设计
+
+Instead of using IBM proprietary CPUs, they chose Intel chips.
+没用 IBM 的 CPU，选了 Intel 的芯片
+
+Instead of using IBM's prefered operating system, CP/M,
+也没用 IBM 的首选操作系统 CP/M
+
+they licenced Microsoft's Disk Operating System: DOS
+而是用了微软的 DOS
+
+and so on, from the screen to the printer.
+依此类推，从屏幕到打印机都这样自由选择
+
+For the first time, IBM divisions had to compete with outside firms
+IBM 第一次不得不与外部公司竞争
+
+to build hardware and software for the new computer.
+来给新计算机做硬件和软件
+
+This radical break from the company tradition of in-house development kept costs low
+这和 IBM 的传统做法不同：自己做硬件来节省成本
+
+and brought partner firms into the fold.
+然后和其它公司合作
+
+After just a year of development,
+经过短短一年
+
+the IBM Personal Computer, or IBM PC was released.
+IBM 个人计算机发布了，简称 IBM PC
+
+It was an immediate success,
+产品立马取得了成功
+
+especially with businesses that had long trusted the IBM brand.
+长期信任 IBM 品牌的企业买了很多
+
+But, most influential to its ultimate success was that the computer featured an open architecture,
+但最有影响力的是 \N 它使用 "开放式架构"
+
+with good documentation and expansion slots,
+有良好的文档和扩展槽
+
+allowing third parties to create new hardware and peripherals for the platform.
+使得第三方可以做硬件/外设
+
+That included things like graphics cards, sounds cards, external hard drives, joysticks,
+包括显卡，声卡，外置硬盘，游戏控制杆 \N 以及无数其它组件
+
+and countless other add-ons.
+包括显卡，声卡，外置硬盘，游戏控制杆 \N 以及无数其它组件
+
+This spurred innovation, and also competition, resulting in a huge ecosystem of products.
+这刺激了创新，激发了竞争，产生了巨大的生态系统
+
+This open architecture became known as "IBM Compatible".
+这个开放架构叫 IBM Compatible"（IBM 兼容）
+
+If you bought an "IBM Compatible" computer, it meant you
+意味着如果买了"IBM兼容"的计算机
+
+could use that huge ecosystem of software and hardware.
+你可以用庞大生态系统中的其它软硬件
+
+Being an open architecture also meant that competitor companies could follow the standard
+开放架构也意味着 竞争对手公司可以遵循这个标准
+
+and create their own IBM Compatible computers.
+做出自己的"IBM 兼容"计算机
+
+Soon, Compaq and Dell were selling their own PC clones...
+很快，康柏和戴尔也开始卖 PC
+
+And Microsoft was happy to license MS-DOS to them,
+微软很乐意把 MS-DOS 授权给他们
+
+quickly making it the most popular PC operating system.
+使 DOS 迅速成为最受欢迎的 PC 操作系统
+
+IBM alone sold two million PCs in the first three years, overtaking Apple.
+仅在前三年 \N IBM就卖出了200万台 PC ，超过了苹果
+
+With a large user base, software and hardware developers concentrated
+有了庞大用户群，软件和硬件开发人员 \N 把精力放在"IBM 兼容"平台，因为潜在用户更多
+
+their efforts on IBM Compatible platforms, there were just more users to sell to.
+有了庞大用户群，软件和硬件开发人员 \N 把精力放在"IBM 兼容"平台，因为潜在用户更多
+
+Then, people wishing to buy a computer bought the one with the
+同时，想买计算机的人 \N 也会看哪种计算机的软硬件选择更多
+
+most software and hardware available, and this effect snowballed.
+就像雪球效应一样
+
+Companies producing non-IBM-compatible computers, often with superior specs,
+而那些生产非"IBM兼容"计算机的公司 （一般性能更好）
+
+failed.
+都失败了
+
+Only Apple kept significant market share without IBM compatibility.
+只有苹果公司在没有"IBM兼容"的情况下 \N 保持了足够市场份额
+
+Apple ultimately chose to take the opposite approach a "closed architecture" proprietary
+苹果公司最终选了相反的方式："封闭架构"
+
+designs that typically prevent people from adding new hardware to their computers.
+即自己设计一切，用户一般无法加新硬件到计算机中
+
+This meant that Apple made its own computers, with its own operating system, and often its
+意味着苹果公司要做自己的计算机，自己的操作系统
+
+own peripherals, like displays, keyboards, and printers.
+还有自己的外围设备，如显示器，键盘和打印机
+
+By controlling the full stack, from hardware to software,
+通过控制整个范围，从硬件到软件
+
+Apple was able to control the user experience and improve reliability.
+苹果能控制用户体验并提高可靠性
+
+These competing business strategies were the genesis of the "Mac" versus "PC" division
+不同的商业策略是"Mac vs PC 谁更好"这种争论的起源
+
+that still exists today... which is a misnomer, because they're both personal computers!
+这些争论如今还存在 \N 不过"Mac vs PC"用词不对，因为它们都是个人计算机！
+
+But whatever.
+但是随便啦
+
+To survive the onslaught of low-cost PCs,
+为了在低成本个人计算机的竞争冲击下生存下来
+
+Apple needed to up its game,
+苹果需要提高自身水平 \N 提供比 PC 和 DOS 更好的用户体验
+
+and offer a user experience that PCs and DOS couldn't.
+苹果需要提高自身水平 \N 提供比 PC 和 DOS 更好的用户体验
+
+Their answer was the Macintosh, released in 1984.
+他们的答案是 Macintosh，于 1984 年发布
+
+This ground breaking, reasonably-low-cost, all-in-one computer
+一台突破性 价格适中的一体式计算机 \N 用的不是命令行界面，而是图形界面
+
+booted not a command-line text-interface, but rather a graphical user interface,
+一台突破性 价格适中的一体式计算机 \N 用的不是命令行界面，而是图形界面
+
+our topic for next week. See you then.
+我们下周讨论图形界面. 到时见
+

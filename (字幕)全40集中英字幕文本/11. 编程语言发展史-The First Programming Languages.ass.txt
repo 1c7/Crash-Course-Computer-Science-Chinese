@@ -1,0 +1,662 @@
+This episode is brought to you by CuriosityStream.
+本集由 CuriosityStream 赞助播出
+
+Hi, I'm Carrie Anne and welcome to Crash Course Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+So far, for most of this series, we've focused on hardware
+之前我们把重点放在硬件 - 组成计算机的物理组件
+
+-- the physical components of computing --
+之前我们把重点放在硬件 - 组成计算机的物理组件
+
+things like: electricity and circuits, registers and RAM, ALUs and CPUs.
+比如电，电路，寄存器，RAM，ALU，CPU
+
+But programming at the hardware level is cumbersome and inflexible,
+但在硬件层面编程非常麻烦
+
+so programmers wanted a more versatile way to program computers
+所以程序员想要一种更通用的方法编程
+
+- what you might call a "softer" medium.
+- 一种"更软的"媒介
+
+That's right, we're going to talk about Software!
+没错，我们要讲软件！
+
+In episode 8, we walked through a simple program for the CPU we designed.
+第 8 集我们一步步讲了一个简单程序
+
+The very first instruction to be executed, the one at memory address 0, was 0010 1110.
+第一条指令在内存地址 0：0010 1110
+
+As we discussed, the first four bits of an instruction is the operation code,
+之前说过，前 4 位是操作码
+
+or OPCODE for short.
+简称 OPCODE
+
+On our hypothetical CPU, 0010 indicated a LOAD_A instruction
+对于这个假设 CPU，0010 代表 LOAD_A 指令
+
+-- which moves a value from memory into Register A.
+- 把值从内存复制到寄存器 A
+
+The second set of four bits defines the memory location,
+后 4 位是内存地址，1110 是十进制的 14
+
+in this case, 1110, which is 14 in decimal.
+后 4 位是内存地址，1110 是十进制的 14
+
+So what these eight numbers really mean is "LOAD Address 14 into Register A".
+所以这 8 位表达的意思是 \N  "读内存地址 14，放入寄存器 A"
+
+We're just using two different languages.
+只是用了两种不同语言
+
+You can think of it like English and Morse Code.
+可以想成是英语和摩尔斯码的区别
+
+"Hello" and ".... . .-.. .-.. ---" mean the same thing -- hello! --
+"你好" 和 ".... . .-.. .-.. ---" 是一个意思：你好
+
+they're just encoded differently.
+只是编码方式不同
+
+English and Morse Code also have different levels of complexity.
+英语和摩尔斯码的复杂度也不同
+
+English has 26 different letters in its alphabet and way more possible sounds.
+英文有 26 个字母以及各种发音
+
+Morse only has dots and dashes.
+摩尔斯码只有"点"和"线"
+
+But, they can convey the same information, and computer languages are similar.
+但它们可以传达相同的信息，计算机语言也类似.
+
+As we've seen, computer hardware can only handle raw, binary instructions.
+计算机能处理二进制，二进制是处理器的"母语"
+
+This is the "language" computer processors natively speak.
+计算机能处理二进制，二进制是处理器的"母语"
+
+In fact, it's the only language they're able to speak.
+事实上，它们*只能*理解二进制
+
+It's called Machine Language or Machine Code.
+这叫"机器语言"或"机器码"
+
+In the early days of computing, people had to write entire programs in machine code.
+在计算机早期阶段，必须用机器码写程序
+
+More specifically, they'd first write a high-level version of a program on paper, in English,
+具体来讲，会先在纸上用英语写一个"高层次版"
+
+For example "retrieve the next sale from memory,
+举例："从内存取下一个销售额，
+
+then add this to the running total for the day, week and year,
+然后加到天、周、年的总和
+
+then calculate any tax to be added"
+然后算税"
+
+...and so on.
+等等...
+
+An informal, high-level description of a program like this is called Pseudo-Code.
+这种对程序的高层次描述，叫 "伪代码"
+
+Then, when the program was all figured out on paper,
+在纸上写好后
+
+they'd painstakingly expand and translate it into binary machine code by hand,
+用"操作码表"把伪代码转成二进制机器码
+
+using things like opcode tables.
+用"操作码表"把伪代码转成二进制机器码
+
+After the translation was complete, the program could be fed into the computer and run.
+翻译完成后，程序可以喂入计算机并运行
+
+As you might imagine, people quickly got fed up with this process.
+你可能猜到了，很快人们就厌烦了
+
+So, by the late 1940s and into the 50s,
+所以在 1940~1950 年代
+
+programmers had developed slightly higher-level languages that were more human-readable.
+程序员开发出一种新语言， 更可读 更高层次
+
+Opcodes were given simple names, called mnemonics,
+每个操作码分配一个简单名字，叫"助记符"
+
+which were followed by operands, to form instructions.
+"助记符"后面紧跟数据，形成完整指令
+
+So instead of having to write instructions as a bunch of 1's and 0's,
+与其用 1 和 0 写代码，程序员可以写"LOAD_A 14"
+
+programmers could write something like "LOAD_A 14".
+与其用 1 和 0 写代码，程序员可以写"LOAD_A 14"
+
+We used this mnemonic in Episode 8 because it's so much easier to understand!
+我们在第 8 集用过这个助记符，因为容易理解得多！
+
+Of course, a CPU has no idea what "LOAD_A 14" is.
+当然，CPU 不知道 LOAD_A 14 是什么
+
+It doesn't understand text-based language, only binary.
+它不能理解文字，只能理解二进制
+
+And so programmers came up with a clever trick.
+所以程序员想了一个技巧，写二进制程序来帮忙
+
+They created reusable helper programs, in binary,
+所以程序员想了一个技巧，写二进制程序来帮忙
+
+that read in text-based instructions,
+它可以读懂文字指令，自动转成二进制指令
+
+and assemble them into the corresponding binary instructions automatically.
+它可以读懂文字指令，自动转成二进制指令
+
+This program is called
+这种程序叫
+
+-- you guessed it --
+你可能猜到了
+
+an Assembler.
+汇编器
+
+It reads in a program written in an Assembly Language
+汇编器读取用"汇编语言"写的程序，然后转成"机器码"
+
+and converts it to native machine code.
+汇编器读取用"汇编语言"写的程序，然后转成"机器码"
+
+"LOAD_A 14" is one example of an assembly instruction.
+"LOAD_A 14" 是一个汇编指令的例子
+
+Over time, Assemblers gained new features that made programming even easier.
+随着时间推移，汇编器有越来越多功能，让编程更容易
+
+One nifty feature is automatically figuring out JUMP addresses.
+其中一个功能是自动分析 JUMP 地址
+
+This was an example program I used in episode 8:
+这里有一个第8集用过的例子：
+
+Notice how our JUMP NEGATIVE instruction jumps to address 5,
+注意, JUMP NEGATIVE 指令跳到地址 5
+
+and our regular JUMP goes to address 2.
+JUMP 指令跳到地址 2
+
+The problem is, if we add more code to the beginning of this program,
+问题是，如果在程序开头多加一些代码
+
+all of the addresses would change.
+所有地址都会变
+
+That's a huge pain if you ever want to update your program!
+更新程序会很痛苦！
+
+And so an assembler does away with raw jump addresses,
+所以汇编器不用固定跳转地址
+
+and lets you insert little labels that can be jumped to.
+而是让你插入可跳转的标签
+
+When this program is passed into the assembler,
+当程序被传入汇编器，汇编器会自己搞定跳转地址
+
+it does the work of figuring out all of the jump addresses.
+当程序被传入汇编器，汇编器会自己搞定跳转地址
+
+Now the programmer can focus more on programming
+程序员可以专心编程，不用管底层细节
+
+and less on the underlying mechanics under the hood
+程序员可以专心编程，不用管底层细节
+
+enabling more sophisticated things to be built by hiding unnecessary complexity.
+隐藏不必要细节来做更复杂的工作
+
+As we've done many times in this series,
+我们又提升了一层抽象
+
+we're once again moving up another level of abstraction.
+我们又提升了一层抽象
+
+However, even with nifty assembler features like auto-linking JUMPs to labels,
+然而，即使汇编器有这些厉害功能，比如自动跳转
+
+Assembly Languages are still a thin veneer over machine code.
+汇编只是修饰了一下机器码
+
+In general, each assembly language instruction converts directly
+一般来说，一条汇编指令对应一条机器指令
+
+to a corresponding machine instruction - a one-to-one mapping -
+一般来说，一条汇编指令对应一条机器指令
+
+so it's inherently tied to the underlying hardware.
+所以汇编码和底层硬件的连接很紧密
+
+And the assembler still forces programmers to think about
+汇编器仍然强迫程序员思考  用什么寄存器和内存地址
+
+which registers and memory locations they will use.
+汇编器仍然强迫程序员思考  用什么寄存器和内存地址
+
+If you suddenly needed an extra value,
+如果你突然要一个额外的数，可能要改很多代码
+
+you might have to change a lot of code to fit it in.
+如果你突然要一个额外的数，可能要改很多代码
+
+Let's go to the Thought Bubble.
+让我们进入思考泡泡
+
+This problem did not escape Dr. Grace Hopper.
+葛丽丝·霍普博士 也遇到了这个问题
+
+As a US naval officer, she was one of the first programmers on the Harvard Mark 1 computer,
+作为美国海军军官，她是哈佛1号计算机的首批程序员之一
+
+which we talked about in Episode 2.
+这台机器我们在第 2 集提过
+
+This was a colossal, electro-mechanical beast
+这台巨大机电野兽在 1944 年战时建造完成，帮助盟军作战
+
+completed in 1944 as part of the allied war effort.
+这台巨大机电野兽在 1944 年战时建造完成，帮助盟军作战
+
+Programs were stored and fed into the computer on punched paper tape.
+程序写在打孔纸带上，放进计算机执行
+
+By the way, as you can see,
+顺便一说，如果程序里有漏洞
+
+they "patched" some bugs in this program
+顺便一说，如果程序里有漏洞
+
+by literally putting patches of paper over the holes on the punch tape.
+真的就 直接用胶带来补"漏洞"
+
+The Mark 1's instruction set was so primitive,
+Mark 1 的指令集非常原始，甚至没有 JUMP 指令
+
+there weren't even JUMP instructions.
+Mark 1 的指令集非常原始，甚至没有 JUMP 指令
+
+To create code that repeated the same operation multiple times,
+如果代码要跑不止一次
+
+you'd tape the two ends of the punched tape together, creating a physical loop.
+得把带子的两端连起来  做成循环
+
+In other words, programming the Mark 1 was kind of a nightmare!
+换句话说，给 Mark 1 编程简直是噩梦！
+
+After the war, Hopper continued to work at the forefront of computing.
+战后，霍普继续在计算机前沿工作
+
+To unleash the potential of computers,
+为了释放电脑的潜力
+
+she designed a high-level programming language called "Arithmetic Language Version 0",
+她设计了一个高级编程语言，叫"算术语言版本 0"
+
+or A-0 for short.
+简称"A-0"
+
+Assembly languages have direct, one-to-one mapping to machine instructions.
+汇编与机器指令是一一对应的
+
+But, a single line of a high-level programming language
+但一行高级编程语言  可能会转成几十条二进制指令
+
+might result in dozens of instructions being executed by the CPU.
+但一行高级编程语言  可能会转成几十条二进制指令
+
+To perform this complex translation, Hopper built the first compiler in 1952.
+为了做到这种复杂转换 \N Hopper 在 1952 年创造了第一个编译器
+
+This is a specialized program
+编译器专门把高级语言 转成低级语言
+
+that transforms "source" code written in a programming language into a low-level language,
+编译器专门把高级语言 转成低级语言
+
+like assembly or the binary "machine code" that the CPU can directly process.
+比如汇编或机器码（CPU 可以直接执行机器码）
+
+Thanks, Thought Bubble.
+谢了 思想泡泡
+
+So, despite the promise of easier programming,
+尽管"使编程更简单"很诱人
+
+many people were skeptical of Hopper's idea.
+但很多人对霍普的点子持怀疑态度
+
+She once said, "I had a running compiler and nobody would touch it.
+她曾说"我有能用的编译器，但没人愿意用
+
+they carefully told me, computers could only do arithmetic;
+他们告诉我计算机只能做算术,不能运行程序"
+
+they could not do programs."
+他们告诉我计算机只能做算术,不能运行程序"
+
+But the idea was a good one,
+但这个点子是好的
+
+and soon many efforts were underway to craft new programming languages
+不久，很多人尝试创造新编程语言
+
+-- today there are hundreds!
+- 如今有上百种语言！
+
+Sadly, there are no surviving examples of A-0 code,
+可惜的是，没有任何 A-0 的代码遗留下来
+
+so we'll use Python, a modern programming language, as an example.
+所以我们用 Python 举例（一门现代编程语言）
+
+Let's say we want to add two numbers and save that value.
+假设我们想相加两个数字，保存结果
+
+Remember, in assembly code,
+记住，如果用汇编代码
+
+we had to fetch values from memory, deal with registers, and other low-level details.
+我们得从内存取值，和寄存器打交道，以及其他底层细节
+
+But this same program can be written in python like so:
+但同样的程序可以用 Python 这样写：
+
+Notice how there are no registers or memory locations to deal with
+不用管寄存器或内存位置
+
+-- the compiler takes care of that stuff, abstracting away a lot of low-level and unnecessary complexity.
+- 编译器会搞定这些细节，不用管底层细节
+
+The programmer just creates abstractions for needed memory locations, known as variables,
+程序员只需要创建 代表内存地址的抽象，叫"变量"
+
+and gives them names.
+给变量取名字
+
+So now we can just take our two numbers, store them in variables we give names to
+现在可以把两个数 存在变量里
+
+-- in this case, I picked a and b but those variables could be anything -
+这里取名 A 和 B, 实际编程时你可以随便取名
+
+and then add those together, saving the result in c, another variable I created.
+然后相加两个数，把结果存在变量 C
+
+It might be that the compiler assigns Register A under the hood to store the value in a,
+底层操作时，编译器可能把变量 A 存在寄存器 A
+
+but I don't need to know about it!
+但我不需要知道这些！
+
+Out of sight, out of mind!
+眼不见心不烦
+
+It was an important historical milestone,
+这是个重要历史里程碑
+
+but A-0 and its later variants weren't widely used.
+但 A-0 和之后的版本没有广泛使用
+
+FORTRAN, derived from "Formula Translation",
+FORTRAN，名字来自 "公式翻译"
+
+was released by IBM a few years later, in 1957,
+这门语言数年后由 IBM 在 1957 年发布
+
+and came to dominate early computer programming.
+主宰了早期计算机编程
+
+John Backus, the FORTRAN project director,
+FORTRAN 项目总监 John Backus 说过
+
+said: "Much of my work has come from being lazy.
+"我做的大部分工作都是因为懒
+
+I didn't like writing programs,
+我不喜欢写程序
+
+and so ... I started work on a programming system to make it easier to write programs."
+所以我写这门语言，让编程更容易"
+
+You know, typical lazy person.
+你懂的，典型的"懒人"
+
+They're always creating their own programming systems.
+（白眼）创造自己的编程语言
+
+Anyway, on average, programs written in FORTRAN
+平均来说，FORTRAN 写的程序
+
+were 20 times shorter than equivalent handwritten assembly code.
+比等同的手写汇编代码短 20 倍
+
+Then the FORTRAN Compiler would translate and expand that into native machine code.
+然后 FORTRAN 编译器会把代码转成机器码
+
+The community was skeptical that the performance would be as good as hand written code,
+人们怀疑性能是否比得上手写代码
+
+but the fact that programmers could write more code more quickly,
+但因为能让程序员写程序更快，所以成了一个更经济的选择
+
+made it an easy choice economically:
+但因为能让程序员写程序更快，所以成了一个更经济的选择
+
+trading a small increase in computation time for a significant decrease in programmer time.
+运行速度慢一点点，编程速度大大加快
+
+Of course, IBM was in the business of selling computers,
+当时 IBM 在卖计算机
+
+and so initially, FORTRAN code could only be compiled and run on IBM computers.
+因此最初 FORTRAN 代码只能跑在 IBM 计算机上
+
+And most programing languages and compilers of the 1950s
+1950 年代大多数编程语言和编译器
+
+could only run on a single type of computer.
+只能运行在一种计算机上
+
+So, if you upgraded your computer,
+如果升级电脑
+
+you'd often have to re-write all the code too!
+可能要重写所有代码！
+
+In response, computer experts from industry,
+因此工业界，学术界，政府的计算机专家 \N 在 1959 年组建了一个联盟
+
+academia and government formed a consortium in 1959
+因此工业界，学术界，政府的计算机专家 \N 在 1959 年组建了一个联盟
+
+-- the Committee on Data Systems Languages, advised by our friend Grace Hopper --
+- 数据系统语言委员会，Grace Hopper 担任顾问
+
+to guide the development of a common programming language
+开发一种通用编程语言，可以在不同机器上通用
+
+that could be used across different machines.
+开发一种通用编程语言，可以在不同机器上通用
+
+The result was the high-level, easy to use,
+最后诞生了一门高级，易于使用，
+
+Common Business-Oriented Language, or COBOL for short.
+"普通面向商业语言"，简称 COBOL
+
+To deal with different underlying hardware,
+为了兼容不同底层硬件
+
+each computing architecture needed its own COBOL compiler.
+每个计算架构需要一个 COBOL 编译器
+
+But critically, these compilers could all accept the same COBOL source code,
+最重​​要的是，这些编译器都可以接收相同 COBOL 代码
+
+no matter what computer it was run on.
+不管是什么电脑
+
+This notion is called write once, run anywhere.
+这叫"一次编写，到处运行"
+
+It's true of most programming languages today,
+如今大多数编程语言都是这样
+
+a benefit of moving away from assembly and machine code,
+不必接触 CPU 特有的汇编码和机器码
+
+which is still CPU specific.
+不必接触 CPU 特有的汇编码和机器码
+
+The biggest impact of all this was reducing computing's barrier to entry.
+减小了使用门槛
+
+Before high level programming languages existed,
+在高级编程语言出现之前
+
+it was a realm exclusive to computer experts and enthusiasts.
+编程只是计算机专家和爱好者才会做的事
+
+And it was often their full time profession.
+而且通常是主职
+
+But now, scientists, engineers, doctors, economists, teachers,
+但现在，科学家，工程师，医生，经济学家，教师
+
+and many others could incorporate computation into their work .
+等等，都可以把计算机用于工作
+
+Thanks to these languages,
+感谢这些语言
+
+computing went from a cumbersome and esoteric discipline
+计算机科学从深奥学科 变成了大众化工具
+
+to a general purpose and accessible tool.
+计算机科学从深奥学科 变成了大众化工具
+
+At the same time, abstraction in programming allowed those computer experts
+同时，编程的抽象也让计算机专家
+
+- now "professional programmers" -
+现在叫"专业程序员"
+
+to create increasingly sophisticated programs,
+制作更复杂的程序
+
+which would have taken millions, tens of millions, or even more lines of assembly code.
+如果用汇编写可能要上百万行
+
+Now, this history didn't end in 1959.
+当然，计算机的历史没有在 1959 年结束
+
+In fact, a golden era in programming language design jump started,
+编程语言设计的黄金时代才刚刚开始
+
+evolving in lockstep with dramatic advances in computer hardware.
+和硬件一起飞速发展
+
+In the 1960s, we had languages like ALGOL, LISP and BASIC.
+在 1960 年代，有 ALGOL, LISP 和 BASIC 等语言
+
+In the 70's: Pascal, C and Smalltalk were released.
+70年代有：Pascal，C 和 Smalltalk
+
+The 80s gave us C++, Objective-C, and Perl.
+80年代有：C++，Objective-C 和 Perl
+
+And the 90's: python, ruby, and Java.
+90年代有：Python，Ruby 和 Java
+
+And the new millennium has seen the rise of Swift, C#, and Go
+新千年 Swift, C#, Go 在崛起
+
+- not to be confused with Let it Go and Pokemon Go.
+不要把 Go 和\N 《冰雪奇缘》的 Let it Go 和游戏 Pokemon Go 弄混
+
+Anyway, some of these might sound familiar
+有些语言你可能听起来耳熟 - 很多现在还存在
+
+-- many are still around today.
+有些语言你可能听起来耳熟 - 很多现在还存在
+
+It's extremely likely that the web browser you're using right now
+你现在用的浏览器很可能是 C++ 或 Objective-C 写的
+
+was written in C++ or Objective-C.
+你现在用的浏览器很可能是 C++ 或 Objective-C 写的
+
+That list I just gave is the tip of the iceberg.
+我刚才说的编程语言名字 只是冰山一角
+
+And languages with fancy, new features are proposed all the time.
+新的编程语言在不断诞生
+
+Each new language attempts to leverage new and clever abstractions
+新语言想用更聪明的抽象
+
+to make some aspect of programming easier or more powerful,
+让某些方面更容易或更强大
+
+or take advantage of emerging technologies and platforms,
+或利用新技术和新平台带来的优势
+
+so that more people can do more amazing things, more quickly.
+让更多人能快速做出美妙的事情
+
+Many consider the holy grail of programming to be the use of "plain ol' English",
+许多人认为编程的"圣杯"是直接用英文
+
+where you can literally just speak what you want the computer to do,
+直接对计算机说话，然后它会理解并执行
+
+it figures it out, and executes it.
+直接对计算机说话，然后它会理解并执行
+
+This kind of intelligent system is science fiction for now.
+这种智能系统目前只存在于科幻小说
+
+And fans of 2001: A Space Odyssey may be okay with that.
+"2001：太空漫游" 的粉丝可能没什么意见
+
+Now that you know all about programming languages,
+现在你理解了编程语言,
+
+we're going to deep dive for the next couple of episodes,
+接下来几集 我们会深入了解
+
+and we'll continue to build your understanding
+接下来几集 我们会深入了解
+
+of how programming languages, and the software they create,
+编程语言和用语言写的软件
+
+are used to do cool and unbelievable things.
+是怎么做到那些酷事
+
+See you next week.
+下周见
+
+（给 Curiosity Stream 打广告）
+

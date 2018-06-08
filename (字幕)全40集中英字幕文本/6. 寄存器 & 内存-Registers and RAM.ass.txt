@@ -1,0 +1,620 @@
+Hi, I'm Carrie Anne and welcome to Crash Course Computer Science.
+嗨，我是 Carrie Anne，欢迎收看计算机科学速成课
+
+So last episode, using just logic gates, we built a simple ALU,
+上集，我们用逻辑门做了个简单 ALU
+
+which performs arithmetic and logic operations, hence the 'A' and the 'L'.
+它能执行算术(Arithmetic)和逻辑(Logic)运算 \N ALU 里的 A 和 L 因此得名
+
+But of course, there's not much point in calculating a result only to throw it away
+当然，算出来之后如果扔掉就没什么意义了
+
+- it would be useful to store that value somehow,
+得找个方法存起来
+
+and maybe even run several operations in a row.
+可能还要进行多个连续操作
+
+That's where computer memory comes in!
+这就用到计算机内存了
+
+If you've ever been in the middle of a long RPG campaign on your console,
+如果你在主机上打过一场长时间的对局
+
+or slogging through a difficult level on Minesweeper on your desktop,
+或玩困难模式的 "扫雷"
+
+and your dog came by, tripped and pulled the power cord out of the wall,
+然后狗跑过来，被电源线绊倒，把插头拔了出来
+
+you know the agony of losing all your progress.
+你知道失去进度的痛苦
+
+Condolences.
+真同情你 :(
+
+But the reason for your loss is that your console, your laptop and your computers
+你损失数据的原因是 \N 电脑用的是"随机存取存储器"，简称"RAM"
+
+make use of Random Access Memory, or RAM,
+你损失数据的原因是 \N 电脑用的是"随机存取存储器"，简称"RAM"
+
+which stores things like game state - as long as the power stays on.
+它只能在有电的情况下存储东西，比如游戏状态
+
+Another type of memory, called persistent memory, can survive without power,
+另一种存储 (memory) 叫持久存储，电源关闭时数据也不会丢失
+
+and it's used for different things;
+它用来存其他东西.
+
+We'll talk about the persistence of memory in a later episode.
+我们之后会讨论存储 (memory) 的持久性问题
+
+Today, we're going to start small
+今天我们从简单开始
+
+- literally by building a circuit that can store one.. single.. bit of information.
+- 做只能存储 1 位的电路
+
+After that, we'll scale up, and build our very own memory module,
+之后再扩大，做出我们的内存模块
+
+and we'll combine it with our ALU next time, when we finally build our very own CPU!
+下次和 ALU 结合起来，做出 CPU！
+
+All of the logic circuits we've discussed so far go in one direction
+我们至今说过的电路都是单向的
+
+- always flowing forward.
+- 总是向前流动
+
+like our 8-bit ripple adder from last episode.
+比如上集的 8 位 "脉动进位加法器"
+
+But we can also create circuits that loop back on themselves.
+但也可以做回向电路，把输出连回输入
+
+Let's try taking an ordinary OR gate, and feed the output back into one of its inputs
+我们拿一个 OR 门试试，把输出连回输入
+
+and see what happens.
+看看会发生什么
+
+First, let's set both inputs to 0.
+首先，两个输入都设为 0
+
+So 0 OR 0 is 0, and so this circuit always outputs 0.
+"0 OR 0" 是 0，所以电路输出0
+
+If we were to flip input A to 1.
+如果将 A 变成1
+
+1 OR 0 is 1, so now the output of the OR gate is 1.
+"1 OR 0" 为 1，所以输出 1
+
+A fraction of a second later, that loops back around into input B,
+一转眼的功夫，输出回到 B
+
+so the OR gate sees that both of its inputs are now 1.
+OR 门看到两个输入都是 1
+
+1 OR 1 is still 1, so there is no change in output.
+"1 OR 1" 仍然为1，所以输出不变
+
+If we flip input A back to 0, the OR gate still outputs 1.
+如果将 A 变成 0，OR 门依然输出 1
+
+So now we've got a circuit that records a "1" for us.
+现在我们有个电路能记录 "1"
+
+Except, we've got a teensy tiny problem - this change is permanent!
+然而有个小问题：这是永久的！
+
+No matter how hard we try, there's no way to get this circuit to flip back from a 1 to a 0.
+无论怎么试，都没法从 1 变回 0
+
+Now let's look at this same circuit, but with an AND gate instead.
+我们换成 AND 门看看会怎样
+
+We'll start inputs A and B both at 1.
+开始时，A 和 B 都设 1
+
+1 AND 1 outputs 1 forever.
+"1 AND 1" 永远输出 1
+
+But, if we then flip input A to 0, because it's an AND gate, the output will go to 0.
+如果之后 A 设为 0，由于是 AND 门，输出会变成 0
+
+So this circuit records a 0, the opposite of our other circuit.
+这个电路能记录 0，和之前那个相反
+
+Like before, no matter what input we apply to input A afterwards, the circuit will always output 0.
+就像之前，无论 A 设什么值，电路始终输出 0
+
+Now we've got circuits that can record both 0s and 1s.
+现在有了能存 0 和 1 的电路
+
+The key to making this a useful piece of memory is to combine our two circuits into what is
+为了做出有用的存储 (memory) \N 我们把两个电路结合起来
+
+called the AND-OR Latch.
+这叫 "AND-OR 锁存器"
+
+It has two inputs, a "set" input, which sets the output to a 1,\Ncalled the AND-OR Latch.
+It has two inputs, a "set" input, which sets the output to a 1,
+它有两个输入\N  "设置"输入, 把输出变成 1\N "复位"输入, 把输出变成 0
+
+and a "reset" input, which resets the output to a 0.
+它有两个输入\N  "设置"输入, 把输出变成 1\N "复位"输入, 把输出变成 0
+
+If set and reset are both 0, the circuit just outputs whatever was last put in it.
+如果"设置"和"复位"都是 0，电路会输出最后放入的内容
+
+In other words, it remembers a single bit of information!
+也就是说，它存住了 1 位的信息！
+
+Memory!
+存储！
+
+This is called a "latch" because it "latches onto" a particular value and stays that way.
+这叫"锁存", 因为它"锁定"了一个值
+
+The action of putting data into memory is called writing, whereas getting the data out is called reading.
+放入数据的动作叫 "写入"  ，拿出数据的动作叫 "读取"
+
+Ok, so we've got a way to store a single bit of information!
+现在我们终于有办法存一个位了！
+
+Great!
+超棒！
+
+Unfortunately, having two different wires for input - set and reset - is a bit confusing.
+麻烦的是, 用两条线 "设置"和"复位" 来输入, 有点难理解
+
+To make this a little easier to use, we really want a single wire to input data,
+为了更容易用，我们希望只有一条输入线
+
+that we can set to either 0 or 1 to store the value.
+将它设为 0 或 1 来存储值
+
+Additionally, we are going to need a wire that enables the memory
+还需要一根线来"启用"内存
+
+to be either available for writing or "locked" down
+启用时允许写入，没启用时就 "锁定"
+
+- which is called the write enable line.
+- 这条线叫 "允许写入线"
+
+By adding a few extra logic gates, we can build this circuit,
+加一些额外逻辑门，可以做出这个电路
+
+which is called a Gated Latch since the "gate" can be opened or closed.
+这叫"门锁"，因为门可以打开和关上
+
+Now this circuit is starting to get a little complicated.
+现在有点复杂了
+
+We don't want to have to deal with all the individual logic gates...
+我们不想关心单独的逻辑门
+
+so as before, we're going to bump up a level of abstraction,
+所以我们提升一层抽象
+
+and put our whole Gated Latch circuit in a box -- a box that stores one bit.
+把 "门锁" 放到盒子里 - 这个盒子能存一个 bit
+
+Let's test out our new component!
+我们来测一下新组件！
+
+Let's start everything at 0.
+一切从 0 开始
+
+If we toggle the Data wire from 0 to 1 or 1 to 0,
+数据输入从0换到1, 从1换到0
+
+nothing happens - the output stays at 0.
+什么也不会发生 - 输出依然是 0
+
+That's because the write enable wire is off, which prevents any change to the memory.
+因为 "允许写入线" 是关闭的，所以内容不会变化
+
+So we need to "open" the "gate" by turning the write enable wire to 1.
+所以要给 "允许写入线" 输入 1, "打开" 门
+
+Now we can put a 1 on the data line to save the value 1 to our latch.
+现在往 "数据线" 放 1，1 就能存起来了
+
+Notice how the output is now 1.\NNow we can put a 1 on the data line to save the value 1 to our latch.
+Notice how the output is now 1.
+注意输出现在是 1 了
+
+Success!
+成功！
+
+We can turn off the enable line and the output stays as 1.
+现在可以关掉  "允许写入线" ，输出会保持 1
+
+Once again, we can toggle the value on the data line all we want,
+现在不管给 "数据线" 什么值
+
+but the output will stay the same.
+输出都不会变
+
+The value is saved in memory.
+值存起来了
+
+Now let's turn the enable line on again use our data line to set the latch to 0.
+现在又打开 "允许写入线"  \N  "数据线" 设为0
+
+Done.
+完成
+
+Enable line off, and the output is 0.
+"允许写入线" 关闭，输出 0
+
+And it works!
+成功了！
+
+Now, of course, computer memory that only stores one bit of information isn't very useful
+当然，只能存 1 bit 没什么大用
+
+-- definitely not enough to run Frogger.
+- 肯定玩不了游戏
+
+Or anything, really.
+或做其它事情
+
+But we're not limited to using only one latch.
+但我们没限制只能用一个锁存器
+
+If we put 8 latches side-by-side, we can store 8 bits of information like an 8-bit number.
+如果我们并排放 8 个锁存器，\N 可以存 8 位信息，比如一个 8 bit 数字
+
+A group of latches operating like this is called a register,
+一组这样的锁存器叫 "寄存器"
+
+which holds a single number, and the number of bits in a register is called its width.
+寄存器能存一个数字，这个数字有多少位，叫"位宽"
+
+Early computers had 8-bit registers, then 16, 32,
+早期电脑用 8 位寄存器，然后是 16 位，32 位
+
+and today, many computers have registers that are 64-bits wide.
+如今许多计算机都有 64 位宽的寄存器
+
+To write to our register, we first have to enable all of the latches.
+写入寄存器前，要先启用里面所有锁存器
+
+We can do this with a single wire that connects to all of their enable inputs, which we set to 1.
+我们可以用一根线连接所有 "允许输入线", 把它设为 1
+
+We then send our data in using the 8 data wires, and then set enable back to 0,
+然后用 8 条数据线发数据，然后将 "允许写入线" 设回 0
+
+and the 8 bit value is now saved in memory.
+现在 8 位的值就存起来了
+
+Putting latches side-by-side works ok for a small-ish number of bits.
+如果只有很少的位(bits)，把锁存器并排放置，也勉强够用了.
+
+A 64-bit register would need 64 wires running to the data pins, and 64 wires running to the outputs.
+64 位寄存器要 64 根数据线，64 根连到输出端
+
+Luckily we only need 1 wire to enable all the latches, but that's still 129 wires.
+幸运的是，我们只要 1 根线启用所有锁存器 \N 但加起来也有 129 条线了
+
+For 256 bits, we end up with 513 wires!
+如果存 256 位要 513 条线！
+
+The solution is a matrix!
+解决方法是矩阵！
+
+In this matrix, we don't arrange our latches in a row,
+在矩阵中，我们不并列排放锁存器
+
+we put them in a grid.
+而是做成网格
+
+For 256 bits, we need a 16 by 16 grid of latches with 16 rows and columns of wires.
+存 256 位，我们用 16x16 网格的锁存器，有 16 行 16 列
+
+To activate any one latch, we must turn on the corresponding row AND column wire.
+要启用某个锁存器，就打开相应的 行线 和 列线
+
+Let's zoom in and see how this works.
+放大看看怎么做的
+
+We only want the latch at the intersection of the two active wires to be enabled,
+我们只想打开交叉处  锁存器的 "允许写入线"
+
+but all of the other latches should stay disabled.
+所有其他锁存器，保持关闭
+
+For this, we can use our trusty AND gate!
+我们可以用 AND 门！
+
+The AND gate will output a 1 only if the row and the column wires are both 1.
+只有 行线和列线 均为 1 ，AND 门才输出 1
+
+So we can use this signal to uniquely select a single latch.
+所以可以用选择单个锁存器
+
+This row/column setup connects all our latches with a single, shared, write enable wire.
+这种行/列排列法，用一根 "允许写入线" 连所有锁存器
+
+In order for a latch to become write enabled,
+为了让锁存器变成 "允许写入"
+
+the row wire, the column wire, and the write enable wire must all be 1.
+行线，列线和 "允许写入线" 都必须是 1
+
+That should only ever be true for one single latch at any given time.
+每次只有 1 个锁存器会这样
+
+This means we can use a single, shared wire for data.
+代表我们可以只用一根 "数据线"  \N 连所有锁存器来传数据
+
+Because only one latch will ever be write enabled, only one will ever save the data
+因为只有一个锁存器会启用，只有那个会存数据
+
+-- the rest of the latches will simply ignore values on the data wire because they are not write enabled.
+其他锁存器会忽略数据线上的值，因为没有 "允许写入"
+
+We can use the same trick with a read enable wire to read the data later,
+我们可以用类似的技巧, 做"允许读取线"来读数据
+
+to get the data out of one specific latch.
+从一个指定的锁存器，读取数据
+
+This means in total, for 256 bits of memory,
+所以对于 256 位的存储
+
+we only need 35 wires - 1 data wire, 1 write enable wire, 1 read enable wire,
+只要 35 条线 \N1条"数据线", 1条"允许写入线", 1条"允许读取线"
+
+and 16 rows and columns for the selection.
+还有16行16列的线用于选择锁存器 \N （16+16=32, 32+3=35）
+
+That's significant wire savings!
+这省了好多线！
+
+But we need a way to uniquely specify each intersection.
+但我们需要某种方法来 唯一指定 交叉路口
+
+We can think of this like a city,
+我们可以想成城市
+
+where you might want to meet someone at 12th avenue and 8th street
+你可能想和别人  在第 12 大道和第 8 街的交界碰面
+
+-- that's an address that defines an intersection.
+- 这是一个交叉点的地址
+
+The latch we just saved our one bit into has an address of row 12 and column 8.
+我们刚刚存了一位的地址是 "12行 8列"
+
+Since there is a maximum of 16 rows, we store the row address in a 4 bit number.
+由于最多 16 行, 用 4 位就够了
+
+12 is 1100 in binary.
+12 用二进制表示为 1100
+
+We can do the same for the column address: 8 is 1000 in binary.
+列地址也可以这样： 8 用二进制表示为 1000
+
+So the address for the particular latch we just used can be written as 11001000.
+刚才说的"12行 8列"可以写成 11001000
+
+To convert from an address into something that selects the right row or column,
+为了将地址转成  行和列
+
+we need a special component called a multiplexer
+我们需要 "多路复用器"
+
+-- which is the computer component with a pretty cool name at least compared to the ALU.
+- 这个名字起码比 ALU 酷一点
+
+Multiplexers come in all different sizes,
+多路复用器有不同大小
+
+but because we have 16 rows, we need a 1 to 16 multiplexer.
+因为有 16 行，我们需要 1 到 16 多路复用器
+
+It works like this.
+工作方式是
+
+You feed it a 4 bit number, and it connects the input line to a corresponding output line.
+输入一个 4 位数字，它会把那根线，连到相应的输出线
+
+So if we pass in 0000, it will select the very first column for us.
+如果输入 0000，它会选择第一列
+
+If we pass in 0001, the next column is selected, and so on.
+如果输入 0001，会选择下一列，依此类推
+
+We need one multiplexer to handle our rows and another multiplexer to handle the columns.
+一个多路复用器处理行(row) \N 另一个多路复用器处理列(column)
+
+Ok, it's starting to get complicated again,
+好吧，开始有点复杂了
+
+so let's make our 256-bit memory its own component.
+那么把 256 位内存当成一个整体好了
+
+Once again a new level of abstraction!
+又提升了一层抽象！
+
+It takes an 8-bit address for input - the 4 bits for the column and 4 for the row.
+它输入一个 8 位地址：4 位代表列，4 位代表行
+
+We also need write and read enable wires.
+我们还需要 "允许写入线" 和 "允许读取线"
+
+And finally, we need just one data wire, which can be used to read or write data.
+最后，还需要一条数据线，用于读/写数据
+
+Unfortunately, even 256-bits of memory isn't enough to run much of anything,
+不幸的是， 256 位的内存也没法做什么事
+
+so we need to scale up even more!
+所以还要扩大规模
+
+We're going to put them in a row.
+把它们并排放置
+
+Just like with the registers.
+就像寄存器一样
+
+We'll make a row of 8 of them, so we can store an 8 bit number - also known as a byte.
+一行8个，可以存一个 8 位数字 \N 8 位也叫一个字节（byte）
+
+To do this, we feed the exact same address into all 8 of our 256-bit memory components at the same time,
+为了存一个 8 位数字，我们同时给 8 个 256 位内存一样的地址
+
+and each one saves one bit of the number.
+每个地址存 1 位
+
+That means the component we just made can store 256 bytes at 256 different addresses.
+意味着这里总共能存 256 个字节 （byte）
+
+Again, to keep things simple, we want to leave behind this inner complexity.
+再次，为了简单，我们不管内部
+
+Instead of thinking of this as a series of individual memory modules and circuits,
+不看作是一堆独立的存储模块和电路
+
+we'll think of it as a uniform bank of addressable memory.
+而是看成一个整体的可寻址内存
+
+We have 256 addresses,
+我们有 256 个地址
+
+and at each address, we can read or write an 8-bit value.
+每个地址能读或写一个 8 位值
+
+We're going to use this memory component next episode when we build our CPU.
+我们下集做 CPU 时会用到这个内存
+
+The way that modern computers scale to megabytes and gigabytes of memory
+现代计算机的内存 \N 扩展到上兆字节（MB）和千兆字节（GB）的方式
+
+is by doing the same thing we've been doing here
+和我们这里做的一样
+
+-- keep packaging up little bundles of memory into larger, and larger, and larger arrangements.
+不断把内存打包到更大规模
+
+As the number of memory locations grow, our addresses have to grow as well.
+随着内存地址增多，内存地址也必须增长
+
+8 bits hold enough numbers to provide addresses for 256 bytes of our memory,
+8 位最多能代表 256 个内存地址 \N（1111 1111 是255，0~255 一共 256 个数字）
+
+but that's all.
+只有这么多
+
+To address a gigabyte - or a billion bytes of memory - we need 32-bit addresses.
+要给千兆或十亿字节的内存寻址，需要 32 位的地址
+
+An important property of this memory is that we can access any memory location, at any time, and in a random order.
+内存的一个重要特性是：可以随时访问任何位置
+
+For this reason, it's called Random-Access Memory or RAM.
+因此叫 "随机存取存储器" ，简称 RAM
+
+When you hear people talking about how much RAM a computer has
+当你听到有人说 RAM 有多大
+
+- that's the computer's memory.
+他的意思是内存有多大
+
+RAM is like a human's short term or working memory,
+RAM 就像人类的短期记忆
+
+where you keep track of things going on right now
+记录当前在做什么事
+
+- like whether or not you had lunch or paid your phone bill.
+比如吃了午饭没，或有没有交电话费
+
+Here's an actual stick of RAM - with 8 memory modules soldered onto the board.
+这是一条真的内存，上面焊了 8 个内存模块
+
+If we carefully opened up one of these modules and zoomed in,
+如果打开其中一个，然后放大
+
+The first thing you would see are 32 squares of memory.
+会看到 32 个内存方块
+
+Zoom into one of those squares, and we can see each one is comprised of 4 smaller blocks.
+放大其中一个方块，可以看到有 4 个小块
+
+If we zoom in again, we get down to the matrix of individual bits.
+如果再放大，可以看到存一个"位"的矩阵
+
+This is a matrix of 128 by 64 bits.
+这个矩阵是 128 位 x 64 位
+
+That's 8192 bits in total.
+总共 8192 位
+
+Each of our 32 squares has 4 matrices, so that's 32 thousand, 7 hundred and 68 bits.
+每个方格 4 个矩阵 \N 所以一个方格有 32768 个位 （8192 x 4 = 32768）
+
+And there are 32 squares in total.
+而一共 32 个方格
+
+So all in all, that's roughly 1 million bits of memory in each chip.
+总而言之，1 个芯片大约存 100 万位
+
+Our RAM stick has 8 of these chips, so in total, this RAM can store 8 millions bits,
+RAM 有 8 个芯片，所以总共 800 万位
+
+otherwise known as 1 megabyte.
+也就是 1 兆字节（1 MB）
+
+That's not a lot of memory these days -- this is a RAM module from the 1980's.
+1 MB 如今不算大 - 这是 1980 年代的 RAM
+
+Today you can buy RAM that has a gigabyte or more of memory
+如今你可以买到千兆字节（GB）的 RAM
+
+- that's billions of bytes of memory.
+那可是数十亿字节的内存
+
+So, today, we built a piece of SRAM - Static Random-Access Memory - which uses latches.
+今天，我们用锁存器做了一块 SRAM（静态随机存取存储器）
+
+There are other types of RAM, such as DRAM, Flash memory, and NVRAM.
+还有其他类型的 RAM，如 DRAM，闪存和 NVRAM
+
+These are very similar in function to SRAM,
+它们在功能上与 SRAM 相似
+
+but use different circuits to store the individual bits
+但用不同的电路存单个位
+
+- for example, using different logic gates, capacitors, charge traps, or memristors.
+- 比如用不同的逻辑门，电容器，电荷捕获或忆阻器
+
+But fundamentally, all of these technologies store bits of information
+但根本上  这些技术都是矩阵层层嵌套，来存储大量信息
+
+in massively nested matrices of memory cells.
+但根本上  这些技术都是矩阵层层嵌套，来存储大量信息
+
+Like many things in computing, the fundamental operation is relatively simple.
+就像计算机中的很多事情，底层其实都很简单
+
+it's the layers and layers of abstraction that's mind blowing
+让人难以理解的，是一层层精妙的抽象
+
+-- like a russian doll that keeps getting smaller and smaller and smaller.
+像一个越来越小的俄罗斯套娃
+
+I'll see you next week.
+下周见
+

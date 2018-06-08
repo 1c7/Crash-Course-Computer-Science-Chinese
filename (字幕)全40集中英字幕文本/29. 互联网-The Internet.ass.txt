@@ -1,0 +1,612 @@
+Hi, I’m Carrie Anne, and welcome to CrashCourse Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne \N 欢迎收看计算机科学速成课！
+
+As we talked about last episode, your computer is connected to a large, distributed network,
+上集讲到，你的计算机和一个巨大的分布式网络连在一起
+
+called The Internet.
+这个网络叫互联网
+
+I know this because you’re watching a YouTube video,
+你现在就在网上看视频呀
+
+which is being streamed over that very internet.
+你现在就在网上看视频呀
+
+It’s arranged as an ever-enlarging web of interconnected devices.
+互联网由无数互联设备组成，而且日益增多
+
+For your computer to get this video,
+计算机为了获取这个视频 \N 首先要连到局域网，也叫 LAN
+
+the first connection is to your local area network, or LAN,
+计算机为了获取这个视频 \N 首先要连到局域网，也叫 LAN
+
+which might be every device in your house that’s connected to your wifi router.
+你家 WIFI 路由器连着的所有设备，组成了局域网.
+
+This then connects to a Wide Area Network, or WAN,
+局域网再连到广域网，广域网也叫 WAN
+
+which is likely to be a router run by your Internet Service Provider, or ISP，
+WAN 的路由器一般属于你的"互联网服务提供商"，简称 ISP
+
+companies like Comcast, AT&T or Verizon.
+比如 Comcast，AT&T 和 Verizon 这样的公司
+
+At first, this will be a regional router, like one for your neighborhood,
+广域网里，先连到一个区域性路由器，这路由器可能覆盖一个街区。
+
+and then that router connects to an even bigger WAN,
+然后连到一个更大的 WAN，可能覆盖整个城市
+
+maybe one for your whole city or town.
+然后连到一个更大的 WAN，可能覆盖整个城市
+
+There might be a couple more hops, but ultimately you’ll connect to the backbone of the internet
+可能再跳几次，但最终会到达互联网主干
+
+made up of gigantic routers with super high-bandwidth connections running between them.
+互联网主干由一群超大型、带宽超高路由器组成
+
+To request this video file from YouTube,
+为了从 YouTube 获得这个视频，
+
+a packet had to work its way up to the backbone,
+数据包（packet）要先到互联网主干
+
+travel along that for a bit, and then work its way back down to a YouTube server that had the file.
+沿着主干到达有对应视频文件的 YouTube 服务器
+
+That might be four hops up, two hops across the backbone,
+数据包从你的计算机跳到 Youtube 服务器，可能要跳个10次，
+
+and four hops down, for a total of ten hops.
+先跳4次到互联网主干，2次穿过主干，\N主干出来可能再跳4次，然后到 Youtube 服务器
+
+If you’re running Windows, Mac OS or Linux, you can see the route data takes to different
+如果你在用 Windows, Mac OS 或 Linux系统，可以用 traceroute 来看跳了几次
+
+places on the internet by using the traceroute program on your computer.
+如果你在用 Windows, Mac OS 或 Linux系统，可以用 traceroute 来看跳了几次
+
+Instructions in the Doobly Doo.
+更多详情看视频描述（YouTube原视频下）
+
+For us here at the Chad & Stacey Emigholz Studio in Indianapolis,
+我们在"印第安纳波利斯"的 Chad&Stacy Emigholz 工作室，\N 访问加州的 DFTBA 服务器，
+
+the route to the DFTBA server in California goes through 11 stops.
+经历了11次中转
+
+We start at 192.168.0.1 -- that's the IP address for my computer on our LAN.
+从 192.168.0.1 出发，这是我的电脑在 局域网（LAN）里的 IP 地址
+
+Then there’s the wifi router here at the studio,
+然后到工作室的 WIFI 路由器
+
+then a series of regional routers, then we get onto the backbone,
+然后穿过一个个地区路由器，到达主干.
+
+and then we start working back down to the computer hosting "DFTBA.com”,
+然后从主干出来，又跳了几次，到达"DFTBA.com”的服务器
+
+which has the IP address 104.24.109.186.
+IP 地址是 104.24.109.186.
+
+But how does a packet actually get there?
+但数据包*到底*是怎么过去的？
+
+What happens if a packet gets lost along the way?
+如果传输时数据包被弄丢了，会发生什么？
+
+If I type "DFTBA.com” into my web browser, how does it know the server’s address?
+如果在浏览器里输 "DFTBA.com"，浏览器怎么知道服务器的地址多少？
+
+These are our topics for today!
+我们今天会讨论这些话题.
+
+As we discussed last episode, the internet is a huge distributed network
+上集说过，互联网是一个巨型分布式网络 \N 会把数据拆成一个个数据包来传输
+
+that sends data around as little packets.
+上集说过，互联网是一个巨型分布式网络 \N 会把数据拆成一个个数据包来传输
+
+If your data is big enough, like an email attachment,
+如果要发的数据很大，比如邮件附件 \N 数据会被拆成多个小数据包
+
+it might get broken up into many packets.
+如果要发的数据很大，比如邮件附件 \N 数据会被拆成多个小数据包
+
+For example, this video stream is arriving to your computer right now
+举例，你现在看的这个视频 \N 就是一个个到达你电脑的数据包
+
+as a series of packets, and not one gigantic file.
+而不是一整个大文件发过来
+
+Internet packets have to conform to a standard called the Internet Protocol, or IP.
+数据包（packet）想在互联网上传输 \N 要符合"互联网协议"的标准，简称 IP
+
+It’s a lot like sending physical mail through the postal system
+就像邮寄手写信一样，邮寄是有标准的\N 每封信需要一个地址，而且地址必须是独特的
+
+– every letter needs a unique and legible address written on it,
+就像邮寄手写信一样，邮寄是有标准的\N 每封信需要一个地址，而且地址必须是独特的
+
+and there are limits to the size and weight of packages.
+并且大小和重量是有限制的
+
+Violate this, and your letter won’t get through.
+违反这些规定，信件就无法送达.
+
+IP packets are very similar.
+IP 数据包也是如此
+
+However, IP is a very low level protocol
+因为 IP 是一个非常底层的协议
+
+– there isn’t much more than a destination address in a packet’s header
+数据包的头部（或者说前面）只有目标地址
+
+which is the metadata that’s stored in front of the data payload.
+头部存 "关于数据的数据" \N 也叫 元数据(metadata)
+
+This means that a packet can show up at a computer, but the computer may not know
+这意味着当数据包到达对方电脑 \N 对方不知道把包交给哪个程序，是交给 Skype 还是使命召唤？
+
+which application to give the data to; Skype or Call of Duty.
+这意味着当数据包到达对方电脑 \N 对方不知道把包交给哪个程序，是交给 Skype 还是使命召唤？
+
+For this reason, more advanced protocols were developed that sit on top of IP.
+因此需要在 IP 之上，开发更高级的协议.
+
+One of the simplest and most common is the User Datagram Protocol, or UDP.
+这些协议里 \N 最简单最常见的叫"用户数据报协议"，简称 UDP
+
+UDP has its own header, which sits inside the data payload.
+UDP 也有头部，这个头部位于数据前面
+
+Inside of the UDP header is some useful, extra information.
+头部里包含有用的信息
+
+One of them is a port number.
+信息之一是端口号
+
+Every program wanting to access the internet will
+每个想访问网络的程序 \N 都要向操作系统申请一个端口号.
+
+ask its host computer’s Operating System to be given a unique port.
+每个想访问网络的程序 \N 都要向操作系统申请一个端口号.
+
+Like Skype might ask for port number 3478.
+比如 Skype 会申请端口 3478
+
+When a packet arrives to the computer, the Operating System
+当一个数据包到达时 \N 接收方的操作系统会读 UDP 头部，读里面的端口号
+
+will look inside the UDP header and read the port number.
+当一个数据包到达时 \N 接收方的操作系统会读 UDP 头部，读里面的端口号
+
+Then, if it sees, for example, 3478, it will give the packet to Skype.
+如果看到端口号是 3478，就把数据包交给 Skype
+
+So to review, IP gets the packet to the right computer,
+总结：\NIP 负责把数据包送到正确的计算机 \N UDP 负责把数据包送到正确的程序
+
+but UDP gets the packet to the right program running on that computer.
+总结：\NIP 负责把数据包送到正确的计算机 \N UDP 负责把数据包送到正确的程序
+
+UDP headers also include something called a checksum,
+UDP 头部里还有"校验和"，用于检查数据是否正确
+
+which allows the data to be verified for correctness.
+UDP 头部里还有"校验和"，用于检查数据是否正确
+
+As the name suggests, it does this by checking the sum of the data.
+正如"校验和"这个名字所暗示的 \N 检查方式是把数据求和来对比
+
+Here’s a simplified version of how this works.
+以下是个简单例子
+
+Let's imagine the raw data in our UDP packet is
+假设 UDP 数据包里 \N 原始数据是 89 111 33 32 58 41
+
+89 111 33 32 58 and 41.
+假设 UDP 数据包里 \N 原始数据是 89 111 33 32 58 41
+
+Before the packet is sent, the transmitting computer calculates the checksum
+在发送数据包前 \N 电脑会把所有数据加在一起，算出"校验和"
+
+by adding all the data together: 89 plus 111 plus 33 and so on.
+89+111+33+... 以此类推
+
+In our example, this adds up to a checksum of 364.
+得到 364，这就是"校验和".
+
+In UDP, the checksum value is stored in 16 bits.
+UDP 中，\N"校验和"以 16 位形式存储 (就是16个0或1)
+
+If the sum exceeds the maximum possible value, the upper-most bits overflw,
+如果算出来的和，超过了 16 位能表示的最大值 \N 高位数会被扔掉，保留低位
+
+and only the lower bits are used.
+如果算出来的和，超过了 16 位能表示的最大值 \N 高位数会被扔掉，保留低位
+
+Now, when the receiving computer gets this packet,
+当接收方电脑收到这个数据包
+
+it repeats the process, adding up all the data.
+它会重复这个步骤 \N 把所有数据加在一起，89+111+33... 以此类推
+
+89 plus 111 plus 33 and so on.
+它会重复这个步骤 \N 把所有数据加在一起，89+111+33... 以此类推
+
+If that sum is the same as the checksum sent in the header, all is well.
+如果结果和头部中的校验和一致 \N 代表一切正常
+
+But, if the numbers don’t match, you know that the data got corrupted
+如果不一致，数据肯定坏掉了
+
+at some point in transit, maybe because of a power fluctuation or faulty cable.
+也许传输时碰到了功率波动，或电缆出故障了
+
+Unfortunately, UDP doesn’t offer any mechanisms to fix the data, or request a new copy
+不幸的是，UDP 不提供数据修复或数据重发的机制
+
+receiving programs are alerted to the corruption, but typically just discard the packet.
+接收方知道数据损坏后，一般只是扔掉.
+
+Also, UDP provides no mechanisms to know if packets are getting through
+而且，UDP 无法得知数据包是否到达.
+
+a sending computer shoots the UDP packet off,
+发送方发了之后，无法知道数据包是否到达目的地
+
+but has no confirmation it ever gets to its destination successfully.
+发送方发了之后，无法知道数据包是否到达目的地
+
+Both of these properties sound pretty catastrophic, but some applications are ok with this,
+这些特性听起来很糟糕，但是有些程序不在意这些问题
+
+because UDP is also really simple and fast.
+因为 UDP 又简单又快.
+
+Skype, for example, which uses UDP for video chat, can handle corrupt or missing packets.
+拿 Skype 举例 \N 它用 UDP 来做视频通话，能处理坏数据或缺失数据
+
+That’s why sometimes if you’re on a bad internet connection,
+所以网速慢的时候 Skype 卡卡的 \N 因为只有一部分数据包到了你的电脑
+
+Skype gets all glitchy – only some of the UDP packets are making it to your computer.
+所以网速慢的时候 Skype 卡卡的 \N 因为只有一部分数据包到了你的电脑
+
+But this approach doesn’t work for many other types of data transmission.
+但对于其他一些数据，这个方法不适用.
+
+Like, it doesn’t really work if you send an email, and it shows up with the middle missing.
+比如发邮件，\N 邮件不能只有开头和结尾 没有中间.
+
+The whole message really needs to get there correctly!
+邮件要完整到达收件方
+
+When it "absolutely, positively needs to get there”,
+如果"所有数据必须到达" \N 就用"传输控制协议"，简称 TCP
+
+programs use the Transmission Control Protocol, or TCP,
+如果"所有数据必须到达" \N 就用"传输控制协议"，简称 TCP
+
+which like UDP, rides inside the data payload of IP packets.
+TCP 和 UDP 一样，头部也在存数据前面
+
+For this reason, people refer to this combination of protocols as TCP/IP.
+因此，人们叫这个组合 TCP/IP
+
+Like UDP, the TCP header contains a destination port and checksum.
+就像 UDP ，TCP 头部也有"端口号"和"校验和"
+
+But, it also contains fancier features, and we’ll focus on the key ones.
+但 TCP 有更高级的功能，我们这里只介绍重要的几个
+
+First off, TCP packets are given sequential numbers.
+1. TCP 数据包有序号
+
+So packet 15 is followed by packet 16, which is followed by 17, and so on...
+15号之后是16号，16号之后是17号，以此类推 \N 发上百万个数据包也是有可能的.
+
+for potentially millions of packets sent during that session.
+15号之后是16号，16号之后是17号，以此类推 \N 发上百万个数据包也是有可能的.
+
+These sequence numbers allow a receiving computer to put the packets into the correct order,
+序号使接收方可以把数据包排成正确顺序，即使到达时间不同.
+
+even if they arrive at different times across the network.
+序号使接收方可以把数据包排成正确顺序，即使到达时间不同.
+
+So if an email comes in all scrambled, the TCP implementation in your computer’s operating
+哪怕到达顺序是乱的，TCP 协议也能把顺序排对
+
+system will piece it all together correctly.
+哪怕到达顺序是乱的，TCP 协议也能把顺序排对
+
+Second, TCP requires that once a computer has correctly received a packet
+2. TCP 要求接收方的电脑收到数据包 \N 并且"校验和"检查无误后（数据没有损坏）\N 给发送方发一个确认码，代表收到了
+
+– and the data passes the checksum – that it send back an acknowledgement,
+2. TCP 要求接收方的电脑收到数据包 \N 并且"校验和"检查无误后（数据没有损坏）\N 给发送方发一个确认码，代表收到了
+
+or "ACK” as the cool kids say, to the sending computer.
+"确认码" 简称 ACK \N 得知上一个数据包成功抵达后，发送方会发下一个数据包
+
+Knowing the packet made it successfully, the sender can now transmit the next packet.
+"确认码" 简称 ACK \N 得知上一个数据包成功抵达后，发送方会发下一个数据包
+
+But this time, let’s say, it waits, and doesn’t get an acknowledgement packet back.
+假设这次发出去之后，没收到确认码 \N 那么肯定哪里错了
+
+Something must be wrong. If enough time elapses,
+如果过了一定时间还没收到确认码 \N 发送方会再发一次
+
+the sender will go ahead and just retransmit the same packet.
+如果过了一定时间还没收到确认码 \N 发送方会再发一次
+
+It’s worth noting here  that the original packet might have actually gotten there,
+注意 数据包可能的确到了
+
+but the acknowledgment is just really delayed.
+只是确认码延误了很久，或传输中丢失了
+
+Or perhaps it was the acknowledgment that was lost.
+只是确认码延误了很久，或传输中丢失了
+
+Either way, it doesn’t matter, because the receiver has those sequence numbers,
+但这不碍事 因为收件方有序列号
+
+and if a duplicate packet arrives, it can be discarded.
+如果收到重复的数据包就删掉
+
+Also, TCP isn’t limited to a back and forth conversation – it can send many packets,
+还有，TCP 不是只能一个包一个包发
+
+and have many outstanding ACKs, which increases bandwidth significantly, since you aren’t
+可以同时发多个数据包，收多个确认码 \N 这大大增加了效率，不用浪费事件等确认码
+
+wasting time waiting for acknowledgment packets to return.
+可以同时发多个数据包，收多个确认码 \N 这大大增加了效率，不用浪费事件等确认码
+
+Interestingly, the success rate of ACKs, and also the round trip time
+有趣的是，确认码的成功率和来回时间 \N 可以推测网络的拥堵程度
+
+between sending and acknowledging, can be used to infer network congestion.
+有趣的是，确认码的成功率和来回时间 \N 可以推测网络的拥堵程度
+
+TCP uses this information to adjust how aggressively it sends packets –
+TCP 用这个信息，调整同时发包数量，解决拥堵问题
+
+a mechanism for congestion control.
+TCP 用这个信息，调整同时发包数量，解决拥堵问题
+
+So, basically, TCP can handle out-of-order packet delivery, dropped packets
+简单说，TCP 可以处理乱序和丢失数据包，丢了就重发.
+
+– including retransmission – and even throttle its transmission rate according to available bandwidth.
+还可以根据拥挤情况自动调整传输率
+
+Pretty awesome!
+相当厉害！
+
+You might wonder why anyone would use UDP when TCP has all those nifty features.
+你可能会奇怪，既然 TCP 那么厉害，还有人用 UDP 吗？
+
+The single biggest downside are all those acknowledgment packets
+TCP 最大的缺点是 \N 那些"确认码"数据包把数量翻了一倍
+
+– it doubles the number of messages on the network,
+TCP 最大的缺点是 \N 那些"确认码"数据包把数量翻了一倍
+
+and yet, you're not transmitting any more data.
+但并没有传输更多信息
+
+That overhead, including associated delays, is sometimes not worth the improved robustness,
+有时候这种代价是不值得的 \N 特别是对时间要求很高的程序，比如在线射击游戏
+
+especially for time-critical applications, like Multiplayer First Person Shooters.
+有时候这种代价是不值得的 \N 特别是对时间要求很高的程序，比如在线射击游戏
+
+And if it’s you getting lag-fragged you’ll definitely agree!
+如果你玩游戏很卡，你也会觉得这样不值!
+
+When your computer wants to make a connection to a website, you need two things
+当计算机访问一个网站时 \N 需要两个东西：1.IP地址 2.端口号
+
+- an IP address and a port.
+当计算机访问一个网站时 \N 需要两个东西：1.IP地址 2.端口号
+
+Like port 80, at 172.217.7.238.
+例如 172.217.7.238 的 80 端口 \N 这是谷歌的 IP 地址和端口号
+
+This example is the IP address and port for the Google web server.
+例如 172.217.7.238 的 80 端口 \N 这是谷歌的 IP 地址和端口号
+
+In fact, you can enter this into your browser’s address bar, like so,
+事实上，你可以输到浏览器里，然后你会进入谷歌首页
+
+and you’ll end up on the google homepage.
+事实上，你可以输到浏览器里，然后你会进入谷歌首页
+
+This gets you to the right destination,
+有了这两个东西就能访问正确的网站 \N 但记一长串数字很讨厌
+
+but remembering that long string of digits would be really annoying.
+有了这两个东西就能访问正确的网站 \N 但记一长串数字很讨厌
+
+It’s much easier to remember: google.com.
+google.com 比一长串数字好记
+
+So the internet has a special service that maps these domain names to addresses.
+所以互联网有个特殊服务 \N 负责把域名和 IP 地址一一对应
+
+It’s like the phone book for the internet.
+就像专为互联网的电话簿 \N 它叫"域名系统"，简称 DNS
+
+And it’s called the Domain Name System, or DNS for short.
+就像专为互联网的电话簿 \N 它叫"域名系统"，简称 DNS
+
+You can probably guess how it works.
+它的运作原理你可能猜到了
+
+When you type something like "youtube.com” into your web browser,
+在浏览器里输 youtube.com \N 浏览器会去问 DNS 服务器，它的 IP 地址是多少
+
+it goes and asks a DNS server – usually one provided by your ISP – to lookup the address.
+一般 DNS 服务器 \N 是互联网供应商提供的
+
+DNS consults its huge registry, and replies with the address... if one exists.
+DNS 会查表，如果域名存在，就返回对应 IP 地址.
+
+In fact, if you try mashing your keyboard, adding ".com”, and then hit enter in your
+如果你乱敲键盘加个.com 然后按回车
+
+browser, you’ll likely be presented with an error that says DNS failed.
+你很可能会看到 DNS 错误
+
+That’s because that site doesn’t exist, so DNS couldn’t give your browser an address.
+因为那个网站不存在，所以 DNS 无法返回给你一个地址
+
+But, if DNS returns a valid address, which it should for "YouTube.com”, then your
+如果你输的是有效地址，比如 youtube.com \N DNS 按理会返回一个地址
+
+browser shoots off a request over TCP for the website’s data.
+然后浏览器会给这个 IP 地址 \N 发 TCP 请求
+
+There’s over 300 million registered domain names, so to make out DNS Lookup a little
+如今有三千万个注册域名，所以为了更好管理
+
+more manageable, it’s not stored as one gigantically long list,
+DNS 不是存成一个超长超长的列表，而是存成树状结构
+
+but rather in a tree data structure.
+DNS 不是存成一个超长超长的列表，而是存成树状结构
+
+What are called Top Level Domains, or TLDs, are at the very top.
+顶级域名（简称 TLD）在最顶部，比如 .com 和 .gov
+
+These are huge categories like .com and .gov.
+顶级域名（简称 TLD）在最顶部，比如 .com 和 .gov
+
+Then, there are lower level domains that sit below that, called second level domains; Examples
+下一层是二级域名，比如 .com 下面有 \N google.com 和 dftba.com
+
+under .com include google.com and dftba.com.
+下一层是二级域名，比如 .com 下面有 \N google.com 和 dftba.com
+
+Then, there are even lower level domains, called subdomains,
+再下一层叫子域名，\N 比如 images.google.com, store.dftba.com
+
+like images.google.com, store.dftba.com.
+再下一层叫子域名，\N 比如 images.google.com, store.dftba.com
+
+And this tree is absolutely HUGE!
+这个树超！级！大！
+
+Like I said, more than 300 million domain names, and that's just second level domain
+我前面说的"三千万个域名"只是二级域名 \N 不是所有子域名
+
+names, not all the sub domains.
+我前面说的"三千万个域名"只是二级域名 \N 不是所有子域名
+
+For this reason, this data is distributed across many DNS servers,
+因此，这些数据散布在很多 DNS 服务器上
+
+which are authorities for different parts of the tree.
+不同服务器负责树的不同部分
+
+Okay, I know you’ve been waiting for it...
+好了 我知道你肯定在等这个梗：
+
+We’ve reached a new level of abstraction!
+我们到了一层新抽象！
+
+Over the past two episodes, we’ve worked up from electrical signals on wires,
+过去两集里 \N 我们讲了线路里的电信号，以及无线网络里的无线信号
+
+or radio signals transmitted through the air in the case of wireless networks.
+过去两集里 \N 我们讲了线路里的电信号，以及无线网络里的无线信号
+
+This is called the Physical Layer.
+这些叫"物理层"
+
+MAC addresses, collision detection,
+而"数据链路层"负责操控"物理层"，\N 数据链路层有：媒体访问控制地址（MAC），碰撞检测，
+
+exponential backoff and similar low level protocols that
+而"数据链路层"负责操控"物理层"，\N 数据链路层有：媒体访问控制地址（MAC），碰撞检测，
+
+mediate access to the physical layer are part of the Data Link Layer.
+指数退避，以及其他一些底层协议
+
+Above this is the Network Layer,
+再上一层是"网络层"
+
+which is where all the switching and routing technologies that we discussed operate.
+负责各种报文交换和路由
+
+And today, we mostly covered the Transport layer, protocols like UDP and TCP,
+而今天，我们讲了"传输层"里一大部分， 比如 UDP 和 TCP 这些协议,
+
+which are responsible for point to point data transfer between computers,
+负责在计算机之间进行点到点的传输
+
+and also things like error detection and recovery when possible.
+而且还会检测和修复错误
+
+We’ve also grazed the Session Layer –
+我们还讲了一点点"会话层"
+
+where protocols like TCP and UDP are used to open a connection,
+"会话层"会使用 TCP 和 UDP 来创建连接，传递信息，然后关掉连接
+
+pass information back and forth, and then close the connection when finished
+"会话层"会使用 TCP 和 UDP 来创建连接，传递信息，然后关掉连接
+
+– what’s called a session.
+这一整套叫"会话"
+
+This is exactly what happens when you, for example, do a DNS Lookup, or request a webpage.
+查询 DNS 或看网页时，就会发生这一套流程
+
+These are the bottom five layers of the Open System Interconnection (OSI) model,
+这是 开放式系统互联通信参考模型(OSI) 的底下5层
+
+a conceptual framework for compartmentalizing all these different network processes.
+这个概念性框架 把网络通信划分成多层
+
+Each level has different things to worry about and solve,
+每一层处理各自的问题
+
+and it would be impossible to build one huge networking implementation.
+如果不分层 \N 直接从上到下捏在一起实现网络通信，是完全不可能的
+
+As we’ve talked about all series, abstraction allows computer scientists and engineers to
+抽象使得科学家和工程师能分工同时改进多个层 \N 不被整体复杂度难倒.
+
+be improving all these different levels of the stack simultaneously,
+抽象使得科学家和工程师能分工同时改进多个层 \N 不被整体复杂度难倒.
+
+without being overwhelmed by the full complexity.
+抽象使得科学家和工程师能分工同时改进多个层 \N 不被整体复杂度难倒.
+
+And amazingly, we’re not quite done yet
+而且惊人的是！我们还没讲完呢！
+
+The OSI model has two more layers, the Presentation Layer and the Application Layer,
+OSI 模型还有两层，"表示层"和"应用程序层"
+
+which include things like web browsers, Skype,
+其中有浏览器，Skype，HTML解码，在线看电影等
+
+HTML decoding, streaming movies and more.
+其中有浏览器，Skype，HTML解码，在线看电影等
+
+Which we’ll talk about next week.  See you then.
+我们下周说，到时见
+

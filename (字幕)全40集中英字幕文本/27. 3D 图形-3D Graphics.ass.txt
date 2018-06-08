@@ -1,0 +1,624 @@
+Hi, I'm Carrie Anne, and welcome to Crash Course Computer Science!
+嗨，我是 Carrie Anne \N 欢迎收看计算机科学速成课！
+
+Over the past five episodes,
+在过去五集
+
+we've worked up from text-based teletype interfaces to pixelated bitmapped graphics.
+我们从基于电传打字机的命令行界面 \N 讲到图形怎么显示到屏幕上
+
+Then, last episode,we covered Graphical User Interfaces and all
+再到上集的 图形用户界面（GUI）
+
+their "Ooey Gooey" richness.
+以及图形界面的美味
+
+All of these examples have been 2D. But of course "we are living in a 3D world
+之前的例子都是2D, 但我们生活的世界是3D的
+
+and I'm a 3 dimensional girl!
+我也是个三维 girl~
+
+So today, we're going to talk about some fundamental methods in 3D computer graphics
+所以今天，我们讲3D图形的基础知识
+
+and how you render them onto a 2D screen.
+以及如何渲染 3D 图形到 2D 屏幕上
+
+As we discussed in episode 24 we can write functions that draw a line between any two points like A and B.
+24集中说过 \N 可以写一个函数，从A到B画一条线
+
+By manipulating the X and Y coordinates of points A and B, we can manipulate the line.
+通过控制 A 和 B 的(X,Y)坐标，可以控制一条线
+
+In 3D graphics, points have not just two coordinates, but three -- X, Y and Z.
+在3D图像中, 点的坐标不再是两点, 而是三点, X,Y,Z
+
+Or "zee" but I'm going to say "zed".
+或读"Zee"，但我之后会读成"Zed"
+
+Of course, we don't have X/Y/Z coordinates on a 2D computer screen
+当然，2D的电脑屏幕上\N不可能有 XYZ 立体坐标轴
+
+so graphics algorithms are responsible for "flattening" 3D coordinates onto a 2D plane.
+所以有图形算法 \N 负责把3D坐标"拍平"显示到2D屏幕上
+
+This process is known as 3D Projection.
+这叫"3D投影"
+
+Once all of the points have been converted from 3D to 2D
+所有的点都从3D转成2D后
+
+we can use the regular 2D line drawing function to connect the dots… literally.
+就可以用画2D线段的函数 来连接这些点
+
+This is called Wireframe Rendering.
+这叫 "线框渲染"
+
+Imagine building a cube out of chopsticks, and shining a flashlight on it.
+想象用筷子做一个立方体，然后用手电筒照它
+
+The shadow it casts onto your wall - its projection - is flat.
+墙上的影子就是投射，是平的
+
+If you rotate the cube around
+如果旋转立方体
+
+you can see it's a 3D object, even though it's a flat projection.
+投影看起来会像 3D 物体，尽管是投影面是平的
+
+This transformation from 3D to 2D is exactly what your computer is doing
+电脑也是这样3D转2D
+
+just with a lot more math… and less chopsticks.
+只不过用大量数学，而不是筷子
+
+There are several types of 3D Projection.
+3D投影有好几种
+
+What you're seeing right now is an Orthographic Projection
+你现在看到的，叫 正交投影
+
+where, for example, the parallel sides in the cube appear as parallel in the projection.
+立方体的各个边，在投影中互相平行
+
+In the real 3D world through, parallel lines converge as they get further from the viewer
+在真实3D世界中,平行线段会在远处收敛于一点
+
+like a road going to the horizon.
+就像远处的马路汇聚到一点
+
+This type of 3D projection is called Perspective Projection .
+这叫 透视投射
+
+It's the same process, just with different math.
+过程是类似的，只是数学稍有不同
+
+Sometimes you want perspective and sometimes you don't --
+有时你想要透视投影，有时不想
+
+the choice is up to the developer.
+具体取决于开发人员
+
+Simple shapes, like cubes, are easily defined by straight lines.
+如果想画立方体这种简单图形，直线就够了
+
+But for more complex shapes, triangles are better
+但更复杂的图形，三角形更好
+
+-- what are called polygons in 3D graphics.
+在3D图形学中 \N 我们叫三角形"多边形"(Polygons)
+
+Look at this beautiful teapot made out of polygons.
+看看这个多边形组成的 漂亮茶壶
+
+A collection of polygons like this is a mesh
+一堆多边形的集合叫 网格
+
+The denser the mesh, the smoother the curves and the finer the details.
+网格越密，表面越光滑，细节越多
+
+But, that also increases the polygon count, which means more work for the computer
+但意味着更多计算量
+
+Game designers have to carefully balance model fidelity vs. polygon count,
+游戏设计者要平衡角色的真实度 \N 和多边形数量
+
+because if the count goes too high
+如果数量太多 \N 帧率会下降到肉眼可感知，用户会觉得卡
+
+the framerate of an animation drops below what users perceive as smooth.
+如果数量太多 \N 帧率会下降到肉眼可感知，用户会觉得卡
+
+For this reason, there are algorithms for simplifying meshes.
+因此有算法用来简化网格
+
+The reason triangles are used,
+之所以三角形更常用 \N 而不是用正方形，或其它更复杂的图形
+
+and not squares, or polygons, or some other more complex shape
+之所以三角形更常用 \N 而不是用正方形，或其它更复杂的图形
+
+is simplicity:
+是因为三角形的简单性
+
+three points in space unambiguously define a plane.
+空间中  三点定义一个平面
+
+If you give me three points in a 3D space, I can draw a plane through it
+如果给3个3D点，我能画出一个平面
+
+there is only one.. single.. answer.
+而且只有这一个答案
+
+This isn't guaranteed to be true for shapes with four or more points.
+4个或多于4个点就不一定了
+
+Also two points aren't enough to define a plane, only a line,
+而2个点不够定义平面，只能定义线段
+
+so three is the perfect and minimal number. Triangles for the win!
+所以3是最完美的数字，三角形万岁
+
+Wireframe rendering is cool and all - sorta retro - but of course 3D graphics can also be filled.
+线框渲染 虽然很酷，但3D图像需要填充
+
+The classic algorithm for doing this is called Scanline Rendering,
+填充图形的经典算法叫 扫描线渲染 (Scanline Rendering) \N 于1967年诞生在犹他州大学
+
+first developed in 1967 at the University of Utah
+填充图形的经典算法叫 扫描线渲染 (Scanline Rendering) \N 于1967年诞生在犹他州大学
+
+For a simple example, let's consider just one polygon.
+为了例子简单，我们只看一个多边形
+
+Our job here is to figure out how this polygon translates to filled pixels on a computer screen
+我们要思考 \N 这个多边形如何转成一块填满像素的区域
+
+so let's first overlay a grid of pixels to fill
+我们先铺一层像素网格
+
+The scanline algorithm starts by reading the three points that make up the polygon
+扫描线算法 先读多边形的3个点
+
+and finding the lowest and highest Y values.  It will only consider rows between these two points.
+找最大和最小的Y值，只在这两点间工作
+
+Then, the algorithm works down one row at a time.
+然后算法从上往下，一次处理一行
+
+In each row, it calculates where a line running through
+计算每一行和多边形相交的2个点
+
+the center of a row - intersects with the side of the polygon.
+计算每一行和多边形相交的2个点
+
+Because polygons are triangles, if you intersect one line, you have to intersect with another.
+因为是三角形,如果相交一条边, 必然相交另一条
+
+It's guaranteed!
+因为是三角形,如果相交一条边, 必然相交另一条
+
+The job of the scanline algorithm is to fill in the pixels between the two intersections.
+扫描线算法 会填满2个相交点之间的像素
+
+Let's see how this works.
+来看个具体例子
+
+On the first row we look at we intersect here and here.
+第一行 相交于这里和这里
+
+The algorithm then colors in all pixels between those two intersections.
+算法把两点间填满颜色
+
+And this just continues, row by row, which is why it's called Scan... Line... Rendering.
+然后下一行，再下一行，所以叫 扫描..线..渲染
+
+When we hit the bottom of the polygon, we're done.
+扫到底部就完成了
+
+The rate at which a computer fills in polygons is called the fillrate.
+填充的速度叫 fillrate（填充速率）
+
+Admittedly, this is a pretty ugly filled polygon. It has what are known as "Jaggies" rough edges.
+当然 这样的三角形比较丑，边缘满是锯齿
+
+This effect is less pronounced when using smaller pixels.
+当像素较小时 就不那么明显
+
+But nonetheless, you see these in games all the time, especially on lower powered platforms.
+但尽管如此 \N 你肯定在游戏里见过这种效果，特别是低配电脑
+
+One method to soften this effect is Antialiasing.
+一种减轻锯齿的方法叫\N  抗锯齿(Antialiasing)
+
+Instead of filling pixels in a polygon with the same color,
+与其每个像素都涂成一样的颜色
+
+we can adjust the color based on how much the polygon cuts through each pixel
+可以判断多边形切过像素的程度，来调整颜色
+
+If a pixel is entirely inside of a polygon,it gets fully colored.
+如果像素在多边形内部，就直接涂颜色
+
+But if the polygon only grazes a pixel, it'll get a lighter shade.
+如果多边形划过像素，颜色就浅一些
+
+This feathering of the edges is much more pleasant to the eyes.
+这种边缘羽化的效果 看着更舒服些
+
+Antialiasing is used all over the place, including in 2D graphics, like fonts and icons.
+抗锯齿 被广泛使用，比如字体和图标
+
+If you lean in real close to your monitor..
+如果你把脸贴近屏幕
+
+Closer, Closer.
+近点..再近点
+
+You'll see all the fonts in your browser are Antialiased. So smooth!
+你能看到浏览器里字体是抗锯齿的，超平滑
+
+In a 3D scene, there are polygons that are part objects in the back, near the front,and just about everywhere.
+在3D场景中，多边形到处都是
+
+Only some are visible,
+但只有一部分能看见
+
+because some objects are hidden behind other objects in the scene
+因为其它的被挡住了
+
+-- what's called occlusion .
+这叫 遮挡
+
+The most straightforward way to handle this is to use a sort algorithm,
+最直接的处理办法是用排序算法
+
+and arrange all the polygons in the scene from farthest to nearest, then render them in that order.
+从远到近排列，然后从远到近渲染
+
+This is called the Painter's Algorithm , because painters also have to start with the background
+这叫 画家算法 因为画家也是先画背景
+
+and then increasingly work up to foreground elements.
+然后再画更近的东西
+
+Consider this example scene with three overlapping polygons.
+看这个例子，有3个重叠的多边形
+
+To make things easier to follow, we're going to color the polygons differently.
+为了简单，我们画成不同颜色
+
+Also for simplicity, we'll assume these polygons are all parallel to the screen
+同时，假设3个多边形都和屏幕平行
+
+but in a real program, like a game,
+但在实际应用中, 比如游戏里\N多边形可能是倾斜的
+
+the polygons can be tilted in 3D space.
+但在实际应用中, 比如游戏里\N多边形可能是倾斜的
+
+Our three polygons, A B and C… are at distance 20, 12 and 14.
+3个多边形A,B,C，距离20,12,14
+
+The first thing the Painter's Algorithm does is sort all the polygons, from farthest to nearest.
+画家算法的第一件事，是从远到近排序
+
+Now that they're in order, we can use scanline rendering to fill each polygon, one at a time.
+现在有序了，我们可以用 扫描线算法 填充多边形，一次填一个
+
+We start with Polygon A, the farthest one away.
+我们从最远的A开始
+
+Then we repeat the process for the next farthest polygon, in this case, C.
+然后重复这个过程，填充第二远的C
+
+And then we repeat this again, for Polygon B.
+然后是 B
+
+Now we're all done, and you can see the ordering is correct. The polygons that are closer, are in front!
+现在完成了，可以看到顺序是对的，近的多边形在前面！
+
+An alternative method for handling occlusion is called Z-Buffering .
+还有一种方法叫 深度缓冲
+
+It achieves the same output as before, but with a different algorithm.
+它和之前的算法做的事情一样，但方法不同
+
+Let's go back to our previous example, before it was sorted.
+我们回到之前的例子，回到排序前的状态
+
+That's because this algorithm doesn't need to sort any polygons, which makes it faster.
+因为这个算法不用排序，所以速度更快
+
+In short, Z-buffering keeps track of the closest distance
+简而言之，Z-buffering 算法会记录
+
+to a polygon for every pixel in the scene.
+场景中每个像素和摄像机的距离
+
+It does this by maintaining a Z-Buffer, which is just a matrix of values that sits in memory.
+在内存里存一个数字矩阵
+
+At first, every pixel is initialized to infinity.
+首先，每个像素的距离被初始化为"无限大"
+
+Then Z-buffering starts with the first polygon in its list. In this case, that's A.
+然后 Z-buffering 从列表里第一个多边形开始处理，也就是A
+
+It follows the same logic as the scanline algorithm, but instead of coloring in pixels,
+它和扫描线算法逻辑相同，但不是给像素填充颜色
+
+it checks the distance of the polygon versus what's recorded in its Z-Buffer.
+而是把多边形的距离\N和 Z-Buffer 里的距离进行对比
+
+It records the lower of the two values.
+它总是记录更低的值
+
+For our Polygon A, with a distance of 20, it wins against infinity every time.
+A距离20，20小于"无限大"，所以缓冲区记录20
+
+When it's done with Polygon A, it moves on to the next polygon in its list, and the same thing happens.
+算完A之后算下一个，以此类推
+
+Now, because we didn't sort the polygons,
+因为没对多边形排序
+
+it's not always the case that later polygons overwrite high values.
+所以后处理的多边形并不总会覆盖前面的
+
+In the case of Polygon C,
+对于多边形C
+
+only some of the values in the Z-buffer get new minimum distances.
+缓冲区里只有一部分值会被多边形C的距离值覆盖
+
+This completed Z-buffer is used in conjunction with a fancier version of scanline rendering
+Z缓冲区完成后，会和"扫描线"算法的改进高级版配合使用
+
+that not only tests for line intersection,
+不仅可以勘测到线的交叉点
+
+but also does a look up to see if that pixel will even be visible in the final scene.
+还可以知道某像素是否在最终场景中可见
+
+If it's not, the algorithm skips it and moves on.
+如果不可见，扫描线算法会跳过那个部分
+
+An interesting problem arises when two polygons have the same distance,
+当两个多边形距离相同时 \N 会出现一个有趣问题
+
+like if Polygon A and B are both at a distance of 20. Which one do you draw on top?
+比如多边形 A 和 B 距离都是 20, 哪个画上面?
+
+Polygons are constantly being shuffled around in memory and changing their access order.
+多边形会在内存中移来移去，访问顺序会不断变化
+
+Plus, rounding errors are inherent in floating point computations.
+另外,计算浮点数有舍入误差
+
+So, which one gets drawn on top is often unpredictable.
+所以哪一个画在上面, 往往是不可预测的
+
+The result is a flickering effect called Z-Fighting, which if you've played 3D games no doubt encountered.
+导致出现 Z-fighting 效果 \N 如果你玩过3D游戏，肯定见过
+
+Speaking of glitches, another common optimization in 3D graphics is called Back-Face Culling.
+说起 故障，3D游戏中有个优化叫 背面剔除
+
+If you think about it, a triangle has two sides, a front and a back.
+你想想,三角形有两面,正面和背面
+
+With something like the head of an avatar, or the ground in a game,
+游戏角色的头部或地面，只能看到朝外的一面
+
+you should only ever see one side -- the side facing outwards.
+游戏角色的头部或地面，只能看到朝外的一面
+
+So to save processing time, the back-side of polygons are often ignored in the rendering pipeline
+所以为了节省处理时间，会忽略多边形背面
+
+which cuts the number of polygon faces to consider in half.
+减了一半多边形面数
+
+This is great, except when there's a bug that lets you get inside of those objects,and look outwards.
+这很好,但有个bug是 如果进入模型内部往外看
+
+Then the avatar head or ground becomes invisible.
+头部和地面会消失
+
+Moving on. We need to talk about lighting -- also known as shading
+继续，我们讲灯光，也叫 明暗处理
+
+because if it's a 3D scene, the lighting should vary over the surface of objects.
+因为3D场景中, 物体表面应该有明暗变化
+
+Let's go back to our teapot mesh.
+我们回到之前的茶壶网格
+
+With scanline rendering coloring in all the polygons, our teapot looks like this.
+用"扫描线"算法渲染所有多边形后，茶壶看起来像这样
+
+Not very 3D.
+没什么 3D 感
+
+So, let's add some lighting to enhance the realism!
+我们来加点灯光，提高真实感
+
+As an example, we'll pick 3 polygons from different parts of our teapot.
+为了举例，我们从茶壶上挑3个不同位置的多边形
+
+Unlike our previous examples, we're now going to consider how these polygons are oriented in 3D space
+和之前的例子不同，这次要考虑这些多边形面对的方向
+
+they're no longer parallel to the screen, but rather tilted in different 3D directions.
+它们不平行于屏幕，而是面对不同方向
+
+The direction they face is called the Surface Normal ,
+他们面对的方向叫 " 表面法线 "
+
+and we can visualize that direction with a little 3D arrow that's perpendicular to the polygon's surface.
+我们可以用一个垂直于表面的小箭头\N来显示这个方向
+
+Now let's add a light source.
+现在加个光源
+
+Each polygon is going to be illuminated a different amount. Some will appear brighter
+每个多边形被照亮的程度不同 有的更亮
+
+because their angle causes more light to be reflected towards the viewer.
+因为面对的角度\N导致更多光线反射到观察者
+
+For example, the bottom-most polygon is tilted downwards,
+举个例子，底部的多边形向下倾斜
+
+away from the light source, which means it's going to be dark.
+远离光源，所以更暗一些
+
+In a similar way, the rightmost polygon is slightly facing away from the light,
+类似的，最右的多边形更背对光源
+
+so it will be partially illuminated.
+所以只有部分照亮
+
+And finally, there's the upper-left polygon.
+最后是左上角的多边形
+
+Its angle means that it will reflect light from the light source towards our view.
+因为它面对的角度  意味着会把光线反射到我们这里
+
+So, it'll appear bright.
+所以会显得更亮
+
+If we do this for every polygon, our teapot looks like this which is much more realistic!
+如果对每个多边形执行同样的步骤，看上去会更真实!
+
+This approach is called Flat Shading, and it's the most basic lighting algorithm.
+这叫 平面着色，是最基本的照明算法
+
+Unfortunately, it also makes all those polygon boundaries really noticeable
+不幸的是，这使多边形的边界非常明显，看起来不光滑
+
+and the mesh doesn't look smooth.
+不幸的是，这使多边形的边界非常明显，看起来不光滑
+
+For this reason, more advanced lighting algorithms were developed,
+因此开发了更多算法
+
+such as Gouraud Shading and Phong Shading .
+比如 高洛德着色 和 冯氏着色
+
+Instead of coloring in polygons using just one colour,
+不只用一种颜色给整个多边形上色
+
+they vary the colour across the surface in clever ways,
+而是以巧妙的方式改变颜色
+
+which results in much nicer output.
+得到更好的效果
+
+We also need to talk about textures ,
+我们还要说下" 纹理 "
+
+which in graphics refers to the look of a surface,rather than its feel.
+纹理在图形学中指外观，而不是手感
+
+Like with lighting, there are many algorithms with all sorts of fancy effects.
+就像照明算法一样，\N 纹理也有多种算法，来做各种花哨效果
+
+The simplest is texture mapping .
+最简单的是 纹理映射
+
+To visualize this process,let's go back to our single polygon.
+为了理解纹理映射，回到单个多边形
+
+When we're filling this in, using scanline rendering,
+用"扫描线算法"填充时
+
+we can look up what color to use at every pixel according to a texture image saved in memory.
+可以看看内存内的纹理图像 决定像素用什么颜色
+
+To do this, we need a mapping between the polygon's coordinates and the texture's coordinates.
+为了做到这点，\N 需要把多边形坐标和纹理坐标对应起来
+
+Let's jump to the first pixel that scanline rendering needs to fill in.
+我们来看看"扫描线算法"要填充的第一个像素
+
+The texturing algorithm will consult the texture in memory,
+纹理算法会查询纹理
+
+take the average color from the corresponding region, and fill the polygon accordingly.
+从相应区域取平均颜色，并填充多边形
+
+This process repeats for all pixels in the polygon, and that's how we get textures.
+重复这个过程，就可以获得纹理
+
+If you combine all the techniques we've talked about this episode, you get a wonderfully funky little teapot.
+如果结合这集提到的所有技巧 \N 会得到一个精美的小茶壶
+
+And this teapot can sit in an even bigger scene, comprised of millions of polygons.
+这个茶壶可以放进更大的场景里 \N 场景由上百万个多边形组成
+
+Rendering a scene like this takes a fair amount of computation.
+渲染这样的场景需要大量计算
+
+But importantly, it's the same type of calculations being performed
+但重要的是，再大的场景，过程都是一样的 \N 一遍又一遍，处理所有多边形
+
+over and over and over again for many millions of polygons –
+但重要的是，再大的场景，过程都是一样的 \N 一遍又一遍，处理所有多边形
+
+scanline filling, antialiasing, lighting, and texturing.
+扫描线填充, 抗锯齿, 光照, 纹理化
+
+However there are a couple of ways to make this much faster!
+然而，有几种方法可以加速渲染
+
+First off, we can speed things up by having special hardware
+首先，我们可以为这种特定运算 \N 做专门的硬件来加快速度，让运算快如闪电
+
+with extra bells and whistles just for these specific types of computations, making them lightning fast.
+首先，我们可以为这种特定运算 \N 做专门的硬件来加快速度，让运算快如闪电
+
+And secondly,we can divide up a 3D scene into many smaller parts,
+其次，我们可以把3D场景分解成多个小部分
+
+and then render all the pieces in parallel,rather than sequentially.
+然后并行渲染，而不是按顺序渲染
+
+CPU's aren't designed for this, so they aren't particularly fast.
+CPU不是为此设计的，因此图形运算不快
+
+So, computer engineers created special processors just for graphics
+所以，计算机工程师为图形做了专门的处理器
+
+– a GPU, or Graphics Processing Unit.
+叫 GPU "图形处理单元"
+
+These can be found on graphics cards inside of your computer, along with RAM reserved for graphics.
+GPU 在显卡上，周围有专用的 RAM
+
+This is where all the meshes and textures live,
+所有网格和纹理都在里面
+
+allowing them to be accessed super fast by many different cores of the GPU all at once.
+让 GPU 的多个核心可以高速访问
+
+A modern graphics card, like a GeForce GTX 1080 TI,
+现代显卡，如 GeForce GTX 1080 TI
+
+contains 3584 processing cores, offering massive parallelization.
+有3584个处理核心，提供大规模并行处理
+
+It can process hundreds of millions of polygons every second!
+每秒处理上亿个多边形！
+
+Ok, that concludes our whistle stop tour of 3D graphics.
+好了，本集对3D图形的介绍到此结束
+
+Next week, we switch topics entirely.
+下周我们聊全新的主题
+
+I'll ping you then.
+我到时会 ping 你~
+

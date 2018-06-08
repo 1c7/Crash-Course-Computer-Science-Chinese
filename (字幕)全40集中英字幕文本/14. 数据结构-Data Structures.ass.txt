@@ -1,0 +1,546 @@
+Hi, I'm Carrie Anne, and welcome to Crash Course Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+Last episode, we discussed a few example classic algorithms,
+上集讲了一些经典算法
+
+like sorting a list of numbers and finding the shortest path in a graph.
+比如给数组排序，找图的最短路径
+
+What we didn't talk much about,
+而上集没讲的是
+
+is how the data the algorithms ran on was stored in computer memory.
+算法处理的数据  存在内存里的格式是什么
+
+You don't want your data to be like John Green's college dorm room,
+你肯定不想数据像 John Green 的大学宿舍一样乱 \N 到处都是食物，衣服和纸
+
+with food, clothing and papers strewn everywhere.
+你肯定不想数据像 John Green 的大学宿舍一样乱 \N 到处都是食物，衣服和纸
+
+Instead, we want our data to be structured,
+我们希望数据是结构化的，方便读取
+
+so that it's organized, allowing things to be easily retrieved and read.
+我们希望数据是结构化的，方便读取
+
+For this, computer scientists use Data Structures!
+因此计算机科学家发明了 "数据结构"！
+
+We already introduced one basic data structure last episode,
+上集已经介绍了一种基本数据结构：
+
+Arrays, also called lists or Vectors in some languages.
+数组（Array）\N 也叫列表（list）或向量（Vector）（在其它编程语言里）
+
+These are a series of values stored in memory.
+数组的值一个个连续存在内存里
+
+So instead of just a single value being saved into a variable, like 'j equals 5',
+所以不像之前，一个变量里只存一个值（比如 j = 5）
+
+we can define a whole series of numbers, and save that into an array variable.
+我们可以把多个值存在数组变量里
+
+To be able to find a particular value in this array, we have to specify an index.
+为了拿出数组中某个值，我们要指定一个下标（index）
+
+Almost all programing languages start arrays at index 0,
+大多数编程语言里，数组下标都从 0 开始
+
+and use a square bracket syntax to denote array access.
+用方括号 [ ] 代表访问数组
+
+So, for example, if we want to add the values in the first and third spots of our array 'j',
+如果想相加数组 J 的第一个和第三个元素
+
+and save that into a variable 'a', we would write a line of code like this.
+把结果存在变量 a，可以写上图这样一行代码
+
+How an array is stored in memory is pretty straightforward.
+数组存在内存里的方式  十分易懂
+
+For simplicity, let's say that the compiler chose to store ours at memory location 1,000.
+为了简单，假设编译器从内存地址 1000 开始存数组
+
+The array contains 7 numbers, and these are stored one after another in memory, as seen here.
+数组有7个数字，像上图一样按顺序存.
+
+So when we write "j index of 0", the computer goes to memory location 1,000,
+写 j[0]，会去内存地址 1000
+
+with an offset of 0, and we get the value 5.
+加 0 个偏移，得到地址 1000，拿值：5
+
+If we wanted to retrieve "j index of 5", our program goes to memory location 1000,
+如果写 j[5]，会去内存地址 1000
+
+plus an offset of 5, which in this case, holds a value of 4.
+加 5 个偏移，得到地址 1005，拿值： 4
+
+It's easy to confuse the fifth number in the array with the number at index 5.
+很容易混淆 "数组中第 5 个数" 和 "数组下标为 5 的数"
+
+They are not the same.
+它们不是一回事
+
+Remember, the number at index 5 is the 6th number in the array
+记住，下标 5 其实是数组中第 6 个数
+
+because the first number is at index 0.
+因为下标是从 0 开始算的
+
+Arrays are extremely versatile data structures, used all the time,
+数组的用途广泛
+
+and so there are many functions that can handle them to do useful things.
+所以几乎所有编程语言  都自带了很多函数来处理数组
+
+For example, pretty much every programming language comes with a built-in sort function,
+举例，数组排序函数很常见
+
+where you just pass in your array, and it comes back sorted.
+只需要传入数组，就会返回排序后的数组
+
+So there's no need to write that algorithm from scratch.
+不需要写排序算法
+
+Very closely related are Strings, which are just arrays of characters,
+数组的亲戚是 字符串 (string)
+
+like letters, numbers, punctuation and other written symbols.
+其实就是字母,数字,标点符号等  组成的数组
+
+We talked about how computers store characters way back in Episode 4.
+第 4 集讨论过计算机怎么存储字符
+
+Most often, to save a string into memory, you just put it in quotes, like so.
+写代码时 用引号括起来就行了  \N j = "STAN ROCKS"
+
+Although it doesn't look like an array, it is.
+虽然长的不像数组，但的确是数组
+
+Behind the scenes, the memory looks like this.
+幕后看起来像这样
+
+Note that the string ends with a zero in memory.
+注意，字符串在内存里以 0 结尾
+
+It's not the character zero, but the binary value 0.
+不是"字符0"，是"二进制值0" \N 这叫字符"null"，表示字符串结尾
+
+This is called the null character, and denotes the end of the string in memory.
+不是"字符0"，是"二进制值0" \N 这叫字符"null"，表示字符串结尾
+
+This is important because if I call a function like "print quote",
+这个字符非常重要，如果调用 print 函数
+
+which writes the string to the screen,
+print 在屏幕上输出字符串
+
+it prints out each character in turn starting at the first memory location,
+会从开始位置，逐个显示到屏幕
+
+but it needs to know when to stop!
+但得知道什么时候停下来！
+
+Otherwise, it would print out every single thing in memory as text.
+否则会把内存里所有东西 都显示出来
+
+The zero tells string functions when to stop.
+0 告诉函数何时停下
+
+Because computers work with text so often,
+因为计算机经常处理字符串，所以有很多函数专门处理字符串
+
+there are many functions that specifically handle strings.
+因为计算机经常处理字符串，所以有很多函数专门处理字符串
+
+For example, many programming languages have a string concatenation function, or "strcat",
+比如连接字符串的 strcat
+
+which takes in two strings, and copies the second one to the end of the first.
+strcat 接收两个字符串，把第二个放到第一个结尾.
+
+We can use arrays for making one dimensional lists,
+我们可以用数组做一维列表
+
+but sometimes you want to manipulate data that is two dimensional,
+但有时想操作二维数据
+
+like a grid of numbers in a spreadsheet, or the pixels on your computer screen.
+比如电子表格，或屏幕上的像素
+
+For this, we need a Matrix.
+那么需要 矩阵（Matrix）
+
+You can think of a Matrix as an array of arrays!
+可以把矩阵看成  数组的数组！
+
+So a 3 by 3 matrix is really  an array of size 3, with each index storing an array of size 3.
+一个 3x3 矩阵就是一个长度为3的数组 \N 数组里每个元素都是一个长度为3的数组
+
+We can initialize a matrix like so.
+可以这样初始化.
+
+In memory, this is packed together in order like this.
+内存里是这样排列的
+
+To access a value, you need to specify two indexes, like "J index of 2, then index of 1" -
+为了拿一个值，需要两个下标，比如 j[2][1]
+
+this tells the computer you're looking for the item in subarray 2 at position 1.
+告诉计算机在找数组 2 里，位置是 1 的元素
+
+And this would give us the value 12.
+得到数字 12
+
+The cool thing about matrices is we're not limited to 3 by 3
+矩阵酷的地方是，不止能做 3x3 的矩阵
+
+-- we can make them any size we want
+任何维度都行
+
+-- and we can also make them any number of dimensions we want.
+任何维度都行
+
+For example, we can create a five dimensional matrix and access it like this.
+可以做一个5维矩阵，然后这样访问 \N a = j[2][0][18][18][3]
+
+That's right, you now know how to access a five dimensional matrix
+现在你知道了  怎么读一个 5 维矩阵
+
+-- tell your friends!
+快去告诉你的朋友！
+
+So far, we've been storing individual numbers or letters into our arrays or matrices.
+目前我们只存过单个数字/字符，存进数组或矩阵
+
+But often it's useful to store a block of related variables together.
+但有时, 把几个有关系的变量存在一起, 会很有用
+
+Like, you might want to store a bank account number along with its balance.
+比如银行账户号和余额
+
+Groups of variables like these can be bundled together into a Struct.
+多个变量打包在一起叫  结构体 (Struct)
+
+Now we can create variables that aren't just single numbers,
+现在多个不同类型数据，可以放在一起
+
+but are compound data structures, able to store several pieces of data at once.
+现在多个不同类型数据，可以放在一起
+
+We can even make arrays of structs that we define,
+甚至可以做一个数组，里面放很多结构体
+
+which are automatically bundled together in memory.
+这些数据在内存里  会自动打包在一起
+
+If we access, for example, J index of 0, we get back the whole struct stored there,
+如果写 j[0]，能拿到  j[0] 里的结构体
+
+and we can pull the specific account number and balance data we want.
+然后拿银行账户和余额
+
+This array of structs, like any other array,
+存结构体的数组，和其它数组一样
+
+gets created at a fixed size that can't be enlarged to add more items.
+创建时就有固定大小，不能动态增加大小
+
+Also, arrays must be stored in order in memory,
+还有，数组在内存中 按顺序存储
+
+making it hard to add a new item to the middle.
+在中间插入一个值很困难
+
+But, the struct data structure can be used for
+但结构体可以创造更复杂的数据结构，消除这些限制
+
+building more complicated data structures that avoid these restrictions.
+但结构体可以创造更复杂的数据结构，消除这些限制
+
+Let's take a look at this struct that's called a "node".
+我们来看一个结构体，叫 节点(node)
+
+It stores a variable, like a number, and also a pointer.
+它存一个变量 \N 一个指针（pointer）
+
+A pointer is a special variable that points, hence the name, to a location in memory.
+"指针" 是一种特殊变量，指向一个内存地址，因此得名.
+
+Using this struct, we can create a linked list,
+用 节点 可以做 链表（linked list）
+
+which is a flexible data structure that can store many nodes.
+链表是一种灵活数据结构，能存很多个 节点 (node)
+
+It does this by having each node point to the next node in the list.
+灵活性是通过每个节点 指向 下一个节点实现的
+
+Let's imagine we have three node structs saved in memory, at locations 1000, 1002 and 1008.
+假设有三个节点，在内存地址 1000，1002, 1008
+
+They might be spaced apart because they were created at different times,
+隔开的原因 可能是创建时间不同
+
+and other data can sit between them.
+它们之间有其他数据
+
+So, you see that the first node contains the value 7, and the location 1008 in its "next" pointer.
+可以看到第一个节点，值是 7，指向地址 1008
+
+This means that the next node in the linked list is located at memory location 1008.
+代表下一个节点，位于内存地址 1008
+
+Looking down the linked list, to the next node,
+现在来到下一个节点
+
+we see it stores the value 112 and points to another node at location 1002.
+值是 112，指向地址 1002
+
+If we follow that, we find a node that contains the value 14
+如果跟着它，会看到一个值为 14 的节点
+
+and points back to the first node at location 1000.
+这个节点  指回地址 1000，也就是第一个节点
+
+So this linked list happened to be circular,
+这叫 循环链表
+
+but it could also have been terminated by using a next pointer value of 0
+但链表也可以是非循环的，最后一个指针是 0
+
+-- the null value -- which would indicate we've reached the end of the list.
+"null"，代表链表尽头
+
+When programmers use linked lists,
+当程序员用链表时
+
+they rarely look at the memory values stored in the next pointers.
+很少看指针具体指向哪里
+
+Instead, they can use an abstraction of a linked list, that looks like this,
+而是用链表的抽象模型，就像上图
+
+which is much easier to conceptualize.
+更容易看懂
+
+Unlike an array, whose size has to be pre-defined,
+数组大小需要预先定好
+
+linked lists can be dynamically extended or shortened.
+链表大小可以动态增减
+
+For example, we can allocate a new node in memory,
+可以创建一个新节点，通过改变指针值，把新节点插入链表
+
+and insert it into this list, just by changing the next pointers.
+可以创建一个新节点，通过改变指针值，把新节点插入链表
+
+Linked Lists can also easily be re-ordered, trimmed, split, reversed, and so on.
+链表也很容易重新排序，两端缩减，分割，倒序等
+
+Which is pretty nifty!
+超方便！
+
+And pretty useful for algorithms like sorting, which we talked about last week.
+链表也适合上集的排序算法
+
+Owing to this flexibility, many more-complex data structures are built on top of linked lists
+因为灵活，很多复杂数据结构 都用链表
+
+The most famous and universal are queues and stacks.
+最出名的是 队列（queue）和 栈（stack）
+
+A queue - like the line at your post office - goes in order of arrival.
+"队列" 就像邮局排队，谁先来就排前面
+
+The person who has been waiting the longest, gets served first.
+"队列" 就像邮局排队，谁先来就排前面
+
+No matter how frustrating it is that all you want to do is buy stamps
+虽然你可能只想买邮票，而前面的人要寄 23 个包裹
+
+and the person in front of you seems to be mailing 23 packages.
+虽然你可能只想买邮票，而前面的人要寄 23 个包裹
+
+But, regardless, this behavior is called First-In First-Out, or FIFO.
+这叫 先进先出（FIFO）
+
+That's the first part.
+我指队列，不是指那 23 个包裹
+
+Not the 23 packages thing.
+我指队列，不是指那 23 个包裹
+
+Imagine we have a pointer, named "post office queue", that points to the first node in our linked list.
+想象有个指针叫"邮局队列"，指向链表第一个节点
+
+Once we're done serving Hank, we can read Hank's next pointer,
+第一个节点是 Hank，服务完 Hank 之后 \N 读取 Hank 的指针
+
+and update our "post office queue" pointer to the next person in the line.
+把"邮局队列"指向下一个人
+
+We've successfully dequeued Hank -- he's gone, done, finished.
+这样就把 Hank "出队"（dequeue）了
+
+If we want to enqueue someone, that is, add them to the line,
+如果我们想把某人"入队"（enqueue） \N 意思是加到队列里
+
+we have to traverse down the linked list until we hit the end,
+要遍历整个链表到结尾
+
+and then change that next pointer to point to the new person.
+然后把结尾的指针，指向新人（Nick）
+
+With just a small change, we can use linked lists as stacks, which are LIFO…
+只要稍作修改，就能用链表做 栈，\N 栈是后进先出(LIFO)
+
+Last-In First-Out.
+只要稍作修改，就能用链表做 栈，\N 栈是后进先出(LIFO)
+
+You can think of this like a stack of pancakes...
+可以把"栈"想成一堆松饼
+
+as you make them, you add them to the top of stack.
+做好一个新松饼，就堆在之前上面
+
+And when you want to eat one, you take them from the top of the stack.
+吃的时候，是从最上面开始
+
+Delicious!
+美味！
+
+Instead of enqueueing and dequeuing,
+栈就不叫"入队""出队"了
+
+data is pushed onto the stack and popped from the stacks.
+叫"入栈"（push） "出栈"（pop）
+
+Yep, those are the official terms!
+对，这些是正确术语！
+
+If we update our node struct to contain not just one, but two pointers,
+如果节点改一下，改成 2 个指针
+
+we can build trees,
+就能做 树（tree）
+
+another data structure that's used in many algorithms.
+很多算法用了 "树" 这种数据结构
+
+Again, programmers rarely look at the values of these pointers,
+同样，程序员很少看指针的具体值
+
+and instead conceptualize trees like this: The top most node is called the root.
+而是把"树"抽象成这样：最高的节点叫"根节点"（root）
+
+And any nodes that hang from other nodes are called children nodes.
+"根节点"下的所有节点   都叫"子节点"（children）
+
+As you might expect, nodes above children are called parent nodes.
+任何子节点的直属上层节点，叫"母节点"（parent node）
+
+Does this example imply that Thomas Jefferson is the parent of Aaron Burr?
+这个例子能说明 托马斯·杰斐逊 是 阿龙·伯尔 的父亲吗？
+
+I'll leave that to your fanfiction to decide.
+我让你们的同人文来决定
+
+And finally, any nodes that have no children
+没有任何"子节点"的节点
+
+-- where the tree ends -- are called Leaf Nodes.
+也就是"树"结束的地方，叫"叶节点"（leaf）
+
+In our example, nodes can have up to two children,
+在这里的例子中，节点最多只可以有 2 个子节点
+
+and for that reason, this particular data structure is called a binary tree.
+因此叫 二叉树（binary tree）
+
+But you could just as easily have trees with three, four or any number of children
+但你可以随便改，弄成 3个，4个，或更多
+
+by modifying the data structure accordingly.
+但你可以随便改，弄成 3个，4个，或更多
+
+You can even have tree nodes that use linked lists to store all the nodes they point to.
+甚至节点 可以用链表存所有子节点
+
+An important property of trees - both in real life and in data structures - is that
+"树"的一个重要性质是（不管现实中还是数据结构中）
+
+there's a one-way path from roots to leaves.
+"根"到"叶"是 单向 的
+
+It'd be weird if roots connected to leaves, that connected to roots.
+如果根连到叶，叶连到根  就很奇怪
+
+For data that links arbitrarily, that include things like loops,
+如果数据随意连接，包括循环
+
+we can use a graph data structure instead.
+可以用"图"表示
+
+Remember our graph from last episode of cities connected by roads?
+还记得上集用路连接城市的"图"吗？
+
+This can be stored as nodes with many pointers, very much like a tree,
+这种结构  可以用有多个指针的节点表示
+
+but there is no notion of roots and leaves, and children and parents…
+因此没有 根 叶 子节点 父节点 这些概念
+
+Anything can point to anything!
+可以随意指向！
+
+So that's a whirlwind overview
+以上概述了计算机科学中，最主要的一些数据结构
+
+of pretty much all of the fundamental data structures used in computer science.
+以上概述了计算机科学中，最主要的一些数据结构
+
+On top of these basic building blocks,
+这些基本结构之上，程序员做了各种新变体，有不同性质.
+
+programmers have built all sorts of clever variants, with slightly different properties
+这些基本结构之上，程序员做了各种新变体，有不同性质.
+
+-- data structures like red-black trees and heaps, which we don't have time to cover.
+比如"红黑树"和"堆"，我们没时间讲
+
+These different data structures have properties that are useful for particular computations.
+不同数据结构适用于不同场景
+
+The right choice of data structure can make your job a lot easier,
+选择正确数据结构会让工作更简单
+
+so it pays off to think about how you want to structure your data before you jump in.
+所以花时间考虑用什么数据结构是值得的
+
+Fortunately, most programming languages come with
+幸运的是，大多数编程语言自带了预先做好的数据结构
+
+libraries packed full of ready-made data structures.
+幸运的是，大多数编程语言自带了预先做好的数据结构
+
+For example, C++ has its Standard Template Library, and Java has the Java Class Library.
+比如，C++有"标准模板库"，Java有"Java 类库"
+
+These mean programmers don't have to waste time implementing things from scratch,
+程序员不用浪费时间从零写
+
+and can instead wield the power of data structures to do more interesting things,
+时间可以花在更有趣的事情
+
+once again allowing us to operate at a new level of abstraction!
+又提升了一层抽象！
+
+I'll see you next week.
+下周见！
+

@@ -1,0 +1,765 @@
+Hi, I'm Carrie Anne, and welcome to CrashCourse Computer Science!
+(｡･∀･)ﾉﾞ嗨 我是 Carrie Anne 欢迎收看计算机科学速成课
+
+We ended last episode with the 1984 release of Apple's Macintosh personal computer.
+我们上集最后 \N 谈了苹果在1984年发布的 Macintosh
+
+It was the first computer a regular person could buy with a graphical user interface
+这是普通人可以买到的 \N 第一台带图形用户界面的计算机
+
+and a mouse to interact with it.
+还带一个鼠标
+
+This was a radical evolution from the command line interfaces
+那时的计算机全是命令行 \N 图形界面是个革命性进展
+
+found on all other personal computers of the era.
+那时的计算机全是命令行 \N 图形界面是个革命性进展
+
+Instead of having to remember...
+不必记住或猜正确的命令
+
+or guess...  the right commands to type in,
+我们不必记住或猜测正确的命令
+
+a graphical user interface shows you what functions are possible.
+图形界面直接显示了，你可以做什么
+
+You just have to look around the screen for what you want to do.
+只要在屏幕上找选项就行了
+
+It's a "point and click" interface.
+这是一个"选择并点击"的界面
+
+All of a sudden, computers were much more intuitive.
+突然间计算机更直观了
+
+Anybody, not just hobbyists or computer scientists,
+不只是爱好者或科学家能用计算机 \N 任何人都可以用计算机解决问题
+
+could figure things out all by themselves.
+不只是爱好者或科学家能用计算机 \N 任何人都可以用计算机解决问题
+
+The Macintosh is credited with taking Graphical User Interfaces, or GUIs, mainstream,
+人们认为是 Macintosh \N 把图形用户界面（GUI）变成主流
+
+but in reality they were the result of many decades of research.
+但实际上图形界面是数十年研究的成果
+
+In previous episodes, we discussed some early interactive graphical applications,
+前几集，我们讨论了早期的交互式图形程序
+
+like Sketchpad and Spacewar!, both made in 1962.
+比如 Sketchpad 和太空战争 \N 都是1962年制作的
+
+But these were one-off programs,
+但都是一次性项目，不是整合良好的体验
+
+and not whole integrated computing experiences.
+但都是一次性项目，不是整合良好的体验
+
+Arguably, the true forefather of modern GUIs was Douglas Engelbart.
+现代图形界面的先驱 \N 可以说是 道格拉斯·恩格尔巴特
+
+Let's go to the thought bubble!
+让我们进入思想泡泡！
+
+During World War 2, while Engelbart was stationed in the Philippines as a radar operator,
+二战期间 \N 恩格尔巴特 驻扎在菲律宾做雷达操作员
+
+he read Vannevar Bush's article on the Memex.
+他读了 万尼瓦尔·布什 的 Memex 文章
+
+These ideas inspired him,
+这些文章启发了他
+
+and when his Navy service ended,
+当他海军服役结束时
+
+he returned to school, completing a Ph.D. in 1955 at U.C. Berkeley.
+他回到学校  \N 1955年在 UCB 取得博士学位
+
+Heavily involved in the emerging computing scene,
+他沉溺于新兴的计算机领域
+
+he collected his thoughts in a seminal 1962 report,
+他在1962年一份开创性报告中 \N 汇集了各种想法
+
+titled: "Augmenting Human Intellect".
+报告名为："增强人类智力"
+
+Engelbart believed that the complexity of the problems facing mankind
+恩格尔巴特认为，人类面临的问题 \N 比解决问题的能力增长得更快
+
+was growing faster than our ability to solve them.
+恩格尔巴特认为，人类面临的问题 \N 比解决问题的能力增长得更快
+
+Therefore, finding ways to augment our intellect
+因此，找到增强智力的方法 \N 似乎是必要且值得一做的目标
+
+would seem to be both a necessary and a desirable goal.
+因此，找到增强智力的方法 \N 似乎是必要且值得一做的目标
+
+He saw that computers could be useful beyond just automation,
+他构想计算机不仅做自动化工作
+
+and be essential interactive tools for future knowledge workers to tackle complex problems.
+也可以成为未来知识型员工 \N 应对复杂问题的工具
+
+Further inspired by Ivan Sutherland's recently demonstrated Sketchpad,
+伊凡·苏泽兰 的"几何画板" \N 进一步启发了 恩格尔巴特
+
+Engelbart set out to make his vision a reality, recruiting a team to build the oN-Line System.
+他决定动手把愿景变为现实 \N 开始招募团队来做 oN-Line System
+
+He recognized that a keyboard alone was insufficient
+他意识到如果只有键盘 \N 对他想搭建的程序来说是不够的
+
+for the type of applications he was hoping to enable.
+他意识到如果只有键盘 \N 对他想搭建的程序来说是不够的
+
+In his words:
+用他的话说：
+
+"We envisioned problem-solvers using computer-aided working stations to augment their efforts.
+"我们设想人们用计算机辅助工作站来增强工作
+
+They required the ability to interact with information displays
+用户需要和屏幕上的信息互动
+
+using some sort of device to move [a cursor] around the screen."
+用某种设备在屏幕上移动[光标]"
+
+And in 1964, working with colleague Bill English,
+1964年，和同事比尔·英格利希的共同努力下
+
+he created the very first computer mouse.
+他创造了第一个计算机鼠标，尾部有一根线
+
+The wire came from the bottom of the device
+他创造了第一个计算机鼠标，尾部有一根线
+
+and looked very much like a rodent and the nickname stuck.
+看起来很像老鼠 \N 因此"鼠标"这个名字沿用了下来
+
+Thanks thought bubble!
+谢了思想泡泡！
+
+In 1968, Engelbart demonstrated his whole system at the Fall Joint Computer Conference,
+1968年 恩格尔巴特 \N 在"秋季计算机联合会议"展示了他的系统
+
+in what's often referred to as "the mother of all demos".
+这次演示 被视为如今所有演示的祖先
+
+The demo was 90 minutes long and demonstrated many features of modern computing:
+演示有90分钟 \N 展现了现代计算机的许多功能：
+
+bitmapped graphics,
+包括 位图图像
+
+video conferencing,
+视频会议
+
+word processing,
+文字处理
+
+and collaborative real-time editing of documents.
+和 实时协作编辑文件
+
+There were also precursors to modern GUIs,
+还有现代图形界面的原型  比如鼠标和多窗口
+
+like the mouse and multiple windows
+还有现代图形界面的原型  比如鼠标和多窗口
+
+- although they couldn't overlap.
+- 不过窗口不能重叠
+
+It was way ahead of its time,
+远远先于那个时代
+
+and like many products with that label, it ultimately failed,
+就像其它"跨时代"的产品一样，它最终失败了
+
+at least commercially.
+至少商业上是这样
+
+But its influence on computer researchers of the day was huge.
+但它对当时的计算机研究者影响巨大
+
+Engelbart was recognized for this watershed moment in computing with a Turing Award in 1997.
+恩格尔巴特 因此获得1997年图灵奖
+
+Federal funding started to reduce in the early 1970s,
+政府资金在 1970 年代初开始减少
+
+which we discussed two episodes ago.
+我们在两集前说过\N（第24集：冷战和消费主义）
+
+At that point, many of Engelbart's team, including Bill English,
+那时，恩格尔巴特团队里的许多人，包括比尔·英格利希
+
+left and went to Xerox's newly formed Palo Alto Research Center,
+去了施乐公司新成立的"帕洛阿尔托研究中心"
+
+more commonly known as Xerox PARC.
+更为人熟知的名字是 Xerox PARC
+
+It was here that the first true GUI computer was developed:
+他们在这里开发了第一台带真正 GUI 的计算机：
+
+the Xerox Alto, finished in 1973.
+施乐奥托  于1973年完成
+
+For the computer to be easy to use,
+为了让计算机易于使用，需要的不只是花哨的图形
+
+it needed more than just fancy graphics.
+为了让计算机易于使用，需要的不只是花哨的图形
+
+It needed to be built around a concept that people were already familiar with,
+还要借助一些人们已经熟悉的概念
+
+so they could immediately recognize how to use the interface with little or no training.
+让人们不用培训 就能很快明白如何使用
+
+Xerox's answer was to treat the 2D screen like the top of a desk or desktop.
+施乐的答案是将2D屏幕当作"桌面"
+
+Just like how you can have many papers laid out on a desk,
+就像桌面上放很多文件一样
+
+a user could have several computer programs open at once.
+用户可以打开多个程序 \N 每个程序都在一个框里，叫"窗口"
+
+Each was contained in their own frame,
+用户可以打开多个程序 \N 每个程序都在一个框里，叫"窗口"
+
+which offered a view onto the application called a window.
+用户可以打开多个程序 \N 每个程序都在一个框里，叫"窗口"
+
+Also like papers on a desk,
+就像桌上的文件一样
+
+these windows could overlap, blocking the items behind them.
+窗口可以重叠，挡住后面的东西
+
+And there were desk accessories, like a calculator and clock,
+还有桌面配件，比如计算器和时钟
+
+that the user could place on the screen and move around.
+用户可以把配件在屏幕上四处移动
+
+It wasn't an exact copy of a desktop though.
+它不是现实桌面的完美复制，而是用桌面这种隐喻
+
+Instead, it was a metaphor of a desktop.
+它不是现实桌面的完美复制，而是用桌面这种隐喻
+
+For this reason, surprisingly, it's called the Desktop Metaphor.
+因此叫"桌面隐喻"
+
+There are many ways to design an interface like this,
+有很多方法来设计界面 \N 但 Alto 团队用窗口，图标，菜单和指针来做
+
+but the Alto team did it with windows, icons, menus, and a pointer
+有很多方法来设计界面 \N 但 Alto 团队用窗口，图标，菜单和指针来做
+
+- what's called a WIMP interface.
+- 因此叫 WIMP 界面
+
+It's what most desktop GUIs use today.
+如今大部分图形界面都用这个
+
+It also offered a basic set of widgets,
+它还提供了一套基本部件
+
+reusable graphical building blocks, things like buttons, checkboxes, sliders, and tabs
+可复用的基本元素 \N 比如按钮，打勾框，滑动条和标签页
+
+which were also drawn from real world objects to make them familiar.
+这些也来自现实世界，让人们有熟悉感
+
+GUI applications are constructed from these widgets,
+GUI 程序就是这些小组件组成的
+
+so let's try coding a simple example using this new programming paradigm.
+让我们试着写一个简单例子
+
+First, we have to tell the operating system that we need a new window to be created for our app.
+首先，我们必须告诉操作系统 \N 为程序创建一个窗口
+
+We do this through a GUI API.
+我们通过 GUI API 实现 \N 需要指定窗口的名字和大小
+
+We need to specify the name of the window and also its size.
+我们通过 GUI API 实现 \N 需要指定窗口的名字和大小
+
+Let's say 500 by 500 pixels.
+假设是 500×500 像素
+
+Now, let's add some widgets - a text box and a button.
+现在再加一些小组件，一个文本框和一个按钮
+
+These require a few parameters to create.
+创建它们需要一些参数
+
+First, we need to specify what window they should appear in,
+首先要指定出现在哪个窗口 \N 因为程序可以有多个窗口
+
+because apps can have multiple windows.
+首先要指定出现在哪个窗口 \N 因为程序可以有多个窗口
+
+We also need to specify the default text, the X and Y location in the window, and a width and height.
+还要指定默认文字\N 窗口中的 X,Y 位置  以及宽度和高度
+
+Ok, so now we've got something that looks like a GUI app,
+好，现在我们有个 \N 看起来像 GUI 程序的东西
+
+but has no functionality.
+但它还没有功能
+
+If you click the "roll" button, nothing happens.
+如果点 Roll 按钮，什么也不会发生
+
+In previous examples we've discussed,
+在之前的例子中，代码是从上到下执行的
+
+the code pretty much executes from top to bottom.
+在之前的例子中，代码是从上到下执行的
+
+GUIs, on the other hand, use what's called event-driven programming;
+但 GUI 是 "事件驱动编程"
+
+code can fire at any time, and in different orders, in response to events.
+代码可以在任意时间执行 以响应事件
+
+In this case, it's user driven events,
+这里是用户触发事件 \N 比如点击按钮，选一个菜单项，或滚动窗口
+
+like clicking on a button, selecting a menu item, or scrolling a window.
+这里是用户触发事件 \N 比如点击按钮，选一个菜单项，或滚动窗口
+
+Or if a cat runs across your keyboard,
+或一只猫踩过键盘
+
+it's a bunch of events all at once!
+就会一次触发好多事件！
+
+Let's say that when the user clicks the "roll" button,
+假设当用户点 Roll 按钮
+
+we want to randomly generate a number between 1 and 20,
+我们产生1到20之间的随机数
+
+and then show that value in our text box.
+然后在文本框中，显示这个数字
+
+We can write a function that does just that.
+我们可以写一个函数来做
+
+We can even get a little fancy and say if we get the number 20,
+我们还可以让它变有趣些，假设随机数是 20 \N 就把背景颜色变成血红色！
+
+set the background color of the window to blood red!
+我们还可以让它变有趣些，假设随机数是 20 \N 就把背景颜色变成血红色！
+
+The last thing we need to do is hook this code up
+最后，把代码与"事件"相连 \N 每次点按钮时  都触发代码
+
+so that it's triggered each time our button is clicked.
+最后，把代码与"事件"相连 \N 每次点按钮时  都触发代码
+
+To do this, we need to specify that our function "handles" this event for our button,
+那么，要设置事件触发时 \N 由哪个函数来处理
+
+by adding a line to our initialize function.
+我们可以在初始化函数中，加一行代码来实现
+
+The type of event, in this case, is a click event,
+我们要处理的，是"点击"事件 \N 然后函数会处理这个事件
+
+and our function is the event handler for that event.
+我们要处理的，是"点击"事件 \N 然后函数会处理这个事件
+
+Now we're done.
+现在完成了
+
+We can click that button all day long,
+可以点按钮点上一整天 \N 每次都会执行 rollD20 函数
+
+and each time, our "roll D20" function gets dispatched and executed.
+可以点按钮点上一整天 \N 每次都会执行 rollD20 函数
+
+This is exactly what's happening behind the scenes
+这就是程序背后的原理
+
+when you press the little bold button in a text editor, or select shutdown from a dropdown menu
+在编辑器里点 粗体  或菜单里选 关机 \N 一个处理该事件的函数会触发
+
+- a function linked to that event is firing.
+在编辑器里点 粗体  或菜单里选 关机 \N 一个处理该事件的函数会触发
+
+Hope I don't roll a 20.
+希望不会随机到 20
+
+Ahhhh!
+啊！！！
+
+Ok, back to the Xerox Alto!
+好，现在回到施乐奥托！
+
+Roughly 2000 Altos were made, and used at Xerox and given to University labs.
+大约制作了2000台奥托\N 有的在施乐公司内部用，有的送给大学实验室
+
+They were never sold commercially.
+从来没有商业出售过
+
+Instead, the PARC team kept refining the hardware and software,
+然而，PARC 团队不断完善硬件和软件
+
+culminating in the Xerox Star system, released in 1981.
+最终于1981年发布了 施乐之星系统
+
+The Xerox Star extended the desktop metaphor.
+施乐之星扩展了"桌面隐喻"
+
+Now, files looked like pieces of paper,
+现在文件看起来就像一张纸 \N 还可以存在文件夹里
+
+and they could be stored in little folders,
+现在文件看起来就像一张纸 \N 还可以存在文件夹里
+
+all of which could sit on your desktop, or be put away into digital filing cabinets.
+这些都可以放桌面上，或数字文件柜里
+
+It's a metaphor that sits ontop of the underlying file system.
+这样来隐喻底层的文件系统
+
+From a user's perspective, this is a new level of abstraction!
+从用户角度来看，是一层新抽象！
+
+Xerox, being in the printing machine business, also advanced text and graphics creation tools.
+施乐卖的是印刷机 \N 但在文本和图形制作工具领域也有领先
+
+For example, they introduced the terms: cut, copy and paste.
+例如，他们首先使用了\N  "剪切""复制""粘贴"这样的术语
+
+This metaphor was drawn
+这个比喻来自编辑打字机文件
+
+from how people dealt with making edits in documents written on typewriters.
+这个比喻来自编辑打字机文件
+
+You'd literally cut text out with scissors, and then paste it, with glue,
+真的是剪刀"剪切" \N 然后胶水"粘贴" 到另一个文件
+
+into the spot you wanted in another document.
+真的是剪刀"剪切" \N 然后胶水"粘贴" 到另一个文件
+
+Then you'd photocopy the page to flatten it back down into a single layer,
+然后再复印一次，新文件就是一层了
+
+making the change invisible.
+看不出编辑的痕迹
+
+Thank goodness for computers!
+感谢计算机的出现！
+
+This manual process was moot with the advent of word processing software,
+文字处理软件出现后 \N 这种手工做法就消失了
+
+which existed on platforms like the Apple II and Commodore PET.
+Apple II 和 Commodore PET 上有文字处理软件
+
+But Xerox went way beyond the competition
+但施乐在这点上走的更远
+
+with the idea that whatever you made on the computer
+无论你在计算机上做什么 \N 文件打印出来应该长得一样
+
+should look exactly like the real world version, if you printed it out.
+无论你在计算机上做什么 \N 文件打印出来应该长得一样
+
+They dubbed this What-You-See-Is-What-You-Get or WYSIWYG.
+他们叫这个"所见即所得"
+
+Unfortunately, like Engelbart's oN-Line System,
+不幸的是，就像恩格尔巴特的 oN-Line System
+
+the Xerox Star was ahead of its time.
+施乐之星也领先于那个时代，销售量不高
+
+Sales were sluggish
+施乐之星也领先于那个时代，销售量不高
+
+because it had a price tag equivalent to nearly $200,000 today for an office setup.
+因为在办公室里配一个，相当如今20万美元
+
+It also didn't help that the IBM PC launched that same year,
+IBM 同年推出了 IBM PC
+
+followed by a tsunami of cheap "IBM Compatible" PC Clones.
+之后便宜的"IBM兼容"计算机席卷市场
+
+But the great ideas that PARC researchers had been cultivating
+但 PARC 研究人员花了十几年做的这些 \N 没有被浪费
+
+and building for almost a decade didn't go to waste.
+但 PARC 研究人员花了十几年做的这些 \N 没有被浪费
+
+In December of 1979, a year and a half before the Xerox Star shipped,
+1979年12月，施乐之星出货前一年半
+
+a guy you may have heard of visited: Steve Jobs.
+有个人去施乐公司参观 \N 你可能听说过这个人：史蒂夫·乔布斯
+
+There's a lot of lore surrounding this visit,
+这次参观有很多传闻
+
+with many suggesting that Steve Jobs and Apple stole Xerox's ideas.
+许多人认为\N 乔布斯和苹果偷走了施乐的创意
+
+But that simply isn't true.
+但那不是事实
+
+In fact, Xerox approached Apple, hoping to partner with them.
+事实上是施乐公司主动找苹果，希望合作
+
+Ultimately, Xerox was able to buy a million dollar stake in Apple
+最终施乐还买了苹果的一百万美元股份
+
+before its highly anticipated I.P.O.
+在苹果备受瞩目的 首次公开募股(IPO) 前买的
+
+-but it came with an extra provision:
+但一个额外条款是：
+
+"disclose everything cool going on at Xerox PARC".
+"公布一切施乐研究中心正在进行的酷工作"
+
+Steve knew they had some of the greatest minds in computing,
+史蒂夫知道他们很厉害
+
+but he wasn't prepared for what he saw.
+但他完全没预想到这些
+
+There was a demonstration of Xerox's graphical user interface,
+其中有个演示是
+
+running on a crisp, bitmapped display,
+一个清晰的位图显示器上，运行着施乐公司的图形界面 \N 操作全靠鼠标直观进行
+
+all driven with intuitive mouse input.
+一个清晰的位图显示器上，运行着施乐公司的图形界面 \N 操作全靠鼠标直观进行
+
+Steve later said, "It was like a veil being lifted from my eyes.
+史蒂夫后来说："就像拨开了眼前的一层迷纱
+
+I could see the future of what computing was destined to be."
+我可以看到计算机产业的未来"
+
+Steve returned to Apple with his engineering entourage,
+史蒂夫和随行的工程师回到苹果公司，开始开发新功能
+
+and they got to work inventing new features,
+史蒂夫和随行的工程师回到苹果公司，开始开发新功能
+
+like the menu bar and a trash can to store files to be deleted;
+比如菜单栏和垃圾桶，垃圾桶存删除文件
+
+it would even bulge when full - again with the metaphors.
+满了甚至会膨胀 - 再次使用了隐喻
+
+Apple's first product with a graphical user interface, and mouse,
+苹果第一款有图形界面和鼠标的产品
+
+was the Apple Lisa, released in 1983.
+是 1983 年发行的 Apple Lisa
+
+It was a super advanced machine, with a super advanced price
+一台超级先进的机器，标了"超级先进"的价格
+
+- almost 25 thousand dollars today.
+- 差不多是如今的 25000 美元
+
+That was significantly cheaper than the Xerox Star,
+虽然比施乐之星便宜不少
+
+but it turned out to be an equal flop in the market.
+但在市场上同样失败
+
+Luckily, Apple had another project up its sleeve:
+幸运的是，苹果还有另一个项目：
+
+The Macintosh, released a year later, in 1984.
+Macintosh，于 1984 年发布
+
+It had a price of around 6,000 dollars today - a quarter of the Lisa's cost.
+价格大约是如今的6000美元 - Lisa 的四分之一
+
+And it hit the mark, selling 70,000 units in the first 100 days.
+它成功了，开售100天就卖了7万台
+
+But after the initial craze, sales started to falter,
+但在最初的狂潮后，销售额开始波动
+
+and Apple was selling more of its Apple II computers than Macs.
+苹果公司卖的 Apple II 比 Mac 多
+
+A big problem was that no one was making software for this new machine
+一个大问题是：没人给这台新机器做软件
+
+with it's new radical interface.
+一个大问题是：没人给这台新机器做软件
+
+And it got worse. The competition caught up fast.
+之后情况变得更糟，竞争对手赶上来了
+
+Soon, other personal computers had primitive,
+不久，其它价格只有 Mac 几分之一的个人计算机 \N 有了原始但可用的图形界面
+
+but usable graphical user interfaces on computers a fraction of the cost.
+不久，其它价格只有 Mac 几分之一的个人计算机 \N 有了原始但可用的图形界面
+
+Consumers ate it up, and so did PC software developers.
+消费者认可它们， PC 软件开发者也认可
+
+With Apple's finances looking increasingly dire,
+随着苹果的财务状况日益严峻 \N 以及和苹果新 CEO 约翰·斯卡利 的关系日益紧张
+
+and tensions growing with Apple's new CEO, John Sculley,
+随着苹果的财务状况日益严峻 \N 以及和苹果新 CEO 约翰·斯卡利 的关系日益紧张
+
+Steve Jobs was ousted.
+史蒂夫乔布斯被赶出了苹果公司
+
+A few months later, Microsoft released Windows 1.0.
+几个月后，微软发布了 Windows 1.0
+
+It may not have been as pretty as Mac OS,
+它也许不如 Mac OS 漂亮
+
+but it was the first salvo in what would become a bitter rivalry
+但让微软在市场中站稳脚跟 \N 奠定了统治地位
+
+and near dominance of the industry by Microsoft.
+但让微软在市场中站稳脚跟 \N 奠定了统治地位
+
+Within ten years, Microsoft Windows was running on almost 95% of personal computers.
+十年内，95％的个人计算机上都有微软的 Windows
+
+Initially, fans of Mac OS could rightly claim superior graphics and ease-of-use.
+最初，Mac OS 的爱好者还可以说\N  Mac 有卓越的图形界面和易用性
+
+Those early versions of Windows were all built on top of DOS,
+Windows 早期版本都是基于 DOS \N 而 DOS 设计时 没想过运行图形界面
+
+which was never designed to run GUIs.
+Windows 早期版本都是基于 DOS \N 而 DOS 设计时 没想过运行图形界面
+
+But, after Windows 3.1,
+但 Windows 3.1 之后
+
+Microsoft began to develop a new consumer-oriented OS
+微软开始开发新的，\N 面向消费者的 GUI 操作系统
+
+with upgraded GUI called Windows 95.
+叫 Windows 95
+
+This was a significant rewrite that offered much more than just polished graphics.
+这是一个意义非凡的版本 \N 不仅提供精美的界面
+
+It also had advanced features Mac OS didn't have,
+还有 Mac OS 没有的高级功能
+
+like program multitasking and protected memory.
+比如"多任务"和"受保护内存"
+
+Windows 95 introduced many GUI elements still seen in Windows versions today,
+Windows 95 引入了许多 \N 如今依然见得到的 GUI 元素
+
+like the Start menu, taskbar, and Windows Explorer file manager.
+比如开始菜单，任务栏和 Windows 文件管理器
+
+Microsoft wasn't infallible though.
+不过微软也失败过
+
+Looking to make the desktop metaphor even easier and friendlier,
+为了让桌面更简单友好 \N 微软开发了一个产品叫 Microsoft Bob
+
+it worked on a product called Microsoft Bob,
+为了让桌面更简单友好 \N 微软开发了一个产品叫 Microsoft Bob
+
+and it took the idea of using metaphors to an extreme.
+将比喻用到极致
+
+Now you had a whole virtual room on your screen,
+现在屏幕上有了一个虚拟房间
+
+with applications embodied as objects that you could put on tables and shelves.
+程序是物品，可以放在桌子和书架上
+
+It even came with a crackling fireplace and a virtual dog to offer assistance.
+甚至还有噼啪作响的壁炉 \N 和提供帮助的虚拟狗狗
+
+And you see those doors on the sides?
+你看到那边的门没？
+
+Yep, those went to different rooms in your computer
+是的，那些门通往不同房间 \N 房间里有不同程序
+
+where different applications were available.
+是的，那些门通往不同房间 \N 房间里有不同程序
+
+As you might have guessed,
+你可能猜到了，它没有获得成功
+
+it was not a success.
+你可能猜到了，它没有获得成功
+
+This is a great example of how the user interfaces we enjoy today
+这是一个好例子，说明如今的用户界面
+
+are the product of what's essentially natural selection.
+是自然选择后的结果
+
+Whether you're running Windows, Mac, Linux, or some other desktop GUI,
+无论你用的是 \N Windows，Mac，Linux 或其他 GUI
+
+it's almost certainly an evolved version of the WIMP paradigm first introduced on the Xerox Alto.
+几乎都是施乐奥托 WIMP 的变化版
+
+Along the way, a lot of bad ideas were tried, and failed.
+一路上，人们试了各种做法并失败了
+
+Everything had to be invented, tested, refined, adopted or dropped.
+一切都必须发明，测试，改进，适应或抛弃
+
+Today, GUIs are everywhere and while they're good,
+如今，图形界面无处不在 \N 使用体验一般只是可以接受，而不是非常好
+
+they are not always great.
+如今，图形界面无处不在 \N 使用体验一般只是可以接受，而不是非常好
+
+No doubt you've experienced design-related frustrations
+你肯定体验过差劲的设计
+
+after downloading an application, used someone else's phone,
+比如下载了很烂的 App，用过别人糟糕的手机
+
+or visited a website. And for this reason,
+或者看到过很差的网站，因此
+
+computer scientists and interface designers continue to work hard
+计算机科学家和界面设计师 \N 会继续努力工作
+
+to craft computing experiences that are both easier and more powerful.
+做出更好更强大的界面
+
+Ultimately, working towards Engelbart's vision of augmenting human intellect.
+朝着恩格尔巴特"增强人类智能"的愿景努力
+
+I'll see you next week.
+我们下周见
+

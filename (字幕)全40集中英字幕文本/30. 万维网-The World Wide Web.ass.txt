@@ -1,0 +1,636 @@
+Hi, I’m Carrie Anne, and welcome to Crash Course Computer Science.
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne \N 欢迎收看计算机科学速成课！
+
+Over the past two episodes, we’ve delved into the wires, signals, switches, packets,
+前两集我们深入讨论了电线 信号 交换机 数据包 \N 路由器以及协议，它们共同组成了互联网.
+
+routers and protocols that make up the internet.
+前两集我们深入讨论了电线 信号 交换机 数据包 \N 路由器以及协议，它们共同组成了互联网.
+
+Today we’re going to move up yet another level of abstraction
+今天我们向上再抽象一层，来讨论万维网
+
+and talk about the World Wide Web.
+今天我们向上再抽象一层，来讨论万维网
+
+This is not the same thing as the Internet,
+万维网(World Wide Web) \N 和互联网(Internet)不是一回事
+
+even though people often use the two terms interchangeably.
+尽管人们经常混用这两个词
+
+The World Wide Web runs on top of the internet,
+万维网在互联网之上运行
+
+in the same way that Skype, Minecraft or Instagram do.
+互联网之上还有 Skype, Minecraft 和 Instagram
+
+The Internet is the underlying plumbing that conveys the data for all these different applications.
+互联网是传递数据的管道，各种程序都会用，
+
+And The World Wide Web is the biggest of them all
+其中传输最多数据的程序是万维网
+
+– a huge distributed application running on millions of servers worldwide,
+分布在全球数百万个服务器上
+
+accessed using a special program called a web browser.
+可以用"浏览器"来访问万维网
+
+We’re going to learn about that, and much more, in today’s episode.
+这集我们会深入讲解万维网
+
+The fundamental building block of the World Wide Web – or web for short
+万维网的最基本单位，是单个页面
+
+– is a single page.
+万维网的最基本单位，是单个页面
+
+This is a document, containing content, which can include links to other pages.
+页面有内容，也有去往其他页面的链接 \N 这些链接叫"超链接"
+
+These are called hyperlinks.
+页面有内容，也有去往其他页面的链接 \N 这些链接叫"超链接"
+
+You all know what these look like: text or images that you can click,
+你们都见过：可以点击的文字或图片，把你送往另一个页面
+
+and they jump you to another page.
+你们都见过：可以点击的文字或图片，把你送往另一个页面
+
+These hyperlinks form a huge web of interconnected information,
+这些超链接形成巨大的互联网络
+
+which is where the whole thing gets its name.
+这就是"万维网"名字的由来
+
+This seems like such an obvious idea.
+现在说起来觉得很简单，但在超链接做出来之前
+
+But before hyperlinks were implemented,
+现在说起来觉得很简单，但在超链接做出来之前
+
+every time you wanted to switch to another piece of information on a computer,
+计算机上每次想看另一个信息时
+
+you had to rummage through the file system to find it, or type it into a search box.
+你需要在文件系统中找到它 \N 或是把地址输入搜索框
+
+With hyperlinks, you can easily flow from one related topic to another.
+有了超链接，你可以在相关主题间轻松切换
+
+The value of hyperlinked information was conceptualized by Vannevar Bush way back in 1945.
+超链接的价值早在 1945 年 \N 就被 Vannevar Bush 意识到了
+
+He published an article describing a hypothetical machine called a Memex,
+在第 24 集中我们说过，他发过一篇文章 \N 描述一个假想的机器 Memex
+
+which we discussed in Episode 24.
+在第 24 集中我们说过，他发过一篇文章 \N 描述一个假想的机器 Memex
+
+Bush described it as "associative indexing... whereby any item may be caused
+Bush的形容是"关联式索引.. 选一个物品会引起
+
+at will to select another immediately and automatically."
+另一个物品被立即选中"
+
+He elaborated: "The process of tying two things together is the important thing...
+他解释道："将两样东西联系在一起的过程十分重要
+
+thereafter, at any time, when one of those items is in view,
+在任何时候，当其中一件东西进入视线
+
+the other [item] can be instantly recalled merely by tapping a button."
+只需点一下按钮，立马就能回忆起另一件"
+
+In 1945, computers didn’t even have screens, so this idea was way ahead of its time!
+1945年的时候计算机连显示屏都没有，\N 所以这个想法非常超前！
+
+Text containing hyperlinks is so powerful,
+因为文字超链接是如此强大
+
+it got an equally awesome name: hypertext!
+它得到了一个同样厉害的名字："超文本"！
+
+Web pages are the most common type of hypertext document today.
+如今超文本最常指向的，是另一个网页
+
+They’re retrieved and rendered by web browsers
+然后网页由浏览器渲染，我们待会会讲
+
+which we'll get to in a few minutes.
+然后网页由浏览器渲染，我们待会会讲
+
+In order for pages to link to one another, each hypertext page needs a unique address.
+为了使网页能相互连接，每个网页需要一个唯一的地址
+
+On the web, this is specified by a Uniform Resource Locator, or URL for short.
+这个地址叫 "统一资源定位器"，简称 URL
+
+An example web page URL is thecrashcourse.com/courses.
+一个网页URL的例子是 "thecrashcourse.com/courses"
+
+Like we discussed last episode, when you request a site,
+就像上集讨论的，当你访问一个网站时
+
+the first thing your computer does is a DNS lookup.
+计算机首先会做"DNS查找"
+
+This takes a domain name as input – like "thecrashcourse.com"
+"DNS查找"的输入是一个域名 \N 比如 thecrashcourse.com
+
+and replies back with the corresponding computer’s IP address.
+DNS 会输出对应的IP地址
+
+Now, armed with the IP address of the computer you want,
+现在有了IP地址 \N 你的浏览器会打开一个 TCP 连接到这个 IP 地址
+
+your web browser opens a TCP connection to a computer
+现在有了IP地址 \N 你的浏览器会打开一个 TCP 连接到这个 IP 地址
+
+that’s running a special piece of software called a web server.
+这个地址运行着"网络服务器"
+
+The standard port number for web servers is port 80.
+网络服务器的标准端口是 80 端口
+
+At this point, all your computer has done is connect to
+这时，你的计算机连到了 \N thecrashcourse.com 的服务器
+
+the web server at the address thecrashcourse.com
+这时，你的计算机连到了 \N thecrashcourse.com 的服务器
+
+The next step is to ask that web server for the "courses" hypertext page.
+下一步是向服务器请求"courses"这个页面
+
+To do this, it uses the aptly named Hypertext Transfer Protocol, or HTTP.
+这里会用"超文本传输协议"(HTTP)
+
+The very first documented version of this spec, HTTP 0.9, created in 1991,
+HTTP的第一个标准，HTTP 0.9，创建于1991年
+
+only had one command – "GET".
+只有一个指令，"GET" 指令
+
+Fortunately, that’s pretty much all you need.
+幸运的是，对当时来说也够用
+
+Because we’re trying to get the "courses" page,
+因为我们想要的是"courses"页面
+
+we send the server the following command– GET /courses.
+我们向服务器发送指令:"GET /courses"
+
+This command is sent as raw ASCII text to the web server,
+该指令以"ASCII编码"发送到服务器
+
+which then replies back with the web page hypertext we requested.
+服务器会返回该地址对应的网页 \N 然后浏览器会渲染到屏幕上
+
+This is interpreted by your computer's web browser and rendered to your screen.
+服务器会返回该地址对应的网页 \N 然后浏览器会渲染到屏幕上
+
+If the user follows a link to another page, the computer just issues another GET request.
+如果用户点了另一个链接，计算机会重新发一个GET请求
+
+And this goes on and on as you surf around the website.
+你浏览网站时，这个步骤会不断重复
+
+In later versions, HTTP added status codes,
+在之后的版本，HTTP添加了状态码
+
+which prefixed any hypertext that was sent following a GET request.
+状态码放在请求前面
+
+For example, status code 200 means OK – I’ve got the page and here it is!
+举例，状态码 200 代表 "网页找到了,给你"
+
+Status codes in the four hundreds are for client errors.
+状态码400~499代表客户端出错
+
+Like, if a user asks the web server for a page that doesn’t exist,
+比如网页不存在，就是可怕的404错误
+
+that’s the dreaded 404 error!
+比如网页不存在，就是可怕的404错误
+
+Web page hypertext is stored and sent as plain old text,
+"超文本"的存储和发送都是以普通文本形式
+
+for example, encoded in ASCII or UTF-16, which we talked about in Episodes 4 and 20.
+举个例子，编码可能是 ASCII 或 UTF-16  \N 我们在第4集和第20集讨论过
+
+Because plain text files don’t have a way to specify what’s a link and what’s not,
+因为如果只有纯文本 \N 无法表明什么是链接，什么不是链接
+
+it was necessary to develop a way to "mark up" a text file with hypertext elements.
+所以有必要开发一种标记方法
+
+For this, the Hypertext Markup Language was developed.
+因此开发了 超文本标记语言（HTML)
+
+The very first version of HTML version 0.8, created in 1990,
+HTML 第一版的版本号是 0.8，创建于 1990 年
+
+provided 18 HTML commands to markup pages.
+有18种HTML指令
+
+That’s it!
+仅此而已
+
+Let’s build a webpage with these!
+我们来做一个网页吧！
+
+First, let’s give our web page a big heading.
+首先，给网页一个大标题
+
+To do this, we type in the letters "h1", which indicates the start of a first level
+我们输 h1 代表一级标题，然后用<>括起来
+
+heading, and we surround that in angle brackets.
+我们输 h1 代表一级标题，然后用<>括起来
+
+This is one example of an HTML tag.
+这就是一个HTML标签
+
+Then, we enter whatever heading text we want.
+然后输入想要的标题
+
+We don’t want the whole page to be a heading.
+我们不想一整页都是标题 \N 所以加 </h1> 作为结束标签
+
+So, we need to "close" the "h1" tag like so, with a little slash in the front.
+我们不想一整页都是标题 \N 所以加 </h1> 作为结束标签
+
+Now lets add some content.
+现在来加点内容
+
+Visitors may not know what Klingons are, so let’s make that word a hyperlink to the
+读者可能不知道"克林贡"是什么，所以我们给这个词
+
+Klingon Language Institute for more information.
+加一个超链接到"克林贡语言研究院"
+
+We do this with an "A" tag, inside of which we include an attribute
+我们用 <a> 标签来做，它有一个 href 属性
+
+that specifies a hyperlink reference.
+说明链接指向哪里，当点击链接时就会进入那个网页
+
+That’s the page to jump to if the link is clicked.
+说明链接指向哪里，当点击链接时就会进入那个网页
+
+And finally, we need to close the A tag.
+最后用 </a> 关闭标签
+
+Now lets add a second level heading, which uses an "h2" tag.
+接下来用 <h2> 标签做二级标题
+
+HTML also provides tags to create lists.
+HTML也有做列表的标签
+
+We start this by adding the tag for an ordered list.
+我们先写<ol> \N 代表 有序列表（ordered list）
+
+Then we can add as many items as we want,
+然后想加几个列表项目  就加几个 \N 用 <li> 包起来就行
+
+surrounded in "<li>" tags, which stands for list item.
+然后想加几个列表项目  就加几个 \N 用 <li> 包起来就行
+
+People may not know what a bat'leth is, so let’s make that a hyperlink too.
+读者可能不知道Bat'leth是什么，那么也加上超链接
+
+Lastly, for good form, we need to close the ordered list tag.
+最后，为了保持良好格式，用</ol>代表列表结束
+
+And we’re done – that’s a very simple web page!
+这就完成了 - 一个很简单的网页！
+
+If you save this text into notepad or textedit, and name it something like "test.html",
+如果把这些文字存入记事本或文本编辑器，\N 然后文件取名"test.html"
+
+you should be able to open it by dragging it into your computer’s web browser.
+就可以拖入浏览器打开
+
+Of course, today’s web pages are a tad more sophisticated.
+当然，如今的网页更复杂一些
+
+The newest version of HTML, version 5, has over a hundred different tags –
+最新版的 HTML，HTML5，有100多种标签
+
+for things like images, tables, forms and buttons.
+图片标签，表格标签，表单标签，按钮标签，等等
+
+And there are other technologies we’re not going to discuss, like Cascading Style Sheets
+还有其他相关技术就不说了\N 比如 层叠样式表 (CSS)
+
+or CSS and JavaScript, which can be embedded into HTML pages and do even fancier things.
+和 JavaScript，这俩可以加进网页，做一些更厉害的事
+
+That brings us back to web browsers.
+让我们回到浏览器
+
+This is the application on your computer that lets you talk with all these web servers.
+网页浏览器可以和网页服务器沟通
+
+Browsers not only request pages and media,
+浏览器不仅获取网页和媒体，获取后还负责显示.
+
+but also render the content that’s being returned.
+浏览器不仅获取网页和媒体，获取后还负责显示.
+
+The first web browser, and web server,
+第一个浏览器和服务器
+
+was written by (now Sir) Tim Berners-Lee over the course of two months in 1990.
+是 Tim Berners-Lee 在 1990 年写的，一共花了2个月
+
+At the time, he was working at CERN in Switzerland.
+那时候他在瑞士的"欧洲核子研究所"工作
+
+To pull this feat off, he simultaneously created several of the fundamental web standards
+为了做出来，他同时建立了几个最基本的网络标准
+
+we discussed today: URL, HTML and HTTP.
+URL, HTML 和 HTTP.
+
+Not bad for two months work!
+两个月能做这些很不错啊！
+
+Although to be fair, he’d been researching hypertext systems for over a decade.
+不过公平点说，他研究超文本系统已经有十几年了
+
+After initially circulating his software amongst colleagues at CERN,
+和同事在 CERN 内部使用一阵子后
+
+it was released to the public in 1991.
+在 1991 年发布了出去
+
+The World Wide Web was born.
+万维网就此诞生
+
+Importantly, the web was an open standard,
+重要的是，万维网有开放标准
+
+making it possible for anyone to develop new web servers and browsers.
+大家都可以开发新服务器和新浏览器
+
+This allowed a team at the University of Illinois at Urbana-Champaign to
+因此"伊利诺伊大学香槟分校"的一个小组
+
+create the Mosaic web browser in 1993.
+在 1993 年做了 Mosaic 浏览器
+
+It was the first browser that allowed graphics to be embedded alongside text;
+第一个可以在文字旁边显示图片的浏览器
+
+previous browsers displayed graphics in separate windows.
+之前浏览器要单开一个新窗口显示图片
+
+It also introduced new features like bookmarks, and had a friendly GUI interface,
+还引进了书签等新功能，界面友好，使它很受欢迎
+
+which made it popular.
+还引进了书签等新功能，界面友好，使它很受欢迎
+
+Even though it looks pretty crusty, it’s recognizable as the web we know today!
+尽管看上去硬邦邦的，但和如今的浏览器长的差不多
+
+By the end of the 1990s, there were many web browsers in use,
+1990年代末有许多浏览器面世
+
+like Netscape Navigator, Internet Explorer, Opera, OmniWeb and Mozilla.
+Netscape Navigator, Internet Explorer \N Opera, OmniWeb, Mozilla
+
+Many web servers were also developed,
+也有很多服务器面世
+
+like Apache and Microsoft’s Internet Information Services (IIS).
+比如 Apache 和 微软互联网信息服务(IIS)
+
+New websites popped up daily, and web mainstays
+每天都有新网站冒出来，如今的网络巨头
+
+like Amazon and eBay were founded in the mid-1990s.
+比如亚马逊和 eBay，创始于 1990 年代中期
+
+It was a golden era!
+那是个黄金时代！
+
+The web was flourishing and people increasingly needed ways to find things.
+随着万维网日益繁荣，人们越来越需要搜索
+
+If you knew the web address of where you wanted to go –
+如果你知道网站地址 \N 比如 ebay.com，直接输入浏览器就行
+
+like ebay.com – you could just type it into the browser.
+如果你知道网站地址 \N 比如 ebay.com，直接输入浏览器就行
+
+But what if you didn’t know where to go?
+如果不知道地址呢？
+
+Like, you only knew that you wanted pictures of cute cats.
+比如想找可爱猫咪的图片
+
+Right now!
+现在就要！
+
+Where do you go?
+去哪里找呢？
+
+At first, people maintained web pages
+起初人们会维护一个目录，链接到其他网站
+
+which served as directories hyperlinking to other websites.
+起初人们会维护一个目录，链接到其他网站
+
+"Most famous among these was "Jerry and David's guide to the World Wide Web",
+其中最有名的叫"Jerry和David的万维网指南"
+
+renamed Yahoo in 1994.
+1994年改名为Yahoo
+
+As the web grew, these human-edited directories started to get unwieldy,
+随着网络越来越大，人工编辑的目录变得不便利
+
+and so search engines were developed.
+所以开发了搜索引擎
+
+Let’s go to the thought bubble!
+让我们进入思想泡泡!
+
+The earliest web search engine that operated like the ones we use today, was JumpStation,
+长的最像现代搜索引擎的最早搜素引擎，叫JumpStation
+
+created by Jonathon Fletcher in 1993 at the University of Stirling.
+由Jonathon Fletcher于1993年在斯特林大学创建
+
+This consisted of three pieces of software that worked together.
+它有 3 个部分
+
+The first was a web crawler, software that followed all the links it could find on the web;
+第一个是爬虫，一个跟着链接到处跑的软件
+
+anytime it followed a link to a page that had new links,
+每当看到新链接，就加进自己的列表里
+
+it would add those to its list.
+每当看到新链接，就加进自己的列表里
+
+The second component was an ever enlarging index,
+第二个部分是不断扩张的索引
+
+recording what text terms appeared on what pages the crawler had visited.
+记录访问过的网页上，出现过哪些词
+
+The final piece was a search algorithm that consulted the index;
+最后一个部分，是查询索引的搜索算法
+
+for example, if I typed the word "cat" into JumpStation,
+举个例子，如果我在 JumpStation 输入"猫"
+
+every webpage where the word "cat" appeared would come up in a list.
+每个有"猫"这个词的网页都会出现
+
+Early search engines used very simple metrics to rank order their search results, most often
+早期搜索引擎的排名方式 非常简单
+
+just the number of times a search term appeared on a page.
+取决于 搜索词在页面上的出现次数
+
+This worked okay, until people started gaming the system,
+刚开始还行，直到有人开始钻空子
+
+like by writing "cat" hundreds of times on their web pages just to steer traffic their way.
+比如在网页上写几百个"猫"，把人们吸引过来
+
+Google’s rise to fame was in large part
+谷歌成名的一个很大原因是 \N 创造了一个聪明的算法来规避这个问题
+
+due to a clever algorithm that sidestepped this issue.
+谷歌成名的一个很大原因是 \N 创造了一个聪明的算法来规避这个问题
+
+Instead of trusting the content on a web page,
+与其信任网页上的内容 \N 搜索引擎会看其他网站 有没有链接到这个网站
+
+they looked at how other websites linked to that page.
+与其信任网页上的内容 \N 搜索引擎会看其他网站 有没有链接到这个网站
+
+If it was a spam page with the word cat over and over again, no site would link to it.
+如果只是写满"猫"的垃圾网站，没有网站会指向它
+
+But if the webpage was an authority on cats, then other sites would likely link to it.
+如果有关于猫的有用内容，有网站会指向它
+
+So the number of what are called "backlinks", especially from reputable sites,
+所以这些"反向链接"的数量，特别是有信誉的网站
+
+was often a good sign of quality.
+代表了网站质量
+
+This started as a research project called BackRub at Stanford University in 1996, before
+Google 一开始时是 1996 年斯坦福大学 \N 一个叫 BackRub 的研究项目
+
+being spun out, two years later, into the Google we know today.
+两年后分离出来，演变成如今的谷歌
+
+Thanks thought bubble!
+谢谢思想泡泡！
+
+Finally, I want to take a second to talk about a term you’ve probably heard a lot recently,
+最后 我想讲一个词，你最近可能经常听到
+
+"Net Neutrality".
+网络中立性
+
+Now that you’ve built an understanding of packets, internet routing, and the World Wide
+现在你对数据包，路由和万维网，有了个大体概念
+
+Web, you know enough to understand the essence, at least the technical essence, of this big debate.
+足够你理解这个争论的核心点，至少从技术角度
+
+In short, network neutrality is the principle that
+简单说"网络中立性"是
+
+all packets on the internet should be treated equally.
+应该平等对待所有数据包
+
+It doesn’t matter if the packets are my email or you streaming this video,
+不论这个数据包是我的邮件，或者是你在看视频
+
+they should all chug along at the same speed and priority.
+速度和优先级应该是一样的
+
+But many companies would prefer that their data arrive to you preferentially.
+但很多公司会乐意让它们的数据优先到达
+
+Take for example, Comcast, a large ISP that also owns many TV channels,
+拿 Comcast 举例，它们不但是大型互联网服务提供商\N 而且拥有多家电视频道
+
+like NBC and The Weather Channel, which are streamed online.
+比如 NBC 和 The Weather Channel，可以在线看.
+
+Not to pick on Comcast, but in the absence of Net Neutrality rules,
+我不是特意找Comcast麻烦 \N 但要是没有网络中立性
+
+they could for example say that they want their content to be delivered silky smooth, with high priority…
+Comcast 可以让自己的内容优先到达 \N 节流其他线上视频
+
+But other streaming videos are going to get throttled,
+Comcast 可以让自己的内容优先到达 \N 节流其他线上视频
+
+that is, intentionally given less bandwidth and lower priority.
+节流(Throttled) 意思是故意给更少带宽和更低优先级
+
+Again I just want to reiterate here this is just conjecture.
+再次重申，这只是举例，不是说 Comcast 很坏
+
+At a high level, Net Neutrality advocates argue that giving internet providers this
+支持网络中立性的人说 \N 没有中立性后，服务商可以推出提速的"高级套餐"
+
+ability to essentially set up tolls on the internet – to provide premium packet delivery
+支持网络中立性的人说 \N 没有中立性后，服务商可以推出提速的"高级套餐"
+
+plants the seeds for an exploitative business model.
+给剥削性商业模式埋下种子
+
+ISPs could be gatekeepers to content, with strong incentives to not play nice with competitors.
+互联网服务供应商成为信息的"守门人"，\N 它们有着强烈的动机去碾压对手
+
+Also, if big companies like Netflix and Google can pay to get special treatment,
+另外，Netflix和Google这样的大公司可以花钱买特权
+
+small companies, like start-ups, will be at a disadvantage, stifling innovation.
+而小公司，比如刚成立的创业公司，\N 会处于劣势，阻止了创新
+
+On the other hand, there are good technical reasons why you might
+另一方面，从技术原因看
+
+want different types of data to flow at different speeds.
+也许你会希望不同数据传输速度不同
+
+That skype call needs high priority,
+你希望Skype的优先级更高，邮件晚几秒没关系
+
+but it’s not a big deal if an email comes in a few seconds late.
+你希望Skype的优先级更高，邮件晚几秒没关系
+
+Net-neutrality opponents also argue that market forces and competition would discourage bad
+而反对"网络中立性"的人认为，市场竞争会阻碍不良行为
+
+behavior, because customers would leave ISPs that are throttling sites they like.
+如果供应商把客户喜欢的网站降速 \N 客户会离开供应商
+
+This debate will rage on for a while yet, and as we always encourage on Crash Course,
+这场争辩还会持续很久，\N 就像我们在 Crash Course 其他系列中说过
+
+you should go out and learn more
+你应该自己主动了解更多信息
+
+because the implications of Net Neutrality are complex and wide-reaching.
+因为"网络中立性"的影响十分复杂而且广泛
+
+I’ll see you next week.
+我们下周再见
+

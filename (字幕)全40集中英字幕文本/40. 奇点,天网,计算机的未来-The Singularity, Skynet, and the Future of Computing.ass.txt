@@ -1,0 +1,702 @@
+Hi, I’m Carrie Anne, and welcome to Crash Course Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne \N 欢迎收看计算机科学速成课！
+
+We’re here: the final episode!
+我们到了 最后一集！
+
+If you’ve watched the whole series,
+如果你看了整个系列，
+
+hopefully you’ve developed a newfound appreciation
+希望你对计算机影响的深度和广度 \N 有全新的认知和欣赏
+
+for the incredible breadth of computing applications and topics.
+希望你对计算机影响的深度和广度 \N 有全新的认知和欣赏
+
+It’s hard to believe we’ve worked up from mere transistors and logic gates,
+难以相信 我们从简单的晶体管和逻辑门开始
+
+all the way to computer vision, machine learning, robotics and beyond.
+一直到计算机视觉，机器学习，机器人以及更多
+
+We’ve stood on the shoulders of giants
+我们站在巨人的肩膀上
+
+like Babbage and Lovelace, Hollerith and Turing,
+Charles Babbage \N Ada Lovelac \N Herman Hollerith \N Alan Turing
+
+Eckert and Hopper, Sutherland and Engelbart,
+J. Presper Eckert \N Grace Hopper \N  Ivan Sutherland \N Douglas Engelbart
+
+Bush and Berners Lee, Gates and the Woz,
+Vannevar Bush (Memex) \N  Berners-Lee  (万维网) \N Bill Gates (微软)\N Steve Wozniak (苹果)
+
+and many other computing pioneers.
+和许多其他先驱
+
+My biggest hope is that these episodes have inspired you to
+我最大的希望是 这些视频能激励你 \N 去了解这些东西如何影响你的人生
+
+learn more about how these subjects affect your life.
+我最大的希望是 这些视频能激励你 \N 去了解这些东西如何影响你的人生
+
+Maybe you’ll even pick up programming or choose a career in computing.
+甚至开始学编程，或找一份计算机职业
+
+It’s awesome!
+这很棒！
+
+It’s also a skill of the future.
+这是未来的技能
+
+I said in the very first episode that computer science isn’t magic, but it sort of is!
+我在第一集说过，计算机科学不是魔法\N 但它有点像魔法
+
+Knowing how to use and program computers is sorcery of the 21st century.
+学习使用电脑和编程，是21世纪的巫术
+
+Instead of incantations and spells, it’s scripts and code.
+只不过用的不是咒语 而是代码
+
+Those who know how to wield that tremendous power will be able to craft great things,
+懂得运用的人，能创造出伟大的东西
+
+not just to improve their own lives, but also their communities and humanity at large.
+不仅改善自己的生活，还有当地社区乃至整体人类
+
+Computing is also going to be literally everywhere –
+计算机会随处可见 -
+
+not just the computers we see today, sitting on desks and countertops,
+不仅是放在桌上 带在包里
+
+and carried in pockets and bags – but inside every object imaginable.
+而是在所有可想象的东西里
+
+Inside all your kitchen appliances, embedded in your walls, nanotagged in your food,
+厨房用具里，墙里，食物里
+
+woven into your clothes, and floating around inside your body.
+编织进衣服里，在你的血液里
+
+This is the vision of the field of Ubiquitous Computing.
+这是"普适计算"的愿景
+
+In some ways, it’s already here, and in other ways, we’ve got many decades to go.
+从某种角度来讲 它已经来临了\N 而换一个角度  还要几十年
+
+Some might view this eventuality as dystopian,
+有些人把这种未来看成 反乌托邦
+
+with computers everywhere surveilling us and competing for our attention.
+到处都有监视器，有无数东西想吸引我们的注意力
+
+But the late Mark Weiser, who articulated this idea in the 1990s,
+但 1990 年代提出这个想法的 马克·维泽尔
+
+saw the potential very differently:
+看到了非常不同的潜力：
+
+"For [fifty] years, most interface design, and most computer design,
+"[五十]年来，大多数界面和计算机设计，
+
+has been headed down the path of the "dramatic" machine.
+都是朝"戏剧性"方向前进
+
+Its highest idea is to make a computer so exciting, so wonderful,
+想把计算机做得超好，让人一刻也不想离开
+
+so interesting, that we never want to be without it.
+想把计算机做得超好，让人一刻也不想离开
+
+A less-traveled path I call the "invisible";
+另一条少有人走的路 是"无形"的
+
+its highest idea is to make a computer so imbedded, so fitting,
+把计算机整合到所有东西里 \N 用的时候很自然 完全注意不到
+
+so natural, that we use it without even thinking about it …
+把计算机整合到所有东西里 \N 用的时候很自然 完全注意不到
+
+The most profound technologies are those that disappear.
+最厉害的科技是看不见的科技
+
+They weave themselves into the fabric of everyday life
+它们融入到日常生活的每一部分 直到无法区分"
+
+until they are indistinguishable from it."
+它们融入到日常生活的每一部分 直到无法区分"
+
+That doesn’t describe computing of today
+如今我们还没达到这样
+
+– where people sit for hours upon end in front of computer monitors,
+- 人们在电脑前连续坐好几小时
+
+and social media notifications interrupt us at dinner.
+吃晚餐被手机推送通知打扰
+
+But, it could describe computing of the future, our final topic.
+但它可以描述计算的未来 \N  本系列最后一个主题
+
+When people think of computing in the future,
+人们思考计算机的未来时 经常会直接想到人工智能
+
+they often jump right to Artificial Intelligence.
+人们思考计算机的未来时 经常会直接想到人工智能
+
+No doubt there will be tremendous strides made in AI in the coming years,
+毫无疑问，接下来几十年人工智能会有巨大进步
+
+but not everything will be, or need to be, AI-powered.
+但不是所有东西都要做成 AI ，或需要 AI
+
+Your car might have an AI to self-drive, but the door locks
+车有自动驾驶AI，但门锁依然会很简单
+
+might continue to be powered by what are essentially if-statements.
+车有自动驾驶AI，但门锁依然会很简单
+
+AI technology is just as likely to enhance existing devices,
+人工智能可能只是增强现有设备
+
+like cars, as it is to open up entirely new product categories.
+比如汽车，AI 带来了一个全新的产品种类
+
+The exact same thing happened with the advent of electrical power – lightbulbs replaced candles.
+刚出现电力时也是这样，灯泡取代了蜡烛.
+
+But electrification also led to the creation of hundreds of new electrically-powered gadgets.
+但电气化也导致上百种新的电动小工具诞生
+
+And of course, we still have candles today.
+当然 我们如今仍然有蜡烛
+
+It’s most likely that AI will be yet another tool
+最可能的情况是 AI 变成 \N 计算机科学家手中的另一门新工具
+
+that computer scientists can draw upon to tackle problems.
+最可能的情况是 AI 变成 \N 计算机科学家手中的另一门新工具
+
+What really gets people thinking, and sometimes sweating,
+但真正让人深思和担忧的是
+
+is whether Artificial Intelligence will surpass human intelligence.
+人工智能是否会超越人类智能？
+
+This is a really tricky question for a multitude of reasons,
+这个问题很难 有多方面原因
+
+including most immediately: "what is intelligence?"
+比如 "智能的准确定义是什么？"
+
+On one hand, we have computers that can drive cars,
+一方面，有会开车的计算机
+
+recognize songs with only a few seconds of audio,
+几秒就能识别歌的 App
+
+translate dozens of languages, and totally dominate at games like chess, Jeopardy, and Go.
+翻译几十种语言，\N 还称霸了一些游戏，比如象棋，知识竞答和围棋
+
+That sounds pretty smart!
+听起来很聪明！
+
+But on the other hand, computers fail at some basic tasks,
+但另一方面，计算机连一些简单事情都做不了
+
+like walking up steps, folding laundry,
+比如走楼梯，叠衣服，
+
+understanding speech at a cocktail party, and feeding themselves.
+在鸡尾酒派对和人聊天，喂饱自己
+
+We’re a long way from Artificial Intelligence that’s as general purpose and capable as a human.
+人工智能成长到和人类一样通用，还有很长的路
+
+With intelligence being somewhat hard to quantify,
+因为"智能"是难以量化的指标
+
+people prefer to characterize computers and creatures
+人们更喜欢用处理能力来区分
+
+by their processing power instead,
+人们更喜欢用处理能力来区分
+
+but that’s a pretty computing-centric view of intelligence.
+但这种衡量智能的方法比较"以计算为中心"
+
+Nonetheless, if we do this exercise,
+但如果把视频中出现过的电脑和处理器 画张图
+
+plotting computers and processors we’ve talked about in this series,
+但如果把视频中出现过的电脑和处理器 画张图
+
+we find that computing today has very roughly equivalence in calculating
+可以看到 如今的计算能力粗略等同于一只老鼠
+
+power to that of a mouse...
+可以看到 如今的计算能力粗略等同于一只老鼠
+
+which, to be fair, also can’t fold laundry, although that would be super cute!
+公平点说，老鼠也不会叠衣服\N 但如果真的会叠 就太可爱了
+
+Human calculating power is up here, another 10 to the 5,
+人类的计算能力在这儿，多10的5次方
+
+or 100,000 times more powerful than computers today.
+也就是比如今电脑强10万倍
+
+That sounds like a big gap, but with the rate of change in computing technologies,
+听起来差距很大，但按如今的发展速度，
+
+we might meet that point in as early as a decade,
+也许十几年就可以赶上了
+
+even though processor speeds are no longer following Moore’s Law,
+虽然现在处理器的速度 不再按摩尔定律增长了
+
+like we discussed in Episode 17.
+我们在第17集讨论过
+
+If this trend continues, computers would have more processing power/intelligence,
+假设趋势继续保持下去，在本世纪结束前
+
+than the sum total of all human brains combined before the end of this century.
+计算机的处理能力/智能 会比全人类加起来还多
+
+And this could snowball as such systems need less human input,
+然后人的参与会越来越少，人工超级智能会开始改造自己
+
+with an artificial superintelligence designing and training new versions of itself.
+然后人的参与会越来越少，人工超级智能会开始改造自己
+
+This runaway technological growth, especially with respect to an intelligence explosion,
+智能科技的失控性发展叫 "奇点"
+
+is called the singularity.
+智能科技的失控性发展叫 "奇点"
+
+The term was first used by our old friend from Episode 10,
+第10集 约翰·冯·诺伊曼 最早用这个词
+
+John von Neumann, who said:
+他说：
+
+"The accelerating progress of technology and changes in the mode of human life,
+"越来越快的技术发展速度和人类生活方式的改变，
+
+give the appearance of approaching some essential singularity
+看起来会接近人类历史中某些重要的奇点
+
+in the history of the race beyond which human affairs,
+看起来会接近人类历史中某些重要的奇点
+
+as we know them, could not continue."
+这个势头不会永远继续下去"
+
+And Von Neumann suggested this back in the 1950s,
+冯诺依曼在 1950 年代说的这话.
+
+when computers were trillions of times slower than they are today.
+那时计算机比现在慢得多
+
+Sixty years later, though, the singularity is
+六十年后的今天，奇点仍然在遥远的地平线上
+
+still just a possibility on the horizon.
+六十年后的今天，奇点仍然在遥远的地平线上
+
+Some experts believe this progress is going to level off,
+一些专家认为 发展趋势会更平缓一些
+
+and be more of an S curve than an exponential one,
+更像是S型，而不是指数型
+
+where as complexity increases, it becomes more difficult to make additional progress.
+而随着复杂度增加，进步会越来越难
+
+Microsoft co-founder Paul Allen calls it a "complexity brake".
+微软联合创始人 保罗·艾伦 叫这个"复杂度刹车"
+
+But, as a thought experiment,
+但当作思维练习
+
+let’s just say that superintelligent computers will emerge.
+我们假设 超智能计算机会出现。
+
+What that would mean for humanity is a hotly debated topic.
+这对人类意味着什么，是个讨论激烈的话题
+
+There are people who eagerly await it,
+有些人迫不及待
+
+and those who are already working to stop it from happening.
+有些人则努力阻止它
+
+Probably the most immediate effect would be technological unemployment,
+最直接的影响可能是"技术性失业"
+
+where workers in many job sectors are rendered obsolete
+很多工作被计算机，比如AI和机器人，给代替掉了
+
+by computers – like AIs and Robots –
+很多工作被计算机，比如AI和机器人，给代替掉了
+
+that can do their work better and for less pay.
+它们的效率更高，成本更低
+
+Although computers are new, this effect is not.
+虽然计算机出现没多久，但"技术性失业"不是新事
+
+Remember Jacquard's Loom from Episode 10?
+还记得第10集里 雅卡尔的织布机 吗？
+
+That automated the task of skilled textile workers back in the 1800s, which led to riots.
+它让1800年代的纺织工人失业，导致了骚乱
+
+Also, back then, most of the population of the US and Europe were farmers.
+当时美国和欧洲 大部分人都是农民
+
+That’s dropped to under 5% today,
+如今农民占人口比例<5％
+
+due to advances like synthetic fertilizers and tractors.
+因为有合成肥料和拖拉机等等技术
+
+More modern examples include telephone switchboard operators
+时间更近一些的例子是"电话接线员"
+
+being replaced with automatic switchboards in 1960,
+在1960年被自动接线板代替了
+
+and robotic arms replacing human painters in car factories in the 1980s.
+还有1980年代的"机器喷漆臂"替代了人工喷漆
+
+And the list goes on and on.
+这样的例子还有很多.
+
+On one hand, these were jobs lost to automation.
+一方面，因为自动化失去了工作
+
+And on the other hand, clothes, food, bicycles, toys,
+另一方面，我们有大量产品，\N 衣服，食物，自行车，玩具等
+
+and a myriad of other products are all plentiful today
+另一方面，我们有大量产品，\N 衣服，食物，自行车，玩具等
+
+because they can be cheaply produced thanks to computing.
+因为可以廉价生产
+
+But, experts argue that AI, robots and computing technologies in general,
+但专家认为人工智能，机器人 以及更广义的计算
+
+are going to be even more disruptive than these historical examples.
+比之前更有破坏性
+
+Jobs, at a very high level, can be summarized along two dimensions.
+工作可以用两个维度概括
+
+First, jobs can be either more manual – like assembling toys
+首先，手工型工作，比如组装玩具
+
+– or more cognitive – like picking stocks.
+- 或思维型工作 - 比如选股票
+
+These jobs can also be routine – the same tasks over and over again
+还有重复性工作，一遍遍做相同的事
+
+or non-routine, where tasks vary and workers need to problem solve and be creative.
+或非重复性，需要创造性的解决问题
+
+We already know that routine-manual jobs can be automated by machines.
+我们知道 重复性手工工作，可以让机器自动化
+
+It has already happened for some jobs and is happening right now for others.
+现在有些已经替代了，剩下的在逐渐替代
+
+What’s getting people worried is that non-routine manual jobs,
+让人担心的是"非重复性手工型工作"
+
+like cooks, waiters and security guards, may get automated too.
+比如厨师，服务员，保安。
+
+And the same goes for routine cognitive work,
+思维型工作也一样
+
+like customer service agents, cashiers, bank tellers, and office assistants.
+比如客服，收银员，银行柜员和办公室助理
+
+That leaves us with just one quadrant that might be safe,
+剩下一个暂时比较安全的象限
+
+at least for a little while:
+剩下一个暂时比较安全的象限
+
+non-routine cognitive work,
+非重复性思维型工作
+
+which includes professions like teachers and artists,
+包括教师和艺术家，
+
+novelists and lawyers, and doctors and scientists.
+小说家和律师，医生和科学家
+
+These types of jobs encompass roughly 40% of the US workforce.
+这类工作占美国劳动力大概40％
+
+That leaves 60% of jobs vulnerable to automation.
+意味着剩下60％工作容易受自动化影响
+
+People argue that technological unemployment at this scale
+有人认为这种规模的技术失业
+
+would be unprecedented and catastrophic,
+是前所未有的，会导致灾难性的后果，
+
+with most people losing their jobs.
+大部分人会失业
+
+Others argue that this will be great,
+其他人则认为很好，
+
+freeing people from less interesting jobs to pursue better ones,
+让人们从无聊工作解脱，去做更好的工作，
+
+all while enjoying a higher standard of living with the bounty of food and products
+同时享受更高生活水平，有更多食物和物品
+
+that will result from computers and robots doing most of the hard work.
+都是计算机和机器人生产的.
+
+No one really knows how this is going to shake out,
+没人知道未来到底会怎样
+
+but if history is any guide, it’ll probably be ok in the long run.
+但如果历史有指导意义，长远看 一切会归于平静
+
+Afterall, no one is advocating that 90% of people
+毕竟，现在没人嚷嚷着让90％的人 回归耕田和纺织
+
+go back to farming and weaving textiles by hand.
+毕竟，现在没人嚷嚷着让90％的人 回归耕田和纺织
+
+The tough question, which politicians are now discussing,
+政界在讨论的棘手问题是
+
+is how to handle hopefully-short-term economic disruption,
+怎么处理数百万人突然失业 \N 造成的短期经济混乱
+
+for millions of people that might be suddenly out of a job.
+怎么处理数百万人突然失业 \N 造成的短期经济混乱
+
+Beyond the workplace, computers are also very likely to change our bodies.
+除了工作，计算机很可能会改变我们的身体
+
+For example, futurist Ray Kurzweil believes that
+举个例子, 未来学家 Ray Kurzweil 认为
+
+"The Singularity will allow us to transcend
+"奇点会让我们超越 肉体和大脑的局限性
+
+[the] limitations of our biological bodies and brains.
+"奇点会让我们超越 肉体和大脑的局限性
+
+We will gain power over our fates.
+我们能掌控自己的命运
+
+... We will be able to live as long as we want.
+可以想活多久活多久  我们能完全理解并扩展大脑思维
+
+We will fully understand human thinking and will vastly extend and expand its reach."
+可以想活多久活多久  我们能完全理解并扩展大脑思维
+
+Transhumanists see this happening in the form of cyborgs,
+超人类主义者认为会出现"改造人"
+
+where humans and technology merge, enhancing our intellect and physiology.
+人类和科技融合在一起，增强智力和身体
+
+There are already brain computer interfaces in use today.
+如今已经有脑电接口了
+
+And wearable computers, like Google Glass and Microsoft Hololens,
+而 Google Glass 和 微软 Hololens \N 这样的穿戴式计算机 也在模糊这条界线
+
+are starting to blur the line too.
+而 Google Glass 和 微软 Hololens \N 这样的穿戴式计算机 也在模糊这条界线
+
+There are also people who foresee "Digital Ascension",
+也有人预见到"数字永生"
+
+which, in the words of Jaron Lanier,
+Jaron Lanier 的说法是
+
+"would involve people dying in the flesh and being uploaded into a computer and remaining conscious".
+"人类的肉体死去，意识上传到计算机"
+
+This transition from biological to digital beings
+从生物体变成数字体 可能是下一次进化跨越
+
+might end up being our next evolutionary step...
+从生物体变成数字体 可能是下一次进化跨越
+
+and a new level of abstraction.
+一层新的抽象
+
+Others predict humans staying largely human,
+其他人则预测  人类大体会保持原样
+
+but with superintelligent computers as a benevolent force,
+但超智能电脑会照顾我们，帮我们管农场
+
+emerging as a caretaker for humanity – running all the farms,
+但超智能电脑会照顾我们，帮我们管农场
+
+curing diseases, directing robots to pick-up trash,
+治病，指挥机器人收垃圾，
+
+building new homes and many other functions.
+建房子 以及很多其他事情
+
+This would allow us to simply enjoy our time on this lovely pale blue dot.
+让我们在这个可爱蓝点上(地球) 好好享受
+
+Still others view AI with more suspicion –
+另一些人对 AI 持怀疑态度 -
+
+why would a superintelligent AI waste its time taking care of us?
+为什么超级人工智能 会费时间照顾我们？
+
+It’s not like we’ve taken on the role of being the benevolent caretaker of ants.
+人类不也没照顾蚂蚁吗？
+
+So maybe this play out like so many Sci-Fi movies
+也许会像许多科幻电影一样，和计算机开战
+
+where we’re at war with computers, our own creation having turned on us.
+也许会像许多科幻电影一样，和计算机开战
+
+It’s impossible to know what the future holds,
+我们无法知道未来到底会怎样
+
+but it’s great that this discussion and debate is already happening,
+但现在已经有相关讨论了，这非常好
+
+so as these technologies emerge, we can plan and react intelligently.
+所以等这些技术出现后，我们可以更好地计划
+
+What’s much more likely, regardless of whether you see computers as future friend or foe,
+不论你把计算机视为未来的朋友或敌人
+
+is that they will outlive humanity.
+更有可能的是，它们的存在时间会超过人类
+
+Many futurists and science fiction writers have speculated
+许多未来学家和科幻作家猜测
+
+that computers will head out into space and colonize the galaxy,
+机器人会去太空殖民
+
+ambivalent to time scales, radiation,
+无视时间，辐射 \N 以及一些其他让人类难以长时间太空旅行的因素.
+
+and all that other stuff that makes
+无视时间，辐射 \N 以及一些其他让人类难以长时间太空旅行的因素.
+
+long-distance space travel difficult for us humans.
+无视时间，辐射 \N 以及一些其他让人类难以长时间太空旅行的因素.
+
+And when the sun is burned up and the Earth is space dust,
+亿万年后太阳燃尽 地球成为星尘 \N 也许我们的机器人孩子 会继续努力探索宇宙每一个角落
+
+maybe our technological children will be hard at work
+亿万年后太阳燃尽 地球成为星尘 \N 也许我们的机器人孩子 会继续努力探索宇宙每一个角落
+
+exploring every nook and cranny of the universe,
+亿万年后太阳燃尽 地球成为星尘 \N 也许我们的机器人孩子 会继续努力探索宇宙每一个角落
+
+hopefully in honor of their parents’ tradition to build knowledge,
+以纪念它们的父母，同时让宇宙变得更好，
+
+improve the state of the universe,
+以纪念它们的父母，同时让宇宙变得更好，
+
+and to boldly go where no one has gone before!
+大胆探索无人深空
+
+In the meantime, computers have a long way to go,
+与此同时，计算机还有很长的路要走
+
+and computer scientists are hard at work advancing
+计算机科学家们在努力推进  过去40集谈到的话题
+
+all of the topics we talked about over the past forty episodes.
+计算机科学家们在努力推进  过去40集谈到的话题
+
+In the next decade or so,
+在接下来的十几年
+
+we’ll likely see technologies like virtual and augmented reality,
+VR 和 AR，无人驾驶车，无人机，可穿戴计算机，
+
+self-driving vehicles, drones, wearable computers,
+VR 和 AR，无人驾驶车，无人机，可穿戴计算机，
+
+and service robots go mainstream.
+和服务型机器人 会变得主流
+
+The internet will continue to evolve new services,
+互联网会继续诞生新服务
+
+stream new media, and connect people in different ways.
+在线看新媒体. 用新方式连接人们
+
+New programming languages and paradigms will be developed
+会出现新的编程语言和范例，帮助创造令人惊叹的新软件
+
+to facilitate the creation of new and amazing software.
+会出现新的编程语言和范例，帮助创造令人惊叹的新软件
+
+And new hardware will make complex operations blazingly fast,
+而新硬件能让复杂运算快如闪电 \N 比如神经网络和3D图形
+
+like neural networks and 3D graphics.
+而新硬件能让复杂运算快如闪电 \N 比如神经网络和3D图形
+
+Personal computers are also ripe for innovation,
+个人电脑也会创新
+
+perhaps shedding their forty-year old desktop metaphor
+不像过去40年着重宣传 "桌面" 电脑
+
+and being reborn as omnipresent and lifelong virtual assistants.
+而是变成无处不在的虚拟助手
+
+And there’s so much we didn’t get to talk about in this series,
+这个系列 我们还有很多话题没谈
+
+like cryptocurrencies, wireless communication,
+比如加密货币，无线通讯，3D打印，生物信息学和量子计算
+
+3D printing, bioinformatics, and quantum computing.
+比如加密货币，无线通讯，3D打印，生物信息学和量子计算
+
+We’re in a golden age of computing
+我们正处于计算机的黄金时代
+
+and there’s so much going on, it’s impossible to summarize.
+有很多事情在发生，全部总结是不可能的
+
+But most importantly, you can be a part of this amazing transformation and challenge,
+但最重要的是 你可以学习计算机 \N 成为这个惊人转型的一部分
+
+by learning about computing, and taking what’s arguably humanity’s greatest invention,
+但最重要的是 你可以学习计算机 \N 成为这个惊人转型的一部分
+
+to make the world a better place.
+把世界变得更好
+
+Thanks for watching.
+感谢收看
+

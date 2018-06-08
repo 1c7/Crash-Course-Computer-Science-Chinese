@@ -1,0 +1,609 @@
+Hi, I'm Carrie Anne, and welcome to CrashCourse Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+We've talked a lot about inputs and outputs in this series,
+我们之前讨论过 输入输出 \N 但都是计算机组件互相输入输出
+
+but they've mostly been between different parts of a computer
+我们之前讨论过 输入输出 \N 但都是计算机组件互相输入输出
+
+like outputting data from RAM or inputting instructions to a CPU.
+比如 RAM 输出数据，或输指令进 CPU
+
+We haven't discussed much about inputs coming from humans.
+我们还没讲 来自人类的输入
+
+We also haven't learned how people get information out of a computer,
+也没讲怎么从电脑中拿出信息，除了用打孔纸卡
+
+other than by printing or punching it onto paper.
+也没讲怎么从电脑中拿出信息，除了用打孔纸卡
+
+Of course, there's a wide variety of input and output devices that
+当然，有很多种 "输入输出设备"  \N 让我们和计算机交互
+
+allow us users to communicate with computers.
+当然，有很多种 "输入输出设备"  \N 让我们和计算机交互
+
+They provide an interface between human and computer.
+它们在人类和机器间提供了界面
+
+And today, there's a whole field of study called Human-Computer Interaction.
+如今有整个学科专门研究这个，叫 "人机交互"
+
+These interfaces are so fundamental to the user experience
+界面对用户体验非常重要 \N 所以是我们接下来几集的重点
+
+that they're the focus of the next few episodes.
+界面对用户体验非常重要 \N 所以是我们接下来几集的重点
+
+As we discussed at the very beginning of the series,
+在系列开头的几集，我们提过
+
+the earliest mechanical and electro-mechanical computing devices
+早期机械计算设备 \N 用齿轮，旋钮和开关等机械结构来输入输出
+
+used physical controls for inputs and outputs, like gears, knobs and switches,
+早期机械计算设备 \N 用齿轮，旋钮和开关等机械结构来输入输出
+
+and this was pretty much the extent of the human interface.
+这些就是交互界面
+
+Even the first electronic computers, like Colossus and ENIAC,
+甚至早期电子计算机  比如 Colossus 和 ENIAC
+
+were configured using huge panels of mechanical controls and patch wires.
+也是用一大堆机械面板和线 来操作
+
+It could take weeks to enter in a single program, let alone run it,
+输入一个程序可能要几星期，还没提运行时间.
+
+and to get data out after running a program, results were most often printed to paper.
+运行完毕后想拿出数据，一般是打印到纸上
+
+Paper printers were so useful
+打印机超有用
+
+that even Babbage designed one for his Difference Engine,
+甚至 查尔斯·巴贝奇 都给差分机专门设计了一个
+
+and that was in the 1820s!
+那可是 1820 年代!
+
+However, by the 1950s, mechanical inputs were rendered obsolete
+然而，到 1950 年代，机械输入完全消失
+
+by programs and data stored entirely on mediums like punch cards and magnetic tape.
+因为出现了打孔纸卡和磁带
+
+Paper printouts were still used for the final output,
+但输出仍然是打印到纸上
+
+and huge banks of indicator lights were developed
+还有大量指示灯，在运行中提供实时反馈
+
+to provide real time feedback while the program was in progress.
+还有大量指示灯，在运行中提供实时反馈
+
+It's important to recognize that computer input of this era was
+那个时代的特点是 尽可能迁就机器 \N 对人类好不好用是其次
+
+designed to be as simple and robust as possible for computers.
+那个时代的特点是 尽可能迁就机器 \N 对人类好不好用是其次
+
+Ease and understanding for users was a secondary concern.
+那个时代的特点是 尽可能迁就机器 \N 对人类好不好用是其次
+
+Punch tape is a great example
+打孔纸带就是个好例子
+
+this was explicitly designed to be easy for computers to read.
+就是为了方便计算机读取
+
+The continuous nature of tape made it easy to handle mechanically,
+纸带是连续的，方便机器处理
+
+and the holes could be reliably detected with a mechanical or optical system,
+纸孔可以方便地 用机械或光学手段识别
+
+which encoded instructions and data.
+纸孔可以编码程序和数据
+
+But of course, humans don't think in terms of little punched holes on strips of paper.
+当然, 人类不是以纸孔方式思考的.
+
+So, the burden was on programmers.
+所以负担放到了程序员身上
+
+They had to spend the extra time and effort to convert their ideas and programs
+他们要花额外时间和精力 \N 转成计算机能理解的格式
+
+into a language and a format that was easy for computers of the era to understand
+他们要花额外时间和精力 \N 转成计算机能理解的格式
+
+often with the help of additional staff and auxiliary devices.
+一般需要额外人员和设备帮忙
+
+It's also important to note that early computers, basically pre-1950,
+要注意的是，基本上 1950 年前的早期计算机 \N "输入"的概念很原始
+
+had an extremely simple notion of human input.
+要注意的是，基本上 1950 年前的早期计算机 \N "输入"的概念很原始
+
+Yes, humans input programs and data into computers,
+是的，的确是人类负责输入程序和数据 \N 但计算机不会交互式回应
+
+but these machines generally didn't respond interactively to humans.
+是的，的确是人类负责输入程序和数据 \N 但计算机不会交互式回应
+
+Once a program was started, it typically ran until it was finished.
+程序开始运行后会一直运行  直到结束
+
+That's because these machines were way too expensive to be
+因为机器太贵了 \N 不能等人类慢慢敲命令和给数据
+
+waiting around for humans to type a command or enter data.
+因为机器太贵了 \N 不能等人类慢慢敲命令和给数据
+
+Any input needed for a computation was fed in at the same time as the program.
+要同时放入程序和数据
+
+This started to change in the late 1950s.
+这在 1950 年代晚期开始发生变化
+
+On one hand, smaller-scale computers started to become cheap enough
+一方面，小型计算机变得足够便宜
+
+that it was feasible to have a human-in-the loop;
+让人类来回和计算机交互  变得可以接受
+
+that is, a back and forth between human and computer.
+交互式就是人和计算机之间来回沟通
+
+And on the other hand,
+而另一方面
+
+big fancy computers became fast and sophisticated enough to support many programs and users at once,
+大型计算机变得更快，能同时支持多个程序和多个用户
+
+what were called multitasking and time-sharing systems .
+这叫"多任务"和"分时系统"
+
+But these computers needed a way to get input from users.
+但交互式操作时 \N 计算机需要某种方法来获得用户输入
+
+For this, computers borrowed the ubiquitous data entry mechanism of the era: keyboards.
+所以借用了当时已经存在的数据录入机制：键盘
+
+At this point, typing machines had already been in use for a few centuries,
+当时，打字机已经存在几个世纪了
+
+but it was Christopher Latham Sholes, who invented the modern typewriter in 1868.
+但现代打字机是 \N克里斯托弗·莱瑟姆·肖尔斯 在 1868 年发明的
+
+It took until 1874 to refine the design and manufacture it,
+虽然到 1874 年才完成设计和制造
+
+but it went on to be a commercial success.
+但之后取得了商业成功
+
+Sholes' typewriter adopted an unusual keyboard layout that you know well QWERTY
+肖尔斯 的打字机用了不寻常的布局，QWERTY
+
+named for the top-left row of letter keys.
+名字来自键盘左上角按键
+
+There has been a lot of speculation as to why this design was used.
+为什么这么设计 有很多猜测
+
+The most prevalent theory is that it put common letter pairings in English far apart
+最流行的理论是  这样设计是为了 \N 把常见字母放得远一些，避免按键卡住
+
+to reduce the likelihood of typebars jamming when entered in sequence.
+最流行的理论是  这样设计是为了 \N 把常见字母放得远一些，避免按键卡住
+
+It's a convenient explanation, but it's also probably false,
+这个解释虽然省事，但可能是错的，或至少不够全面
+
+or at least not the full story.
+这个解释虽然省事，但可能是错的，或至少不够全面
+
+In fact, QWERTY puts many common letter pairs together,
+事实上，QWERTY 把很多常见字母放在了一起 \N 比如 TH 和 ER
+
+like "TH" and "ER".
+事实上，QWERTY 把很多常见字母放在了一起 \N 比如 TH 和 ER
+
+And we know that Sholes and his team went through many iterations
+我们知道 肖尔斯和他的团队设计了很多版 \N 才进化到这个布局
+
+before arriving at this iconic arrangement.
+我们知道 肖尔斯和他的团队设计了很多版 \N 才进化到这个布局
+
+Regardless of the reason, the commercial success of Sholes' typewriter meant
+总之，肖尔斯 的打字机取得了成功 \N 所以其它公司很快开始抄他的设计
+
+the competitor companies that soon followed duplicated his design.
+总之，肖尔斯 的打字机取得了成功 \N 所以其它公司很快开始抄他的设计
+
+Many alternative keyboard layouts have been proposed over the last century,
+过去一个世纪有不少新的键盘布局被发明，宣称各种好处
+
+claiming various benefits.
+过去一个世纪有不少新的键盘布局被发明，宣称各种好处
+
+But, once people had invested the time to learn QWERTY,
+但人们已经熟悉了 QWERTY 布局 \N 根本不想学新布局
+
+they just didn't want to learn something new.
+但人们已经熟悉了 QWERTY 布局 \N 根本不想学新布局
+
+This is what economists would call a switching barrier or switching cost.
+这是经济学家所说的 转换成本
+
+And it's for this very basic human reason
+所以现在都快1个半世纪了 \N 我们还在用 QWERTY 键盘布局
+
+that we still use QWERTY keyboards almost a century and a half later!
+所以现在都快1个半世纪了 \N 我们还在用 QWERTY 键盘布局
+
+I should mention that QWERTY isn't universal.
+我应该提一下，QWERTY 不是通用的
+
+There are many international variants,
+有很多变体，比如法国 AZERTY 布局
+
+like the French AZERTY layout,
+有很多变体，比如法国 AZERTY 布局
+
+or the QWERTZ layout common in central Europe.
+以及中欧常见的 QWERTZ 布局
+
+Interestingly, Sholes didn't envision that typing would ever be faster than handwriting,
+有趣的是，肖尔斯 根本没想到打字会比手写快
+
+which is around 20 words per minute.
+手写速度大约是每分钟 20 个
+
+Typewriters were introduced chiefly for legibility and standardization of documents, not speed.
+打字机主要为了易读性和标准化，而不是速度
+
+However, as they became standard equipment in offices, the desire for speedy typing grew,
+然而随着打字机成为办公室标配 \N 对快速打字的渴望越来越大
+
+and there were two big advances that unlocked typing's true potential.
+有两个重大进步  解放了打字的潜力
+
+Around 1880, Elizabeth Longley, a teacher at the Cincinnati Shorthand and Type-Writer Institute,
+1880年左右，辛辛那提速记学院 \N 一名叫 伊丽莎白·朗利 的老师
+
+started to promote ten-finger typing.
+开始推广 十指打字
+
+This required much less finger movement than hunt-and-peck,
+比一个手指打字要移动的距离短得多，所以速度更快
+
+so it offered enhanced typing speeds.
+比一个手指打字要移动的距离短得多，所以速度更快
+
+Then, a few years later, Frank Edward McGurrin, a federal court clerk in Salt Lake City,
+几年后，弗兰克·爱德华·麦克格林 \N 盐湖城的一位联邦法庭书记
+
+taught himself to touch-type; as in, he didn't need to look at the keys while typing.
+学会了盲打，打字时不用看键盘
+
+In 1888, McGurrin won a highly publicized typing-speed contest,
+1888年，麦格高林 赢了备受关注的打字速度比赛
+
+after which ten-finger, touch-typing began to catch on.
+之后"十指盲打"开始流行
+
+Professional typists were soon able to achieve speeds upwards of 100 words per minute,
+专业打字员  每分钟 100 字以上
+
+much faster than handwriting!
+比手写快多了！而且清晰又整洁！
+
+And nice and neat too!
+比手写快多了！而且清晰又整洁！
+
+So, humans are pretty good with typewriters,
+虽然人类擅长用打字机
+
+but we can't just plunk down a typewriter in front of a computer and have it type
+但我们没法把打字机塞到计算机面前，让它打字
+
+they have no fingers!
+计算机又没有手指
+
+Instead, early computers adapted a special type of typewriter that was used for telegraphs,
+所以早期计算机用了一种特殊打字机，是专门用来发电报的,
+
+called a teletype machine.
+叫 电传打字机
+
+These were electromechanically-augmented typewriters
+这些打字机是强化过的，可以用电报线发送和接收文本
+
+that can send and receive text over telegraph lines.
+这些打字机是强化过的，可以用电报线发送和接收文本
+
+Pressing a letter on one teletype keyboard would cause a signal to be sent,
+按一个字母，信号会通过电报线，发到另一端
+
+over telegraph wires, to a teletype machine on the other end,
+按一个字母，信号会通过电报线，发到另一端
+
+which would then electromechanically type that letter.
+另一端的电传打字机会打出来
+
+This allowed two humans to type to one another over long distances.
+使得两人可以长距离沟通
+
+basically a steampunk version of a chat room.
+基本是个蒸汽朋克版聊天室
+
+Since these teletype machines already had an electronic interface,
+因为电传打字机有电子接口，稍作修改就能用于计算机
+
+they were easily adapted for computer use,
+因为电传打字机有电子接口，稍作修改就能用于计算机
+
+and teletype computer interfaces were common in the 1960s and 70s.
+电传交互界面在 1960~1970 很常见
+
+Interaction was pretty straightforward.
+用起来很简单
+
+Users would type a command, hit enter, and then the computer would type back.
+输入一个命令，按回车，然后计算机会输回来
+
+This text "conversation" between a user and a computer went back and forth.
+用户和计算机来回"对话"
+
+These were called command line interfaces,
+这叫"命令行界面"
+
+and they remained the most prevalent form of human-computer interaction
+它是最主要的人机交互方式，一直到 1980 年代
+
+up until around the 1980s.
+它是最主要的人机交互方式，一直到 1980 年代
+
+Command Line interaction on a teletype machine looks something like this.
+用电传打字机的命令行交互  类似这样：
+
+A user can type any number of possible commands.
+用户可以输入各种命令
+
+Let's check out a few,
+我们来看几个命令，先看当前目录有什么文件
+
+beginning with seeing all of the files in the current directory we're in.
+我们来看几个命令，先看当前目录有什么文件
+
+For this, we would type the command, "ls", which is short for list,
+输入命令 ls，名字来自 list 的缩写
+
+and the computer replies with a list of the files in our current directory.
+然后计算机会列出 当前目录里的所有文件
+
+If we want to see what's in our "secretStarTrekDiscoveryCast.txt.txt file",
+如果想看 secretStarTrekDiscoveryCast.txt 有什么
+
+we use yet another command to display the contents.
+要用另一个命令 显示文件内容
+
+In unix, we can call "cat" - short for concatenate.
+unix 用 cat 命令显示文件内容 \N cat 是连接(concatenate)的缩写
+
+We need to specify which file to display, so we include that after the command, called an argument.
+然后指定文件名，指定的方法是写在 cat 命令后面 \N 传给命令的值叫 参数
+
+If you're connected to a network with other users,
+如果同一个网络里有其他人
+
+you can use a primitive version of a Find My Friends app
+你可以用 finger 命令找朋友 \N 就像是个很原始的"找朋友" App
+
+to get more info on them with the command "finger".
+你可以用 finger 命令找朋友 \N 就像是个很原始的"找朋友" App
+
+Electromechanical teletype machines
+电传打字机 直到1970年代左右都是主流交互方式
+
+were the primary computing interface for most users up until around the 1970s.
+电传打字机 直到1970年代左右都是主流交互方式
+
+Although computer screens first emerged in the 1950s,
+尽管屏幕最早出现在 1950 年代 \N 但对日常使用太贵 而且分辨率低
+
+and were used for graphics they were too expensive and low resolution for everyday use.
+尽管屏幕最早出现在 1950 年代 \N 但对日常使用太贵 而且分辨率低
+
+However, mass production of televisions for the consumer market, and general improvements
+然而因为针对普通消费者的电视机开始量产 \N 同时处理器与内存也在发展
+
+in processors and memory, meant that by 1970, it was economically viable
+到1970年代，屏幕代替电传打字机 变得可行
+
+to replace electromechanical teletype machines with screen-based equivalents.
+到1970年代，屏幕代替电传打字机 变得可行
+
+But rather than build a whole new standard to interface computers with these screens,
+但与其为屏幕  专门做全新的标准
+
+engineers simply recycled the existing text-only, teletype protocol.
+工程师直接用现有的 电传打字机协议
+
+These machines used a screen, which simulated endless paper.
+屏幕就像无限长度的纸 \N 除了输入和输出字，没有其它东西
+
+It was text in and text out, nothing more.
+屏幕就像无限长度的纸 \N 除了输入和输出字，没有其它东西
+
+The protocol was identical, so computers couldn't even tell if it was paper or a screen.
+协议是一样的，所以计算机分不出是纸还是屏幕
+
+These virtual teletype or glass teletype machines became known as terminals .
+这些"虚拟电传打字机"或"玻璃电传打字机"\N 叫 终端
+
+By 1971, it was estimated, in the United States,
+到1971年，美国大约有 7 万台电传打字机 \N 以及 7 万个终端
+
+there was something on the order of 70,000 electro-mechanical teletype machines
+到1971年，美国大约有 7 万台电传打字机 \N 以及 7 万个终端
+
+and 70,000 screen-based terminals in use.
+到1971年，美国大约有 7 万台电传打字机 \N 以及 7 万个终端
+
+Screens were so much better, faster and more flexible, though.
+屏幕又好又快又灵活
+
+Like, you could delete a mistake and it would disappear.
+如果删一个错别字 会立刻消失
+
+So, by the end of the 1970s, screens were standard.
+所以到 1970 年代末  屏幕成了标配
+
+You might think that command line interfaces are way too primitive to do anything interesting.
+你也许会想，命令行界面太原始了 \N 做不了什么有意思的事
+
+But even when the only interaction was through text, programmers found a way to make it fun.
+即便只有文字 \N 程序员也找到了一些方法，让它变得有趣一些
+
+Early interactive, text-based computer games include famous titles like Zork,
+早期的著名交互式文字游戏  Zork
+
+created in 1977.
+出现于 1977 年
+
+Players of these sorts of early games were expected to engage their limitless imaginations
+早期游戏玩家需要丰富的想象力
+
+as they visualized the fictional world around them, like what terrifying monster confronted them
+想像自己身在虚构世界，比如"四周漆黑一片
+
+when it was pitch black and you were likely to be eaten by a grue.
+附近可能有怪物会吃掉你"
+
+Let's go back to our command line, now on a fancy screen-based terminal, and play!
+我们用命令行玩玩看
+
+Just like before, we can see what's in our current directory with the "ls" command.
+就像之前，我们可以用 ls 命令，看当前目录有什么
+
+Then, let's go into our games directory by using the "cd" command,  for " change directory ".
+然后用 cd 命令，进入游戏文件夹 \N cd 的意思是 "改变文件夹"
+
+Now, we can use our "ls" command again to see what games are installed on our computer.
+再用 ls 看有哪些游戏
+
+Sweet, we have Adventure!
+超棒！我们有"冒险旅程"！(adventure)
+
+All we have to do to run this program is type its name.
+想运行这个程序，只需要输入它的名字
+
+Until this application halts, or we quit it, it takes over the command line.
+在程序自行停止或我们主动退出前 \N 它会接管命令行
+
+What you're seeing here is actual interaction from "Colossal Cave Adventure",
+你现在看到的，是"巨大洞穴冒险"这款游戏的真实输出
+
+first developed by Will Crowther in 1976.
+由 Will Crowther 在 1976 年开发
+
+In the game, players can type in one- or two-word commands to move around,
+游戏中，玩家可以输入1个词或2个词的命令 \N 来移动人物，和其他东西交互，捡物品等
+
+interact with objects, pickup items and so on.
+游戏中，玩家可以输入1个词或2个词的命令 \N 来移动人物，和其他东西交互，捡物品等
+
+The program acts as the narrator, describing locations, possible actions,
+然后游戏会像旁白一样，输出你的当前位置， \N 告诉你能做什么动作，以及你的动作造成的结果
+
+and the results of those actions.
+然后游戏会像旁白一样，输出你的当前位置， \N 告诉你能做什么动作，以及你的动作造成的结果
+
+Certain ones resulted in death!
+有些动作会导致死亡！
+
+The original version only had 66 locations to explore,
+原始版本只有 66 个地方可供探索
+
+but it's widely considered to be the first example of interactive fiction.
+但它被广泛认为是最早的互动式小说
+
+These text adventure games later became multiplayer, called MUDs or Multi-User Dungeons.
+游戏后来从纯文字进化成多人游戏 \N 简称 MUD，或多人地牢游戏
+
+And they're the great-forbearers of the awesome graphical MMORPG's
+是如今 MMORPG 的前辈 \N （大型多人在线角色扮演游戏）
+
+(massive, multiplayer online role playing games) we enjoy today.
+是如今 MMORPG 的前辈 \N （大型多人在线角色扮演游戏）
+
+And if you want to know more about the history of these and other games
+如果你想了解游戏史，我们有游戏速成课  \N 主持人 Andre Meadows
+
+we've got a whole series on it hosted by Andre Meadows!
+如果你想了解游戏史，我们有游戏速成课  \N 主持人 Andre Meadows
+
+Command line interfaces, while simple, are very powerful.
+命令行界面虽然简单  但十分强大
+
+Computer programming is still very much a written task, and as such,
+编程大部分依然是打字活 \N 所以用命令行比较自然
+
+command lines are a natural interface.
+编程大部分依然是打字活 \N 所以用命令行比较自然
+
+For this reason, even today, most programmers use
+因此，即使是现在  \N 大多数程序员工作中依然用命令行界面
+
+command line interfaces as part of their work.
+因此，即使是现在  \N 大多数程序员工作中依然用命令行界面
+
+And they're also the most common way to access computers that are far away,
+而且用命令行访问远程计算机 是最常见的方式 \N 比如服务器在另一个国家
+
+like a server in a different country.
+而且用命令行访问远程计算机 是最常见的方式 \N 比如服务器在另一个国家
+
+If you're running Windows, macOS or Linux,
+如果你用 Windows, macOS, Linux
+
+your computer has a command line interface one you may have never used.
+你的计算机有命令行界面，但你可能从来没用过
+
+Check it out by typing "cmd" in your Windows search bar,
+你可以在 Windows 搜索栏中输入 cmd
+
+or search for Terminal on Mac.
+或在 Mac 上搜 Terminal
+
+Then install a copy of Zork and play on!
+然后你可以装 Zork 玩！
+
+So, you can see how these early advancements still have an impact on computing today.
+现在你知道了 \N 早期计算机的发展是如何影响到现在的.
+
+Just imagine if your phone didn't have a good ol' fashioned QWERTY keyboard.
+想想要是手机没有 QWERTY 键盘 \N 在 Instagram 给图片配标题可就麻烦了
+
+It could take forever to type your Instagram captions.
+想想要是手机没有 QWERTY 键盘 \N 在 Instagram 给图片配标题可就麻烦了
+
+But, there's still something missing from our discussion.
+但我们还有一个重要话题没讲
+
+All the sweet sweet graphics!
+美妙的图形界面！
+
+That's our topic for next week.
+这是下周的主题
+
+See you soon.
+下周见
+

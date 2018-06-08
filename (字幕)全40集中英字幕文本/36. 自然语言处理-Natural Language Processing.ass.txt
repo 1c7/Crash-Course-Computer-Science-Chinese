@@ -1,0 +1,693 @@
+Hi, I'm Carrie Anne, and welcome to Crash Course Computer Science!
+(｡･∀･)ﾉﾞ嗨 我是Carrie Anne，欢迎收看计算机科学速成课
+
+Last episode we talked about computer vision
+上集我们讨论了计算机视觉 - 让电脑能看到并理解
+
+- giving computers the ability to see and understand visual information.
+上集我们讨论了计算机视觉 - 让电脑能看到并理解
+
+Today we're going to talk about how to give computers the ability to understand language.
+今天我们讨论  怎么让计算机理解语言
+
+You might argue they've always had this capability.
+你可能会说：计算机已经有这个能力了
+
+Back in Episodes 9 and 12,
+在第9和第12集
+
+we talked about machine language instructions,
+我们聊了机器语言和更高层次的编程语言
+
+as well as higher-level programming languages.
+我们聊了机器语言和更高层次的编程语言
+
+While these certainly meet the definition of a language,
+虽然从定义来说 它们也算语言
+
+they also tend to have small vocabularies and follow highly structured conventions.
+但词汇量一般很少，而且非常结构化
+
+Code will only compile and run if it's 100 percent free of spelling and syntactic errors.
+代码只能在拼写和语法完全正确时，编译和运行
+
+Of course, this is quite different from human languages
+当然，这和人类语言完全不同 \N - 人类语言叫"自然语言"
+
+- what are called natural languages -
+当然，这和人类语言完全不同 \N - 人类语言叫"自然语言"
+
+containing large, diverse vocabularies,
+自然语言有大量词汇
+
+words with several different meanings,
+有些词有多种含义
+
+speakers with different accents,
+不同口音
+
+and all sorts of interesting word play.
+以及各种有趣的文字游戏
+
+People also make linguistic faux pas when writing and speaking,
+人们在写作和说话时也会犯错
+
+like slurring words together, leaving out key details so things are ambiguous,
+比如单词拼在一起发音 \N 关键细节没说 导致意思模糊两可
+
+and mispronouncing things.
+以及发错音
+
+But, for the most part, humans can roll right through these challenges.
+但大部分情况下，另一方能理解
+
+The skillful use of language is a major part of what makes us human.
+人类有强大的语言能力
+
+And for this reason,
+因此，让计算机拥有语音对话的能力
+
+the desire for computers to understand and speak our language
+因此，让计算机拥有语音对话的能力
+
+has been around since they were first conceived.
+这个想法从构思计算机时就有了
+
+This led to the creation of Natural Language Processing, or NLP,
+"自然语言处理"因此诞生，简称 NLP
+
+an interdisciplinary field combining computer science and linguistics.
+结合了计算机科学和语言学的 一个跨学科领域
+
+There's an essentially infinite number of ways to arrange words in a sentence.
+单词组成句子的方式有无限种
+
+We can't give computers a dictionary of all possible sentences
+我们没法给计算机一个字典，包含所有可能句子
+
+to help them understand what humans are blabbing on about.
+让计算机理解人类在嘟囔什么
+
+So an early and fundamental NLP problem was deconstructing sentences into bite-sized pieces,
+所以 NLP 早期的一个基本问题是 \N 怎么把句子切成一块块
+
+which could be more easily processed.
+这样更容易处理
+
+In school, you learned about nine fundamental types of English words:
+上学时，老师教你 英语单词有九种基本类型：
+
+nouns, pronouns, articles, verbs, adjectives,
+名词，代词，冠词，动词，形容词
+
+adverbs, prepositions, conjunctions, and interjections.
+副词，介词，连词和感叹词
+
+These are called parts of speech.
+这叫"词性"
+
+There are all sorts of subcategories too,
+还有各种子类，比如
+
+like singular vs. plural nouns and superlative vs. comparative adverbs,
+单数名词 vs 复数名词 \N 副词最高级 vs 副词比较级
+
+but we're not going to get into that.
+但我们不会深入那些.
+
+Knowing a word's type is definitely useful,
+了解单词类型有用
+
+but unfortunately, there are a lot words that have multiple meanings - like "rose" and "leaves",
+但不幸的是，很多词有多重含义 比如 rose 和 leaves
+
+which can be used as nouns or verbs.
+可以用作名词或动词
+
+A digital dictionary alone isn't enough to resolve this ambiguity,
+仅靠字典，不能解决这种模糊问题
+
+so computers also need to know some grammar.
+所以电脑也要知道语法
+
+For this, phrase structure rules were developed, which encapsulate the grammar of a language.
+因此开发了 "短语结构规则" 来代表语法规则
+
+For example, in English there's a rule
+例如，英语中有一条规则
+
+that says a sentence can be comprised of a noun phrase followed by a verb phrase.
+句子可以由一个名词短语和一个动词短语组成
+
+Noun phrases can be an article, like "the",
+名词短语可以是冠词，如 the
+
+followed by a noun or they can be an adjective followed by a noun.
+然后一个名词，或一个形容词后面跟一个名词
+
+And you can make rules like this for an entire language.
+你可以给一门语言制定出一堆规则
+
+Then, using these rules, it's fairly easy to construct what's called a parse tree,
+用这些规则，可以做出"分析树"
+
+which not only tags every word with a likely part of speech,
+它给每个单词标了可能是什么词性
+
+but also reveals how the sentence is constructed.
+也标明了句子的结构
+
+These smaller chunks of data allow computers to more easily access,
+数据块更小 更容易处理
+
+process and respond to information.
+数据块更小 更容易处理
+
+Equivalent processes are happening every time you do a voice search,
+每次语音搜索，都有这样的流程
+
+like: "where's the nearest pizza".
+比如 "最近的披萨在哪里"
+
+The computer can recognize that this is a "where" question,
+计算机能明白这是"哪里"（where）的问题
+
+knows you want the noun "pizza",
+知道你想要名词"披萨"（pizza）
+
+and the dimension you care about is "nearest".
+而且你关心的维度是"最近的"（nearest）
+
+The same process applies to "what is the biggest giraffe?" or "who sang thriller?"
+"最大的长颈鹿是什么？"或"Thriller是谁唱的？" \N 也是这样处理
+
+By treating language almost like lego,
+把语言像乐高一样拆分，方便计算机处理
+
+computers can be quite adept at natural language tasks.
+把语言像乐高一样拆分，方便计算机处理
+
+They can answer questions and also process commands,
+计算机可以回答问题 以及处理命令
+
+like "set an alarm for 2:20"
+比如"设 2:20 的闹钟"
+
+or "play T-Swizzle on spotify".
+或"用 Spotify 播放 T-Swizzle"
+
+But, as you've probably experienced, they fail when you start getting too fancy,
+但你可能体验过，如果句子复杂一点
+
+and they can no longer parse the sentence correctly, or capture your intent.
+计算机就没法理解了
+
+Hey Siri... me thinks the mongols doth roam too much,
+嘿Siri ...... 俺觉得蒙古人走得太远了
+
+what think ye on this most gentle mid-summer's day?
+在这个最温柔的夏日的日子里，你觉得怎么样？
+
+Siri: I'm not sure I got that.
+Siri：我没明白
+
+I should also note that phrase structure rules, and similar methods that codify language,
+还有，"短语结构规则"和其他把语言结构化的方法
+
+can be used by computers to generate natural language text.
+可以用来生成句子
+
+This works particularly well when data is stored in a web of semantic information,
+数据存在语义信息网络时，这种方法特别有效
+
+where entities are linked to one another in meaningful relationships,
+实体互相连在一起
+
+providing all the ingredients you need to craft informational sentences.
+提供构造句子的所有成分
+
+Siri: Thriller was released in 1983 and sung by Michael Jackson
+Siri：Thriller 于1983年发行，由迈克尔杰克逊演唱
+
+Google's version of this is called Knowledge Graph.
+Google 版的叫"知识图谱"
+
+At the end of 2016,
+在2016年底
+
+it contained roughly seventy billion facts about, and relationships between, different entities.
+包含大概七百亿个事实，以及不同实体间的关系
+
+These two processes, parsing and generating text,
+处理, 分析, 生成文字 \N 是聊天机器人的最基本部件
+
+are fundamental components of natural language chatbots
+处理, 分析, 生成文字 \N 是聊天机器人的最基本部件
+
+- computer programs that chat with you.
+- 聊天机器人就是能和你聊天的程序
+
+Early chatbots were primarily rule-based,
+早期聊天机器人大多用的是规则.
+
+where experts would encode hundreds of rules mapping what a user might say,
+专家把用户可能会说的话，和机器人应该回复什么，\N 写成上百个规则
+
+to how a program should reply.
+专家把用户可能会说的话，和机器人应该回复什么，\N 写成上百个规则
+
+Obviously this was unwieldy to maintain and limited the possible sophistication.
+显然，这很难维护，而且对话不能太复杂.
+
+A famous early example was ELIZA, created in the mid-1960s at MIT.
+一个著名早期例子叫 Eliza\N 1960年代中期 诞生于麻省理工学院
+
+This was a chatbot that took on the role of a therapist,
+一个治疗师聊天机器人
+
+and used basic syntactic rules to identify content in written exchanges,
+它用基本句法规则 来理解用户打的文字
+
+which it would turn around and ask the user about.
+然后向用户提问
+
+Sometimes, it felt very much like human-human communication,
+有时候会感觉像和人类沟通一样
+
+but other times it would make simple and even comical mistakes.
+但有时会犯简单 甚至很搞笑的错误
+
+Chatbots, and more advanced dialog systems,
+聊天机器人和对话系统
+
+have come a long way in the last fifty years, and can be quite convincing today!
+在过去五十年发展了很多，如今可以和真人很像!
+
+Modern approaches are based on machine learning,
+如今大多用机器学习
+
+where gigabytes of real human-to-human chats are used to train chatbots.
+用上GB的真人聊天数据 来训练机器人
+
+Today, the technology is finding use in customer service applications,
+现在聊天机器人已经用于客服回答
+
+where there's already heaps of example conversations to learn from.
+客服有很多对话可以参考
+
+People have also been getting chatbots to talk with one another,
+人们也让聊天机器人互相聊天
+
+and in a Facebook experiment, chatbots even started to evolve their own language.
+在 Facebook 的一个实验里，\N 聊天机器人甚至发展出自己的语言
+
+This experiment got a bunch of scary-sounding press,
+很多新闻把这个实验 报导的很吓人
+
+but it was just the computers crafting a simplified protocol to negotiate with one another.
+但实际上只是计算机 \N 在制定简单协议来帮助沟通
+
+It wasn't evil, it's was efficient.
+这些语言不是邪恶的，而是为了效率
+
+But what about if something is spoken
+但如果听到一个句子
+
+- how does a computer get words from the sound?
+- 计算机怎么从声音中提取词汇？
+
+That's the domain of speech recognition,
+这个领域叫"语音识别"
+
+which has been the focus of research for many decades.
+这个领域已经重点研究了几十年
+
+Bell Labs debuted the first speech recognition system in 1952,
+贝尔实验室在1952年推出了第一个语音识别系统
+
+nicknamed Audrey, the automatic digit recognizer.
+绰号 Audrey，自动数字识别器
+
+It could recognize all ten numerical digits,
+如果你说得够慢，它可以识别全部十位数字
+
+if you said them slowly enough.
+如果你说得够慢，它可以识别全部十位数字
+
+5
+
+9
+
+7？
+
+The project didn't go anywhere
+这个项目没有实际应用，因为手输快得多
+
+because it was much faster to enter telephone numbers with a finger.
+这个项目没有实际应用，因为手输快得多
+
+Ten years later, at the 1962 World's Fair,
+十年后，1962年的世界博览会上
+
+IBM demonstrated a shoebox-sized machine capable of recognizing sixteen words.
+IBM展示了一个鞋盒大小的机器，能识别16个单词
+
+To boost research in the area,
+为了推进"语音识别"领域的研究
+
+DARPA kicked off an ambitious five-year funding initiative in 1971,
+DARPA 在1971年启动了一项雄心勃勃的五年筹资计划
+
+which led to the development of Harpy at Carnegie Mellon University.
+之后诞生了卡内基梅隆大学的 Harpy
+
+Harpy was the first system to recognize over a thousand words.
+Harpy 是第一个可以识别1000个单词以上的系统
+
+But, on computers of the era,
+但那时的电脑
+
+transcription was often ten or more times slower than the rate of natural speech.
+语音转文字，经常比实时说话要慢十倍或以上
+
+Fortunately, thanks to huge advances in computing performance in the 1980s and 90s,
+幸运的是，1980,1990年代 计算机性能的大幅提升
+
+continuous, real-time speech recognition became practical.
+实时语音识别变得可行
+
+There was simultaneous innovation in the algorithms for processing natural language,
+同时也出现了处理自然语言的新算法
+
+moving from hand-crafted rules,
+不再是手工定规则
+
+to machine learning techniques
+而是用机器学习
+
+that could learn automatically from existing datasets of human language.
+从语言数据库中学习
+
+Today, the speech recognition systems with the best accuracy are using deep neural networks,
+如今准确度最高的语音识别系统 用深度神经网络
+
+which we touched on in Episode 34.
+我们在第34集讲过
+
+To get a sense of how these techniques work,
+为了理解原理
+
+let's look at some speech, specifically,
+我们来看一些对话声音
+
+the acoustic signal.
+我们来看一些对话声音
+
+Let's start by looking at vowel sounds,
+先看元音
+
+like aaaaa and eeeeee.
+比如 a 和 e
+
+These are the waveforms of those two sounds, as captured by a computer's microphone.
+这是两个声音的波形
+
+As we discussed in Episode 21 - on Files and File Formats -
+我们在第21集（文件格式）说过
+
+this signal is the magnitude of displacement,
+这个信号来自 麦克风内部隔膜震动的频率
+
+of a diaphragm inside of a microphone, as sound waves cause it to oscillate.
+这个信号来自 麦克风内部隔膜震动的频率
+
+In this view of sound data, the horizontal axis is time,
+在这个视图中，横轴是时间
+
+and the vertical axis is the magnitude of displacement, or amplitude.
+竖轴是隔膜移动的幅度，或者说振幅
+
+Although we can see there are differences between the waveforms,
+虽然可以看到2个波形有区别
+
+it's not super obvious what you would point at to say,
+但不能看出
+
+"ah ha! this is definitely an eeee sound".
+"啊！这个声音肯定是 e"
+
+To really make this pop out, we need to view the data in a totally different way:
+为了更容易识别，我们换个方式看：
+
+a spectrogram.
+谱图
+
+In this view of the data, we still have time along the horizontal axis,
+这里横轴还是时间
+
+but now instead of amplitude on the vertical axis,
+但竖轴不是振幅
+
+we plot the magnitude of the different frequencies that make up each sound.
+而是不同频率的振幅
+
+The brighter the color, the louder that frequency component.
+颜色越亮，那个频率的声音越大
+
+This conversion from waveform to frequencies is done with a very cool algorithm called
+这种波形到频率的转换 是用一种很酷的算法做的
+
+a Fast Fourier Transform.
+快速傅立叶变换（FFT）
+
+If you've ever stared at a stereo system's EQ visualizer,
+如果你盯过立体声系统的 EQ 可视化器
+
+it's pretty much the same thing.
+它们差不多是一回事
+
+A spectrogram is plotting that information over time.
+谱图是随着时间变化的
+
+You might have noticed that the signals have a sort of ribbed pattern to them
+你可能注意到，信号有种螺纹图案
+
+that's all the resonances of my vocal tract.
+那是我声道的回声
+
+To make different sounds,
+为了发出不同声音
+
+I squeeze my vocal chords, mouth and tongue into different shapes,
+我要把声带，嘴巴和舌头变成不同形状
+
+which amplifies or dampens different resonances.
+放大或减少不同的共振
+
+We can see this in the signal, with areas that are brighter, and areas that are darker.
+可以看到有些区域更亮，有些更暗
+
+If we work our way up from the bottom, labeling where we see peaks in the spectrum
+如果从底向上看，标出高峰
+
+- what are called formants -
+- 叫"共振峰"  -
+
+we can see the two sounds have quite different arrangements.
+可以看到有很大不同
+
+And this is true for all vowel sounds.
+所有元音都是如此
+
+It's exactly this type of information that lets computers recognize spoken vowels,
+这让计算机可以识别元音
+
+and indeed, whole words.
+然后识别出整个词
+
+Let's see a more complicated example,
+让我们看一个更复杂的例子
+
+like when I say: "she.. was.. happy"
+当我说"她..很开心"的时候
+
+We can see our "eee" sound here, and "aaa" sound here.
+可以看到 e 声，和 a 声
+
+We can also see a bunch of other distinctive sounds,
+以及其它不同声音
+
+like the "shh" sound in "she",
+比如 she 中的 shh 声
+
+the "wah" and "sss" in "was", and so on.
+was 中的 wah 和 sss，等等
+
+These sound pieces, that make up words,
+这些构成单词的声音片段
+
+are called phonemes.
+叫"音素"
+
+Speech recognition software knows what all these phonemes look like.
+语音识别软件 知道这些音素
+
+In English, there are roughly forty-four,
+英语有大概44种音素
+
+so it mostly boils down to fancy pattern matching.
+所以本质上变成了音素识别
+
+Then you have to separate words from one another,
+还要把不同的词分开
+
+figure out when sentences begin and end...
+弄清句子的开始和结束点
+
+and ultimately, you end up with speech converted into text,
+最后把语音转成文字
+
+allowing for techniques like we discussed at the beginning of the episode.
+使这集视频开头里讨论的那些技术成为可能
+
+Because people say words in slightly different ways,
+因为口音和发音错误等原因
+
+due to things like accents and mispronunciations,
+人们说单词的方式略有不同
+
+transcription accuracy is greatly improved when combined with a language model,
+所以结合语言模型后，语音转文字的准确度会大大提高
+
+which contains statistics about sequences of words.
+里面有单词顺序的统计信息
+
+For example "she was" is most likely to be followed by an adjective, like "happy".
+比如："她"后面很可能跟一个形容词，\N 比如"很开心"
+
+It's uncommon for "she was" to be followed immediately by a noun.
+"她"后面很少是名词
+
+So if the speech recognizer was unsure between, "happy" and "harpy",
+如果不确定是 happy 还是 harpy，会选 happy
+
+it'd pick "happy",
+如果不确定是 happy 还是 harpy，会选 happy
+
+since the language model would report that as a more likely choice.
+因为语言模型认为可能性更高
+
+Finally, we need to talk about Speech Synthesis,
+最后, 我们来谈谈 "语音合成"
+
+that is, giving computers the ability to output speech.
+让计算机输出语音
+
+This is very much like speech recognition, but in reverse.
+它很像语音识别，不过反过来
+
+We can take a sentence of text, and break it down into its phonetic components,
+把一段文字，分解成多个声音
+
+and then play those sounds back to back, out of a computer speaker.
+然后播放这些声音
+
+You can hear this chaining of phonemes very clearly with older speech synthesis technologies,
+早期语音合成技术，可以清楚听到音素是拼在一起的
+
+like this 1937, hand-operated machine from Bell Labs.
+比如这个1937年贝尔实验室的手动操作机器
+
+Say, "she saw me" with no expression.
+不带感情的说"她看见了我"
+
+She saw me.
+她看见了我
+
+Now say it in answer to these questions.
+现在回答问题
+
+Who saw you?
+谁看见你了？
+
+She saw me.
+她看见了我
+
+Who did she see?
+她看到了谁？
+
+She saw me.
+她看见了我
+
+Did she see you or hear you?
+她看到你还是听到你说话了？
+
+She saw me.
+她看见了我
+
+By the 1980s, this had improved a lot,
+到了1980年代，技术改进了很多
+
+but that discontinuous and awkward blending of phonemes
+但音素混合依然不够好，产生明显的机器人声
+
+still created that signature, robotic sound.
+但音素混合依然不够好，产生明显的机器人声
+
+Thriller was released in 1983 and sung by Michael Jackson.
+Thriller 于1983年发行，迈克尔·杰克逊 演唱.
+
+Today, synthesized computer voices, like Siri, Cortana and Alexa,
+如今，电脑合成的声音，比如 Siri, Cortana, Alexa
+
+have gotten much better, but they're still not quite human.
+好了很多，但还不够像人
+
+But we're soo soo close,
+但我们非常非常接近了
+
+and it's likely to be a solved problem pretty soon.
+这个问题很快会被解决
+
+Especially because we're now seeing an explosion of voice user interfaces on our phones,
+现在语音界面到处都是，手机里
+
+in our cars and homes, and maybe soon, plugged right into our ears.
+汽车里，家里，也许不久之后耳机也会有.
+
+This ubiquity is creating a positive feedback loop,
+这创造一个正反馈循环
+
+where people are using voice interaction more often,
+人们用语音交互的频率会提高
+
+which in turn, is giving companies like Google, Amazon and Microsoft
+这又给了谷歌，亚马逊，微软等公司
+
+more data to train their systems on.
+更多数据来训练语音系统.
+
+Which is enabling better accuracy,
+提高准确性
+
+which is leading to people using voice more,
+准确度高了，人们更愿意用语音交互
+
+which is enabling even better accuracy and the loop continues!
+越用越好，越好越用
+
+Many predict that speech technologies will become as common a form of interaction
+很多人预测，语音交互会越来越常见
+
+as screens, keyboards, trackpads and other physical input-output devices that we use today.
+就像如今的屏幕，键盘，触控板等设备
+
+That's particularly good news for robots,
+这对机器人发展是个好消息
+
+who don't want to have to walk around with keyboards in order to communicate with humans.
+机器人就不用走来走去时  带个键盘和人类沟通
+
+But, we'll talk more about them next week. See you then.
+下周我们讲机器人.  到时见
+

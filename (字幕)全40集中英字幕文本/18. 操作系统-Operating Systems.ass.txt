@@ -1,0 +1,741 @@
+This episode is supported by Hover.
+本集由 Hover 赞助播出
+
+Hi, I'm Carrie Anne, and welcome to Crash Course Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+Computers in the 1940s and early 50s ran one program at a time.
+1940,1950 年代的电脑，每次只能运行一个程序
+
+A programmer would write one at their desk, for example, on punch cards.
+程序员在打孔纸卡上写程序
+
+Then, they'd carry it to a room containing a room-sized computer,
+然后拿到一个计算机房间,  交给操作员
+
+and hand it to a dedicated computer operator.
+然后拿到一个计算机房间,  交给操作员
+
+That person would then feed the program into the computer when it was next available.
+等计算机空下来了，操作员会把程序放入
+
+The computer would run it, spit out some output, and halt.
+然后运行，输出结果，停机
+
+This very manual process worked OK back when computers were slow,
+以前计算机慢，这种手动做法可以接受
+
+and running a program often took hours, days or even weeks.
+运行一个程序通常要几小时，几天甚至几周
+
+But, as we discussed last episode,
+但上集说过，计算机越来越快，越来越快
+
+computers became faster... and faster... and faster
+但上集说过，计算机越来越快，越来越快
+
+exponentially so!
+指数级增长！
+
+Pretty soon, having humans run around and inserting programs into readers
+很快，放程序的时间 比程序运行时间还长
+
+was taking longer than running the actual programs themselves.
+很快，放程序的时间 比程序运行时间还长
+
+We needed a way for computers to operate themselves,
+我们需要一种方式 让计算机自动运作
+
+and so, operating systems were born.
+于是"操作系统"诞生了
+
+Operating systems , or OS for short, are just programs.
+操作系统，简称 OS，其实也是程序
+
+But, special privileges on the hardware let them run and manage other programs.
+但它有操作硬件的特殊权限  \N 可以运行和管理其它程序
+
+They're typically the first one to start when a computer is turned on,
+操作系统一般是开机第一个启动的程序
+
+and all subsequent programs are launched by the OS.
+其他所有程序 都由操作系统启动
+
+They got their start in the 1950s,
+操作系统开始于 1950 年代 \N 那时计算机开始变得更强大更流行
+
+as computers became more widespread and more powerful.
+操作系统开始于 1950 年代 \N 那时计算机开始变得更强大更流行
+
+The very first OS augmented the mundane, manual task of loading programs by hand.
+第一个操作系统 加强了程序加载方式
+
+Instead of being given one program at a time,
+之前只能一次给一个程序，现在可以一次多个
+
+computers could be given batches.
+之前只能一次给一个程序，现在可以一次多个
+
+When the computer was done with one,
+当计算机运行完一个程序，会自动运行下一个程序
+
+it would automatically and near-instantly start the next.
+当计算机运行完一个程序，会自动运行下一个程序
+
+There was no downtime while someone scurried around an office to find the next program to run.
+这样就不会浪费时间，找下一个程序的纸卡
+
+This was called batch processing .
+这叫 批处理
+
+While computers got faster, they also got cheaper.
+电脑变得更快更便宜，开始在出现在世界各地
+
+So, they were popping up all over the world,
+电脑变得更快更便宜，开始在出现在世界各地
+
+especially in universities and government offices.
+特别是大学和政府办公室
+
+Soon, people started sharing software.
+很快，人们开始分享软件，但有一个问题
+
+But there was a problem
+很快，人们开始分享软件，但有一个问题
+
+In the era of one-off computers, like the Harvard Mark 1 or ENIAC,
+在哈佛1号和 ENIAC 那个时代，计算都是一次性的
+
+programmers only had to write code for that one single machine.
+程序员只需要给那"一台"机器写代码
+
+The processor, punch card readers, and printers were known and unchanging.
+处理器，读卡器，打印机都是已知的
+
+But as computers became more widespread,
+但随着电脑越来越普遍，计算机配置并不总是相同的
+
+their configurations were not always identical,
+但随着电脑越来越普遍，计算机配置并不总是相同的
+
+like computers might have the same CPU, but not the same printer.
+比如计算机可能有相同 CPU，但不同的打印机
+
+This was a huge pain for programmers.
+这对程序员很痛苦
+
+Not only did they have to worry about writing their program,
+不仅要担心写程序，还要担心程序怎么和不同型号打印机交互
+
+but also how to interface with each and every model of printer,
+不仅要担心写程序，还要担心程序怎么和不同型号打印机交互
+
+and all devices connected to a computer, what are called peripherals.
+以及计算机连着的其他设备，这些统称"外部设备"
+
+Interfacing with early peripherals was very low level,
+和早期的外部设备交互，是非常底层的
+
+requiring programmers to know intimate hardware details about each device.
+程序员要了解设备的硬件细节
+
+On top of that, programmers rarely had access to every model of a peripheral to test their code on.
+加重问题的是，程序员很少能拿到所有型号的设备来测代码
+
+So, they had to write code as best they could, often just by reading manuals,
+所以一般是阅读手册来写代码，祈祷能正常运行
+
+and hope it worked when shared.
+所以一般是阅读手册来写代码，祈祷能正常运行
+
+Things weren't exactly plug-and-play
+现在是"即插即用"，以前是"祈祷能用"
+
+back then more plug-and-pray.
+现在是"即插即用"，以前是"祈祷能用"
+
+This was clearly terrible,
+这很糟糕，所以为了程序员写软件更容易
+
+so to make it easier for programmers,
+这很糟糕，所以为了程序员写软件更容易
+
+Operating Systems stepped in as intermediaries between software programs and hardware peripherals.
+操作系统充当软件和硬件之间的媒介
+
+More specifically, they provided a software abstraction, through APIs,
+更具体地说，操作系统提供 API 来抽象硬件，叫"设备驱动程序"
+
+called device drivers .
+更具体地说，操作系统提供 API 来抽象硬件，叫"设备驱动程序"
+
+These allow programmers to talk to common input and output hardware,
+程序员可以用标准化机制  和输入输出硬件（I/O）交互
+
+or I/O for short, using standardized mechanisms.
+程序员可以用标准化机制  和输入输出硬件（I/O）交互
+
+For example, programmers could call a function like "print highscore",
+比如，程序员只需调用 print(highscore)
+
+and the OS would do the heavy lifting to get it onto paper.
+操作系统会处理  输到纸上的具体细节
+
+By the end of the 1950s, computers had gotten so fast,
+到 1950 年代尾声，电脑已经非常快了
+
+they were often idle waiting for slow mechanical things, like printers and punch card readers.
+处理器经常闲着，等待慢的机械设备（比如打印机和读卡器）
+
+While programs were blocked on I/O,
+程序阻塞在 I/O 上
+
+the expensive processor was just chillin'... not like a villain
+而昂贵的处理器则在度假，就是放松啥也不做
+
+you know, just relaxing.
+而昂贵的处理器则在度假，就是放松啥也不做
+
+In the late 50's, the University of Manchester, in the UK,
+50年代后期，英国曼彻斯特大学 \N 开始研发世界上第一台超级计算机，Atlas
+
+started work on a supercomputer called Atlas, one of the first in the world.
+50年代后期，英国曼彻斯特大学 \N 开始研发世界上第一台超级计算机，Atlas
+
+They knew it was going to be wicked fast,
+他们知道机器会超级快，所以需要一种方式来最大限度的利用它
+
+so they needed a way to make maximal use of the expensive machine.
+他们知道机器会超级快，所以需要一种方式来最大限度的利用它
+
+Their solution was a program called the Atlas Supervisor, finished in 1962.
+他们的解决方案是一个程序叫 Atlas Supervisor  \N 于1962年完成
+
+This operating system not only loaded programs automatically, like earlier batch systems,
+这个操作系统 \N不仅像更早期的批处理系统那样，能自动加载程序
+
+but could also run several at the same time on its single CPU.
+还能在单个 CPU 上同时运行几个程序
+
+It did this through clever scheduling.
+它通过调度来做到这一点
+
+Let's say we have a game program running on Atlas,
+假设 Atlas 上有一个游戏在运行
+
+and we call the function "print(highscore)"
+并且我们调用一个函数 print(highscore)
+
+which instructs Atlas to print the value of a variable named "highscore"
+它让 Atlas 打印一个叫 highscore 的变量值
+
+onto paper to show our friends that we're the ultimate champion of virtual tiddlywinks.
+让朋友知道 我是最高分冠军
+
+That function call is going to take a while, the equivalent of thousands of clock cycles,
+print 函数运行需要一点时间，大概上千个时钟周期
+
+because mechanical printers are slow in comparison to electronic CPUs.
+但因为打印机比 CPU 慢，与其等着它完成操作
+
+So instead of waiting for the I/O to finish,
+但因为打印机比 CPU 慢，与其等着它完成操作
+
+Atlas instead puts our program to sleep,
+Atlas 会把程序休眠，运行另一个程序
+
+then selects and runs another program that's waiting and ready to run.
+Atlas 会把程序休眠，运行另一个程序
+
+Eventually, the printer will report back to Atlas that it finished printing the value of "highscore".
+最终, 打印机会告诉 Atlas, 打印已完成
+
+Atlas then marks our program as ready to go,
+Atlas 会把程序标记成可继续运行
+
+and at some point, it will be scheduled to run again on the CPU,
+之后在某时刻会安排给 CPU 运行
+
+and continue onto the next line of code following the print statement.
+并继续 print 语句之后的下一行代码
+
+In this way, Atlas could have one program running calculations on the CPU,
+这样, Atlas 可以在 CPU 上运行一个程序
+
+while another was printing out data,
+同时另一个程序在打印数据
+
+and yet another reading in data from a punch tape.
+同时另一个程序读数据
+
+Atlas' engineers doubled down on this idea,
+Atlas 的工程师做的还要多，配了4台纸带读取器，4台纸带打孔机
+
+and outfitted their computer with 4 paper tape readers, 4 paper tape punches,
+Atlas 的工程师做的还要多，配了4台纸带读取器，4台纸带打孔机
+
+and up to 8 magnetic tape drives.
+多达8个磁带驱动器
+
+This allowed many programs to be in progress all at once,
+使多个程序可以同时运行，在单个 CPU 上共享时间
+
+sharing time on a single CPU.
+使多个程序可以同时运行，在单个 CPU 上共享时间
+
+This ability, enabled by the Operating System, is called
+操作系统的这种能力叫"多任务处理"
+
+multitasking.
+操作系统的这种能力叫"多任务处理"
+
+There's one big catch to having many programs running simultaneously on a single computer, though.
+同时运行多个程序有个问题
+
+Each one is going to need some memory,
+每个程序都会占一些内存 \N 当切换到另一个程序时，我们不能丢失数据
+
+and we can't lose that program's data when we switch to another program.
+每个程序都会占一些内存 \N 当切换到另一个程序时，我们不能丢失数据
+
+The solution is to allocate each program its own block of memory.
+解决办法是 给每个程序分配专属内存块
+
+So, for example, let's say a computer has 10,000 memory locations in total.
+举个例子，假设计算机一共有 10000 个内存位置
+
+Program A might get allocated memory addresses 0 through 999,
+程序 A 分配到内存地址 0 到 999
+
+and Program B might get 1000 through 1999, and so on.
+而程序 B 分配到内存地址 1000 到 1999，以此类推
+
+If a program asks for more memory,
+如果一个程序请求更多内存，操作系统会决定是否同意
+
+the operating system decides if it can grant that request,
+如果一个程序请求更多内存，操作系统会决定是否同意
+
+and if so, what memory block to allocate next.
+如果同意，分配哪些内存块
+
+This flexibility is great, but introduces a quirk.
+这种灵活性很好，但带来一个奇怪的后果
+
+It means that Program A could end up being allocated non-sequential blocks of memory,
+程序 A 可能会分配到非连续的内存块
+
+in say addresses 0 through 999, and 2000 through 2999.
+比如内存地址 0 到 999，以及 2000 到 2999
+
+And this is just a simple example
+这只是个简单例子
+
+- a real program might be allocated dozens of blocks scattered all over memory.
+真正的程序可能会分配到内存中数十个地方
+
+As you might imagine,
+你可能想到了，这对程序员来说很难跟踪
+
+this would get really confusing for programmers to keep track of.
+你可能想到了，这对程序员来说很难跟踪
+
+Maybe there's a long list of sales data in memory that
+也许内存里有一长串销售额，每天下班后要算销售总额
+
+a program has to total up at the end of the day,
+也许内存里有一长串销售额，每天下班后要算销售总额
+
+but this list is stored across a bunch of different blocks of memory.
+但列表 存在一堆不连续的内存块里
+
+To hide this complexity, Operating Systems virtualize memory locations.
+为了隐藏这种复杂性，操作系统会把内存地址进行 "虚拟化"
+
+With Virtual Memory, programs can assume their memory always starts at address 0,
+这叫 "虚拟内存"，程序可以假定内存总是从地址0开始
+
+keeping things simple and consistent.
+简单又一致
+
+However, the actual, physical location in computer memory
+而实际物理位置  被操作系统隐藏和抽象了
+
+is hidden and abstracted by the operating system.
+而实际物理位置  被操作系统隐藏和抽象了
+
+Just a new level of abstraction.
+一层新的抽象
+
+Let's take our example Program B,
+用程序 B 来举例 \N 它被分配了内存地址 1000 到 1999
+
+which has been allocated a block of memory from address 1000 to 1999.
+用程序 B 来举例 \N 它被分配了内存地址 1000 到 1999
+
+As far as Program B can tell, this appears to be a block from 0 to 999.
+对程序 B 而言，它看到的地址是 0 到 999
+
+The OS and CPU handle the virtual-to-physical memory remapping automatically.
+操作系统会自动处理 \N 虚拟内存和物理内存之间的映射
+
+So, if Program B requests memory location 42,
+如果程序 B 要地址 42，实际上是物理地址 1042
+
+it really ends up reading address 1042.
+如果程序 B 要地址 42，实际上是物理地址 1042
+
+This virtualization of memory addresses is even more useful for Program A,
+这种内存地址的虚拟化  对程序 A 甚至更有用
+
+which in our example, has been allocated two blocks of memory
+在例子中，A 被分配了两块隔开的内存
+
+that are separated from one another.
+在例子中，A 被分配了两块隔开的内存
+
+This too is invisible to Program A.
+程序 A 不知道这点.
+
+As far as it can tell, it's been allocated a continuous block of 2000 addresses.
+以 A 的视角，它有 2000 个连续地址
+
+When Program A reads memory address 999,
+当程序 A 读内存地址 999 时 \N 会刚好映射到物理内存地址 999
+
+that does coincidentally map to physical memory address 999.
+当程序 A 读内存地址 999 时 \N 会刚好映射到物理内存地址 999
+
+But if Program A reads the very next value in memory, at address 1000,
+但如果程序 A 读下一个地址 1000
+
+that gets mapped behind the scenes to physical memory address 2000.
+会映射到物理地址 2000
+
+This mechanism allows programs to have flexible memory sizes,
+这种机制使程序的内存大小可以灵活增减 \N 叫"动态内存分配"
+
+called dynamic memory allocation,
+这种机制使程序的内存大小可以灵活增减 \N 叫"动态内存分配"
+
+that appear to be continuous to them.
+对程序来说，内存看起来是连续的.
+
+It simplifies everything and offers tremendous flexibility to the Operating System
+它简化了一切，为操作系统同时运行多个程序 \N 提供了极大的灵活性
+
+in running multiple programs simultaneously.
+它简化了一切，为操作系统同时运行多个程序 \N 提供了极大的灵活性
+
+Another upside of allocating each program its own memory,
+给程序分配专用的内存范围，\N 另一个好处是 这样隔离起来会更好
+
+is that they're better isolated from one another.
+给程序分配专用的内存范围，\N 另一个好处是 这样隔离起来会更好
+
+So, if a buggy program goes awry, and starts writing gobbledygook,
+如果一个程序出错，开始写乱七八糟的数据
+
+it can only trash its own memory, not that of other programs.
+它只能捣乱自己的内存，不会影响到其它程序.
+
+This feature is called Memory Protection.
+这叫 "内存保护"
+
+This is also really useful in protecting against malicious software, like viruses.
+防止恶意软件（如病毒）也很有用
+
+For example, we generally don't want other programs to have the ability
+例如，我们不希望其他程序有能力 \N 读或改邮件程序的内存
+
+to read or modify the memory of, let say, our email,
+例如，我们不希望其他程序有能力 \N 读或改邮件程序的内存
+
+with that kind of access,
+如果有这种权限 \N 恶意软件可能以你的名义发邮件，甚至窃取个人信息
+
+malware could send emails on your behalf and maybe steal personal information.
+如果有这种权限 \N 恶意软件可能以你的名义发邮件，甚至窃取个人信息
+
+Not good!
+一点都不好！
+
+Atlas had both virtual and protected memory.
+Atlas 既有"虚拟内存"也有"内存保护"
+
+It was the first computer and OS to support these features!
+是第一台支持这些功能的计算机和操作系统！
+
+By the 1970s, computers were sufficiently fast and cheap.
+到 1970 年代，计算机足够快且便宜
+
+Institutions like a university could buy a computer and let students use it.
+大学会买电脑让学生用
+
+It was not only fast enough to run several programs at once,
+计算机不仅能同时运行多个程序，还能让多用户能同时访问
+
+but also give several users simultaneous, interactive access.
+计算机不仅能同时运行多个程序，还能让多用户能同时访问
+
+This was done through a terminal,
+多个用户用"终端"来访问计算机
+
+which is a keyboard and screen that connects to a big computer,
+"终端"只是键盘+屏幕，连到主计算机 \N 终端本身没有处理能力
+
+but doesn't contain any processing power itself.
+"终端"只是键盘+屏幕，连到主计算机 \N 终端本身没有处理能力
+
+A refrigerator-sized computer might have 50 terminals connected to it,
+冰箱大小的计算机可能有50个终端，能让50个用户使用
+
+allowing up to 50 users.
+冰箱大小的计算机可能有50个终端，能让50个用户使用
+
+Now operating systems had to handle not just multiple programs,
+这时操作系统不但要处理多个程序，还要处理多个用户
+
+but also multiple users.
+这时操作系统不但要处理多个程序，还要处理多个用户
+
+So that no one person could gobble up all of a computer's resources,
+为了确保其中一个人  不会占满计算机资源
+
+operating systems were developed that offered time-sharing.
+开发了 分时操作系统
+
+With time-sharing each individual user was only allowed to utilize
+意思是 每个用户只能用一小部分处理器，内存等
+
+a small fraction of the computer's processor, memory, and so on.
+意思是 每个用户只能用一小部分处理器，内存等
+
+Because computers are so fast,
+因为电脑很快 \N 即使拿到 1/50 的资源也足以完成许多任务
+
+even getting just 1/50th of its resources was enough for individuals to complete many tasks.
+因为电脑很快 \N 即使拿到 1/50 的资源也足以完成许多任务
+
+The most influential of early time-sharing Operating Systems was
+早期分时操作系统中，最有影响力的是 \N Multics（多任务信息与计算系统）
+
+Multics,  or Multiplexed Information and Computing Service,
+早期分时操作系统中，最有影响力的是 \N Multics（多任务信息与计算系统）
+
+released in 1969.
+于 1969 年发布
+
+Multics was the first major operating system designed to be secure from the outset.
+Multics 是第一个，从设计时就考虑到安全的操作系统
+
+Developers didn't want mischievous users accessing data they shouldn't,
+开发人员不希望恶意用户 访问不该访问的数据
+
+like students attempting to access the final exam on their professor's account.
+比如学生假装成教授，访问期末考试的文件
+
+Features like this meant Multics was really complicated for its time,
+这导致 Multics 的复杂度超过当时的平均水准
+
+using around 1 Megabit of memory, which was a lot back then!
+操作系统会占大约 1 Mb 内存，这在当时很多！
+
+That might be half of a computer's memory, just to run the OS!
+可能是内存的一半，只拿来运行操作系统！
+
+Dennis Ritchie, one of the researchers working on Multics, once said:
+Multics 的研究人员之一 Dennis Ritchie 曾说过
+
+"One of the obvious things that went wrong with Multics as a commercial success
+"阻碍 Multics 获得商业成功的一个明显问题是
+
+was just that it was sort of over-engineered in a sense.
+从某种方面来说，它被过度设计了，功能太多了"
+
+There was just too much in it."
+从某种方面来说，它被过度设计了，功能太多了"
+
+This lead Dennis, and another Multics researcher,
+所以 Dennis 和另一个 Multics 研究员 \N Ken Thompson 联手打造新的操作系统
+
+Ken Thompson, to strike out on their own and build a new, lean operating system
+所以 Dennis 和另一个 Multics 研究员 \N Ken Thompson 联手打造新的操作系统
+
+called Unix.
+叫 Unix
+
+They wanted to separate the OS into two parts:
+他们想把操作系统分成两部分：
+
+First was the core functionality of the OS,
+首先是操作系统的核心功能
+
+things like memory management, multitasking,and dealing with I/O,
+如内存管理，多任务和输入/输出处理 \N 这叫"内核"
+
+which is called the kernel .
+如内存管理，多任务和输入/输出处理 \N 这叫"内核"
+
+The second part was a wide array of useful tools that came bundled with,
+第二部分是一堆有用的工具
+
+but not part of the kernel, things like programs and libraries.
+但它们不是内核的一部分（比如程序和运行库）
+
+Building a compact, lean kernel meant intentionally leaving some functionality out.
+紧凑的内核 意味着功能没有那么全面
+
+Tom Van Vleck, another Multics developer, recalled:
+Multics 的另一个开发者 Tom Van Vleck 回忆说：
+
+"I remarked to Dennis that easily half the code I was writing in Multics was error recovery code."
+"我对 Dennis 说，我在 Multics 写的一半代码都是错误恢复代码"
+
+He said, "We left all that stuff out of Unix.
+他说:"Unix 不会有这些东西
+
+If there's an error, we have this routine called panic,
+如果有错误发生，我们就让内核"恐慌"（panic）
+
+and when it is called, the machine crashes,
+当调用它时，机器会崩溃
+
+and you holler down the hall, 'Hey, reboot it.'""
+你得在走廊里大喊，"嘿，重启电脑"
+
+You might have heard of kernel panics.
+你可能听过 "内核恐慌"（kernel panic）
+
+This is where the term came from.
+这就是这个词的来源
+
+It's literally when the kernel crashes, has no recourse to recover,
+内核如果崩溃，没有办法恢复
+
+and so calls a function called "panic".
+所以调用一个叫"恐慌"（panic）的函数
+
+Originally, all it did was print the word "panic" and then enter an infinite loop.
+起初只是打印"恐慌"一词，然后无限循环
+
+This simplicity meant that Unix could be run on cheaper and more diverse hardware,
+这种简单性意味着  \N Unix 可以在更便宜更多的硬件上运行
+
+making it popular inside Bell Labs, where Dennis and Ken worked.
+使 Unix 在 Dennis 和 Ken 工作的 \N 贝尔实验室大受欢迎
+
+As more developers started using Unix to build and run their own programs,
+越来越多开发人员用 Unix 写程序和运行程序
+
+the number of contributed tools grew.
+工具数量日益增长
+
+Soon after its release in 1971,
+1971 年发布后不久
+
+it gained compilers for different programming languages and even a word processor,
+就有人写了不同编程语言的编译器 \N 甚至文字处理器
+
+quickly making it one of the most popular OSes of the 1970s and 80s.
+使得 Unix 迅速成为 \N 1970~80年代最流行的操作系统之一
+
+At the same time, by the early 1980s,
+到 1980 年代早期
+
+the cost of a basic computer had fallen to the point where individual people could afford one,
+计算机的价格 降到普通人买得起  \N 这些叫"个人电脑"或"家庭电脑"
+
+called a personal or home computer.
+计算机的价格 降到普通人买得起  \N 这些叫"个人电脑"或"家庭电脑"
+
+These were much simpler than the big mainframes
+这些电脑比大型主机简单得多 \N 主机一般在大学，公司和政府
+
+found at universities, corporations, and governments.
+这些电脑比大型主机简单得多 \N 主机一般在大学，公司和政府
+
+So, their operating systems had to be equally simple.
+因此操作系统也得简单
+
+For example, Microsoft's Disk Operating System, or MS-DOS, was just 160 kilobytes,
+举例，微软的磁盘操作系统（MS-DOS）只有 160 kB \N 一张磁盘就可以容纳
+
+allowing it to fit, as the name suggests, onto a single disk.
+举例，微软的磁盘操作系统（MS-DOS）只有 160 kB \N 一张磁盘就可以容纳
+
+First released in 1981, it became the most popular OS for early home computers,
+于 1981 年发布，成为早期家用电脑最受欢迎的操作系统
+
+even though it lacked multitasking and protected memory.
+虽然缺少"多任务"和"保护内存"这样功能
+
+This meant that programs could,
+意味着程序经常使系统崩溃
+
+and would, regularly crash the system.
+意味着程序经常使系统崩溃
+
+While annoying, it was an acceptable tradeoff,
+虽然很讨厌但还可以接受，因为用户可以重启
+
+as users could just turn their own computers off and on again!
+虽然很讨厌但还可以接受，因为用户可以重启
+
+Even early versions of Windows,
+哪怕是微软 1985 年发布的早期 Windows \N 虽然在 90 年代很流行
+
+first released by Microsoft in 1985  and which dominated the OS scene throughout the 1990s,
+哪怕是微软 1985 年发布的早期 Windows \N 虽然在 90 年代很流行
+
+lacked strong memory protection.
+但却缺乏"内存保护"
+
+When programs misbehaved,
+当程序行为不当时，就会"蓝屏"
+
+you could get the blue screen of death,
+当程序行为不当时，就会"蓝屏"
+
+a sign that a program had crashed so badly that it took down the whole operating system.
+代表程序崩溃的非常严重，把系统也带崩溃了
+
+Luckily, newer versions of Windows have better protections and usually don't crash that often.
+幸运的是，新版Windows有更好的保护，不会经常崩溃
+
+Today, computers run modern operating systems,
+如今的计算机 有现代操作系统
+
+like Mac OS X, Windows 10, Linux, iOS and Android.
+比如 Mac OS X，Windows 10 \NLinux，iOS和Android
+
+Even though the computers we own are most often used by just a single person,
+虽然大部分设备只有一个人使用
+
+you!
+你！
+
+their OS all have multitasking and virtual and protected memory.
+操作系统依然有"多任务, "虚拟内存", "内存保护"
+
+So, they can run many programs at once:
+因此可以同时运行多个程序：
+
+you can watch YouTube in your web browser,
+一边在浏览器看 YouTube，一边在 Photoshop 修图
+
+edit a photo in Photoshop,
+一边在浏览器看 YouTube，一边在 Photoshop 修图
+
+play music in Spotify and sync Dropbox all at the same time.
+用 Spotify 放音乐，同步 Dropbox
+
+This wouldn't be possible without those decades of research and development on Operating Systems,
+如果没有操作系统这几十年的发展，这些都不可能,
+
+and of course the proper memory to store those programs.
+当然，我们也需要地方放程序
+
+Which we'll get to next week.
+下周会讨论
+

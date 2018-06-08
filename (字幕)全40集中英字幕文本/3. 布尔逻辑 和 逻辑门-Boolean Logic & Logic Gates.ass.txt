@@ -1,0 +1,498 @@
+Hi, I'm Carrie Anne and welcome to Crash Course Computer Science!
+嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+Today we start our journey up the ladder of abstraction,
+今天我们开始"抽象"的旅程
+
+where we leave behind the simplicity of being able to see every switch and gear,
+不用管底层细节，把精力用来构建更复杂的系统
+
+but gain the ability to assemble increasingly complex systems.
+不用管底层细节，把精力用来构建更复杂的系统
+
+Last episode, we talked about how computers evolved from electromechanical devices,
+上集，我们谈了计算机最早是机电设备
+
+that often had decimal representations of numbers
+一般用十进制计数
+
+- like those represented by teeth on a gear
+- 比如用齿轮数来代表十进制
+
+- to electronic computers with transistors that can turn the flow of electricity on or off.
+- 再到晶体管计算机
+
+And fortunately, even with just two states of electricity,
+幸运的是，只用 开/关 两种状态也可以代表信息
+
+we can represent important information.
+幸运的是，只用 开/关 两种状态也可以代表信息
+
+We call this representation Binary
+这叫 二进制
+
+-- which literally means "of two states",
+- 意思是"用两种状态表示"
+
+in the same way a bicycle has two wheels or a biped has two legs.
+就像自行车有两个轮，双足动物有两条腿
+
+You might think two states isn't a lot to work with, and you'd be right!
+你可能觉得两种状态不多，你是对的！
+
+But, it's exactly what you need for representing the values "true" and "false".
+但如果只需要表示 true 和 false，两个值就够了
+
+In computers, an "on" state, when electricity is flowing, represents true.
+电路闭合，电流流过，代表 "真"
+
+The off state, no electricity flowing, represents false.
+电路断开，无电流流过，代表"假"
+
+We can also write binary as 1's and 0's instead of true's and false's
+二进制也可以写成 1 和 0 而不是 true 和 false
+
+- they are just different expressions of the same signal
+- 只是不同的表达方式罢了
+
+- but we'll talk more about that in the next episode.
+- 我们下集会讲更多细节
+
+Now it is actually possible to use transistors for more than just turning electrical current on and off,
+晶体管的确可以不只是 开/关，还可以让不同大小的电流通过
+
+and to allow for different levels of current.
+晶体管的确可以不只是 开/关，还可以让不同大小的电流通过
+
+Some early electronic computers were ternary, that's three states,
+一些早期电子计算机是三进制的，有 3 种状态
+
+and even quinary, using 5 states.
+甚至五进制，5 种状态
+
+The problem is, the more intermediate states there are,
+问题是，状态越多，越难区分信号
+
+the harder it is to keep them all seperate
+问题是，状态越多，越难区分信号
+
+-- if your smartphone battery starts running low or there's electrical noise
+- 如果手机快没电了或者附近有电噪音
+
+because someone's running a microwave nearby,
+因为有人在用微波炉，
+
+the signals can get mixed up...
+信号可能会混在一起...
+
+and this problem only gets worse with transistors changing states millions of times per second!
+而每秒百万次变化的晶体管会让这个问题变得更糟！
+
+So, placing two signals as far apart as possible
+所以我们把两种信号尽可能分开
+
+- using just 'on and off' - gives us the most distinct signal to minimize these issues.
+- 只用"开"和"关"两种状态，可以尽可能减少这类问题
+
+Another reason computers use binary
+计算机用二进制的另一个原因是
+
+is that an entire branch of mathematics already existed that dealt exclusively with true and false values.
+有一整个数学分支存在，专门处理"真"和"假"
+
+And it had figured out all of the necessary rules and operations for manipulating them.
+它已经解决了所有法则和运算
+
+It's called Boolean Algebra!
+叫"布尔代数"！
+
+George Boole, from which Boolean Algebra later got its name,
+乔治·布尔（George Boole）是布尔二字的由来
+
+was a self-taught English mathematician in the 1800s.
+是一位 19 世纪自学成才的英国数学家
+
+He was interested in representing logical statements that went "under, over, and beyond"
+他有兴趣用数学式子 扩展亚里士多德基于哲学的逻辑方法
+
+Aristotle's approach to logic, which was, unsurprisingly, grounded in philosophy.
+他有兴趣用数学式子 扩展亚里士多德基于哲学的逻辑方法
+
+Boole's approach allowed truth to be systematically and formally proven, through logic equations
+布尔用 逻辑方程 系统而正式的证明真理(truth)
+
+which he introduced in his first book, "The Mathematical Analysis of Logic" in 1847.
+他在 1847 年的第一本书"逻辑的数学分析"中介绍过
+
+In "regular" algebra -- the type you probably learned in high school -- the values of variables
+在"常规"代数里 - 你在高中学的那种 - 变量的值
+
+are numbers, and operations on those numbers are things like addition and multiplication.
+是数字，可以进行加法或乘法之类的操作
+
+But in Boolean Algebra, the values of variables are true and false, and the operations are logical.
+但在布尔代数中，变量的值是 true 和 false，\N 能进行逻辑操作
+
+There are three fundamental operations in Boolean Algebra: a NOT, an AND, and an OR operation.
+布尔代数中有三个基本操作：NOT, AND 和 OR
+
+And these operations turn out to be really useful so we're going to look at them individually.
+这些操作非常有用，我们一个个来看
+
+A NOT takes a single boolean value, either true or false, and negates it.
+NOT 操作把布尔值反转，\N把 true 进行 NOT 就会变成 false，反之亦然
+
+It flips true to false, and false to true.
+NOT 操作把布尔值反转，\N把 true 进行 NOT 就会变成 false，反之亦然
+
+We can write out a little logic table that shows the original value under Input,
+我们可以根据 NOT 操作的输入和输出，做出这个表
+
+and the outcome after applying the operation under Output.
+我们可以根据 NOT 操作的输入和输出，做出这个表
+
+Now here's the cool part -- we can easily build boolean logic out of transistors.
+酷的地方是 - 用晶体管可以轻松实现这个逻辑
+
+As we discussed last episode, transistors are really just little electrically controlled switches.
+上集说过，晶体管只是电控制的开关
+
+They have three wires: two electrodes and one control wire.
+有 3 根线：2 根电极和 1 根控制线
+
+When you apply electricity to the control wire,
+控制线通电时
+
+it lets current flow through from one electrode, through the transistor, to the other electrode.
+电流就可以从一个电极流到另一个电极
+
+This is a lot like a spigot on a pipe
+就像水龙头一样
+
+-- open the tap, water flows,
+- 打开水龙头，就有水流出来
+
+close the tap, water shuts off.
+关掉水龙头，就没水了
+
+You can think of the control wire as an input,
+可以把控制线，当做输入 ( input ) \N 底部的电极，当做输出（output）
+
+and the wire coming from the bottom electrode as the output.
+可以把控制线，当做输入 ( input ) \N 底部的电极，当做输出（output）
+
+So with a single transistor, we have one input and one output.
+所以 1 个晶体管，有一个输入和一个输出
+
+If we turn the input on, the output is also on because the current can flow through it.
+如果我们打开输入（input on) \N 输出也会打开（output on） \N 因为电流可以流过
+
+If we turn the input off, the output is also off and the current can no longer pass through.
+如果关闭输入（input off） \N 输出也会关闭（output off）\N 因为电流无法通过
+
+Or in boolean terms, when the input is true, the output is true.
+或者用布尔术语来说\N 输入为 真，输出为 真
+
+And when the input is false, the output is also false.
+输入为 假 \N 输出为 假
+
+Which again we can show on a logic table.
+我们也可以把这个做成"真值表"
+
+This isn't a very exciting circuit though because its not doing anything
+这个电路没什么意思，因为它没做什么事
+
+-- the input and output are the same.
+- 输入和输出是一样的
+
+But, we can modify this circuit just a little bit to create a NOT.
+但我们可以稍加修改，实现 NOT
+
+Instead of having the output wire at the end of the transistor, we can move it before.
+与其把下面那根线当做 输出，我们可以把 输出 放到上面
+
+If we turn the input on, the transistor allows current to pass through it to the "ground",
+如果打开 输入，电流可以流过然后 "接地"
+
+and the output wire won't receive that current
+输出就没有电流，所以输出是 off
+
+- so it will be off.
+输出就没有电流，所以输出是 off
+
+In our water metaphor grounding would be like
+如果用水来举例
+
+if all the water in your house was flowing out of a huge hose
+就像家里的水都从一个大管子流走了
+
+so there wasn't any water pressure left for your shower.
+打开淋浴头一点水也没有
+
+So in this case if the input is on, output is off.
+如果输入是 on，输出是 off
+
+When we turn off the transistor, though, current is prevented from flowing down it to the ground,
+当输入是 off，电流没法接地，就流过了输出，所以输出是 on
+
+so instead, current flows through the output wire.
+当输入是 off，电流没法接地，就流过了输出，所以输出是 on
+
+So the input will be off and the output will be on.
+如果输入是 off，输出是 on
+
+And this matches our logic table for NOT, so congrats, we just built a circuit that computes NOT!
+和 NOT 操作表一样！太棒了！我们做了个有点用的电路！
+
+We call them NOT gates - we call them gates because they're controlling the path of our current.
+我们叫它 "NOT 门" \N 之所以叫 "门"，是因为它能控制电流的路径
+
+The AND Boolean operation takes two inputs, but still has a single output.
+"AND"操作有 2 个输入，1 个输出
+
+In this case the output is only true if both inputs are true.
+如果 2 个输入都是 true，输出才是 true
+
+Think about it like telling the truth.
+你可以想成是 说真话
+
+You're only being completely honest if you don't lie even a little.
+如果完全不说谎，才是诚实
+
+For example, let's take the statement,
+举例，看如下这个句子
+
+"My name is Carrie Anne AND I'm wearing a blue dress".
+我叫 Carrie Anne "而且"我穿着蓝色的衣服
+
+Both of those facts are true, so the whole statement is true.
+2 个都是真的，所以整个是真的
+
+But if I said, "My name is Carrie Anne AND I'm wearing pants" that would be false,
+但如果说，我叫 Carrie Anne"而且"我穿了裤子, 就是假的
+
+because I'm not wearing pants.
+因为我没穿裤子
+
+Or trousers.
+或长裤，如果你是英国人你会用这个词……（英/美单词不同梗）
+
+If you're in England.
+或长裤，如果你是英国人你会用这个词……（英/美单词不同梗）
+
+The Carrie Anne part is true, but a true AND a false, is still false.
+虽然前半句是真的，但是 真 "AND" 假，还是假
+
+If I were to reverse that statement it would still obviously be false,
+就算把前后顺序反过来，也依然是 假
+
+and if I were to tell you two complete lies that is also false,
+如果我说 2 个假的事情，那么结果是假。
+
+and again we can write all of these combinations out in a table.
+和上次一样，可以给"AND"做个表
+
+To build an AND gate, we need two transistors connected together
+为了实现 "AND 门"，我们需要 2 个晶体管连在一起
+
+so we have our two inputs and one output.
+这样有 2 个输入和 1 个输出
+
+If we turn on just transistor A, current won't flow because the current is stopped by transistor B.
+如果只打开 A，不打开 B \N 电流无法流到 output，所以输出是 false
+
+Alternatively, if transistor B is on, but the transistor A is off,
+如果只打开 B，不打开 A ，也一样，电流无法流到 output
+
+the same thing, the current can't get through.
+如果只打开 B，不打开 A ，也一样，电流无法流到 output
+
+Only if transistor A AND transistor B are on does the output wire have current.
+只有 A 和 B 都打开了，output 才有电流
+
+The last boolean operation is OR
+最后一个是 OR （前面讲了 NOT 和 AND)
+
+-- where only one input has to be true for the output to be true.
+只要 2 个输入里，其中 1 个是 true，输出就是 true
+
+For example, my name is Margaret Hamilton OR I'm wearing a blue dress.
+比如，我叫 Margaret Hamilton"或"我穿着蓝色衣服
+
+This is a true statement because although I'm not Margaret Hamilton unfortunately,
+结果是 true，虽然我不是 Margaret Hamilton
+
+I am wearing a blue dress, so the overall statement is true.
+但是我穿着蓝色衣服，所以结果是 true
+
+An OR statement is also true if both facts are true.
+对于"OR 操作"来说，\N如果 2 个 输入都是 true，输出也是 true
+
+The only time an OR statement is false is if both inputs are false.
+只有 2 个输入都是 false，OR 的结果才是 false
+
+Building an OR gate from transistors needs a few extra wires.
+实现 "OR 门" 除了晶体管还要额外的线
+
+Instead of having two transistors in series -- one after the other --
+不是串联起来。而是并联
+
+we have them in parallel.
+不是串联起来。而是并联
+
+We run wires from the current source to both transistors.
+然后左边这条线有电流输入
+
+We use this little arc to note that the wires jump over one another and aren't connected,
+我们用"小拱门"代表 2 条线没连在一起，只是跨过而已
+
+even though they look like they cross.
+虽然看起来像连在一起
+
+If both transistors are turned off, the current is prevented from flowing to the output,
+如果 A 和 B 都是 off，电流无法流过
+
+so the output is also off.
+所以输出是 off
+
+Now, if we turn on just Transistor A, current can flow to the output.
+如果打开 A，电流可以流过。输出是 on
+
+Same thing if transistor A is off, but Transistor B in on.
+如果只打开 B 也一样
+
+Basically if A OR B is on, the output is also on.
+只要 A OR B 是 on， 输出就是 on
+
+Also, if both transistors are on, the output is still on.
+如果 A 和 B 都 on，结果是 on
+
+Ok, now that we've got NOT, AND, and OR gates,
+好，现在 NOT 门, AND 门, OR 门 都搞定了
+
+and we can leave behind the constituent transistors and move up a layer of abstraction.
+我们可以进行一次抽象
+
+The standard engineers use for these gates are a triangle with a dot for a NOT,
+NOT 门的画法是三角形前面一个圆点
+
+a D for the AND, and a spaceship for the OR.
+AND 门用 D 表示 ，OR 门用太空船表示
+
+Those aren't the official names, but that's howI like to think of them.
+"D 形状和太空船"不是标准叫法, 只是我喜欢这样叫而已
+
+Representing them and thinking about them this way allows us to build even bigger components
+我们可以用这种方法表示它们，构建更大的组件
+
+while keeping the overall complexity relatively the same
+就不会变得很复杂
+
+- just remember that that mess of transistors and wires is still there.
+- 晶体管和电线依然在那里，我们只是用符号来代表而已
+
+For example, another useful boolean operation in computation is called an Exclusive OR
+除了前面说的三个\N 另一个有用的布尔操作叫 "异或"
+
+- or XOR for short.
+- 简称 XOR
+
+XOR is like a regular OR, but with one difference:
+XOR 就像普通 OR，但有一个区别：
+
+if both inputs are true, the XOR is false.
+如果 2 个输入都是 true，XOR 输出 false
+
+The only time an XOR is true is when one input is true and the other input is false.
+想要 XOR 输出 true \N 一个输入必须是 true，另一个必须是 false
+
+It's like when you go out to dinner and your meal comes with a side salad OR a soup
+就像你出去吃晚饭，你点的饭要么配沙拉，要么配汤
+
+- sadly, you can't have both!
+- 你不能两个都要！
+
+And building this from transistors is pretty confusing,
+用晶体管实现 XOR 门有点烧脑子
+
+but we can show how an XOR is created from our three basic boolean gates.
+但我可以展示一下\N 怎么用前面提到的 3 种门来做 XOR 门
+
+We know we have two inputs again -- A and B -- and one output.
+我们有 2 个输入，A 和 B ，还有 1 个输出.
+
+Let's start with an OR gate, since the logic table looks almost identical to an OR.
+我们先放一个 OR 门. 因为 OR 和 XOR 的逻辑表很像
+
+There's only one problem - when A and B are true, the logic is different from OR,
+只有 1 个问题 - 当 A 和 B 都是 true 时 \N OR 的输出和想要的 XOR 输出不一样
+
+and we need to output "false".
+我们想要 false
+
+And XOR turns out to be a very useful component,
+XOR 超有用的
+
+and we'll get to it in another episode,
+我们下次再说它
+
+so useful in fact engineers gave it its own symbol too -- an OR gate with a smile :)
+因为超有用，\N 工程师给了它一个符号，一个 OR 门 + 一个笑脸
+
+But most importantly, we can now put XOR into our metaphorical toolbox
+重要的是，现在可以把 XOR 放入"工具箱"了
+
+and not have to worry about the individual logic gates that make it up,
+不用担心 XOR 具体用了几个门
+
+or the transistors that make up those gates,
+这几个门又是怎么用晶体管拼的
+
+or how electrons are flowing through a semiconductor.
+或电子是怎么流过半导体的
+
+Moving up another layer of abstraction.
+再次向上抽象
+
+When computer engineers are designing processors, they rarely work at the transistor level,
+工程师设计处理器时，很少在晶体管的层面上思考，
+
+and instead work with much larger blocks, like logic gates, and even larger components
+而是用更大的组件，比如逻辑门，或者由逻辑门组成的更大组件，
+
+made up of logic gates, which we'll discuss in future episodes.
+我们以后会讲
+
+And even if you are a professional computer programmer,
+就算是专业程序员
+
+it's not often that you think about
+也不用考虑逻辑是怎样在物理层面实现的
+
+how the logic that you are programming is actually implemented
+也不用考虑逻辑是怎样在物理层面实现的
+
+in the physical world by these teeny tiny components.
+也不用考虑逻辑是怎样在物理层面实现的
+
+We've also moved from thinking about raw electrical signals to our first representation of data
+我们从电信号开始，到现在第一次表示数据
+
+- true and false - and we've even gotten a little taste of computation.
+- 真和假 - 开始有点"计算"的感觉了
+
+With just the logic gates in this episode,
+仅用这集讲的 逻辑门
+
+we could build a machine that evaluates complex logic statements,
+我们可以判断复杂的语句 比如：
+
+like if "Name is John Green AND after 5pm OR is Weekend AND near Pizza Hut",
+[如果是 John Green] AND [下午 5 点后] \N OR [周末] AND [在比萨店附近]
+
+then "John will want pizza" equals true.
+那么 "John 想要比萨" = 真
+
+And with that, I'm starving, I'll see you next week.
+我都说饿了，下周见
+

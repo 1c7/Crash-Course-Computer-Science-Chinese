@@ -1,0 +1,537 @@
+Hi, I’m Carrie Anne and this is Crash Course Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+Last episode, we combined an ALU, control unit, some memory, and a clock together to
+上集我们把 ALU, 控制单元, RAM, 时钟 结合在一起
+
+make a basic, but functional Central Processing Unit – or CPU
+做了个基本，但可用的"中央处理单元", 简称 CPU
+
+– the beating, ticking heart of a computer.
+它是计算机的核心
+
+We’ve done all the hard work of building many of these components from the electronic
+我们已经用电路做了很多组件.
+
+circuits up, and now it’s time to give our CPU some actual instructions to process!
+这次我们给 CPU 一些指令来运行!
+
+The thing that makes a CPU powerful is the fact that it is programmable –
+CPU 之所以强大，是因为它是可编程的 -
+
+if you write a different sequence of instructions, then the CPU will perform a different task.
+如果写入不同指令，就会执行不同任务
+
+So the CPU is a piece of hardware which is controlled by easy-to-modify software!
+CPU 是一块硬件，可以被软件控制!
+
+Let’s quickly revisit the simple program that we stepped through last episode.
+我们重新看一下上集的简单程序
+
+The computer memory looked like this.
+内存里有这些值
+
+Each address contained 8 bits of data.
+每个地址可以存 8 位数据
+
+For our hypothetical CPU, the first four bits specified the operation code, or opcode, and
+因为我们的 CPU 是假设的，这里前4位是"操作码"
+
+the second set of four bits specified an address or registers.
+后4位指定一个内存地址，或寄存器.
+
+In memory address zero we have 0010 1110.
+内存地址 0 是 0010 1110
+
+Again, those first four bits are our opcode which corresponds to a "LOAD_A" instruction.
+前 4 位代表 LOAD_A 指令
+
+This instruction reads data from a location of memory specified in those last four bits
+意思是：把后 4 位指定的内存地址的值，放入寄存器 A
+
+of the instruction and saves it into Register A. In this case, 1110, or 14 in decimal.
+后 4 位是 1110，十进制的 14
+
+So let’s not think of this of memory address 0 as "0010 1110", but rather as the instruction
+我们来把 0010 1110 看成 "LOAD_A 14" 指令
+
+"LOAD_A 14".
+我们来把 0010 1110 看成 "LOAD_A 14" 指令
+
+That’s much easier to read and understand!
+这样更好理解！
+
+And for me to say!
+也更方便说清楚
+
+And we can do the same thing for the rest of the data in memory.
+可以对内存里剩下的数也这样转换.
+
+In this case, our program is just four instructions long,
+这里，我们的程序只有4个指令
+
+and we’ve put some numbers into memory too, 3 and 14.
+还有数字 3 和 14
+
+So now let’s step through this program:
+现在一步步看
+
+First is LOAD_A 14, which takes the value in address 14, which is the number 3,
+"LOAD_A 14" 是从地址 14 中拿到数字3，放入寄存器A
+
+and stores it into Register A.
+"LOAD_A 14" 是从地址 14 中拿到数字3，放入寄存器A
+
+Then we have a "LOAD_B 15" instruction, which takes the value in memory location 15,
+"LOAD_B 15" 是从地址 15 中拿到数字14，放入寄存器B
+
+which is the number 14, and saves it into Register B.
+"LOAD_B 15" 是从地址 15 中拿到数字14，放入寄存器B
+
+Okay.
+好.
+
+Easy enough.
+挺简单的！
+
+But now we have an "ADD" instruction.
+下一个是 ADD 指令
+
+This tells the processor to use the ALU to add two registers together,
+"ADD B A" 告诉 ALU \N 把寄存器 B 和寄存器 A 里的数字加起来
+
+in this case, B and A are specified.
+"ADD B A" 告诉 ALU \N 把寄存器 B 和寄存器 A 里的数字加起来
+
+The ordering is important, because the resulting sum is saved into the second register that’s specified.
+（B和A的）顺序很重要，因为结果会存在第二个寄存器
+
+So in this case, the resulting sum is saved into Register A.
+也就是寄存器 A
+
+And finally, our last instruction is "STORE_A 13", which instructs the CPU to write whatever
+最后一条指令是 "STORE_A 13" \N 把寄存器 A 的值存入内存地址 13
+
+value is in Register A into memory location 13.
+最后一条指令是 "STORE_A 13" \N 把寄存器 A 的值存入内存地址 13
+
+Yesss!
+好棒！
+
+Our program adds two numbers together.
+我们把 2 个数加在了一起!
+
+That’s about as exciting as it gets when we only have four instructions to play with.
+毕竟只有4个指令，也只能做这个了.
+
+So let’s add some more!
+加多一些指令吧!
+
+Now we’ve got a subtract function, which like ADD, specifies two registers to operate on.
+SUB 是减法，和 ADD 一样也要 2 个寄存器来操作.
+
+We’ve also got a fancy new instruction called JUMP.
+还有 JUMP（跳转）
+
+As the name implies, this causes the program to "jump" to a new location.
+让程序跳转到新位置
+
+This is useful if we want to change the order of instructions, or choose to skip some instructions.
+如果想改变指令顺序，或跳过一些指令，这个很实用
+
+For example, a JUMP 0, would cause the program to go back to the beginning.
+举例, JUMP 0 可以跳回开头
+
+At a low level, this is done by writing the value specified in the last four bits into
+JUMP 在底层的实现方式是 \N 把指令后 4 位代表的内存地址的值
+
+the instruction address register, overwriting the current value.
+覆盖掉 "指令地址寄存器" 里的值
+
+We’ve also added a special version of JUMP called JUMP_NEGATIVE.
+还有一个特别版的 JUMP 叫 JUMP_NEGATIVE
+
+"This only jumps the program if the ALU’s negative flag is set to true.
+它只在 ALU 的 "负数标志" 为真时，进行 JUMP
+
+As we talked about in Episode 5, the negative flag is only set
+第5集讲过，算数结果为负，"负数标志"才是真
+
+when the result of an arithmetic operation is negative.
+第5集讲过，算数结果为负，"负数标志"才是真
+
+If the result of the arithmetic was zero or positive, the negative flag would not be set.
+结果不是负数时, "负数标志"为假
+
+So the JUMP NEGATIVE won’t jump anywhere, and the CPU will just continue on to the next instruction.
+如果是假，JUMP_NEGATIVE 就不会执行 \N 程序照常进行
+
+Our previous program really should have looked like this to be correct,
+我们之前的例子程序，其实应该是这样，才能正确工作.
+
+otherwise the CPU would have just continued on after the STORE instruction, processing all those 0’s.
+否则跑完  STORE_A 13 之后，\N CPU 会不停运行下去，处理后面的 0
+
+But there is no instruction with an opcode of 0, and so the computer would have crashed!
+因为 0 不是操作码，所以电脑会崩掉!
+
+It’s important to point out here that we’re storing
+我还想指出一点，指令和数据都是存在同一个内存里的.
+
+both instructions and data in the same memory.
+我还想指出一点，指令和数据都是存在同一个内存里的.
+
+There is no difference fundamentally -- it’s all just binary numbers.
+它们在根本层面上毫无区别 - 都是二进制数
+
+So the HALT instruction is really important because it allows us to separate the two.
+HALT 很重要，能区分指令和数据
+
+Okay, so let’s make our program a bit more interesting, by adding a JUMP.
+好，现在用 JUMP 让程序更有趣一些.
+
+We’ll also modify our two starting values in memory to 1 and 1.
+我们还把内存中 3 和 14 两个数字，改成 1 和 1
+
+Lets step through this program just as our CPU would.
+现在来从 CPU 的视角走一遍程序
+
+First, LOAD_A 14 loads the value 1 into Register A.
+首先 LOAD_A 14，把 1 存入寄存器A \N（因为地址 14 里的值是 1）
+
+Next, LOAD_B 15 loads the value 1 into Register B.
+然后 LOAD_B 15，把 1 存入寄存器B\N（因为地址 15 里的值也是 1）
+
+As before, we ADD registers B and A together, with the sum going into Register A. 1+1 = 2,
+然后 ADD B A 把寄存器 B 和 A 相加 \N 结果放到寄存器 A 里
+
+so now Register A has the value 2 in it (stored in binary of course)
+现在寄存器 A 的值是 2 \N (当然是以二进制存的）
+
+Then the STORE instruction saves that into memory location 13.
+然后 STORE_A 13 指令，把寄存器 A 的值存入内存地址 13
+
+Now we hit a "JUMP 2" instruction.
+现在遇到 JUMP 2 指令
+
+This causes the processor to overwrite the value in the instruction address register,
+CPU 会把"指令地址寄存器"的值，现在是 4，改成 2
+
+which is currently 4, with the new value, 2.
+CPU 会把"指令地址寄存器"的值，现在是 4，改成 2
+
+Now, on the processor’s next fetch cycle, we don’t fetch HALT,
+因此下一步不再是 HALT
+
+instead we fetch the instruction at memory location 2, which is ADD B A.
+而是读内存地址 2 里的指令，也就是 ADD B A
+
+We’ve jumped!
+我们跳转了!
+
+Register A contains the value 2, and register B contains the value 1.
+寄存器 A 里是 2，寄存器 B 里是 1
+
+So 1+2 = 3, so now Register A has the value 3.
+1+2=3，寄存器 A 变成 3
+
+We store that into memory.
+存入内存
+
+And we’ve hit the JUMP again, back to ADD B A.
+又碰到 JUMP 2，又回到 ADD B A.
+
+1+3=4
+1+3=4
+
+So now register A has the value 4.
+现在寄存器 A 是 4
+
+See what's happening here?
+发现了吗？
+
+Every loop, we’re adding one.
+每次循环都+1
+
+Its counting up!
+不断增多
+
+Cooooool.
+酷
+
+But notice there’s no way to ever escape.
+但没法结束啊
+
+We’re never.. ever.. going to get to that halt instruction,
+永远不会碰到 HALT
+
+because we’re always going to hit that JUMP.
+总是会碰到 JUMP
+
+This is called an infinite loop – a program that runs forever… ever… ever… ever…
+这叫无限循环 - 这个程序会永远跑下去.. 下去.. 下去.. 下去
+
+ever
+下去
+
+To break the loop, we need a conditional jump.
+为了停下来，我们需要有条件的 JUMP
+
+A jump that only happens if a certain condition is met.
+只有特定条件满足了，才执行 JUMP.
+
+Our JUMP_NEGATIVE is one example of a conditional jump,
+比如 JUMP NEGATIVE 就是条件跳转的一个例子
+
+but computers have other types too - like JUMP IF EQUAL and JUMP IF GREATER.
+还有其他类型的条件跳转，比如\N  JUMP IF EQUAL（如果相等）\N JUMP IF GREATER（如果更大）
+
+So let’s make our code a little fancier and step through it.
+现在把代码弄花哨一点，再过一遍代码
+
+Like before, the program starts by loading values from memory into registers A and B.
+就像之前，程序先把内存值放入寄存器 A 和 B.
+
+In this example, the number 11 gets loaded into Register A, and 5 gets loaded into Register B.
+寄存器 A 是 11，寄存器 B 是 5
+
+Now we subtract register B from register A. That’s 11 minus 5, which is 6,
+SUB B A，用 A 减 B，11-5=6
+
+and so 6 gets saved into Register A.
+6 存入寄存器 A
+
+Now we hit our JUMP NEGATIVE.
+JUMP NEGATIVE 出场
+
+The last ALU result was 6.
+上一次 ALU 运算的结果是 6
+
+That’s a positive number, so the the negative flag is false.
+是正数，所以 "负数标志" 是假
+
+That means the processor does not jump.
+因此处理器不会执行 JUMP
+
+So we continue on to the next instruction...
+继续下一条指令
+
+...which is a JUMP 2.
+JUMP 2
+
+No conditional on this one, so we jump to instruction 2 no matter what.
+JUMP 2 没有条件，直接执行！
+
+Ok, so we’re back at our SUBTRACT Register B from Register A. 6 minus 5 equals 1.
+又回到寄存器 A-B，6-5=1
+
+So 1 gets saved into register A.
+A 变成 1
+
+Next instruction.
+下一条指令
+
+We’re back again at our JUMP NEGATIVE.
+又是 JUMP NEGATIVE
+
+1 is also a positive number, so the CPU continues on to the JUMP 2, looping back around again
+因为 1 还是正数，因此 JUMP NEGATIVE 不会执行 \N 来到下一条指令，JUMP 2
+
+to the SUBTRACT instruction.
+又来减一次
+
+This time is different though.
+这次就不一样了
+
+1 minus 5 is negative 4.
+1-5=-4
+
+And so the ALU sets its negative flag to true for the first time.
+这次ALU的 "负数标志" 是真
+
+Now, when we advance to the next instruction,
+现在下一条指令
+
+JUMP_NEGATIVE 5, the CPU executes the jump to memory location 5.
+JUMP NEGATIVE 5, CPU 的执行跳到内存地址 5
+
+We’re out of the infinite loop!
+跳出了无限循环！
+
+Now we have a ADD B to A. Negative 4 plus 5, is positive 1, and we save that into Register A.
+现在的指令是 ADD B A，-4+5=1，1 存入寄存器 A
+
+Next we have a STORE instruction that saves Register A into memory address 13.
+下一条指令  STORE_A 13，把 A 的值存入内存地址 13
+
+Lastly, we hit our HALT instruction and the computer rests.
+最后碰到 HALT 指令，停下来.
+
+So even though this program is only 7 instructions long, the CPU ended up executing 13 instructions,
+虽然程序只有 7 个指令，但 CPU 执行了 13 个指令,
+
+and that's because it looped twice internally.
+因为在内部循环了 2 次.
+
+This code calculated the remainder if we divide 5 into 11, which is one.
+这些代码其实是算余数的，11除5余1
+
+With a few extra lines of code, we could also keep track of how many loops we did, the count
+如果加多几行指令，我们还可以跟踪循环了多少次
+
+of which would be how many times 5 went into 11… we did two loops, so that means 5 goes
+11除5，循环2次
+
+into 11 two times... with a remainder of 1.
+余1
+
+And of course this code could work for any two numbers, which we can just change in memory
+当然，我们可以用任意2个数，7和81，18和54，什么都行
+
+to whatever we want: 7 and 81, 18 and 54, it doesn’t matter
+当然，我们可以用任意2个数，7和81，18和54，什么都行
+
+-- that’s the power of software!
+这就是软件的强大之处
+
+Software also allowed us to do something our hardware could not.
+软件还让我们做到硬件做不到的事
+
+Remember, our ALU didn’t have the functionality to divide two numbers,
+ALU 可没有除法功能
+
+instead it’s the program we made that gave us that functionality.
+是程序给了我们这个功能.
+
+And then other programs can use our divide program to do even fancier things.
+别的程序也可以用我们的除法程序，来做其他事情
+
+And you know what that means.
+这意味着  一层新抽象！
+
+New levels of abstraction!
+这意味着  一层新抽象！
+
+So, our hypothetical CPU is very basic – all of its instructions are 8 bits long,
+我们这里假设的 CPU 很基础，所有指令都是 8 位,
+
+with the opcode occupying only the first four bits.
+操作码只占了前面 4 位
+
+So even if we used every combination of 4 bits, our CPU would only be able to support
+即便用尽 4 位，也只能代表 16 个指令
+
+a maximum of 16 different instructions.
+即便用尽 4 位，也只能代表 16 个指令
+
+On top of that, several of our instructions used the last 4 bits to specify a memory location.
+而且我们有几条指令，是用后 4 位来指定内存地址
+
+But again, 4 bits can only encode 16 different values,
+因为 4 位最多只能表示 16 个值，
+
+meaning we can address a maximum of 16 memory locations - that’s not a lot to work with.
+所以我们只能操作 16 个地址，这可不多.
+
+For example, we couldn’t even JUMP to location 17,
+我们甚至不能 JUMP 17
+
+because we literally can’t fit the number 17 into 4 bits.
+因为 4 位二进制无法表示数字 17
+
+For this reason, real, modern CPUs use two strategies.
+因此，真正的现代 CPU 用两种策略
+
+The most straightforward approach is just to have bigger instructions, with more bits,
+最直接的方法是用更多位来代表指令，比如 32 位或 64 位
+
+like 32 or 64 bits.
+最直接的方法是用更多位来代表指令，比如 32 位或 64 位
+
+This is called the instruction length.
+这叫 指令长度
+
+Unsurprisingly.
+毫不意外
+
+The second approach is to use variable length instructions.
+第二个策略是 "可变指令长度"
+
+For example, imagine a CPU that uses 8 bit opcodes.
+举个例子，比如某个 CPU 用 8 位长度的操作码
+
+When the CPU sees an instruction that needs no extra values, like the HALT instruction,
+如果看到 HALT 指令，HALT 不需要额外数据
+
+it can just execute it immediately.
+那么会马上执行.
+
+However, if it sees something like a JUMP instruction, it knows it must also fetch
+如果看到 JUMP，它得知道位置值
+
+the address to jump to, which is saved immediately behind the JUMP instruction in memory.
+这个值在 JUMP 的后面
+
+This is called, logically enough, an Immediate Value.
+这叫 "立即值"
+
+In such processor designs, instructions can be any number of bytes long,
+这样设计，指令可以是任意长度
+
+which makes the fetch cycle of the CPU a tad more complicated.
+但会让读取阶段复杂一点点
+
+Now, our example CPU and instruction set is hypothetical,
+要说明的是，我们拿来举例的 CPU 和指令集都是假设的,
+
+designed to illustrate key working principles.
+是为了展示核心原理
+
+So I want to leave you with a real CPU example.
+所以我们来看个真的 CPU 例子.
+
+In 1971, Intel released the 4004 processor.
+1971年，英特尔发布了 4004 处理器.
+
+It was the first CPU put all into a single chip
+这是第一次把 CPU 做成一个芯片  \N 给后来的英特尔处理器打下了基础
+
+and paved the path to the intel processors we know and love today.
+这是第一次把 CPU 做成一个芯片  \N 给后来的英特尔处理器打下了基础
+
+It supported 46 instructions, shown here.
+它支持 46 个指令
+
+Which was enough to build an entire working computer.
+足够做一台能用的电脑
+
+And it used many of the instructions we’ve talked about like JUMP ADD SUBTRACT and LOAD.
+它用了很多我们说过的指令，比如 JUMP ADD SUB LOAD
+
+It also uses 8-bit immediate values, like we just talked about, for things like JUMPs,
+它也用 8 位的"立即值"来执行 JUMP, 以表示更多内存地址.
+
+in order to address more memory.
+它也用 8 位的"立即值"来执行 JUMP, 以表示更多内存地址.
+
+And processors have come a long way since 1971.
+处理器从 1971 年到现在发展巨大.
+
+A modern computer processor, like an Intel Core i7, has thousands of different instructions
+现代 CPU, 比如英特尔酷睿 i7, 有上千个指令和指令变种
+
+and instruction variants, ranging from one to fifteen bytes long.
+长度从1到15个字节.
+
+For example, there’s over a dozens different opcodes just for variants of ADD!
+举例，光 ADD 指令就有很多变种!
+
+And this huge growth in instruction set size is due in large part to extra bells and whistles
+指令越来越多，是因为给 CPU 设计了越来越多功能
+
+that have been added to processor designs overtime, which we’ll talk about next episode.
+下集我们会讲
+
+See you next week!
+下周见
+

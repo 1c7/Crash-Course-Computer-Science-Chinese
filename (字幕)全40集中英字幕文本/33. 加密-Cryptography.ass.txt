@@ -1,0 +1,566 @@
+Hi, I'm Carrie Anne, and welcome to CrashCourse Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+Over the past two episodes, we’ve talked a lot about computer security.
+在过去两集，我们聊了很多计算机安全话题
+
+But the fact is, there’s no such thing as a perfectly, 100% secure, computer system.
+但事实是 世上不存在100%安全的系统
+
+There will always be bugs and security experts know that.
+总会有漏洞存在，而且安全专家知道这一点
+
+So system architects employ a strategy called defence in depth
+所以系统架构师会部署"多层防御"
+
+which uses many layers of varying security mechanisms to frustrate attackers.
+用多层不同的安全机制来阻碍攻击者
+
+It’s a bit like how castles are designed
+有点像城堡的设计一样
+
+first you’ve got to dodge the archers
+首先要避开弓箭手
+
+then cross the moat, scale the walls, avoid the hot oil, get over the ramparts, and defeat the guards
+穿过护城河,翻过城墙,避开热油,打败守卫
+
+before you get to the throne room
+才能达到王座
+
+but in this case we’re talking about one of the most common forms of computer security
+不过我们这里要说的是，计算机安全中最常见的防御形式
+
+Cryptography
+密码学
+
+The word cryptography comes from the roots ‘crypto’ and ‘graphy’, roughly translating to "secret writing".
+密码学(cryptography) 一词 \N 来自 crypto 和 graphy，大致翻译成"秘密写作"
+
+In order to make information secret, you use a cipher – an algorithm that converts plain text into ciphertext
+为了加密信息，要用加密算法(Cipher) 把明文转为密文
+
+which is gibberish unless you have a key that lets you undo the cipher.
+除非你知道如何解密，不然密文看起来只是一堆乱码
+
+The process of making text secret is called encryption
+把明文转成密文叫"加密"(encryption)
+
+and the reverse process is called decryption
+把密文恢复回明文叫"解密"(decryption)
+
+Ciphers have been used long before computers showed up.
+加密算法早在计算机出现前就有了
+
+Julius Caesar used what’s now called a Caesar cipher, to encrypt private correspondence.
+朱利叶斯·凯撒 用如今我们叫"凯撒加密"的方法 来加密私人信件
+
+He would shift the letters in a message forward by three places.
+他会把信件中的字母 向前移动三个位置
+
+So, A became D, and the word "brutus" became this: "euxwxv".
+所以A会变成D，brutus变成euxwxv
+
+To decipher the message, recipients had to know both the algorithm and the number to shift by, which acted as the key.
+为了解密，接收者要知道 \N 1. 用了什么算法 2. 要偏移的字母位数
+
+The Caesar cipher is one example of a larger class of techniques called substitution ciphers.
+有一大类算法叫"替换加密"，凯撒密码是其中一种
+
+These replace every letter in a message with\Nsomething else according to a translation.
+算法把每个字母替换成其他字母
+
+A big drawback of basic substitution ciphers is that letter frequencies are preserved.
+但有个巨大的缺点是，字母的出现频率是一样的
+
+For example, E is the most common letter in English
+举个例子，E在英语中是最常见的字母
+
+so if your cipher translates E to an X
+如果把E加密成X
+
+then X will show up the most frequently in the ciphertext.
+那么密文中 X 的出现频率会很高
+
+A skilled cryptanalyst can work backwards from these kinds of statistics to figure out the message.
+熟练的密码破译师可以从统计数据中发现规律，进而破译密码
+
+Indeed, it was the breaking of a substitution cipher that led to the execution of Mary Queen of Scots,in 1587 for plotting to kill Queen Elizabeth.
+1587年，正因为一个"替换加密"的密文被破译，\n导致杀伊丽莎白女王的阴谋暴露，使得玛丽女王被处决
+
+Another fundamental class of techniques are permutation ciphers.
+另一类加密算法叫 "移位加密"
+
+Let’s look at a simple example, called a columnar transposition cipher.
+我们来看一个简单例子叫 "列移位加密"
+
+Here, we take a message, and fill the letters into a grid.
+我们把明文填入网格
+
+In this case, we’ve chosen 5 by 5
+网格大小我们这里选择 5x5
+
+To encrypt our message, we read out the characters in a different order
+为了加密信息，我们换个顺序来读
+
+let’s say from the bottom left, working upwards, one column at a time.
+比如从左边开始，从下往上，一次一列。
+
+The new letter ordering, what’s called a permutation, is the encrypted message.
+加密后字母的排列不同了
+
+The ordering direction, as well as the 5 by 5 grid size, serves as the key.
+解密的关键是，知道读取方向和网格大小是5x5
+
+Like before, if the cipher and key are known, a recipient can reverse the process to reveal the original message.
+就像之前，如果接收者知道密文和加密方法 \N 才能解密得到原始消息
+
+By the 1900s, cryptography was mechanized in the form of encryption machines.
+到了1900年代，人们用密码学做了加密机器
+
+The most famous was the German Enigma, used by the Nazis to encrypt their wartime communications.
+其中最有名的是德国的英格玛（Enigma）\N 纳粹在战时用英格玛加密通讯信息
+
+As we discussed back in Episode 15, the Enigma was a typewriter-like machine, with a keyboard and lampboard, both showing the full alphabet.
+正如第15集中说过，Enigma 是一台像打字机的机器，\N 有键盘和灯板，两者都有完整的字母表
+
+Above that, there was a series of configurable rotors that were the key to the Enigma’s encryption capability.
+而且它有一系列"转子"(rotros) ，是加密的关键
+
+First, let’s look at just one rotor.
+首先，我们只看一个转子
+
+One side had electrical contacts for all 26 letters.
+它一面有26个接触点，代表26个字母
+
+These connected to the other side of the rotor using cross-crossing wires that swapped one letter for another.
+然后线会连到另一面，替换字母
+
+If ‘H’ went in, ‘K’ might come out the other side.
+如果输入'H'，'K'会从另一边出来
+
+If "K’ went in, ‘F’ might come out, and so on.
+如果输入'K'，'F'会从另一边出来，以此类推
+
+This letter swapping behavior should sound familiar: it’s a substitution cipher!
+这个字母替换过程你应该听起来很熟悉：它是"替换加密"!
+
+But, the Enigma was more sophisticated becauseit used three or more rotors in a row, each feeding into the next.
+但英格玛(Enigma)更复杂一些，因为它有3个或更多转子，\N 一个转子的输出作为下一个转子的输入。
+
+Rotors could also be rotated to one of 26 possible starting positions
+转子还有26个起始位置
+
+and they could be inserted in different orders, providinga lot of different substitution mappings.
+还可以按不同顺序放入转子，提供更多字母替换映射
+
+Following the rotors was a special circuit called a reflector.
+转子之后是一个叫"反射器"的特殊电路
+
+Instead of passing the signal on to another rotor, it connected every pin to another,
+它每个引脚会连到另一个引脚
+
+and sent the electrical signal back through the rotors.
+并把信号发回给转子
+
+Finally, there was a plug board at the front of the machine
+最后，机器前方有一个插板
+
+that allowed letters coming from the keyboard to be optionally swapped,
+可以把输入键盘的字母预先进行替换
+
+adding another level of complexity.
+又加了一层复杂度
+
+With our simplified circuit, let’s encrypta letter on this example enigma configuration.
+让我们用这里的简化版电路，加密一些字母
+
+If we press the ‘H’ key, electricity flows through the plugboard, then the rotors
+如果我们按下"H"键，电流会先通过插板，然后通过转子
+
+hits the reflector, comes back through the rotorsand plugboard, and illuminates the letter ‘L’ on the lampboard.
+到达反射器，然后回来转子，回来插板，并照亮键盘灯板的字母"L"。
+
+So H is encrypted to L.
+H 就加密成了 L
+
+Note that the circuit can flow both ways –
+注意, 电路是双向的
+
+so if we typed the letter ‘L’, ‘H’ would light up.
+所以如果我们按下 L，H 会亮起来
+
+In other words, it’s the same process for encrypting and decrypting;
+换句话说，加密和解密的步骤是一样的
+
+you just have to make sure the sending and receiving machineshave the same initial configuration.
+你只需要确保 发送机和接收机的初始配置一样就行
+
+If you look carefully at this circuit, you’ll notice it’s impossible for a letter to be encrypted as itself
+如果你有仔细观察，会注意到字母加密后一定会变成另一个字母
+
+which turned out to be a fatal cryptographic weakness.
+之后这成为最大的弱点
+
+Finally, to prevent the Enigma from being a simple substitution cipher
+最后，为了让英格玛不只是简单的"替换加密"
+
+every single time a letter was entered, the rotors advanced by one spot, sort of like an odometer in a car.
+每输入一个字母，转子会转一格，有点像汽车里程表。
+
+So if you entered the text A-A-A, it might come out as B-D-K, where the substitution mapping changed with every key press.
+如果你输入A-A-A，可能会变成B-D-K，\n映射会随着每次按键而改变
+
+The Enigma was a tough cookie to crack, for sure.
+英格玛当然是一块难啃的骨头
+
+But as we discussed in Episode 15, Alan Turingand and his colleagues
+但正如我们第15集中说的，艾伦·图灵和同事
+
+at Bletchley Park were able to break Enigma codes and largely automate the process.
+破解了英格玛加密，并把大部分破解流程做成了自动化
+
+But with the advent of computers, cryptography moved from hardware into software.
+但随着计算机出现，加密从硬件转往软件
+
+One of the earliest software ciphers to become widespread
+早期加密算法中，应用最广泛的
+
+was the Data Encryption Standard developed by IBM and the NSA in 1977
+是 IBM 和 NSA 于1977年开发的"数据加密标准"
+
+DES, as it was known, originally used binary keys that were 56 bits long,
+DES最初用的是56 bit长度的二进制密钥，
+
+which means that there are 2 to the 56, or about 72 quadrillion different keys.
+意味着有2的56次方，或大约72千万亿个不同密钥
+
+Back in 1977, that meant that nobody – except perhaps the NSA –
+在1977年时，也许 NSA 有这能力，
+
+had enough computing power to brute-force all possible keys.
+但没有其他人有足够计算能力 来暴力破解所有可能密钥。
+
+But, by 1999, a quarter-million dollar computer could try every possible DES key in just two days, rendering the cipher insecure.
+但到1999年，一台25万美元的计算机能在两天内 \N 把 DES 的所有可能密钥都试一遍，让 DES 算法不再安全
+
+So, in 2001, the Advanced Encryption Standard(AES) was finalized and published.
+因此 2001 年出了：高级加密标准（AES）
+
+AES is designed to use much bigger keys – 128,192 or 256 bits in size – making brute force attacks much, much harder.
+AES 用更长的密钥 - 128位/192位/256位 - 让暴力破解更加困难
+
+For a 128-bit keys, you'd need trillions of years to try every combination, even if you used every single computer on the planet today.
+128位的密钥，哪怕用现在地球上的所有计算机\N 也要上万亿年才能试遍所有组合
+
+So you better get started!
+你最好赶紧开始!
+
+AES chops data up into 16-byte blocks, and then applies a series of substitutions and permutations,
+AES将数据切成一块一块，每块16个字节，\N 然后用密钥进行一系列替换加密和移位加密
+
+based on the key value plus some other operations to obscure the message,
+再加上一些其他操作，进一步加密信息
+
+and this process is repeated ten or more times for each block.
+每一块数据，会重复这个过程10次或以上
+
+You might be wondering: why only ten rounds?
+你可能想知道：为什么只重复10次？
+
+Or why only 128 bit keys, and not ten thousand bit keys?
+为什么用128位密钥，而不是10000位？
+
+Well, it’s a performance tradeoff.
+这其实是基于性能的权衡
+
+If it took hours to encrypt and send an email,or minutes to connect to a secure website, people wouldn't use it
+如果要花几小时加密和发邮件，或几分钟载入网站，没人愿意用
+
+AES balances performance and security to provide practical cryptography.
+AES 在性能和安全性间取得平衡
+
+Today, AES is used everywhere, from encrypting files on iPhones
+如今AES被广泛使用，比如iPhone上加密文件
+
+and transmitting data over WiFi with WPA2 to accessing websites using HTTPS.
+用 WPA2 协议在 WiFi 中访问 HTTPS 网站
+
+So far, the cryptographic techniques we’ve discussed rely on keys that are known by both sender and recipient.
+到目前为止 我们讨论过的加密技术\N 依赖于发送者和接收者都知道密钥
+
+The sender encrypts a message using a key, and the recipient decrypts it using the same key.
+发件人用密钥加密，收件人用相同的密钥解密
+
+In the old days, keys would be shared by voice, or physically;
+以前，密钥可以口头约定，或依靠物品
+
+for example, the Germans distributed codebooks with daily settings for their Enigma machines.
+比如德国人给英格玛配了密码本，上面有每天的配置
+
+But this strategy could never work in the internet era.
+但互联网时代没法这样做
+
+Imagine having to crack open a codebook to connect to youtube
+你能想象 要打开密码本才能访问 YouTube 吗？
+
+What’s needed is a way for a server to send a secret key over the public internet to a user wishing to connect securely.
+我们需要某种方法 在公开的互联网上传递密钥给对方
+
+It seems like that wouldn’t be secure, because if the key is sent in the open and intercepted by a hacker
+这看起来好像不安全，如果密钥被黑客拦截了
+
+couldn’t they use that to decrypt all communication between the two?
+黑客不就能解密通信了吗？
+
+The solution is key exchange!
+解决方案是 "密钥交换"！
+
+– An algorithm that lets two computers agreeon a key without ever sending one.
+密钥交换是一种不发送密钥，\N 但依然让两台计算机在密钥上达成共识的算法
+
+We can do this with one-way functions –
+我们可以用"单向函数"来做
+
+mathematical operations that are very easy to do in one direction, but hard to reverse.
+单项函数是一种数学操作，很容易算出结果，\N 但想从结果逆向推算出输入非常困难
+
+To show you how one-way functions work, let’ s use paint colors as an analogy.
+为了让你明白单项函数，我们拿颜色作比喻
+
+It’s easy to mix paint colors together, but it’s not so easy to figure
+将颜色混合在一起很容易，
+
+out the constituent colors that were used to make a mixed paint color.
+但想知道混了什么颜色很难
+
+You’d have to test a lot of possibilities to figure it out.
+要试很多种可能才知道
+
+In this metaphor, our secret key is a unique shade of paint.
+用这个比喻，那么我们的密钥是一种独特的颜色
+
+First, there’s a public paint color that everyone can see.
+首先，有一个公开的颜色，所有人都可以看到
+
+Then, John and I each pick a secret paint color.
+然后，约翰和我各自选一个秘密颜色，只有自己知道.
+
+To exchange keys, I mix my secret paint color with the public paint color.
+为了交换密钥，我把我的 秘密颜色 和 公开颜色 混在一起
+
+Then, I send that mixed color to John by anymeans – mail, carrier pigeon, whatever.
+然后发给约翰，可以写信发，用信鸽发，什么方式都行.
+
+John does the same – mixing his secret paint color with the public color, then sending that to me.
+约翰也这样做，把他的秘密颜色和公开颜色混在一起，然后发我
+
+When I receive John’s color, I simply add my private color to create a blend of all three paints.
+我收到约翰的颜色之后，把我的秘密颜色加进去，\N  现在3种颜色混合在一起
+
+John does the same with my mixed color.
+John 也一样做
+
+And Voila!
+瞧!
+
+We both end up with the same paint color!
+我们有了一样的颜色
+
+We can use this as a shared secret, even though we never sent each other our individual secret colors.
+我们可以把这个颜色当密钥，尽管我们从来没有给对方发过这颜色
+
+A snooping outside observer would know partial information, but they’d find it very difficult to figure out our shared secret color.
+外部窥探者可以知道部分信息，但无法知道最终颜色
+
+Of course, sending and mixing paint colors isn’t going to work well for transmitting computer data.
+当然，计算机要传输数据时，混合颜料和发颜料不太合适
+
+But luckily, mathematical one-way functions are perfect,
+但幸运的是，数学单向函数是完美的
+
+and this is what Diffie-Hellman Key Exchange uses.
+我们可以用 "迪菲-赫尔曼密钥交换"
+
+In Diffie-Hellman, the one-way function is modular exponentiation.
+在 Diffie-Hellman 中，单向函数是模幂运算
+
+This means taking one number, the base, to the power of another number,
+意思是先做幂运算，拿一个数字当底数，拿一个数字当指数，比如 A
+
+b
+
+the exponent, and taking the remainder when dividing by a third number, the modulus.
+然后除以第三个数字，最后拿到我们想要的余数
+
+So, for example, if we wanted to calculate 3 to the 5th power, modulo 31,
+举个例子，假设我们想算3的5次方，模31
+
+we would calculate 3 to the 5th, which is 243,
+我们先算3的5次方，得到243
+
+then take the remainder when divided by 31, which is 26.
+\N然后除31，取余数，得到26
+
+The hard part is figuring out the exponent given only the result and the base.
+重点是  如果只给余数和基数。很难得知指数是多少
+
+If I tell you I raised 3 to some secret number, modulo 31, and got 7 as the remainder
+如果我告诉你，3的某次方 模31，余数是7
+
+you'd have to test a lot of exponents to know which one I picked.
+你要试很多次，才能知道次方是多少
+
+If we make these numbers big, say hundreds of digits long,
+如果把数字变长一些，比如几百位长
+
+then finding the secret exponent is nearly impossible.
+想找到秘密指数是多少，几乎是不可能的。
+
+Now let’s talk about how Diffie-Hellman
+现在我们来讨论 Diffie-Hellman 是怎么
+
+uses modular exponentiation to calculate a shared key.
+用模幂运算 算出双方共享的密钥
+
+First, there's a set of public values – the base and the modulus,
+首先，我们有公开的值 - 基数和模数
+
+that, like our public paint color, everyone gets to know... even the bad guys!
+就像公开的油漆颜色，所有人都看的到，甚至坏人!
+
+To send a message securely to John, I would pick a secret exponent: X.
+为了安全向 John 发信息，我选一个秘密指数：X
+
+Then, I’d calculate B to the power of X, modulo M.
+然后算  B^X mod M 的结果
+
+I send this big number over to John.
+然后把这个大数字发给 John.
+
+John does the same, picking a secret exponent Y, and sending me B to the Y modulo M.
+John 也一样做，选一个秘密指数Y，然后把 B^Y mod M 的结果发我
+
+To create a shared secret key,
+为了算出 双方共用的密钥
+
+I take what John sent me, and take it to the power of X, my secret exponent.
+我把 John 给我的数，用我的秘密指数 X，进行模幂运算 (看上图)
+
+This is mathematically equivalent to B to the XY modulus M.
+数学上相等于  B的XY次方 模M
+
+John does the same, taking what I sent to him to the power of Y, and we both end up with the exact same number!
+John也一样做，拿我给他的数 进行模幂运算，最终得到一样的数
+
+It’s a secret shared key, even though we never sent each other our secret number.
+双方有一样的密钥，即使我们从来没给对方发过各自的秘密指数
+
+We can use this big number as a shared key for encrypted communication, using something like AES for encryption.
+我们可以用这个大数字当密钥，用 AES 之类的加密技术来加密通信
+
+Diffie-Hellman key exchange is one method for establishing a shared key.
+"Diffie-Hellman 密钥交换"是建立共享密钥的一种方法。
+
+These keys that can be used by both sender and receiver, to encrypt and decrypt messages
+双方用一样的密钥加密和解密消息，这叫"对称加密", 因为密钥一样
+
+are called symmetric keys because the key is the same on both sides.
+双方用一样的密钥加密和解密消息，这叫"对称加密", 因为密钥一样
+
+The Caesar Cipher, Enigma and AES are all symmetric encryption.
+凯撒加密，英格玛，AES 都是"对称加密"
+
+There’s also asymmetric encryption, where there are two different keys
+还有"非对称加密"，有两个不同的密钥
+
+most often one that’s public and another that’s private.
+一个是公开的，另一个是私有的
+
+So, people can encrypt a message using a public key that
+人们用公钥加密消息 \N 只有有私钥的人能解密
+
+only the recipient, with their private key, can decrypt.
+人们用公钥加密消息 \N 只有有私钥的人能解密
+
+In other words, knowing the public key only lets you encrypt, but not decrypt – it’s asymmetric!
+换句话说，知道公钥只能加密但不能解密 \N - 它是"不对称"的！
+
+So, think about boxes with padlocks that you can open with a key.
+想象一个可以锁上的盒子
+
+To receive a secure message, I can give a sender a box and padlock.
+为了收到安全的信息，我们可以给别人箱子和锁
+
+They put their message in it and lock it shut.
+别人把信息放箱子，然后锁起来
+
+Now, they can send that box back to me and only I can open it, with my private key.
+把盒子寄回给我，只有我的钥匙能打开
+
+After locking the box, neither the sender,
+上锁后，如果发件人或其他人想打开盒子 \N 除了暴力尝试没有其他办法.
+
+nor anyone else who finds the box, can open it without brute force.
+上锁后，如果发件人或其他人想打开盒子 \N 除了暴力尝试没有其他办法.
+
+In the same way, a digital public key can encrypt something that can only be decrypted with a private key.
+和盒子例子一样，公钥加密后只能私钥来解密.
+
+The reverse is possible too: encrypting something with a
+反过来也是可以的：私钥加密后 用公钥解密
+
+private key that can be decrypted with a public key.
+反过来也是可以的：私钥加密后 用公钥解密
+
+This is used for signing, where a server encrypts data using their private key.
+这种做法用于签名，服务器可以用私钥加密，
+
+Anyone can decrypt it using the server's public key.
+任何人都可以用服务器的公钥解密
+
+This acts like an unforgeable signature,
+就像一个不可伪造的签名
+
+as only the owner, using their private key, can encrypt.
+因为只有私钥的持有人 能加密
+
+It proves that you're getting data from the right server or person, and not an imposter.
+这能证明数据来自正确的服务器或个人，而不是某个假冒者
+
+The most popular asymmetric encryption technique used today is RSA,
+目前最流行的"非对称加密"技术是 RSA
+
+named after its inventors: Rivest, Shamir and Adleman.
+名字来自发明者： Rivest, Shamir, Adleman.
+
+So, now you know all the "key" parts of modern cryptography:
+现在你学会了现代密码学的所有"关键"部分：
+
+symmetric encryption, key exchange and public-key cryptography.
+对称加密，密钥交换，公钥密码学
+
+When you connect to a secure website, like your bank,
+当你访问一个安全的网站，比如银行官网
+
+that little padlock icon means that your computer has used public key cryptography
+绿色锁图标代表 用了公钥密码学
+
+to verify the server key exchange to establish a secret temporary key,
+验证服务器的密钥，然后建立临时密钥
+
+and symmetric encryption to protect all the back-and-forth communication from prying eyes.
+然后用对称加密保证通信安全
+
+Whether you're buying something online, sending emails to BFFs,
+不管你是网上购物，发邮件给朋友，还是看猫咪视频
+
+or just browsing cat videos
+不管你是网上购物，发邮件给朋友，还是看猫咪视频
+
+cryptography keeps all that safe, private and secure.
+密码学都在保护你的隐私和安全
+
+Thanks cryptography!
+谢啦密码学！
+

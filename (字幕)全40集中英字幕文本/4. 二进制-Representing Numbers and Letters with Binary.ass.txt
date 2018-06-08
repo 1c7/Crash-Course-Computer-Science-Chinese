@@ -1,0 +1,549 @@
+Hi I'm Carrie Anne, this is Crash Course Computer Science
+嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+and today we're going to talk about how computers store and represent numerical data.
+今天，我们讲计算机如何存储和表示数字
+
+Which means we've got to talk about Math!
+所以会有一些数学
+
+But don't worry.
+不过别担心
+
+Every single one of you already knows exactly what you need to know to follow along.
+你们的数学水平绝对够用了
+
+So, last episode we talked about how transistors can be used to build logic gates,
+上集我们讲了，怎么用晶体管做逻辑门
+
+which can evaluate boolean statements.
+逻辑门可以判断布尔语句
+
+And in boolean algebra, there are only two, binary values: true and false.
+布尔代数只有两个值：True 和 False
+
+But if we only have two values,
+但如果只有两个值，我们怎么表达更多东西？
+
+how in the world do we represent information beyond just these two values?
+但如果只有两个值，我们怎么表达更多东西？
+
+That's where the Math comes in.
+这就需要数学了
+
+So, as we mentioned last episode, a single binary value can be used to represent a number.
+上集提到，1 个二进制值可以代表 1 个数
+
+Instead of true and false, we can call these two states 1 and 0 which is actually incredibly useful.
+我们可以把真和假 ，当做 1 和 0
+
+And if we want to represent larger things we just need to add more binary digits.
+如果想表示更多东西，加位数就行了
+
+This works exactly the same way as the decimal numbers that we're all familiar with.
+和我们熟悉的十进制一样
+
+With decimal numbers there are "only" 10 possible values a single digit can be; 0 through 9,
+十进制只有 10 个数（0到9）
+
+and to get numbers larger than 9 we just start adding more digits to the front.
+要表示大于 9 的数，加位数就行了
+
+We can do the same with binary.
+二进制也可以这样玩
+
+For example, let's take the number two hundred and sixty three.
+拿 263 举例
+
+What does this number actually represent?
+这个数字 "实际" 代表什么？
+
+Well, it means we've got 2 one-hundreds, 6 tens, and 3 ones.
+2 个 100 \N6 个 10 \N 3 个 1
+
+If you add those all together, we've got 263.
+加在一起，就是 263
+
+Notice how each column has a different multiplier.
+注意每列有不同的乘数
+
+In this case, it's 100, 10, and 1.
+100, 10, 1
+
+Each multiplier is ten times larger than the one to the right.
+每个乘数都比右边大十倍
+
+That's because each column has ten possible digits to work with, 0 through 9,
+因为每列有 10 个可能的数字（0到9）
+
+after which you have to carry one to the next column.
+如果超过 9，要在下一列进 1.
+
+For this reason, it's called base-ten notation, also called decimal since deci means ten.
+因此叫 "基于十的表示法"  或十进制
+
+AND Binary works exactly the same way, it's just base-two.
+二进制也一样，只不过是基于 2 而已
+
+That's because there are only two possible digits in binary - 1 and 0.
+因为二进制只有两个可能的数， 1 和 0
+
+This means that each multiplier has to be two times larger than the column to its right.
+意味着每个乘数必须是右侧乘数的两倍
+
+Instead of hundreds, tens, and ones, we now have fours, twos and ones.
+就不是之前的 100, 10, 1 \N 而是 4, 2, 1
+
+Take for example the binary number: 101.
+拿二进制数 101 举例
+
+This means we have 1 four, 0 twos, and 1 one.
+意味着有\N 1个 "4"  \N 0个 "2"  \N 1个 "1"
+
+Add those all together and we've got the number 5 in base ten.
+加在一起，得到十进制的 5
+
+But to represent larger numbers, binary needs a lot more digits.
+为了表示更大的数字，二进制需要更多位数
+
+Take this number in binary 10110111.
+拿二进制数 10110111 举例
+
+We can convert it to decimal in the same way.
+我们可以用相同的方法转成十进制
+
+We have 1 x 128, 0 x 64, 1 x 32, 1 x 16, 0 x 8, 1 x 4, 1 x 2, and 1 x 1.
+1 x 128 ，0 x 64 ，1 x 32 ，1 x 16 \N 0 x 8 ，1 x 4 ，1 x 2 ，1 x 1
+
+Which all adds up to 183.
+加起来等于 183
+
+Math with binary numbers isn't hard either.
+二进制数的计算也不难
+
+Take for example decimal addition of 183 plus 19.
+以十进制数 183 加 19 举例
+
+First we add 3 + 9, that's 12, so we put 2 as the sum and carry 1 to the ten's column.
+首先 3 + 9，得到 12，然后位数记作 2，向前进 1
+
+Now we add 8 plus 1 plus the 1 we carried, thats 10, so the sum is 0 carry 1.
+现在算 8+1+1=10，所以位数记作0，再向前进 1
+
+Finally we add 1 plus the 1 we carried, which equals 2.
+最后 1+1=2，位数记作2
+
+So the total sum is 202.
+所以和是202
+
+Here's the same sum but in binary.
+二进制也一样
+
+Just as before, we start with the ones column.
+和之前一样，从个位开始
+
+Adding 1+1 results in 2, even in binary.
+1+1=2，在二进制中也是如此
+
+But, there is no symbol "2" so we use 10 and put 0 as our sum and carry the 1.
+但二进制中没有 2，所以位数记作 0 ，进 1
+
+Just like in our decimal example.
+就像十进制的例子一样
+
+1 plus 1, plus the 1 carried,
+1+1，再加上进位的1
+
+equals 3 or 11 in binary,
+等于 3，用二进制表示是 11
+
+so we put the sum as 1 and we carry 1 again, and so on.
+所以位数记作 1，再进 1，以此类推
+
+We end up with this number, which is the same as the number 202 in base ten.
+最后得到这个数字，跟十进制 202 是一样的
+
+Each of these binary digits, 1 or 0, is called a "bit".
+二进制中，一个 1 或 0  叫一"位"
+
+So in these last few examples, we were using 8-bit numbers with their lowest value of zero
+上个例子我们用了 8 位 , 8 位能表示的最小数是 0,  8位都是0
+
+and highest value is 255, which requires all 8 bits to be set to 1.
+最大数是 255，8 位都是 1
+
+Thats 256 different values, or 2 to the 8th power.
+能表示 256 个不同的值，2 的 8 次方
+
+You might have heard of 8-bit computers, or 8-bit graphics or audio.
+你可能听过 8 位机，8 位图像，8 位音乐
+
+These were computers that did most of their operations in chunks of 8 bits.
+意思是计算机里\N 大部分操作都是 8 位 8 位这样处理的
+
+But 256 different values isn't a lot to work with, so it meant things like 8-bit games
+但 256 个值不算多，意味着 8位游戏只能用 256 种颜色
+
+were limited to 256 different colors for their graphics.
+但 256 个值不算多，意味着 8位游戏只能用 256 种颜色
+
+And 8-bits is such a common size in computing, it has a special word: a byte.
+8 位是如此常见，以至于有专门的名字：字节
+
+A byte is 8 bits.
+1 字节 = 8 位 \N 1 bytes = 8 bits
+
+If you've got 10 bytes, it means you've really got 80 bits.
+如果有 10 个字节，意味着有 80 位
+
+You've heard of kilobytes, megabytes, gigabytes and so on.
+你听过 千字节（kb）兆字节（mb）千兆字节（gb）
+
+These prefixes denote different scales of data.
+不同前缀代表不同数量级
+
+Just like one kilogram is a thousand grams,
+就像 1 千克 = 1000 克，1 千字节 = 1000 字节
+
+1 kilobyte is a thousand bytes.
+就像 1 千克 = 1000 克，1 千字节 = 1000 字节
+
+or really 8000 bits.
+或 8000 位
+
+Mega is a million bytes (MB), and giga is a billion bytes (GB).
+Mega 是百万字节（MB）, Giga 是十亿字节（GB）
+
+Today you might even have a hard drive that has 1 terabyte (TB) of storage.
+如今你可能有 1 TB 的硬盘
+
+That's 8 trillion ones and zeros.
+8 万亿个1和0
+
+But hold on!
+等等，我们有另一种计算方法
+
+That's not always true.
+等等，我们有另一种计算方法
+
+In binary, a kilobyte has two to the power of 10 bytes, or 1024.
+二进制里，1 千字节 = 2的10次方 = 1024 字节
+
+1000 is also right when talking about kilobytes,
+1000 也是千字节（KB）的正确单位
+
+but we should acknowledge it isn't the only correct definition.
+1000 和 1024 都对
+
+You've probably also heard the term 32-bit or 64-bit computers
+你可能听过 32 位 或 64 位计算机
+
+C you're almost certainly using one right now.
+你现在用的电脑肯定是其中一种
+
+What this means is that they operate in chunks of 32 or 64 bits.
+意思是一块块处理数据，每块是 32 位或 64 位
+
+That's a lot of bits!
+这可是很多位
+
+The largest number you can represent with 32 bits is just under 4.3 billion.
+32 位能表示的最大数，是 43 亿左右
+
+Which is thirty-two 1's in binary.
+也就是 32 个 1
+
+This is why our Instagram photos are so smooth and pretty
+所以 Instagram 照片很清晰
+
+- they are composed of millions of colors,
+- 它们有上百万种颜色
+
+because computers today use 32-bit color graphics
+因为如今都用 32 位颜色
+
+Of course, not everything is a positive number
+当然，不是所有数字都是正数
+
+- like my bank account in college.
+比如我上大学时的银行账户 T_T
+
+So we need a way to represent positive and negative numbers.
+我们需要有方法表示正数和负数
+
+Most computers use the first bit for the sign:
+大部分计算机用第一位表示正负：
+
+1 for negative, 0 for positive numbers,
+1 是负，0 是正
+
+and then use the remaining 31 bits for the number itself.
+用剩下 31 位来表示数字
+
+That gives us a range of roughly plus or minus two billion.
+能表示的数字范围是 正 20 亿到负 20 亿
+
+While this is a pretty big range of numbers, it's not enough for many tasks.
+虽然是很大的数，但有时还不够用
+
+There are 7 billion people on the earth, and the US national debt is almost 20 trillion dollars after all.
+全球有 70 亿人口，美国国债近 20 万亿美元
+
+This is why 64-bit numbers are useful.
+所以 64 位数很有用
+
+The largest value a 64-bit number can represent is around 9.2 quintillion!
+64 位能表达最大数是 9.2x10
+
+That's a lot of possible numbers and will hopefully stay above the US national debt for a while!
+希望美国国债在一段时间内不会超过这个数！
+
+Most importantly, as we'll discuss in a later episode,
+重要的是（我们之后的视频会深入讲）
+
+computers must label locations in their memory,
+计算机必须给内存中每一个位置，做一个 "标记"
+
+known as addresses, in order to store and retrieve values.
+这个标记叫 "位址", 目的是为了方便存取数据
+
+As computer memory has grown to gigabytes and terabytes - that's trillions of bytes
+如今硬盘已经增长到 GB 和 TB，上万亿个字节！
+
+it was necessary to have 64-bit memory addresses as well.
+内存地址也应该有 64 位
+
+In addition to negative and positive numbers,
+除了负数和正数，计算机也要处理非整数
+
+computers must deal with numbers that are not whole numbers,
+除了负数和正数，计算机也要处理非整数
+
+like 12.7 and 3.14, or maybe even stardate: 43989.1.
+比如 12.7 和 3.14，或"星历 43989.1"
+
+These are called "floating point" numbers,
+这叫 浮点数
+
+because the decimal point can float around in the middle of number.
+因为小数点可以在数字间浮动
+
+Several methods have been developed to represent floating point numbers.
+有好几种方法 表示浮点数
+
+The most common of which is the IEEE 754 standard.
+最常见的是 IEEE 754 标准
+
+And you thought historians were the only people bad at naming things!
+你以为只有历史学家取名很烂吗？
+
+In essence, this standard stores decimal values sort of like scientific notation.
+它用类似科学计数法的方法，来存十进制值
+
+For example, 625.9 can be written as 0.6259 x 10^3.
+例如，625.9 可以写成 0.6259×10 ^ 3
+
+There are two important numbers here: the .6259 is called the significand.
+这里有两个重要数字：.6259 叫 "有效位数" , 3 是指数
+
+And 3 is the exponent.
+这里有两个重要数字：.6259 叫 "有效位数" , 3 是指数
+
+In a 32-bit floating point number,
+在 32 位浮点数中
+
+the first bit is used for the sign of the number -- positive or negative.
+第 1 位表示数字的正负
+
+The next 8 bits are used to store the exponent
+接下来 8 位存指数
+
+and the remaining 23 bits are used to store the significand.
+剩下 23 位存有效位数
+
+Ok, we've talked a lot about numbers, but your name is probably composed of letters,
+好了，聊够数字了，但你的名字是字母组成的
+
+so it's really useful for computers to also have a way to represent text.
+所以我们也要表示文字
+
+However, rather than have a special form of storage for letters,
+与其用特殊方式来表示字母 \N 计算机可以用数字表示字母
+
+computers simply use numbers to represent letters.
+与其用特殊方式来表示字母 \N 计算机可以用数字表示字母
+
+The most straightforward approach might be to simply number the letters of the alphabet:
+最直接的方法是给字母编号：
+
+A being 1, B being 2, C 3, and so on.
+A是1，B是2，C是3，以此类推
+
+In fact, Francis Bacon, the famous English writer,
+著名英国作家 弗朗西斯·培根（Francis Bacon）
+
+used five-bit sequences to encode all 26 letters of the English alphabet
+曾用 5位序列 来编码英文的 26 个字母
+
+to send secret messages back in the 1600s.
+在十六世纪传递机密信件
+
+And five bits can store 32 possible values - so that's enough for the 26 letters,
+五位（bit）可以存 32 个可能值（2^5） - 这对26个字母够了
+
+but not enough for punctuation, digits, and upper and lower case letters.
+但不能表示 标点符号，数字和大小写字母
+
+Enter ASCII, the American Standard Code for Information Interchange.
+ASCII，美国信息交换标准代码
+
+Invented in 1963, ASCII was a 7-bit code, enough to store 128 different values.
+发明于 1963 年，ASCII 是 7 位代码，足够存 128 个不同值
+
+With this expanded range, it could encode capital letters, lowercase letters,
+范围扩大之后，可以表示大写字母，小写字母,
+
+digits 0 through 9, and symbols like the @ sign and punctuation marks.
+数字 0 到 9, @ 这样的符号, 以及标点符号
+
+For example, a lowercase 'a' is represented by the number 97, while a capital 'A' is 65.
+举例，小写字母 a 用数字 97 表示，大写字母 A 是 65
+
+A colon is 58 and a closed parenthesis is 41.
+: 是58  \n ) 是41
+
+ASCII even had a selection of special command codes,
+ASCII 甚至有特殊命令符号
+
+such as a newline character to tell the computer where to wrap a line to the next row.
+比如换行符，用来告诉计算机换行
+
+In older computer systems,
+在老计算机系统中
+
+the line of text would literally continue off the edge of the screen if you didn't include a new line character!
+如果没换行符，文字会超出屏幕
+
+Because ASCII was such an early standard,
+因为 ASCII 是个很早的标准
+
+it became widely used,
+所以它被广泛使用
+
+and critically, allowed different computers built by different companies to exchange data.
+让不同公司制作的计算机，能互相交换数据
+
+This ability to universally exchange information is called "interoperability".
+这种通用交换信息的能力叫 "互用性"
+
+However, it did have a major limitation: it was really only designed for English.
+但有个限制：它是为英语设计的
+
+Fortunately, there are 8 bits in a byte, not 7,
+幸运的是，一个字节有8位，而不是7位
+
+and it soon became popular to use codes 128 through 255,
+128 到 255 的字符渐渐变得常用
+
+previously unused, for "national" characters.
+这些字符以前是空的，是给各个国家自己  "保留使用的"
+
+In the US, those extra numbers were largely used to encode additional symbols,
+在美国，这些额外的数字主要用于编码附加符号
+
+like mathematical notation, graphical elements, and common accented characters.
+比如数学符号，图形元素和常用的重音字符
+
+On the other hand, while the Latin characters were used universally,
+另一方面，虽然拉丁字符被普遍使用
+
+Russian computers used the extra codes to encode Cyrillic characters,
+在俄罗斯，他们用这些额外的字符表示西里尔字符
+
+and Greek computers, Greek letters, and so on.
+而希腊电脑用希腊字母，等等
+
+And national character codes worked pretty well for most countries.
+这些保留下来给每个国家自己安排的空位，\N 对大部分国家都够用
+
+The problem was,
+问题是
+
+if you opened an email written in Latvian on a Turkish computer,
+如果在 土耳其 电脑上打开 拉脱维亚语 写的电子邮件
+
+the result was completely incomprehensible.
+会显示乱码
+
+And things totally broke with the rise of computing in Asia,
+随着计算机在亚洲兴起，这种做法彻底失效了
+
+as languages like Chinese and Japanese have thousands of characters.
+中文和日文这样的语言有数千个字符
+
+There was no way to encode all those characters in 8-bits!
+根本没办法用 8 位来表示所有字符！
+
+In response, each country invented multi-byte encoding schemes,
+为了解决这个问题，每个国家都发明了多字节编码方案
+
+all of which were mutually incompatible.
+但不相互兼容
+
+The Japanese were so familiar with this encoding problem that they had a special name for it:
+日本人总是碰到编码问题，以至于专门有词来称呼：
+
+"mojibake", which means "scrambled text".
+"mojibake" 意思是 乱码
+
+And so it was born - Unicode - one format to rule them all.
+所以 Unicode 诞生了 - 统一所有编码的标准
+
+Devised in 1992 to finally do away with all of the different international schemes
+设计于 1992 年，解决了不同国家不同标准的问题
+
+it replaced them with one universal encoding scheme.
+Unicode 用一个统一编码方案
+
+The most common version of Unicode uses 16 bits with space for over a million codes -
+最常见的 Unicode 是 16 位的，有超过一百万个位置 -
+
+enough for every single character from every language ever used
+对所有语言的每个字符都够了
+
+more than 120,000 of them in over 100 types of script
+100 多种字母表加起来占了 12 万个位置。
+
+plus space for mathematical symbols and even graphical characters like Emoji.
+还有位置放数学符号，甚至 Emoji
+
+And in the same way that ASCII defines a scheme for encoding letters as binary numbers,
+就像 ASCII 用二进制来表示字母一样
+
+other file formats - like MP3s or GIFs -
+其他格式 - 比如 MP3 或 GIF  -
+
+use binary numbers to encode sounds or colors of a pixel in our photos, movies, and music.
+用二进制编码声音/颜色，表示照片,电影,音乐
+
+Most importantly, under the hood it all comes down to long sequences of bits.
+重要的是，这些标准归根到底是一长串位
+
+Text messages, this YouTube video, every webpage on the internet,
+短信，这个 YouTube 视频，互联网上的每个网页
+
+and even your computer's operating system, are nothing but long sequences of 1s and 0s.
+甚至操作系统，只不过是一长串 1 和 0
+
+So next week,
+下周
+
+we'll start talking about how your computer starts manipulating those binary sequences,
+我们会聊计算机怎么操作二进制
+
+for our first true taste of computation.
+初尝"计算"的滋味
+
+Thanks for watching. See you next week.
+感谢观看，下周见
+

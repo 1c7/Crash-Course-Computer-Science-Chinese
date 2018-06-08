@@ -1,0 +1,609 @@
+Hi, I'm Carrie Anne, and welcome to Crash Course Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+Last episode we talked about data storage, how technologies like magnetic tape and hard
+上集我们讲了数据存储，磁带和硬盘这样的技术
+
+disks can store trillions of bits of data,
+可以在断电状态长时间存上万亿个位
+
+for long durations, even without power.
+可以在断电状态长时间存上万亿个位
+
+Which is perfect for recording "big blobs" of related data,
+非常合适存一整块有关系的数据，或者说"文件"
+
+what are more commonly called computer files.
+非常合适存一整块有关系的数据，或者说"文件"
+
+You've no doubt encountered many types,
+你肯定见过很多种文件 \N 比如文本文件，音乐文件，照片和视频
+
+like text files, music files, photos and videos.
+你肯定见过很多种文件 \N 比如文本文件，音乐文件，照片和视频
+
+Today, we're going to talk about how files work,
+今天，我们要讨论文件到底是什么 \N 以及计算机怎么管理文件
+
+and how computers keep them all organized with File Systems.
+今天，我们要讨论文件到底是什么 \N 以及计算机怎么管理文件
+
+It's perfectly legal for a file to contain arbitrary, unformatted data,
+随意排列文件数据完全没问题，但按格式排会更好
+
+but it's most useful and practical if the data inside the file is organized somehow.
+随意排列文件数据完全没问题，但按格式排会更好
+
+This is called a file format.
+这叫 "文件格式"
+
+You can invent your own, and programmers do that from time to time,
+你可以发明自己的文件格式，程序员偶尔会这样做
+
+but it's usually best and easiest to use an existing standard, like JPEG and MP3.
+但最好用现成标准，比如 JPEG 和 MP3
+
+Let's look at some simple file formats.
+来看一些简单文件格式，最简单的是文本文件
+
+The most straightforward are text files,
+来看一些简单文件格式，最简单的是文本文件
+
+also know as TXT file, which contain...surprise! text.
+也叫 TXT 文件, 里面包含的是... 文字 （惊喜吧）
+
+Like all computer files, this is just a huge list of numbers, stored as binary.
+就像所有其它文件，文本文件只是一长串二进制数
+
+If we look at the raw values of a text file in storage, it would look something like this:
+原始值看起来会像这样：
+
+We can view this as decimal numbers instead of binary,
+可以转成十进制看，但帮助不大
+
+but that still doesn't help us read the text.
+可以转成十进制看，但帮助不大
+
+The key to interpreting this data is knowing that TXT files use ASCII,
+解码数据的关键是 ASCII 编码
+
+a character encoding standard we discussed way back in Episode 4.
+一种字符编码标准，第 4 集讨论过.
+
+So, in ASCII, our first value, 72, maps to the capital letter H.
+第一个值 72 \N 在 ASCII 中是大写字母 H
+
+And in this way, we decode the whole file.
+以此类推 解码其他数字
+
+Let's look at a more complicated example: a WAVE File, also called a WAV,
+来看一个更复杂的例子：波形(Wave)文件，也叫 WAV \N 它存音频数据
+
+which stores audio.
+来看一个更复杂的例子：波形(Wave)文件，也叫 WAV \N 它存音频数据
+
+Before we can correctly read the data, we need to know some information,
+在正确读取数据前，需要知道一些信息
+
+like the bit rate and whether it's a single track or stereo.
+比如码率(bit rate)，以及是单声道还是立体声
+
+Data about data, is called meta data.
+关于数据的数据，叫"元数据"(meta data)
+
+This metadata is stored at the front of the file, ahead of any actual data,
+元数据存在文件开头，在实际数据前面 \N 因此也叫 文件头(Header)
+
+in what's known as a Header.
+元数据存在文件开头，在实际数据前面 \N 因此也叫 文件头(Header)
+
+Here's what the first 44 bytes of a WAV file looks like.
+WAV 文件的前 44 个字节长这样
+
+Some parts are always the same, like where it spells out W-A-V-E.
+有的部分总是一样的，比如写着 WAVE 的部分
+
+Other parts contain numbers that change depending on the data contained within.
+其他部分的内容，会根据数据变化
+
+The audio data comes right behind the metadata, and it's stored as a long list of numbers.
+音频数据紧跟在元数据后面，是一长串数字
+
+These values represent the amplitude of sound captured many times per second, and if you
+数字代表每秒捕获多次的声音幅度
+
+want a primer on sound, check out our video all about it in Crash Course Physics.
+如果想学声音的基础知识 \N 可以看物理速成课第18集
+
+Link in the dobblydoo.
+如果想学声音的基础知识 \N 可以看物理速成课第18集
+
+As an example, let's look at a waveform of me saying: "hello!" Hello!
+举个例子，看一下"你好"的波形
+
+Now that we've captured some sound, let's zoom into a little snippet.
+现在捕获到了一些声音，我们放大看一下
+
+A digital microphone, like the one in your computer or smartphone,
+电脑和手机麦克风，每秒可以对声音进行上千次采样
+
+samples the sound pressure thousands of times.
+电脑和手机麦克风，每秒可以对声音进行上千次采样
+
+Each sample can be represented as a number.
+每次采样可以用一个数字表示
+
+Larger numbers mean higher sound pressure, what's called amplitude.
+声压越高数字越大，也叫"振幅"
+
+And these numbers are exactly what gets stored in a WAVE file!
+WAVE 文件里存的就是这些数据！
+
+Thousands of amplitudes for every single second of audio!
+每秒上千次的振幅！
+
+When it's time to play this file, an audio program needs to actuate the computer's speakers
+播放声音文件时，扬声器会产生相同的波形
+
+such that the original waveform is emitted.
+播放声音文件时，扬声器会产生相同的波形
+
+"Hello!"
+"你好！"
+
+So, now that you're getting the hang of file formats, let's talk about bitmaps or
+现在来谈谈 位图(Bitmap)，后缀 .bmp, 它存图片
+
+BMP, which store pictures.
+现在来谈谈 位图(Bitmap)，后缀 .bmp, 它存图片
+
+On a computer, Pictures are made up of little tiny square elements called pixels.
+计算机上，图片由很多个叫"像素"的方块组成
+
+Each pixel is a combination of three colors: red, green and blue.
+每个像素由三种颜色组成：红，绿，蓝
+
+These are called additive primary colors, and they can be mixed together to create any
+叫"加色三原色"，混在一起可以创造其它颜色
+
+other color on our electronic displays.
+叫"加色三原色"，混在一起可以创造其它颜色
+
+Now, just like WAV files, BMPs start with metadata,
+就像 WAV 文件一样，BMP 文件开头也是元数据 \N 有图片宽度，图片高度，颜色深度
+
+including key values like image width, image height, and color depth.
+就像 WAV 文件一样，BMP 文件开头也是元数据 \N 有图片宽度，图片高度，颜色深度
+
+As an example, let's say the metadata specified an image 4 pixels wide, by 4 pixels tall,
+举例，假设元数据说图是 4像素宽 x 4像素高
+
+with a 24-bit color depth - that's 8-bits for red, 8-bits for green, and 8-bits for blue.
+颜色深度 24 位\N  8 位红色，8 位绿色，8 位蓝色
+
+As a reminder, 8 bits is the same as one byte.
+提醒一下，8位 (bit) 和 1字节(byte)是一回事
+
+The smallest number a byte can store is 0, and the largest is 255.
+一个字节能表示的最小数是 0，最大 255
+
+Our image data is going to look something like this:
+图像数据看起来会类似这样：\N 来看看第一个像素的颜色
+
+Let's look at the color of our first pixel.
+图像数据看起来会类似这样：\N 来看看第一个像素的颜色
+
+It has 255 for its red value, 255 for green and 255 for blue.
+红色是255，绿色是255，蓝色也是255
+
+This equates to full intensity red, full intensity green and full intensity blue.
+这等同于全强度红色，全强度绿色和全强度蓝色
+
+These colors blend together on your computer monitor to become white.
+混合在一起变成白色
+
+So our first pixel is white!
+所以第一个像素是白色！
+
+The next pixel has a Red-Green-Blue, or RGB value of 255, 255, 0.
+下一个像素的红绿蓝值，或 RGB 值 \N  255,255,0 是黄色！
+
+That's the color yellow!
+下一个像素的红绿蓝值，或 RGB 值 \N  255,255,0 是黄色！
+
+The pixel after that has a RGB value of 0,0,0 - that's zero intensity everything, which is black.
+下一个像素是 0,0,0 ，黑色
+
+And the next one is yellow.
+下一个是黄色
+
+Because the metadata specified this was a 4 by 4 image, we know that we've reached
+因为元数据说图片是 4x4 \N 我们知道现在到了第一行结尾
+
+the end of our first row of pixels.
+因为元数据说图片是 4x4 \N 我们知道现在到了第一行结尾
+
+So, we need to drop down a row.
+所以换一行
+
+The next RGB value is 255,255,0 yellow again.
+下一个 RGB 值是 255,255,0，又是黄色
+
+Okay, let's go ahead and read all the pixels in our 4x4 image tada!
+好，我们读完剩下的像素
+
+A very low resolution pac-man!
+一个低分辨率的吃豆人
+
+Obviously this is a simple example of a small image,
+刚才显然只是一个简单例子，但这张图片也可以用 BMP 存
+
+but we could just as easily store this image in a BMP.
+刚才显然只是一个简单例子，但这张图片也可以用 BMP 存
+
+I want to emphasize again that it doesn't matter if it's a text file, WAV,
+我想再次强调，不管是文本文件，WAV，BMP
+
+BMP, or fancier formats we don't have time to discuss,
+或是我们没时间讨论的其他格式
+
+Under the hood, they're all the same: long lists of numbers, stored as binary, on a storage device.
+文件在底层全是一样的： 一长串二进制
+
+File formats are the key to reading and understanding the data inside.
+为了知道文件是什么，文件格式至关重要
+
+Now that you understand files a little better, let's move on to
+现在你对文件更了解了 \N 我们接下来讨论计算机怎么存文件
+
+how computers go about storing them.
+现在你对文件更了解了 \N 我们接下来讨论计算机怎么存文件
+
+Even though the underlying storage medium might be
+虽然硬件可能是磁带，磁鼓，磁盘或集成电路
+
+a strip of tape, a drum, a disk, or integrated circuits...
+虽然硬件可能是磁带，磁鼓，磁盘或集成电路
+
+hardware and software abstractions let us think of storage as a
+通过软硬件抽象后，可以看成一排能存数据的桶
+
+long line of little buckets that store values.
+通过软硬件抽象后，可以看成一排能存数据的桶
+
+In the early days, when computers only performed one computation
+在很早期时，计算机只做一件事，比如算火炮射程表 \N 整个储存器就像一整个文件
+
+like calculating artillery range tables. the entire storage operated like one big file.
+在很早期时，计算机只做一件事，比如算火炮射程表 \N 整个储存器就像一整个文件
+
+Data started at the beginning of storage, and then filled it up in order as output was
+数据从头存到尾，直到占满
+
+produced, up to the storage capacity.
+数据从头存到尾，直到占满
+
+However, as computational power and storage capacity improved, it became possible, and
+但随着计算能力和存储容量的提高 \N 存多个文件变得非常有用
+
+useful, to store more than one file at a time.
+但随着计算能力和存储容量的提高 \N 存多个文件变得非常有用
+
+The simplest option is to store files back-to-back.
+最简单的方法  是把文件连续存储
+
+This can work... but how does the computer know where files begin and end?
+这样能用, \N 但怎么知道文件开头和结尾在哪里？
+
+Storage devices have no notion of files C they're just a mechanism for storing lots of bits.
+储存器没有文件的概念，只是存储大量位
+
+So, for this to work, we need to have a special file that records where other ones are located.
+所以为了存多个文件 \N 需要一个特殊文件，记录其他文件的位置
+
+This goes by many names, but a good general term is Directory File.
+这个特殊文件有很多名字，这里泛称 "目录文件"
+
+Most often, it's kept right at the front of storage, so we always know where to access it.
+这个文件经常存在最开头，方便找
+
+Location zero!
+位置 0！
+
+Inside the Directory File are the names of all the other files in storage.
+目录文件里，存所有其他文件的名字
+
+In our example, they each have a name, followed by a period
+格式是文件名 + 一个句号 + 扩展名，比如 BMP 或 WAV
+
+and end with what's called a File Extension, like "BMP" or "WAV".
+格式是文件名 + 一个句号 + 扩展名，比如 BMP 或 WAV
+
+Those further assist programs in identifying file types.
+扩展名帮助得知文件类型
+
+The Directory File also stores metadata about these files, like when they were created and
+目录文件还存文件的元数据，比如创建时间
+
+last modified, who the owner is, and if it can be read, written or both.
+最后修改时间，文件所有者是谁\N是否能读/写  或读写都行
+
+But most importantly, the directory file contains where these files
+最重要的是，目录文件有文件起始位置和长度
+
+begin in storage, and how long they are.
+最重要的是，目录文件有文件起始位置和长度
+
+If we want to add a file, remove a file, change a filename, or similar,
+如果要添加文件，删除文件，更改文件名等
+
+we have to update the information in the Directory File.
+必须更新目录文件
+
+It's like the Table of Contents in a book, if you make a chapter shorter, or move it
+就像书的目录，如果缩短或移动了一个章节 \N 要更新目录，不然页码对不上
+
+somewhere else, you have to update the table of contents, otherwise the page numbers won't match!
+就像书的目录，如果缩短或移动了一个章节 \N 要更新目录，不然页码对不上
+
+The Directory File, and the maintenance of it, is an example of a very basic File System,
+目录文件，以及对目录文件的管理 \N 是一个非常简单的文件系统例子
+
+the part of an Operating System that manages and keep track of stored files.
+文件系统专门负责管理文件
+
+This particular example is a called a Flat File System, because they're all stored at one level.
+刚刚的例子叫"平面文件系统" \N因为文件都在同一个层次
+
+It's flat!
+平的！
+
+Of course, packing files together, back-to-back, is a bit of a problem,
+当然，把文件前后排在一起  有个问题
+
+because if we want to add some data to let's say "todo.txt",
+如果给 todo.txt 加一点数据 \N 会覆盖掉后面 carrie.bmp 的一部分
+
+there's no room to do it without overwriting part of "carrie.bmp".
+如果给 todo.txt 加一点数据 \N 会覆盖掉后面 carrie.bmp 的一部分
+
+So modern File Systems do two things.
+所以现代文件系统会做两件事
+
+First, they store files in blocks.
+1. 把空间划分成一块块 \N 导致有一些 "预留空间" 可以方便改动
+
+This leaves a little extra space for changes, called slack space.
+1. 把空间划分成一块块 \N 导致有一些 "预留空间" 可以方便改动
+
+It also means that all file data is aligned to a common size, which simplifies management.
+同时也方便管理
+
+In a scheme like this, our Directory File needs to keep track of
+用这样的方案，目录文件要记录文件在哪些块里
+
+what block each one is stored in.
+用这样的方案，目录文件要记录文件在哪些块里
+
+The second thing File Systems do, is allow files to be broken up into chunks
+2. 拆分文件，存在多个块里
+
+and stored across many blocks.
+2. 拆分文件，存在多个块里
+
+So let's say we open "todo.txt", and we add a few more items then the file becomes
+假设打开 todo.txt 加了些内容\N 文件太大存不进一块里
+
+too big to be saved in its one block.
+假设打开 todo.txt 加了些内容\N 文件太大存不进一块里
+
+We don't want to overwrite the neighboring one, so instead, the File System allocates
+我们不想覆盖掉隔壁的块，所以文件系统会分配 \N 一个没使用的块，容纳额外的数据
+
+an unused block, which can accommodate extra data.
+我们不想覆盖掉隔壁的块，所以文件系统会分配 \N 一个没使用的块，容纳额外的数据
+
+With a File System scheme like this, the Directory File needs to store
+目录文件会记录不止一个块，而是多个块
+
+not just one block per file, but rather a list of blocks per file.
+目录文件会记录不止一个块，而是多个块
+
+In this way, we can have files of variable sizes that can be easily
+只要分配块，文件可以轻松增大缩小
+
+expanded and shrunk, simply by allocating and deallocating blocks.
+只要分配块，文件可以轻松增大缩小
+
+If you watched our episode on Operating Systems, this should sound a lot like Virtual Memory.
+如果你看了第18集 操作系统 \N 这听起来很像"虚拟内存"
+
+Conceptually it's very similar!
+概念上讲的确很像！
+
+Now let's say we want to delete "carrie.bmp".
+假设想删掉 carrie.bmp \N 只需要在目录文件删掉那条记录
+
+To do that, we can simply remove the entry from the Directory File.
+假设想删掉 carrie.bmp \N 只需要在目录文件删掉那条记录
+
+This, in turn, causes one block to become free.
+让一块空间变成了可用
+
+Note that we didn't actually erase the file's data in storage, we just deleted the record of it.
+注意这里没有擦除数据，只是把记录删了
+
+At some point, that block will be overwritten with new data, but until then, it just sits there.
+之后某个时候，那些块会被新数据覆盖 \N 但在此之前，数据还在原处
+
+This is one way that computer forensic teams can "recover" data from computers even
+所以计算机取证团队可以"恢复"数据
+
+though people think it has been deleted. Crafty!
+虽然别人以为数据已经"删了", 狡猾！
+
+Ok, let's say we add even more items to our todo list, which causes the File System
+假设往 todo.txt 加了更多数据 \N 所以操作系统分配了一个新块，用了刚刚 carrie.bmp 的块
+
+to allocate yet another block to the file, in this case,
+假设往 todo.txt 加了更多数据 \N 所以操作系统分配了一个新块，用了刚刚 carrie.bmp 的块
+
+recycling the block freed from carrie.bmp.
+假设往 todo.txt 加了更多数据 \N 所以操作系统分配了一个新块，用了刚刚 carrie.bmp 的块
+
+Now our "todo.txt" is stored across 3 blocks, spaced apart, and also out of order.
+现在 todo.txt 在 3 个块里，隔开了，顺序也是乱的
+
+Files getting broken up across storage like this is called fragmentation.
+这叫碎片
+
+It's the inevitable byproduct of files being created, deleted and modified.
+碎片是增/删/改文件导致的，不可避免
+
+For many storage technologies, this is bad news.
+对很多存储技术来说，碎片是坏事
+
+On magnetic tape, reading todo.txt into memory would require
+如果 todo.txt 存在磁带上，读取文件要
+
+seeking to block 1, then fast forwarding to block 5, and then rewinding to block 3
+先读块1, 然后快进到块5，然后往回转到块2
+
+that's a lot of back and forth!
+来回转个半天
+
+In real world File Systems, large files might be stored across hundreds of blocks,
+现实世界中，大文件可能存在数百个块里
+
+and you don't want to have to wait five minutes for your files to open.
+你可不想等五分钟才打开文件
+
+The answer is defragmentation!
+答案是碎片整理！
+
+That might sound like technobabble, but the process is really simple,
+这个词听起来好像很复杂，但实际过程很简单
+
+and once upon a time it was really fun to watch!
+以前看计算机做碎片整理 真的很有趣！
+
+The computer copies around data so that files have blocks located together
+计算机会把数据来回移动，排列成正确的顺序
+
+in storage and in the right order.
+计算机会把数据来回移动，排列成正确的顺序
+
+After we've defragged, we can read our todo file,
+整理后 todo.txt 在 1 2 3，方便读取.
+
+now located in blocks 1 through 3, in a single, quick read pass.
+整理后 todo.txt 在 1 2 3，方便读取.
+
+So far, we've only been talking about Flat File Systems,
+目前只说了平面文件系统，文件都在同一个目录里.
+
+where they're all stored in one directory.
+目前只说了平面文件系统，文件都在同一个目录里.
+
+This worked ok when computers only had a little bit of storage,
+如果存储空间不多，这可能就够用了 \N 因为只有十几个文件
+
+and you might only have a dozen or so files.
+如果存储空间不多，这可能就够用了 \N 因为只有十几个文件
+
+But as storage capacity exploded, like we discussed last episode,
+但上集说过，容量爆炸式增长，文件数量也飞速增长
+
+so did the number of files on computers.
+但上集说过，容量爆炸式增长，文件数量也飞速增长
+
+Very quickly, it became impractical to store all files together at one level.
+很快，所有文件都存在同一层变得不切实际
+
+Just like documents in the real world, it's handy to store related files together in folders.
+就像现实世界\N 相关文件放在同一个文件夹会方便很多
+
+Then we can put connected folders into folders, and so on.
+然后文件夹套文件夹.
+
+This is a Hierarchical File System, and its what your computer uses.
+这叫"分层文件系统"，你的计算机现在就在用这个.
+
+There are a variety of ways to implement this, but let's stick with the File System example
+实现方法有很多种，我们用之前的例子来讲重点好了
+
+we've been using to convey the main idea.
+实现方法有很多种，我们用之前的例子来讲重点好了
+
+The biggest change is that our Directory File needs to be able to point not just to files,
+最大的变化是 目录文件不仅要指向文件, 还要指向目录
+
+but also other directories.
+最大的变化是 目录文件不仅要指向文件, 还要指向目录
+
+To keep track of what's a file and what's a directory, we need some extra metadata.
+我们需要额外元数据  来区分开文件和目录，
+
+This Directory File is the top-most one, known as the Root Directory.
+这个目录文件在最顶层，因此叫根目录
+
+All other files and folders lie beneath this directory along various file paths.
+所有其他文件和文件夹，都在根目录下
+
+We can see inside of our "Root" Directory File that we have 3 files
+图中可以看到根目录文件有3个文件 \N 2个子文件夹："音乐"和"照片"
+
+and 2 subdirectories: music and photos.
+图中可以看到根目录文件有3个文件 \N 2个子文件夹："音乐"和"照片"
+
+If we want to see what's stored in our music directory, we have to go to that block and
+如果想知道"音乐"文件夹里有什么 \N 必须去那边读取目录文件（格式和根目录文件一样）
+
+read the Directory File located there; the format is the same as our root directory.
+如果想知道"音乐"文件夹里有什么 \N 必须去那边读取目录文件（格式和根目录文件一样）
+
+There's a lot of great songs in there!
+有很多好歌啊！
+
+In addition to being able to create hierarchies of unlimited depth,
+除了能做无限深度的文件夹 \N 这个方法也让我们可以轻松移动文件
+
+this method also allows us to easily move around files.
+除了能做无限深度的文件夹 \N 这个方法也让我们可以轻松移动文件
+
+So, if we wanted to move "theme.wav" from our root directory to the music directory,
+如果想把 theme.wav 从根目录移到音乐目录
+
+we don't have to re-arrange any blocks of data.
+不用移动任何数据块
+
+We can simply modify the two Directory Files, removing an entry from one and adding it to another.
+只需要改两个目录文件 \N 一个文件里删一条记录，另一个文件里加一条记录
+
+Importantly, the theme.wav file stays in block 5.
+theme.wav 依然在块5
+
+So that's a quick overview of the key principles of File Systems.
+文件系统的几个重要概念  现在介绍完了.
+
+They provide yet another way to move up a new level of abstraction.
+它提供了一层新抽象！
+
+File systems allow us to hide the raw bits stored on magnetic tape, spinning disks and
+文件系统使我们不必关心 \N 文件在磁带或磁盘的具体位置
+
+the like, and they let us think of data as neatly organized and easily accessible files.
+整理和访问文件更加方便
+
+We even started talking about users, not programmers, manipulating data,
+我们像普通用户一样直观操纵数据，比如打开和整理文件
+
+like opening files and organizing them,
+我们像普通用户一样直观操纵数据，比如打开和整理文件
+
+foreshadowing where the series will be going in a few episodes.
+接下来几集也会从用户角度看问题
+
+I'll see  you next week.
+下周见
+

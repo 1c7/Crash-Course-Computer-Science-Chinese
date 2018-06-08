@@ -1,0 +1,630 @@
+Hi, I'm Carrie Anne and welcome to Crash Course Computer Science.
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne \N 欢迎收看计算机科学速成课！
+
+Early in this series we covered computing history
+之前介绍了计算机历史 \N 从人类文明的曙光开始 (第1集）
+
+From roughly the dawn of civilization,
+之前介绍了计算机历史 \N 从人类文明的曙光开始 (第1集）
+
+up to the birth of electronic general purpose computers in the mid 1940s.
+一直到 1940 年代中期  电子计算机诞生
+
+A lot of the material we've discussed over the past 23 episodes
+过去 23 集里讲的很多东西
+
+like programming languages and compilers
+比如编程语言和编译器，算法和集成电路
+
+Algorithms and integrated circuits
+比如编程语言和编译器，算法和集成电路
+
+Floppy disks and operating systems, telly types and screens
+软盘和操作系统，电报机和屏幕
+
+all emerged over roughly a 30-year period,
+全都是1940~1970年代，大概这30年间里出现的
+
+From the mid 1940s up to the mid 1970s
+全都是1940~1970年代，大概这30年间里出现的
+
+This is the era of computing before companies like Apple and Microsoft existed
+那时苹果和微软还不存在，也没有推特，谷歌或者 Uber.
+
+and long before anyone Tweeted, Googled or Uber-d.
+那时苹果和微软还不存在，也没有推特，谷歌或者 Uber.
+
+It was a formative period setting the stage for personal computers,
+还没到个人电脑时代
+
+worldwide web, self-driving cars, virtual reality, and many other topics
+而万维网，无人驾驶汽车，虚拟现实等主题，\N 这个系列的后半部分会讲
+
+we'll get to in the second half of this series.
+而万维网，无人驾驶汽车，虚拟现实等主题，\N 这个系列的后半部分会讲
+
+Today we're going to step back from circuits and algorithms
+今天, 我们不管电路和算法 \N 来聊聊这个影响力巨大的时代
+
+and review this influential period.
+今天, 我们不管电路和算法 \N 来聊聊这个影响力巨大的时代
+
+We'll pay special attention to the historical backdrop of the cold war,
+我们会把重点放在 \N 冷战，太空竞赛，全球化，消费主义的兴起.
+
+The space race and the rise of globalization and consumerism.
+我们会把重点放在 \N 冷战，太空竞赛，全球化，消费主义的兴起.
+
+Pretty much immediately after World War II concluded in 1945,
+1945年二战结束后不久
+
+there was tension between the world's two new superpowers
+两个超级大国的关系越发紧张，美国和苏联开始了冷战
+
+the United States and the USSR
+两个超级大国的关系越发紧张，美国和苏联开始了冷战
+
+The Cold War had begun and with it,
+因此政府往科学和工程学 投入大量资金
+
+massive government spending on science and engineering.
+因此政府往科学和工程学 投入大量资金
+
+Computing which had already demonstrated its value
+计算机在战时已经证明了自身的价值 \N 比如曼哈顿计划 和 破解纳粹通讯加密
+
+in wartime efforts like the Manhattan Project
+计算机在战时已经证明了自身的价值 \N 比如曼哈顿计划 和 破解纳粹通讯加密
+
+and code breaking Nazi communications,
+计算机在战时已经证明了自身的价值 \N 比如曼哈顿计划 和 破解纳粹通讯加密
+
+was lavished with government funding.
+所以政府大量投入资源 \N 各种雄心勃勃的项目得以进行
+
+They enabled huge ambitious computing projects to be undertaken,
+所以政府大量投入资源 \N 各种雄心勃勃的项目得以进行
+
+like ENIAC, EDVAC, Atlas and Whirlwind all mentioned in previous episodes.
+比如之前提过的 ENIAC, EDVAC, Atlas, Whirlwind
+
+This spurred rapid advances that simply weren't possible in the commercial sector alone,
+这种高速发展，如果仅靠商业运作是根本无法做到的
+
+where projects were generally expected to recoup development costs through sales.
+要依靠销售收回开发成本.
+
+This began to change in the early 1950s,
+1950年代，事情开始发生变化,
+
+especially with Eckert and Buckley's Univac 1,
+特别是 Univac 1，它是第一台取得商业成功的电脑
+
+the first commercially successful computer.
+特别是 Univac 1，它是第一台取得商业成功的电脑
+
+Unlike ENIAC or Atlas , this wasn't just one single computer. It was a model of computers.
+不像 ENIAC 或 Atlas \N Univanc 1 不是一台机器，而是一个型号
+
+in total more than 40 were built.
+一共造了40多台
+
+Most of these Univacs went to government offices or large companies.
+大部分 Univac 去了政府或大公司
+
+Which was part of the growing military industrial complex in the United States,
+成为美国日益增长的军事工业综合体的一部分
+
+with pockets deep enough to afford the cutting edge.
+因为政府有钱承担这些尖端科技.
+
+Famously, a Univac 1 built for the U.S atomic energy commission
+一个著名的例子是，\N 一台给 美国原子能委员会 生产的 Univac 1
+
+was used by CBS to predict the results of the 1952 U.S. presidential election.
+被 CBS 用来预测 1952 年美国总统大选的结果
+
+With just 1% of the vote the computer correctly predicted
+仅用1％的选票，Univac 1 正确预测了结果. \N 艾森豪威尔 获得压倒性胜利，而专家预测 史蒂文森 会赢
+
+Eisenhower landslide, while pundits favored Stevenson.
+仅用1％的选票，Univac 1 正确预测了结果. \N 艾森豪威尔 获得压倒性胜利，而专家预测 史蒂文森 会赢
+
+It was a media event that helped propel computing to the forefront of the public's imagination
+这次事件把计算机推到了公众面前
+
+Computing was unlike machines of the past,
+计算机和以前的机器不一样
+
+which generally augmented human physical abilities.
+以前的机器 增强人类的物理能力
+
+Trucks allowed us to carry more, automatic looms whoa faster,
+比如卡车能带更多东西，自动织布机更快
+
+Machine tools were more precise and so on
+机床更精确 等等. 这些东西代表了工业革命.
+
+for a bunch of contraptions that typify the industrial revolution.
+机床更精确 等等. 这些东西代表了工业革命.
+
+But computers on the other hand could augment human intellect.
+而计算机增强的是人类智力
+
+This potential wasn't lost on Vannevar Bush,
+范内瓦·布什 看到了这种潜力 \N 他在1945年发表了一篇文章
+
+who in 1945 published an article on a
+范内瓦·布什 看到了这种潜力 \N 他在1945年发表了一篇文章
+
+hypothetical computing device he envisioned called the Memex.
+描述了一种假想计算设备叫 Memex
+
+This was a device in which an individual stores all his books,
+可以用这个设备 \N 存自己所有的书, 其他资料 以及和别人沟通
+
+records and communications and which is mechanized,
+而且数据是按照格式存储, \N 所以可以快速查询，有很大灵活性.
+
+so it may be consulted with exceeding speed and flexibility
+而且数据是按照格式存储, \N 所以可以快速查询，有很大灵活性.
+
+It is an enlarged intimate supplement to his memory.
+可以辅助我们的记忆
+
+He also predicted that wholly new forms of encyclopedia will appear,
+他还预测会出现 新的百科全书形式
+
+ready-made, with a mesh of associative trails running through them.
+信息之间相互链接
+
+Sound familiar?
+听起来是不是很熟悉？（维基百科）
+
+Memex directly inspired several subsequent game-changing systems,
+Memex 启发了  之后几个重要里程碑
+
+like Ivan Sutherland Sketchpad, which we discussed last episode,
+比如上集 伊万·萨瑟兰 的 Sketchpad(画板)
+
+and Dough Engelbart's online system, which we will cover soon.
+以及后面很快会讲到 \N Dough Engelbart 的 oN-LINE 系统（第26集）
+
+Vannevar Bush was the head of the U.S. office of Scientific Research and Development,
+范内瓦·布什 \N 做过"美国科学研究与开发办公室"的头头
+
+which was responsible for funding and coordinating scientific research during World War 2.
+这个部门负责在二战期间 \N 资助和安排科学研究
+
+With the Cold War brewing, Bush lobbied for a creation of a peace time equivalent,
+冷战时 范内瓦·布什 到处游说，\N 想建立一个职责类似，但是在和平时期运作的部门
+
+the National Science Foundation, formed in 1950.
+因此 国家科学基金会 于1950年成立
+
+To this day the NSF provides federal funding to support scientific research in the United States.
+至今，国家科学基金会 \N 依然负责给科学研究 提供政府资金
+
+And it is a major reason the U.S. has continued to be a leader in the technology sector.
+美国的科技领先全球，主要原因之一就是这个机构.
+
+It was also in the 1950s that consumers started to buy transistor powered gadgets,
+1950年代，消费者开始买晶体管设备
+
+notable among them was the transistor radio,
+其中值得注意的是 收音机
+
+which was small, durable and battery-powered.
+它又小又耐用，用电池就够了，而且便携
+
+And it was portable,
+它又小又耐用，用电池就够了，而且便携
+
+unlike the vacuum tube based radio sets from the 1940s and before.
+不像 1940 年代之前的收音机，用的是真空管.
+
+It was a runaway success, the Furby or iPhone of its day.
+收音机非常成功，卖的像"菲比精灵"和 iPhone 一样畅销.
+
+The Japanese government looking for industrial opportunities,
+日本政府也在寻求工业机会，想振兴战后经济，
+
+to bolster their post-war economy, soon got in on the action.
+日本政府也在寻求工业机会，想振兴战后经济，
+
+Licensing the rights to Transistors from Bell Labs in 1952.
+他们很快动手从贝尔实验室 取得晶体管的授权
+
+Helping launch the Japanese semiconductor and electronics industry.
+帮助振兴日本的半导体和电子行业
+
+In 1955, the first Sony product was released:
+1955年，索尼的第一款产品面世
+
+The TR-55 Transistor Radio. Concentrating on quality and price,
+TR-55 晶体管收音机. 他们把重心放在质量和价格.
+
+Japanese companies captured half of the U.S. Market for portable radios in just five years.
+因此日本公司在短短5年内，就占有了美国便携式收音机市场的一半.
+
+This planted the first seeds of a major industrial rivalry in the decades to come.
+这为日本成为美国的强大工业对手，埋下伏笔
+
+In 1953, there were only around 100 computers on the entire planet
+1953年，整个地球大概有100台计算机
+
+and at this point, the USSR was only a few years behind the West in computing technology,
+苏联这时的计算机科技  只比西方落后几年
+
+completing their first programmable electronic computer in 1950.
+苏联在1950年 \N完成了第一个可编程电子计算机
+
+But the Soviets were way ahead in the burgeoning space race.
+但苏联在太空竞赛远远领先
+
+Let's go to the thought-bubble.
+我们进入思想泡泡
+
+The Soviets launched the world's first satellite into orbit, Sputnik one,
+苏联在1957年 \N 把第一个卫星送上轨道，史波尼克1号
+
+in 1957, and a few years later in 1961.
+不久，在1961年
+
+Soviet Cosmonaut, Yuri Gagarin became the first human in space.
+苏联宇航员 尤里·加加林 第一个进入太空
+
+This didn't sit well with the American public
+美国民众对此不满
+
+and prompted President Kennedy, a month after Gagarin's mission,
+使得肯尼迪总统 \N 在加加林太空任务一个月后
+
+to encourage the nation to land a man on the moon within the decade. And it was expensive!
+提出要登陆月球. 登月很贵的!
+
+NASA's budget grew almost tenfold,
+NASA 的预算增长了几乎十倍,
+
+peaking in 1966 at roughly 4.5 percent of the U.S. Federal budget
+在 1966 年达到顶峰，占了政府预算的4.5%
+
+Today, It's around half a percent
+如今, NASA 的预算只占 0.5%
+
+NASA used this funding to tackle a huge array of enormous challenges
+NASA 用这笔钱资助各种科学研究
+
+this culminated in the Apollo program
+阿波罗计划花的钱最多，雇了40万人左右
+
+Which is peak employed roughly 400,000 people
+阿波罗计划花的钱最多，雇了40万人左右
+
+further supported by over 20,000 universities and companies
+而且有2万多家大学和公司参与.
+
+one of these huge challenges was navigating in space
+其中一个挑战是 怎样在太空中导航
+
+NASA needed a computer to process complex trajectories
+NASA 需要电脑计算复杂的轨道来引导太空船
+
+and issue guidance commands to the spacecraft
+NASA 需要电脑计算复杂的轨道来引导太空船
+
+For this, they built the Apollo guidance computer,
+因此，他们造了 "阿波罗导航计算机"
+
+There were three significant requirements
+有3个重要要求
+
+First, the computer had to be fast, no surprise there.
+1. 计算机要快, 这在意料之中.
+
+Second, it had to be small & lightweight
+2. 计算机要又小又轻.
+
+there's not a lot of room in a spacecraft
+太空船里的空间不多
+
+and every ounce is precious when you're flying a quarter million miles to the moon
+而且要飞去月球，能轻一点是一点
+
+And finally it had to be really really ridiculously reliable
+3. 要超级可靠
+
+This is super important in a spacecraft
+这对太空船非常重要，因为太空中有很多震动，辐射，极端温度变化
+
+Where there's lots of vibration radiation and temperature change
+这对太空船非常重要，因为太空中有很多震动，辐射，极端温度变化
+
+And there's no running to Best Buy, if something breaks.
+如果东西坏掉了，可没办法去"百思买"买新的
+
+the technology of the era of vacuum tubes and discrete transistors
+那时的主流科技 \N 真空管和晶体管 无法胜任这些要求
+
+Just weren't up to the task
+那个时代的主流科技，真空管和离散晶体管，无法胜任这些要求.
+
+so NASA turned to a brand-new technology, integrated circuits.
+所以 NASA 用全新科技：集成电路
+
+Which we discussed a few episodes ago
+我们几集前聊过
+
+The Apollo guidance computer was the first computer to use them, a huge paradigm shift
+阿波罗导航计算机 首先使用了集成电路
+
+NASA was also the only place that could afford them
+NASA 是唯一负担得起集成电路的组织
+
+Initially each chip cost around $50
+最初，一个芯片差不多50美金
+
+And the guidance computer needed thousands of them.
+导航计算机需要上千个芯片
+
+But by paying that price, the Americans were able to beat the soviets to the moon
+但美国也因此成功登月，打败苏联
+
+Thanks, thought-bubble
+谢了 思想泡泡
+
+Although the Apollo Guidance computer is credited
+虽然人们经常把集成电路的发展 \N 归功于阿波罗导航计算机
+
+with spurring the development and adoption of integrated circuits
+虽然人们经常把集成电路的发展 \N 归功于阿波罗导航计算机
+
+It was a low volume, product there are only 17 Apollo missions after all.
+但它们的产量很低，一共只有 17 次阿波罗任务
+
+it was actually military applications
+实际上是军事 大大推进了集成电路发展
+
+Especially the minuteman and polaris nuclear missile systems
+特别是洲际导弹和核弹，使集成电路大规模生产
+
+That allowed integrated circuits to become a mass-produced item
+特别是洲际导弹和核弹，使集成电路大规模生产
+
+This rapid Advancement was further accelerated by the U.S.
+美国建造强大计算机时，也进一步推进了集成电路
+
+Building and buying huge powerful computers
+美国建造强大计算机时，也进一步推进了集成电路
+
+Often called supercomputers, because they were frequently
+一般叫"超级计算机"，\N 因为它们经常比全球最快电脑还快10倍以上
+
+10 times faster than any other computer on the planet, upon their release.
+一般叫"超级计算机"，\N 因为它们经常比全球最快电脑还快10倍以上
+
+but these machines built by companies like CDC, Cray and IBM were also
+但 CDC，Cray，IBM 制造的计算机非常昂贵
+
+super in cost, and pretty much only governments could afford to buy them.
+几乎只有政府负担得起
+
+in the U.S. these machines went to government Agencies like the NSA.
+这些计算机用于政府机构，比如美国国家安全局
+
+and government research labs like Lawrence Livermore and Los Alamos National laboratories
+以及实验室比如  \N 劳伦斯·利弗莫尔 实验室 \N  洛斯·阿拉莫斯 国家实验室
+
+Initially the U.S. semiconductor industry boomed
+最初，美国的半导体行业 \N 靠高利润政府合同起步
+
+buoyed by High profit government contracts
+最初，美国的半导体行业 \N 靠高利润政府合同起步
+
+However this meant that most U.S.companies overlooked
+因此忽略了消费者市场，因为利润小
+
+the consumer market where profit margins were small
+因此忽略了消费者市场，因为利润小
+
+the Japanese Semiconductor industry came to dominate this niche
+因此日本半导体行业在1950和1960年代 \N 靠低利润率占领了消费者市场
+
+by having to operate with lean profit margins in the 1950s and 60s
+因此日本半导体行业在1950和1960年代 \N 靠低利润率占领了消费者市场
+
+the Japanese had invested heavily in manufacturing capacity
+日本人投入大量资金，大量制造以达到规模经济
+
+to achieve economies of scale
+日本人投入大量资金，大量制造以达到规模经济
+
+in research to improve quality and Yields and in automation to keep manufacturing costs low.
+同时研究技术，提高质量和产量 \N 以及用自动化来降低成本
+
+in the 1970s with the Space Race and cold war subsiding
+1970年代，太空竞赛和冷战逐渐消退 \N 高利润的政府合同变少
+
+previously juicy defense contracts began to dry up.
+1970年代，太空竞赛和冷战逐渐消退 \N 高利润的政府合同变少
+
+and American semi-conductor and electronics companies found it harder to compete.
+美国的半导体和电子设备公司发现更难竞争了
+
+it didn't help the many computing components had been commoditized
+虽然很多计算机组件商品化了，但并没有什么帮助
+
+DRAM was DRAM
+DRAM 就是 DRAM
+
+So why buy expensive Intel memory when you could buy the same chip for less from Hitachi?
+能从日立买便宜的，干嘛要从英特尔买贵的？
+
+Throughout the 1970s U.S. companies began to downsize,
+1970年代 美国公司开始缩小，合并，或直接倒闭
+
+consolidate or outright fail.
+1970年代 美国公司开始缩小，合并，或直接倒闭
+
+Intel had to lay off a third of its workforce in 1974
+1974年 英特尔不得不裁员三分之一
+
+and even the storied Fairchild semiconductor
+知名的仙童半导体也在 1979 年濒临倒闭 \N 被其他公司收购了
+
+was acquired in 1979 after near bankruptcy
+知名的仙童半导体也在 1979 年濒临倒闭 \N 被其他公司收购了
+
+to survive many of these companies began to outsource their manufacturing in a bid to reduce costs.
+为了生存，很多公司把生产外包出去，降低成本
+
+Intel withdrew from its main product category, Memory IC
+英特尔不再把精力放在 内存集成电路 \N 而是把精力放在处理器
+
+and decided to refocus on processes.
+英特尔不再把精力放在 内存集成电路 \N 而是把精力放在处理器
+
+Which ultimately saved the company.
+这个决定最后挽救了公司
+
+This low and U.S.
+美国公司的无力 \N 导致 夏普 和 卡西欧 这样的日本公司
+
+electronics industry allowed Japanese companies like Sharp and Casio
+美国公司的无力 \N 导致 夏普 和 卡西欧 这样的日本公司
+
+to dominate the breakout computing product of the 1970s.
+占领了1970年代的主流产品
+
+Handheld electronic calculators.
+手持计算器
+
+by using integrated circuits, these could be made small and cheap.
+因为集成电路，计算机又小又便宜
+
+They replaced expensive desktop adding machines you find in offices.
+取代了办公室里昂贵的桌面计算器
+
+For most people it was the first time they didn't have to do math on paper, or use a slide rule
+对大多数人 \N 这是他们第一次不必用纸笔和计算尺来做计算
+
+They were an instant hit, selling by the millions.
+手持计算机因此大卖
+
+This further drove down the cost of integrated circuits
+进一步降低了集成电路的成本
+
+and led to the development and widespread use of micro processors.
+使得微处理器被广泛使用
+
+like the Intel 4004 we've discussed previously
+比如之前讨论过的 Intel 4004
+
+This chip was built by Intel in 1971
+Intel 在1971年 \N 应日本计算器公司 Busicom 的要求做了这个芯片
+
+at the request of Japanese calculator company Busicom.
+Intel 在1971年 \N 应日本计算器公司 Busicom 的要求做了这个芯片
+
+Soon, Japanese electronics were everywhere.
+很快，日本电子产品到处都是
+
+from televisions of VCRs to digital wristwatches and Walkmans
+从电视到手表到随身听
+
+the availability of inexpensive microprocessor
+而廉价的微处理器，也催生了全新的产品，比如街机游戏
+
+Spawned in entirely new products like video arcades,
+而廉价的微处理器，也催生了全新的产品，比如街机游戏
+
+the world got Pong in 1972 and Breakout in 1976.
+1972年诞生了Pong，1976年诞生了打砖块
+
+as cost continued to plummet
+因为成本不断下降
+
+soon it became possible for regular people to afford computing devices
+很快，普通人也买得起计算机了
+
+during this time we see the emergence of the first successful home computers
+这段期间，第一批家用电脑开始出现，比如1975年的 Altair 8800
+
+like the 1975 Altair 8800
+这段期间，第一批家用电脑开始出现，比如1975年的 Altair 8800
+
+and also the first home gaming consoles
+以及第一款家用游戏机，比如1977年的Atari 2600
+
+like the Atari 2600 in 1977,
+以及第一款家用游戏机，比如1977年的Atari 2600
+
+Home, now I repeat that, Home.
+家用！我再说一遍 家用！
+
+That seems like a small thing today.
+如今没什么大不了的.
+
+But this was the dawn of a whole new era in computing.
+但那时是计算机的全新时代
+
+in just three decades, computers have evolved from
+在短短三十年内，计算机从大到人类可以在 CPU 里走来走去
+
+machines where you could literally walk inside of the CPU.
+在短短三十年内，计算机从大到人类可以在 CPU 里走来走去
+
+assuming you had government clearance
+当然，你要有政府许可你这样做.
+
+to the point where a child could play with a handheld toy
+发展到小到小孩都能拿住的手持玩具，而且微处理器还快得多.
+
+Containing a microprocessor many times faster,
+发展到小到小孩都能拿住的手持玩具，而且微处理器还快得多.
+
+Critically, this dramatic evolution would have been but without two powerful forces at play
+这种巨大变化是由两种力量推动的：政府和消费者
+
+Governments and Consumers.
+这种巨大变化是由两种力量推动的：政府和消费者
+
+Government funding like the United States provided during the cold war
+政府资金，比如冷战期间美国投入的钱
+
+enabled early adoption of many nascent computing technologies
+推动了计算机的早期发展
+
+This funding helped flow entire Industries relate into computing long enough
+并且让计算机行业活得足够久，使得技术成熟到可以商用
+
+for the technology to mature and become commercially feasible.
+并且让计算机行业活得足够久，使得技术成熟到可以商用
+
+Then businesses and ultimately consumers, provided the demand to take it mainstream.
+然后是公司，最后是消费者，把计算机变成了主流
+
+The cold war may be over, but this relationship continues today
+冷战虽然结束了，但这种关系今天仍在继续
+
+Governments are still funding science research.
+政府依然在资助科学研究
+
+intelligence agencies are still buying supercomputers.
+情报机构依然在超级计算机
+
+humans are still being launched into space.
+人类仍然被发射到太空里
+
+And you're still buying TV, Xbox, Playstation, Laptop and Smartphone
+而你依然在买电视，Xbox，Playstation，笔记本电脑和手机
+
+and for these reasons,
+因此，计算机会继续飞速发展
+
+Computing continues to advance a lightning pace.
+因此，计算机会继续飞速发展
+
+I'll see you next week
+我们下周见
+

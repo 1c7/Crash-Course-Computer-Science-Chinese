@@ -1,0 +1,626 @@
+Hi, I’m Carrie Anne, and welcome to CrashCourse Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+Last episode, we talked about the basics of computer security,
+上集我们讲了计算机安全的基础知识，
+
+principles and techniques used to keep computer systems safe and sound.
+包括各种原则和技术
+
+But, despite our best efforts, the news is full of stories of individuals, companies
+但尽管尽了最大努力，新闻上还是各种 \N 个人，公司，政府被黑客攻击的故事
+
+and governments getting cyberattacked by hackers, people who,
+但尽管尽了最大努力，新闻上还是各种 \N 个人，公司，政府被黑客攻击的故事
+
+with their technical knowledge, break into computer systems.
+那些黑客凭技术知识 闯入计算机系统
+
+Not all hackers are bad though.
+不是所有黑客都是坏人
+
+There are hackers who hunt for bugs and try to close security holes
+有些黑客会寻找并修复软件漏洞 \N 让系统更安全
+
+in software to make systems safer and more resilient.
+有些黑客会寻找并修复软件漏洞 \N 让系统更安全
+
+They’re often hired by companies and governments to perform security evaluations.
+他们经常被公司和政府雇来做安全评估
+
+These hackers are called White Hats, they’re the good guys.
+这些黑客叫"白帽子"，他们是好人
+
+On the flip side, there are Black Hats, malicious hackers with
+另一方面，也有"黑帽"黑客，他们窃取，
+
+intentions to steal, exploit and sell computer vulnerabilities and data.
+利用和销售计算机漏洞和数据
+
+Hackers’ motivations also differ wildly.
+黑客的动机有很多种
+
+Some hack for amusement and curiosity,
+有些是好玩和好奇
+
+while cybercriminals hack most often for monetary gain.
+而网络罪犯一般是为了钱
+
+And then there are hacktivists, who use their skills to promote a social or political goal.
+还有的叫"黑客行动主义者"，\N 通过黑客手段影响社会或达到政治目的
+
+And that’s just the tip of the iceberg.
+这只是冰山一角
+
+Basically, the stereotypical view of a hacker as some unpopular kid sitting in a dark room
+一般对黑客的刻板印象是 \N 某个不受欢迎的小孩在黑暗的房间里
+
+full of discarded pizza boxes probably better describes John Green in college than it does hackers.
+到处都是吃完的比萨盒，这个印象是错的，\N形容约翰·格林的宿舍还更贴切些
+
+Today, we’re not going to teach you how to be a hacker.
+今天，我们不会教你如何成为黑客
+
+Instead, we’ll discuss some classic examples of how hackers
+而是讨论一些入侵原理，给你一个大概概念
+
+break into computer systems to give you an idea of how it’s done.
+而是讨论一些入侵原理，给你一个大概概念
+
+The most common way hackers get into computer systems isn’t
+黑客入侵最常见的方式
+
+by hacking at all; it’s by tricking users into letting them in.
+不是通过技术，而是欺骗别人
+
+This is called social engineering, where a person is manipulated into divulging confidential
+这叫"社会工程学"，欺骗别人让人泄密信息
+
+information, or configuring a computer system so that it permits entry by attackers.
+或让别人配置电脑系统，变得易于攻击
+
+The most common type of attack is phishing, which you most often encounter as an email
+最常见的攻击是网络钓鱼，你可能见过
+
+asking you to login to an account on a website, say your bank.
+银行发邮件叫你点邮件里的链接，登陆账号
+
+You’ll be asked to click a link in the email, which takes you to a site that looks legit
+然后你会进入一个像官网的网站
+
+to the casual observer, but is really an evil clone.
+但实际上是个假网站
+
+When you enter your username and password, that information goes straight to the hackers,
+当你输入用户名和密码时，信息会发给黑客，
+
+who then can login to the real website as you.
+然后黑客就可以假扮你登陆网站
+
+Bad news!
+坏消息！
+
+Even with a 1/10th of one percent success rate, a million phishing emails might yield
+即使成功率只有1/1000，发一百万封钓鱼邮件
+
+a thousand compromised accounts.
+也有一千个帐户中招
+
+Another social engineering attack is pretexting, where attackers call up, let's say a company,
+另一种方法叫 假托(Pretexting)，\N 攻击者给某个公司打电话
+
+and then confidently pretend to be from their IT department.
+假装是IT部门的人
+
+Often attackers will call a first number, and then ask to be transferred to a second,
+攻击者的第一通电话一般会叫人转接
+
+so that the phone number appears to be internal to the company.
+这样另一个人接的时候，电话看起来像内部的
+
+Then, the attacker can instruct an unwitting user to configure their computer in a compromising
+然后让别人把电脑配置得容易入侵
+
+way, or get them to reveal confidential details, like passwords or network configurations.
+或让他们泄露机密信息，比如密码或网络配置
+
+Sorry, one sec…
+不好意思，等一下
+
+Oh. Hey, it's Susan from It.
+嘿，我是 IT 部门的苏珊
+
+We’re having some network issues down here, can you go ahead and check a setting for me?"
+我们遇到一些网络问题，你能帮我检查一个配置吗？
+
+... and it begins.
+然后就开始了
+
+Attackers can be very convincing, especially with a little bit
+只要预先做一点研究，攻击者可以装得很像真的
+
+of research beforehand to find things like key employees’ names.
+比如关键员工的名字
+
+It might take ten phone calls to find an victim, but you only need one to get in.
+也许要10通电话才能找到一个受害者，\N 但只要一个人上当就够了
+
+Emails are also a common delivery mechanism for trojan horses,
+邮件里带"木马"也是常见手段
+
+programs that masquerade as harmless attachments, like a photo or invoice,
+木马会伪装成无害的东西，比如照片或发票
+
+but actually contain malicious software, called malware.
+但实际上是恶意软件
+
+Malware can take many forms.
+恶意软件有很多种
+
+Some might steal your data, like your banking credentials.
+有的会偷数据，比如银行凭证
+
+Others might encrypt your files and demand a ransom, what's known as ransomware.
+有的会加密文件，交赎金才解密，也就是"勒索软件"
+
+If they can’t run malware or get a user to let them in,
+如果攻击者无法用木马或电话欺骗
+
+attackers have to force their way in through other means.
+攻击者只能被迫用其他手段
+
+One method, which we briefly discussed last episode, is to brute force a password
+方法之一是暴力尝试，我们上集讨论过
+
+try every combination of password until you gain entry.
+尝试所有可能的密码，直到进入系统
+
+Most modern systems defend against this type of attack by having you wait incrementally
+大多数现代系统会加长等待时间，来抵御这种攻击
+
+longer periods of time following each failed attempt,
+每次失败就加长等待时间
+
+or even lock you out entirely after a certain number of tries.
+甚至失败超过一定次数后，完全锁住
+
+One recent hack to get around this is called NAND Mirroring,
+最近出现一种攻破方法叫 "NAND镜像"
+
+where if you have physical access to the computer,
+如果能物理接触到电脑
+
+you can attach wires to the device's memory chip
+可以往内存上接几根线
+
+and make a perfect copy of its contents.
+复制整个内存
+
+With this setup, you can try a series of passwords, until the device starts making you wait.
+复制之后，暴力尝试密码，直到设备让你等待
+
+When this happens, you just reflash the memory with the original copy you made,
+这时只要把复制的内容覆盖掉内存
+
+essentially resetting it, allowing you to try more passwords immediately, with no waiting.
+本质上重置了内存，就不用等待，可以继续尝试密码了
+
+This technique was shown to be successful on an iPhone 5C,
+这项方法在 iPhone 5C 上管用
+
+but many newer devices include mechanisms to thwart this type of attack.
+更新的设备有机制阻止这种攻击
+
+If you don’t have physical access to a device,
+如果你无法物理接触到设备
+
+you have to find a way to hack it remotely, like over the internet.
+就必须远程攻击，比如通过互联网.
+
+In general, this requires an attacker to find and take advantage of a bug in a system, and
+远程攻击一般需要攻击者利用系统漏洞
+
+successfully utilizing a bug to gain capabilities or access is called an exploit.
+来获得某些能力或访问权限，这叫"漏洞利用"(Exploit)
+
+One common type of exploit is a buffer overflow.
+一种常见的漏洞利用叫"缓冲区溢出"
+
+Buffers are a general term for a block of memory reserved for storing data.
+"缓冲区"是一种概称，指预留的一块内存空间
+
+We talked about video buffers for storing pixel data in Episode 23.
+我们在第23集，讨论过存像素数据的视频缓冲区
+
+As a simple example, we can imagine an operating system’s login prompt,
+举个简单例子，假设我们在系统登陆界面
+
+which has fields for a username and password.
+要输入用户名和密码
+
+Behind the scenes, this operating system uses buffers for storing the text values that are entered.
+在幕后，系统用缓冲区存输入的值
+
+For illustration, let's say these buffers were specified to be of size ten.
+假设缓冲区大小是10
+
+In memory, the two text buffers would look something like this:
+两个文本缓冲区看起来会像这样：
+
+Of course, the operating system is keeping track of a lot more than just a username and
+当然，操作系统记录的远不止用户名和密码
+
+password, so there’s going to be data stored both before and after in memory.
+所以缓冲区前后 肯定有其他数据
+
+When a user enters a username and password, the values are copied into the buffers,
+当用户输入用户名和密码时，这些值会复制到缓冲区
+
+where they can be verified.
+然后验证是否正确
+
+A buffer overflow attack does exactly what the name suggests: overflows the buffer.
+"缓冲区溢出"正如名字所暗示的：它会溢出缓冲区
+
+In this case, any password longer than ten characters
+在这个例子中，超过十个字符的密码
+
+will overwrite adjacent data in memory.
+会覆盖掉相邻的数据
+
+Sometimes this will just cause a program or operating system to crash,
+有时只会让程序或系统崩溃，
+
+because important values are overwritten with gobbledygook.
+因为重要值被垃圾数据覆盖了
+
+Crashing a system is bad, and maybe that’s all that
+系统崩溃是坏事
+
+a mischievous hacker wants to do, be a nuisance.
+但也许恶作剧黑客就只是想系统崩溃，当个讨厌鬼
+
+But attackers can also exploit this bug more cleverly by injecting purposeful new values
+但攻击者可以更巧妙地利用这个漏洞(bug)，\N 注入有意义的新值
+
+into a program’s memory, for example, setting an "is admin" variable to true.
+到程序的内存中，比如把"is_admin"的值改成true
+
+With the ability to arbitrarily manipulate a program’s memory,
+有了任意修改内存的能力，
+
+hackers can bypass things like login prompts,
+黑客可以绕过"登录"之类的东西，
+
+and sometimes even use that program to hijack the whole system.
+甚至使用那个程序劫持整个系统
+
+There are many methods to combat buffer overflow attacks.
+有很多方法阻止缓冲区溢出
+
+The easiest is to always test the length of input before copying it into a buffer,
+最简单的方法是，复制之前先检查长度，
+
+called bounds checking.
+这叫 "边界检查"
+
+Many modern programming languages implement bounds checking automatically.
+许多现代编程语言自带了边界检查
+
+Programs can also randomize the memory location of variables,
+程序也会随机存放变量在内存中的位置，
+
+like our hypothetical "is admin" flag,
+比如我们之前假设的"is_admin"
+
+so that hackers don’t know what memory location to overwrite,
+这样黑客就不知道应该覆盖内存的哪里
+
+and are more likely to crash the program than gain access.
+导致更容易让程序崩溃，而不是获得访问权限
+
+Programs can also leave unused space after buffers,
+程序也可以在缓冲区后，留一些不用的空间
+
+and keep an eye on those values to see if they change;
+然后跟踪里面的值，看是否发生变化
+
+if they do, they know an attacker is monkeying around with memory.
+如果发生了变化，说明有攻击者在乱来
+
+These regions are called canaries, named after the small birds miners
+这些不用的内存空间叫"金丝雀"，因为以前矿工会带
+
+used to take underground to warn them of dangerous conditions.
+金丝雀下矿，金丝雀会警告危险
+
+Another classic hack is code injection.
+另一种经典手段叫"代码注入"
+
+It’s most commonly used to attack websites that use databases,
+最常用于攻击用数据库的网站，
+
+which pretty much all big websites do.
+几乎所有大网站都用数据库
+
+We won’t be covering databases in this series,
+我们这个系列中不会讲解数据库，
+
+so here’s a simple example to illustrate this type of attack.
+所以以下是个简单例子
+
+We’ll use Structured Query Language, S-Q-L, also called sequel, a popular database API.
+我们会用"结构化查询语言"，也叫SQL，\N 一种流行的数据库API
+
+Let’s imagine our login prompt is now running on a webpage.
+假设网页上有登录提示
+
+When a user clicks "login", the text values are sent to a server, which executes code
+当用户点击"登录"时，值会发到服务器
+
+that checks if that username exists, and if it does, verifies the password matches.
+服务器会运行代码，检查用户名是否存在，\N 如果存在，看密码是否匹配
+
+To do this, the server will execute code, known as a SQL query,
+为了做检查，服务器会执行一段叫 "SQL查询" 的代码
+
+that looks something like this.
+看起来像这样
+
+First, it needs to specify what data we’re retrieving from the database.
+首先，语句要指定从数据库里查什么数据
+
+In this case, we want to fetch the password.
+在这个例子中，我们想查的是密码 (password)  \N (SELECT password)
+
+The server also needs to specify from what place in the database
+还要指定从哪张表查数据 \N (FROM users)
+
+to retrieve the value from.
+还要指定从哪张表查数据 \N (FROM users)
+
+In this case, let’s imagine all the users’ data is stored
+在这个例子里，\N 我们假设所有用户数据都存在 "users" 表里
+
+in a data structure called a table labeled "users".
+在这个例子里，\N 我们假设所有用户数据都存在 "users" 表里
+
+Finally, the server doesn’t want to get back a giant list of passwords for every user
+最后，服务器不想每次取出一个巨大密码列表，\N 包含所有用户密码
+
+in the database, so it specifies that it only wants data for the account
+所以用 username = '用户名'\N 代表只要这个用户
+
+whose username equals a certain value.
+所以用 username = '用户名'\N 代表只要这个用户
+
+That value is copied into the SQL query by the server, based on what the user typed in,
+用户输的值会复制到"SQL查询"
+
+so the actual command that’s sent to the SQL database would look something like this,
+所以实际发到 SQL 数据库的命令，是这样的.
+
+where username='philbin'
+Where username='philbin'
+
+Note also that SQL commands end with a semicolon.
+还要注意，SQL命令以分号结尾
+
+So how does someone hack this?
+那怎么破解这个？
+
+By sending in a malicious username, with embedded SQL commands!
+做法是把"SQL命令"输入到用户名里！
+
+Like, we could send the server this funky username:
+比如我们可以发这个奇怪的用户名：
+
+When the server copies this text into the SQL Query, it ends up looking like this:
+当服务器把值复制到SQL查询中，会变成这样：
+
+As I mentioned before, semicolons are used to separate commands,
+正如之前提的，分号用于分隔命令，
+
+so the first command that gets executed is this:
+所以第一条被执行的命令是：
+
+If there is a user named ‘whatever’, the database will return the password.
+如果有个用户叫"whateer"，数据库将返回密码
+
+Of course, we have no idea what ‘whatever’s’ password is,
+当然，我们不知道密码是什么
+
+so we’ll get it wrong and the server will reject us.
+所以会出错，服务器会拒绝我们
+
+If there’s no user named ‘whatever’, the database will return
+如果没有一个用户叫"whatever"，数据库会返回 \N 空密码或直接错误，服务器也会拒绝我们
+
+no password or provide an error, and the server will again reject us.
+如果没有一个用户叫"whatever"，数据库会返回 \N 空密码或直接错误，服务器也会拒绝我们
+
+Either way, we don’t care, because it’s the next SQL command we’re interested in:
+总之 我们不在乎，\N 我们感兴趣的是下一个SQL命令：
+
+"drop table users" – a command that we injected by manipulating the username field.
+"drop table users" - 我们注入的命令
+
+This command instructs the SQL database to delete the table containing all user data.
+这条命令的意思是  删掉 users 这张表
+
+Wiped clean!
+全删干净！
+
+Which would cause a lot of headaches at a place like a bank... or really anywhere.
+这会造成很多麻烦，不管是银行或什么其他地方
+
+And notice that we didn’t even break into the system –
+注意，我们甚至不需要侵入系统
+
+it’s not like we correctly guessed a username and password.
+我们没有猜到正确的用户名和密码
+
+Even with no formal access, we were able to create mayhem by exploiting a bug.
+即使没有正式访问权限，还是可以利用 bug 来制造混乱
+
+This is a very simple example of code injection,
+这是代码注入的一个简单例子，
+
+which almost all servers today have defenses against.
+如今几乎所有服务器都会防御这种手段
+
+With more sophisticated attacks, it’s possible to add records to the database
+如果指令更复杂一些，也许可以添加新记录到数据库
+
+– like a new administrator account –
+- 比如一个新管理员帐户 -
+
+or even get the database to reveal data, allowing hackers
+甚至可以让数据库泄露数据，使得黑客
+
+to steal things like credit card numbers, social security numbers
+窃取信用卡号码，社会安全号码
+
+and all sorts of nefarious goodies.
+以及各种其他信息
+
+But we’re not going to teach you how to do that.
+但我们不会教你具体怎么做
+
+As with buffer overflows, programmers should always assume input coming from the outside
+就像缓冲区溢出攻击一样，应该总是假设外部数据
+
+to be potentially dangerous, and examine it carefully.
+是危险的，应该好好检查
+
+Most username and password forms on the web don’t let you
+很多用户名和密码表单，不让你输入
+
+include special symbols like semicolons or quotes as a first level of defense.
+特殊字符，比如分号或者括号，作为第一道防御
+
+Good servers also sanitize input by removing or
+好的服务器也会清理输入
+
+modifying special characters before running database queries.
+比如修改或删除特殊字符，然后才放到数据库查询语句里
+
+Working exploits are often sold or shared online.
+管用的漏洞利用(Exploits)一般会在网上贩卖或分享
+
+The more prevalent the bug, or the more damaging the exploit,
+如果漏洞很流行，或造成的危害很大
+
+the higher the price or prestige it commands.
+价格会越高，或者名气越大
+
+Even governments sometimes buy exploits,
+有时甚至政府也会买漏洞利用
+
+which allow them to compromise computers for purposes like spying.
+让他们侵入系统做间谍工作
+
+When a new exploitable bug is discovered that the software creators weren’t aware of,
+当软件制造者不知道软件有新漏洞被发现了
+
+it’s called a zero day vulnerability.
+那么这个漏洞叫 "零日漏洞"
+
+Black Hat Hackers rush to use the exploit for maximum benefit
+黑帽黑客经常赶时间，抢在白帽程序员做出补丁之前
+
+before white hat programmers release a patch for the bug.
+尽可能利用漏洞
+
+This is why it’s so important to keep your computer’s software up to date;
+所以保持系统更新非常重要
+
+a lot of those downloads are security patches.
+很多更新都是安全性补丁
+
+If bugs are left open on enough systems, it allows hackers to
+如果有足够多的电脑有漏洞
+
+write a program that jump from computer to computer automatically
+让恶意程序可以在电脑间互相传播
+
+which are called worms.
+那么叫"蠕虫"
+
+If a hacker can take over a large number of computers, they can be used together,
+如果黑客拿下大量电脑，这些电脑可以组成
+
+to form what’s called a botnet.
+"僵尸网络"
+
+This can have many purposes, like sending huge volumes of spam,
+可以用于很多目的，比如发大量垃圾邮件，
+
+mining bitcoins using other people's computing power and electricity,
+用别人电脑的计算能力和电费挖 Bitcoin，
+
+and launching Distributed Denial of Service or DDoS attacks against servers.
+或发起"拒绝服务攻击"简称DDoS，攻击服务器
+
+DDoS is where all the computers in the botnet send a flood of dummy messages.
+DDoS 就是僵尸网络里的所有电脑发一大堆垃圾信息
+
+This can knock services offline, either to force owners
+堵塞服务器，要么迫使别人交钱消灾
+
+to pay a ransom or just to be evil.
+或纯粹为了作恶
+
+Despite all of the hard working white hats, exploits documented online,
+尽管白帽黑客非常努力工作，漏洞利用的文档都在网上，
+
+and software engineering best practices, cyberattacks happen on a daily basis.
+编写软件有很多"最佳实践"，网络攻击每天都在发生
+
+They cost the global economy roughly half a trillion dollars annually,
+每年损害全球经济差不多5000亿
+
+and that figure will only increase as we become more reliant on computing systems.
+并且随着我们越来越依赖计算机系统，这个数字只会增加.
+
+This is especially worrying to governments, as infrastructure is increasingly computer-driven,
+这使得政府非常担心，因为基础设施越来越电脑化
+
+like powerplants, the electrical grid, traffic lights, water treatment plants, oil refineries,
+比如电力厂，电网，交通灯，水处理厂，炼油厂
+
+air traffic control, and lots of other key systems.
+空管，还有很多其他关键系统
+Many experts predict that the next major war will be fought in cyberspace,
+很多专家预测下一次大战会主要是网络战争
+
+where nations are brought to their knees not by physical attack,
+国家不是被物理攻击打败
+
+but rather crippled economically and infrastructurally through cyberwarfare.
+而是因为网络战争导致经济和基础设施崩溃
+
+There may not be any bullets fired, but the potential for lives lost is still very high...
+也许不会发射一颗子弹，但是人员伤亡的可能性依然很高
+
+maybe even higher than conventional warfare.
+甚至可能高于传统战争
+
+So, we should all adopt good cybersecurity practices.
+所以大家都应该知道一些方法保证网络安全
+
+And, as a community interconnected over the internet,
+全球社区因为互联网而互相连接，
+
+we should ensure our computers are secured against those
+我们应该确保自己的电脑安全
+
+who wish to use their great potential for harm.
+抵御其他想做坏事的人
+
+So maybe stop ignoring that update notification?
+也许不要再忽略更新提示？
+
+I’ll see you next week.
+我们下周见
+

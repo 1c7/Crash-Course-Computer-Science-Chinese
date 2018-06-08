@@ -46,12 +46,15 @@ function extract_main_point(file, number){
   }
 
   // 写文件
-  fs.writeFile(file+'.txt', result, function(err) {
-      if(err) {
-          return console.log(err);
-      }
-      console.log("The file was saved!");
-  });
+  // if (number == 40){
+    fs.writeFile(file+'.txt', result, function(err) {
+        if(err) {
+            return console.log(err);
+        }
+        console.log("The file was saved!");
+    });
+  // }
+
   result = '';
 }
 

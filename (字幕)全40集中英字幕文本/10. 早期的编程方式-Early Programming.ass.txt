@@ -1,0 +1,474 @@
+Hi, I'm Carrie Anne and welcome to Crash Course Computer Science.
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+Over the last few episodes,
+前几集我们把重点放在计算机的原理
+
+We've talked a lot about the mechanics of how computers work.
+前几集我们把重点放在计算机的原理
+
+How they use complex circuits to save and retrieve values from memory,
+怎么从内存读写数据，执行操作
+
+and perform operations on those values
+怎么从内存读写数据，执行操作
+
+like adding two numbers together.
+比如把两个数字加在一起
+
+We've even briefly talked about sequences of operations,
+还简单讲了下指令的执行，也就是计算机程序
+
+which is a computer program
+还简单讲了下指令的执行，也就是计算机程序
+
+What we haven't talked about is how a program gets into a computer?
+但我们还没讲的是：程序如何"进入"计算机
+
+You might remember in episode 7 and 8 ,
+你应该记得在第 7, 8 集，我们一步步讲了例子程序
+
+we step through some simple example programs for the CPU that we had created
+你应该记得在第 7, 8 集，我们一步步讲了例子程序
+
+For simplicity, we just waved our hands and said that the program was already magically in memory
+当时为了简单，我们假设程序已经魔法般在内存里了
+
+But in reality, programs have to be loaded into a computer's memory.
+但事实是，程序需要加载进内存
+
+It's not magic. It's computer science
+这不是魔法，是计算机科学！
+
+The need to program machines existed way before the development of computers.
+给机器编程这个需求，早在计算机出现之前就有了
+
+The most famous example of this was in textile manufacturing
+最著名的例子来自纺织业
+
+If you just wanted to weave a big red tablecloth
+如果你只想织一块红色大桌布
+
+You could simply feed red thread into a loom and let it run
+可以直接放红线进织布机
+
+What about if you wanted the cloth to have a pattern like stripes or plaid?
+但如果想要图案怎么办? 比如条纹或者方格
+
+Workers would have to periodically reconfigure the loom as dictated by the pattern,
+工人要每隔一会儿 调整一次织布机
+
+but this was labor intensive which made patterned fabrics expensive.
+因为非常消耗劳动力，所以图案纺织品很贵
+
+The presence or absence of a hole in the card determined if a specific thread was held high or low in the loom
+特定位置有没有穿孔，决定了线是高是低
+
+Such as the cross thread, called the weft,  passed above or below the thread
+横线是从上/从下穿过
+
+To vary the pattern across rows these punch cards were arranged in long chains
+为了让每行图案不同，纸卡连成长条
+
+Forming a sequence of commands for the loom.
+形成连续指令
+
+Sound familiar?
+听起来很熟？
+
+Many consider Jacquard loom to be one of the earliest forms of programming.
+很多人认为雅卡尔织布机是最早的编程
+
+Punched cards, turned out to be a cheap, reliable, fairly human-readable way to store data.
+事实证明 穿孔纸卡便宜、可靠、也易懂
+
+Nearly a century later,
+近一个世纪后
+
+punch cards were used to help tabulate the 1890 US census
+穿孔纸卡用于 1890 年美国人口普查
+
+which we talked about in episode 1
+我们在第一集提过
+
+Each card held an individual person's data.
+一张卡存一个人的信息
+
+things like race
+比如种族
+
+marital status
+婚姻状况
+
+number of children
+子女数量
+
+country of birth and so on
+出生国家 等等
+
+for each demographic question
+针对每个问题，人口普查工作者会在对应位置打孔
+
+a census worker would punch out a hole of the appropriate position
+针对每个问题，人口普查工作者会在对应位置打孔
+
+when a card was fed into the tabulating machine
+当卡片插入汇总机
+
+a hole would cause the running total for that specific answer to be increased by one
+孔会让对应总和值+1
+
+in this way you could afeed the entire counties worth of people
+可以插入整个国家人口的卡片
+
+and at the end you'd have running totals for all of the questions that you ask
+在结束后得到各个总值
+
+It is important to note here that early tabulating machines were not truly computers
+值得注意的是，早期汇总机不算计算机
+
+as they can only do one thing-tabulate
+因为它们只做一件事 - 汇总数据
+
+their operation was fixed and not programmable
+操作是固定的，不能编程
+
+punched cards stored data, but not a program
+穿孔纸卡存的是数据，不是程序.
+
+over the next 60 years, these business machines grew in capability
+之后60年，这些机器被加强，可以做减、乘、除
+
+Adding features to subtract multiply divide
+之后60年，这些机器被加强，可以做减、乘、除
+
+and even make simple decisions about when to perform certain operations.
+甚至可以做一些小决定，决定何时执行某指令
+
+To trigger these functions appropriately
+为了正确执行不同计算，程序员需要某种控制面板
+
+so that different calculations could be performed, a programmer accessed a control panel
+为了正确执行不同计算，程序员需要某种控制面板
+
+this panel was full of little sockets into which a programmer would plug cables
+面板有很多小插孔，程序员可以插电线
+
+to pass values and signals between different parts of the machine
+让机器的不同部分  互相传数据和信号
+
+for this reason they were also called plug boards
+因此也叫 "插线板"
+
+Unfortunately this meant having to rewire the machine each time a different program needed to be run
+不幸的是, 这意味着 运行不同程序要重新接线
+
+And so by the 1920s these plug boards were made swappable
+所以到 1920 年代，控制面板变成了可拔插
+
+This not only made programming a lot more comfortable
+让编程更方便
+
+but also allowed for different programs be plugged into a machine
+可以给机器插入不同程序
+
+For example one board might be wired to calculate sales tax
+比如，一个插线板算销售税，另一个算工资单
+
+While another helps with payroll
+比如，一个插线板算销售税，另一个算工资单
+
+But plug boards were fiendishly complicated to program
+但给插线板编程很复杂
+
+This tangle of wires is a program for calculating a profit loss summary using an IBM 402 accounting machine
+图中乱成一团的线  负责算盈亏总额 \N 用于 IBM 402 核算机
+
+which were popular in the 1940s
+在 1940 年代这样做很流行
+
+And this style of plug board programming wasn't unique through electromechanical computers
+用插线板编程  不只在机电计算机流行
+
+The world's first general-purpose electronic computer, the ENIAC, completed in 1946
+世上第一台通用电子计算机，ENIAC，完成于 1946 年
+
+used a ton of them
+用了一大堆插线板
+
+Even after a program had been completely figured out on paper
+程序在纸上设计好之后
+
+Physically wiring up the ENIAC and getting the program to run could take upwards of three weeks
+给 ENIAC 连线，最多可能花三个星期
+
+Given the enormous cost of these early computers, weeks of downtime simply to switch programs was unacceptable
+因为早期计算机非常昂贵 \N 停机几个星期只为换程序  完全无法接受
+
+and the new faster more flexible way to program machines was badly needed
+人们急需更快、更灵活的新方式来编程
+
+Fortunately by the late 1940s and into the 50s
+幸运的是，到 1940 年代晚期 1950 年代初
+
+electronic memory was becoming feasible
+内存变得可行
+
+As costs fell, memory size grew, instead of storing a program as a physical plug board of wires
+价格下降, 容量上升.  与其把程序存在插线板
+
+it became possible to store a program entirely in a computer's memory
+存在内存变得可行
+
+where it could be easily changed by programmers and quickly accessed by the CPU
+这样程序易于修改、方便 CPU 快速读取
+
+these machines were called Stored-program Computers
+这类机器叫 "存储程序计算机"
+
+With enough computer memory you could store not only the program you wanted to run
+如果内存足够，不仅可以存要运行的程序
+
+but also any data your program would need
+还可以存程序需要的数据
+
+including new values it created along the way
+包括程序运行时产生的新数据
+
+Unifying the program and data into a single shared memory is called the Von Neumann Architecture
+程序和数据都存在一个地方，叫 "冯诺依曼结构"
+
+named after John Von Neumann
+命名自 约翰·冯·诺依曼
+
+a prominent mathematician and physicist who worked on the Manhattan project and several early electronic computers
+杰出的数学家和物理学家 \N 参与了曼哈顿计划和早期电子计算机项目
+
+and once said I am thinking about something much more important than Bombs
+他曾说：我在思考比炸弹重要得多的东西
+
+I'm thinking about computers
+计算机
+
+The hallmarks of a Von Neumann computer are a processing unit containing an arithmetic logic unit
+冯诺依曼计算机的标志是，一个处理器(有算术逻辑单元)+
+
+data registers and instruction register and instruction address register
+数据寄存器+指令寄存器+指令地址寄存器
+
+And finally a memory to store both data and instructions
++内存（负责存数据和指令)
+
+Hopefully this sounds familiar
+希望这听起来很耳熟
+
+Because we actually built a Von Neumann computer in episode 7
+因为第7集我们造了一个冯诺依曼计算机
+
+The very first Von Neumann Architecture Stored-program computer
+第一台冯诺依曼架构的"储存程序计算机"
+
+was constructed in 1948 by the University of Manchester, nicknamed Baby.
+由曼彻斯特大学于 1948 年建造完成，绰号"宝宝"
+
+and even the computer you are watching this video right now
+甚至你现在看视频的计算机，也在用一样的架构
+
+uses the same architecture
+甚至你现在看视频的计算机，也在用一样的架构
+
+Now electronic computer memory is great and all
+虽然有内存很棒
+
+but you still have to load the program and data into the computer before it can run
+但程序和数据  依然需要某种方式输入计算机
+
+and for this reason punch cards were used
+所以用穿孔纸卡
+
+Let's get to the Thought bubbles
+让我们进入  思维泡泡
+
+Well into the 1980s almost all computers have a punch card reader
+到1980年代，几乎所有的计算机都有穿孔纸卡读取器
+
+which could suck in a single punch card at a time
+可以吸入一张卡片，把卡片内容写进内存
+
+and write the contents of the card into the computer's memory
+可以吸入一张卡片，把卡片内容写进内存
+
+If you load it in a stack of punch cards,
+如果放了一叠卡片，读取器会一个个写进内存
+
+the reader would load them all into memory sequentially as a big block
+如果放了一叠卡片，读取器会一个个写进内存
+
+once the program and data were in memory, the computer would be told to execute it
+一旦程序和数据写入完毕，电脑会开始执行
+
+Of course even simple computer programs might have hundreds of instructions
+即便简单程序也有几百条指令，要用一叠纸卡来存
+
+which meant that programs were stored as stacks of punch cards
+即便简单程序也有几百条指令，要用一叠纸卡来存
+
+So if you ever have the misfortune of accidentally dropping your program on the floor
+如果不小心摔倒弄撒了
+
+it could take you hours days or even weeks to put the code back in the right order
+要花上几小时、几天、甚至几周来整理
+
+A common trick was to draw a diagonal line on the side of the card stack called striping,
+有个小技巧是  在卡片侧面画对角线
+
+so you'd have at least some clue how to get it back into the right order
+如果弄散了，整理起来会方便很多
+
+The largest program ever punched into punch cards was the US Air Force's SAGE air defense system, completed in 1955.
+用纸卡的最大型程序 \N 是美国空军的 SAGE 防空系统，于 1955 年完成
+
+and its peak, the project is said to have employed 20% of the world's programmers
+据称顶峰时期 雇佣了世上 20% 程序员
+
+Its main control program was stored on a whopping 62,500 punch cards
+主控制程序用了 62500 张穿孔纸卡
+
+which is equivalent to roughly 5 megabytes of data
+等同于大约 5MB 的数据
+
+Pretty underwhelming by today's standards
+以如今的标准，不值一提
+
+And punch cards weren't only useful for getting data into computers
+穿孔纸卡不仅可以往计算机放数据
+
+but also getting data out of them
+还可以取出数据
+
+At the end of a program results could be written out of computer memory and onto punch cards by, well, punching cards
+程序运行到最后，结果可以输到纸卡上，方式嘛，当然是打孔
+
+then this data could be analyzed by humans or loaded into a second program for additional computation
+然后人可以分析结果，或者再次放进计算机，做进一步计算
+
+Thanks, thought-bubble
+谢了 思维泡泡
+
+A close cousin to punch cards was punched paper tape
+穿孔纸卡 的亲戚是纸带
+
+Which is basically the same idea, but continuous instead of being on individual cards
+基本是一回事，只不过更连续，不是一张张卡.
+
+And of course we haven't talked about Hard Drives, CD-ROMs, DVDs, USB-Thumb drives and other similar goodies
+当然我们还没提硬盘, 只读光盘, DVD, U盘等等
+
+We'll get to those more advanced types of data storage in a future episode
+以后我们会讲这些更先进的存储方法
+
+Finally in addition to plug boards and punch paper
+最后，除了插线板和穿孔纸卡
+
+there was another common way to program and control computers in pre-1980
+在 1980 年代前，还有一种常见编程方式
+
+Panel programming
+面板编程
+
+Rather than having to physically plug in cables to activate certain functions
+与其插一堆线到插线板
+
+this could also be done with huge panels full of switches and buttons
+可以用一大堆开关和按钮，做到一样的效果
+
+And there were indicator lights to display the status of various functions and values in memory
+面板上有指示灯，代表各种函数的状态和内存中的值
+
+Computers of the 50s and 60s often featured huge control consoles that look like this
+50和60年代的计算机，一般都有这样巨大的控制台
+
+Although it was rare to input a whole program using just switches,it was possible
+很少有人只用开关来输入一整个程序，但技术上是可行的
+
+And early home computers made for the hobbyist market use switches extensively
+早期针对计算机爱好者的家用计算机，大量使用了开关
+
+because most home users couldn't afford expensive peripherals like punch card readers
+因为大多数家庭用户负担不起昂贵的外围设备 \N 比如穿孔纸卡读取器
+
+The first commercially successful home computer was the Altair 8800
+第一款取得商业成功的家用计算机是 Altair 8800
+
+which sold in two versions: Pre-assembled and the Kit
+有两种版本可以买: \N 1. 预先装好的整机  \N 2. 需要组装的组件
+
+the Kit which was popular with amateur computing enthusiasts,
+计算机爱好者 喜欢买组件版
+
+sold for the then unprecedented low price are around $400 in 1975
+售价极低，在 1975 年卖 400 美元左右
+
+Or about $2,000 in 2017
+相当于 2017 年的 2000 美元
+
+To program the 8800, you'd literally toggle the switches on the front panel
+为了给 8800 编程，你要拨动面板上的开关
+
+to enter the binary op-codes for the instruction you wanted
+输入二进制操作码
+
+Then you press the deposit button to write that value into memory
+然后按 "存储键" 把值存入内存
+
+Then in the next location in memory you toggle the switches again
+然后会到下一个内存位置 \N 你可以再次拨开关，写下一个指令
+
+for your next instruction deposit it and so on
+重复这样做
+
+When you finally entered your whole program into memory
+把整个程序都写入内存之后
+
+you would toggle the switches moves back to memory address 0
+可以推动开关，回到内存地址0
+
+press the run button and watch the little lights blink
+然后按运行按钮，灯会闪烁
+
+That was home computing in 1975, Wow.
+这就是 1975 年的家用计算机, 哇.
+
+Whether it was plug board, switches or punched paper
+不管是插线板、开关或穿孔纸卡
+
+Programming these early computers was the realm of experts
+早期编程都是专家活
+
+either professionals who did this for living or technology enthusiasts
+不管是全职还是技术控，都要非常了解底层硬件
+
+you needed intimate knowledge of the underlying hardware,
+不管是全职还是技术控，都要非常了解底层硬件
+
+so things like processor op-codes and register wits, to write programs
+比如 操作码, 寄存器等, 才能写程序
+
+This meant programming was hard and tedious and even professional engineers
+所以编程很难，很烦
+
+and scientists struggled to take full advantage of what computing could offer
+哪怕工程师和科学家都无法 完全发挥计算机的能力
+
+What was needed was a simpler way to tell computers what to do,
+我们需要一种更简单方式  告诉计算机要做什么
+
+a simpler way to write programs
+一种更简单的编程方式
+
+And that brings us to programming languages, which we'll talk about next episode
+这带领我们到下一个话题 - 编程语言, 我们下集会讲
+
+See you next week
+下周见
+

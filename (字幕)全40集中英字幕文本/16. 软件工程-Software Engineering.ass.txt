@@ -1,0 +1,678 @@
+Hi, I'm Carrie Anne, and welcome to CrashCourse Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+So we've talked a lot about sorting in this series
+之前花了很多时间讲排序
+
+and often code to sort a list of numbers might only be ten lines long,
+也写了些 10 行左右的排序代码
+
+which is easy enough for a single programmer to write.
+对1个程序员来说很容易写
+
+Plus, it's short enough that you don't need any special tools
+而且代码很短，不必用专门工具
+
+- you could do it in Notepad.
+- 记事本就够了
+
+Really!
+真的！
+
+But, a sorting algorithm isn't a program;
+但排序算法很少会是独立程序 \N 更可能是大项目的一小部分
+
+it's likely only a small part of a much larger program.
+但排序算法很少会是独立程序 \N 更可能是大项目的一小部分
+
+For example, Microsoft Office has roughly 40 millions lines of code.
+举个例子，微软的 Office 大约有 4000 万代码
+
+40 MILLION!
+4000 万！
+
+That's way too big for any one person to figure out and write!
+太多了，一个人不可能做到
+
+To build huge programs like this, programmers use a set of tools and practices.
+为了写大型程序，程序员用各种工具和方法
+
+Taken together, these form the discipline of Software Engineering
+所有这些形成了"软件工程"学科
+
+- a term coined by engineer Margaret Hamilton,
+- 这个词由工程师 Margaret Hamilton 创造
+
+who helped NASA prevent serious problems during the Apollo missions to the moon.
+她帮助 NASA 在阿波罗计划中避免了严重问题
+
+She once explained it this way:
+她曾说过：
+
+"It's kind of like a root canal: you waited till the end,
+"有点像牙根管治疗：你总是拖到最后才做 \N 但有些事可以预先做好
+
+[but] there are things you could have done beforehand.
+"有点像牙根管治疗：你总是拖到最后才做 \N 但有些事可以预先做好
+
+It's like preventative healthcare,
+有点像预防性体检, 只不过是预防软件出错"
+
+but it's preventative software."
+有点像预防性体检, 只不过是预防软件出错"
+
+As I mentioned in episode 12,
+第 12 集提过
+
+breaking big programs into smaller functions allows many people to work simultaneously.
+把大项目分解成小函数  可以让多人同时工作
+
+They don't have to worry about the whole thing,
+不用关心整个项目，关心自己的函数就好了
+
+just the function they're working on.
+不用关心整个项目，关心自己的函数就好了
+
+So, if you're tasked with writing a sort algorithm,
+如果你的任务是写排序算法
+
+you only need to make sure it sorts properly and efficiently.
+你只需要确保高效和正确就可以了
+
+However, even packing code up into functions isn't enough.
+然而把代码打包成函数 依然不够
+
+Microsoft Office probably contains hundreds of thousands of them.
+如果只是这样，微软 Office 会有几十万个函数
+
+That's better than dealing with 40 million lines of code,
+虽然比 4000 万行代码要好一些，但还是太多了
+
+but it's still way too many "things" for one person or team to manage.
+虽然比 4000 万行代码要好一些，但还是太多了
+
+The solution is to package functions into hierarchies,
+解决办法是：把函数打包成层级. \N 把相关代码都放在一起，打包成对象（objects）
+
+pulling related code together into "objects".
+解决办法是：把函数打包成层级. \N 把相关代码都放在一起，打包成对象（objects）
+
+For example, car's software might have several functions related to cruise control,
+例如，汽车软件中 可能有几个和定速巡航有关的函数
+
+like setting speed, nudging speed up or down, and stopping cruise control altogether.
+比如 设定速度，逐渐加速减速，停止定速巡航
+
+Since they're all related,
+因为这些函数都相关，可以包装成一个"定速巡航对象"
+
+we can wrap them up into a unified cruise control object.
+因为这些函数都相关，可以包装成一个"定速巡航对象"
+
+But, we don't have to stop there,
+但不止如此，我们还可以做更多
+
+cruise control is just one part of the engine's software.
+"定速巡航"只是引擎软件的一部分
+
+There might also be sets of functions that control spark plug ignition,
+可能还有 "火花塞点火" "燃油泵" 和 "散热器"
+
+fuel pumps, and the radiator.
+可能还有 "火花塞点火" "燃油泵" 和 "散热器"
+
+So we can create a "parent" Engine Object
+我们可以做一个"引擎对象" 来包括所有"子"对象
+
+that contains all of these "children" objects.
+我们可以做一个"引擎对象" 来包括所有"子"对象
+
+In addition to children *objects*,
+除了子对象，"引擎对象"可能有自己的函数
+
+the engine itself might have its *own* functions.
+除了子对象，"引擎对象"可能有自己的函数
+
+You want to be able to stop and start it, for example.
+比如 开关引擎
+
+It'll also have its own variables,
+它也会有自己的变量，比如汽车行驶了多少英里
+
+like how many miles the car has traveled.
+它也会有自己的变量，比如汽车行驶了多少英里
+
+In general, objects can contain other objects, functions and variables.
+总的来说，对象可以包其它对象，函数和变量
+
+And of course, the engine is just one part of a Car Object.
+当然，"引擎对象"只是"汽车对象"的一部分
+
+There's also the transmission, wheels, doors, windows, and so on.
+还有传动装置，车轮，门，窗等
+
+Now, as a programmer, if I want to set the cruise control,
+作为程序员，如果想设"定速巡航"
+
+I navigate down the object hierarchy,
+要一层层向下
+
+from the outermost objects to more and more deeply nested ones.
+从最外面的对象往里找
+
+Eventually, I reach the function I want to trigger:
+最后找到想执行的函数：
+
+"Car, then engine, then cruise control, then set cruise speed to 55".
+Car. Engine.  CruiseControl.  setCruiseSpeed(55)
+
+Programming languages often use something equivalent to the syntax shown here.
+编程语言经常用类似这样的语法
+
+The idea of packing up functional units into nested objects is called
+把函数打包成对象的思想叫 "面向对象编程"
+
+Object Oriented Programming.
+把函数打包成对象的思想叫 "面向对象编程"
+
+This is very similar to what we've done all series long:
+这种思想和之前类似
+
+hide complexity by encapsulating low-level details in higher-order components.
+通过封装组件，隐藏复杂度
+
+Before we packed up things like transistor circuits into higher-level boolean gates.
+之前把晶体管  打包成了逻辑门
+
+Now we're doing the same thing with software.
+现在软件也这样做
+
+Yet again, it's a way to move up a new level of abstraction!
+又提升了一层抽象！
+
+Breaking up a big program, like a car's software,
+把大型软件（如汽车软件）\N 拆成一个个更小单元，适合团队合作
+
+into functional units is perfect for teams.
+把大型软件（如汽车软件）\N 拆成一个个更小单元，适合团队合作
+
+One team might be responsible for the cruise control system,
+一个团队负责定速巡航系统
+
+and a single programmer on that team tackles a handful of functions.
+团队里的一位程序员负责其中一些函数
+
+This is similar to how big, physical things are built, like skyscrapers.
+类似建摩天大楼
+
+You'll have electricians running wires,
+有电工装电线
+
+plumbers fitting pipes,
+管道工配管
+
+welders welding,
+焊接工焊接
+
+painters painting,
+油漆工涂油漆
+
+and hundreds of other people teeming all over the hull.
+还有成百上千人做其他事情
+
+They work together on different parts simultaneously,
+在不同岗位同时工作，各尽其能
+
+leveraging their different skills.
+在不同岗位同时工作，各尽其能
+
+Until one day, you've got a whole working building!
+直到整栋楼完成
+
+But, returning to our cruise control example
+回到定速巡航的例子
+
+its code is going to have to make use of functions in other parts of the engine's software,
+定速巡航 要用到引擎的其它函数，来保持车速
+
+to, you know, keep the car at a constant speed.
+定速巡航 要用到引擎的其它函数，来保持车速
+
+That code isn't part of the cruise control team's responsibility.
+定速巡航 团队不负责这些代码，另一个团队负责
+
+It's another team's code.
+定速巡航 团队不负责这些代码，另一个团队负责
+
+Because the cruise control team didn't write that,
+因为是其他团队的代码，
+
+they're going to need good documentation about what each function in the code does,
+定速巡航 团队需要文档 帮助理解代码都做什么
+
+and a well-defined Application Programming Interface
+以及定义好的 "程序编程接口" -简称 API
+
+-- or API for short.
+以及定义好的 "程序编程接口" -简称 API
+
+You can think of an API as the way that
+API 帮助不同程序员合作 \N 不用知道具体细节，只要知道怎么使用就行了
+
+collaborating programmers interact across various parts of the code.
+API 帮助不同程序员合作 \N 不用知道具体细节，只要知道怎么使用就行了
+
+For example, in the IgnitionControl object,
+例如"点火控制"对象中，可能有"设置发动机转数"函数
+
+there might be functions to set the RPM of the engine,
+例如"点火控制"对象中，可能有"设置发动机转数"函数
+
+check the spark plug voltage,
+"检查火花塞电压"函数
+
+as well as fire the individual spark plugs.
+"点燃单个火花塞"函数
+
+Being able to set the motor's RPM is really useful,
+"设置发动机转速"非常有用
+
+the cruise control team is going to need to call that function.
+"定速巡航"团队要用到这个函数
+
+But, they don't know much about how the ignition system works.
+但他们对点火系统不怎么了解
+
+It's not a good idea to let them call functions that fire the individual spark plugs.
+让他们调用"点燃单个火花塞"函数，不是好主意
+
+Or the engine might explode!
+引擎可能会炸！
+
+Maybe.
+可能啦
+
+The API allows the right people access to the right functions and data.
+API 控制哪些函数和数据让外部访问 \N 哪些仅供内部
+
+Object Oriented Programming languages do this
+"面向对象"的编程语言 \N 可以指定函数是 public 或 private，来设置权限
+
+by letting you specify whether functions are public or private.
+"面向对象"的编程语言 \N 可以指定函数是 public 或 private，来设置权限
+
+If a function is marked as "private",
+如果函数标记成 private
+
+it means only functions inside that object can call it.
+意味着 只有同一个对象内的其他函数能调用它
+
+So, in this example, only other functions inside of IgnitionControl,
+在这个例子里，只有内部函数比如 setRPM
+
+like the setRPM function,
+在这个例子里，只有内部函数比如 setRPM
+
+can fire the sparkplugs.
+才能调用 fireSparkplug 函数
+
+On the other hand, because the setRPM function is marked as public,
+而 setRPM 函数是 public  \N 所以其它对象可以调用它，比如 定速巡航
+
+other objects can call it, like cruise control.
+而 setRPM 函数是 public  \N 所以其它对象可以调用它，比如 定速巡航
+
+This ability to hide complexity, and selectively reveal it,
+"面向对象编程"的核心是 \N 隐藏复杂度，选择性的公布功能
+
+is the essence of Object Oriented Programming,
+"面向对象"的核心是 \N 隐藏复杂度，选择性的公布功能
+
+and it's a powerful and popular way to tackle building large and complex programs.
+因为做大型项目很有效，所以广受欢迎
+
+Pretty much every piece of software on your computer, or game running on your console,
+计算机上几乎所有软件，游戏机里几乎所有游戏
+
+was built using an Object Oriented Programming Language,
+都是 "面向对象" 编程语言写的
+
+like C++, C# or Objective-C.
+比如 C++, C#, Objective-C 等
+
+Other popular "OO" languages you may have heard of are Python and Java.
+其他流行 OO 语言，你可能听过 Python 和 Java
+
+It's important to remember that code, before being compiled, is just text.
+有一点很重要：代码在编译前就只是文字而已
+
+As I mentioned earlier,
+前面提过，你可以用记事本或任何文字处理器
+
+you could write code in Notepad or any old word processor.
+前面提过，你可以用记事本或任何文字处理器
+
+Some people do.
+有人确实这样做
+
+But generally, today's software developers use special-purpose applications for writing programs,
+但一般来说，现代软件开发者  会用专门的工具来写代码
+
+ones that integrate many useful tools for writing, organizing, compiling and testing code.
+工具里集成了很多有用功能\N 帮助写代码，整理，编译和测代码
+
+Because they put everything you need in one place,
+因为集成了所有东西
+
+they're called Integrated Development Environments ,
+因此叫 集成开发环境，简称 IDE
+
+or IDEs for short.
+因此叫 集成开发环境，简称 IDE
+
+All IDEs provide a text editor for writing code,
+所有 IDE 都有写代码的界面
+
+often with useful features like automatic color-coding to improve readability.
+还带一些有用功能，比如代码高亮，来提高可读性
+
+Many even check for syntax errors as you type, like spell check for code.
+许多 IDE 提供实时检查，比如拼写
+
+Big programs contain lots of individual source files,
+大型项目有很多源代码文件
+
+so IDEs allow programmers to organize and efficiently navigate everything.
+IDE 帮助开发者整理和看代码
+
+Also built right into the IDE is the ability to compile and run code.
+很多 IDE 还可以直接编译和运行代码
+
+And if your program crashes,
+如果程序崩了，因为你还没写完呢
+
+because it's still a work in progress,
+如果程序崩了，因为你还没写完呢
+
+the IDE can take you back to the line of code where it happened,
+IDE 可以定位到出错代码
+
+and often provide additional information to help you track down and fix the bug,
+还会提供信息 帮你解决问题
+
+which is a process called debugging.
+这叫 调试（debug）
+
+This is important
+调试很重要
+
+because most programmers spend 70 to 80% of their time testing and debugging,
+大多数程序员会花 70％~80％ 时间调试，而不是在写代码
+
+not writing new code.
+大多数程序员会花 70％~80％ 时间调试，而不是在写代码
+
+Good tools, contained in IDEs,
+好工具能极大帮助程序员防止和解决错误
+
+can go a long way when it comes to helping programmers prevent and find errors.
+好工具能极大帮助程序员防止和解决错误
+
+Many computer programmers can be pretty loyal to their IDEs though
+很多开发者只用一款 IDE
+
+But let's be honest.
+但承认吧，VIM 才是最棒的编辑器
+
+VIM is where it's at.
+但承认吧，VIM 才是最棒的编辑器
+
+Providing you know how to quit.
+如果你知道怎么退出的话
+
+In addition to coding and debugging,
+除了写代码和调试
+
+another important part of a programmer's job is documenting their code.
+程序员工作的另一个重要部分是  给代码写文档
+
+This can be done in standalone files called "readme",
+文档一般放在一个叫 README 的文件里
+
+which tell other programmers to read that help file before diving in.
+告诉其他程序员，看代码前先看这个文件
+
+It can also happen right in the code itself with comment
+文档也可以直接写成"注释"，放在源代码里
+
+These are specially-marked statements that the program knows
+注释是标记过的一段文字
+
+to ignore when the code is compiled.
+编译代码时  注释会被忽略
+
+They exist only to help programmers figure out what's what in the source code.
+注释存在的唯一作用 \N 就是帮助开发者理解代码
+
+Good documentation helps programmers when they revisit code they haven't seen for awhile,
+好文档能帮助开发者 \N 几个月后理解自己的代码，对其他人也很重要
+
+but it's also crucial for programmers who are totally new to it.
+好文档能帮助开发者 \N 几个月后理解自己的代码，对其他人也很重要
+
+I just want to take a second here and reiterate that it's THE WORST
+我想花一秒 再强调一下注释很重要
+
+when someone parachutes a load of uncommented and undocumented code into your lap,
+最糟糕的就是拿到一堆代码，没有任何注释和文档
+
+and you literally have to go line by line to understand what the code is doing.
+结果得逐行读代码，理解到底干嘛的
+
+Seriously.
+我是认真的
+
+Don't be that person.
+别做那种人
+
+Documentation also promotes code reuse.
+文档还可以提高复用性
+
+So, instead of having programmers constantly write the same things over and over,
+与其让程序员一遍遍写同样的东西
+
+they can track down someone else's code that does what they need.
+可以直接用别人写好的来解决问题
+
+Then, thanks to documentation,
+读文档看怎么用就行，不用读代码
+
+they can put it to work in their program, without ever having to read through the code.
+读文档看怎么用就行，不用读代码
+
+"Read the docs" as they say.
+"读文档啊"
+
+In addition to IDEs,
+除了 IDE，还有一个重要软件帮助团队协作
+
+another important piece of software that
+除了 IDE，还有一个重要软件帮助团队协作
+
+helps big teams work collaboratively on big coding projects is called
+除了 IDE，还有一个重要软件帮助团队协作
+
+Source Control,
+源代码管理
+
+also known as version control or revision control.
+也叫"版本控制"
+
+Most often, at a big software company like Apple or Microsoft,
+苹果或微软这样的大型软件公司
+
+code for projects is stored on centralized servers,
+会把代码放到一个中心服务器上
+
+called a code repository .
+叫"代码仓库"
+
+When a programmer wants to work on a piece of code,
+程序员想改一段代码时
+
+they can check it out,
+可以 check out
+
+sort of like checking out a book out from a library.
+有点像从图书馆借书
+
+Often, this can be done right in an IDE.
+一般这种操作，可以直接在 IDE 内完成
+
+Then, they can edit this code all they want on their personal computer,
+然后开发者在自己的电脑上编辑代码
+
+adding new features and testing if they work.
+加新功能，测试
+
+When the programmer is confident their changes are working and there are no loose ends,
+如果代码没问题了，所有测试通过了
+
+they can check the code back into the repository,
+可以把代码放回去
+
+known as committing code, for everyone else to use.
+这叫  提交 (commit)
+
+While a piece of code is checked out,
+当代码被 check out，而且可能被改过了
+
+and presumably getting updated or modified,
+当代码被 check out，而且可能被改过了
+
+other programmers leave it alone.
+其他开发者不会动这段代码
+
+This prevents weird conflicts and duplicated work.
+防止代码冲突和重复劳动
+
+In this way, hundreds of programmers can be simultaneously checking in and out pieces of code,
+这样多名程序员可以同时写代码，建立庞大的系统
+
+iteratively building up huge systems.
+这样多名程序员可以同时写代码，建立庞大的系统
+
+Critically, you don't want someone committing buggy code,
+重要的是，你不希望提交的代码里有问题 \N 因为其他人可能用到了这些代码
+
+because other people and teams may rely on it.
+重要的是，你不希望提交的代码里有问题 \N 因为其他人可能用到了这些代码
+
+Their code could crash, creating confusion and lost time.
+导致他们的代码崩溃，造成困惑而且浪费时间
+
+The master version of the code, stored on the server,
+代码的主版本 (master)
+
+should always compile without errors and run with minimal bugs.
+应该总是编译正常，尽可能少 bug
+
+But sometimes bugs creep in.
+但有时 bug 还是会出现
+
+Fortunately, source control software keeps track of all changes,
+幸运的是，源代码管理可以跟踪所有变化
+
+and if a bug is found,
+如果发现 bug
+
+the whole code, or just a piece,
+全部或部分代码，可以"回滚"到之前的稳定版
+
+can be rolled back to an earlier, stable version.
+全部或部分代码，可以"回滚"到之前的稳定版
+
+It also keeps track of who made each change,
+"源代码管理" 也记录了谁改了什么代码
+
+so coworkers can send nasty,
+所以同事可以给你发 讨厌的
+
+I mean, helpful
+我是说"有帮助的" 邮件给写代码的人
+
+and encouraging emails to the offending person.
+我是说"有帮助的" 邮件给写代码的人
+
+Debugging goes hand in hand with writing code,
+写代码和测代码密不可分
+
+and it's most often done by an individual or small team.
+测试一般由个人或小团队完成
+
+The big picture version of debugging is Quality Assurance testing, or QA.
+测试可以统称 "质量保证测试"，简称 QA
+
+This is where a team rigorously tests out a piece of software,
+严格测试软件的方方面面
+
+attempting to create unforeseen conditions that might trip it up.
+模拟各种可能情况，看软件会不会出错
+
+Basically, they elicit bugs.
+基本上就是找 bug
+
+Getting all the wrinkles out is a huge effort,
+解决大大小小的错误需要很多工作
+
+but vital in making sure the software works
+但对确保软件质量至关重要
+
+as intended for as many users in as many situations as imaginable before it ships.
+让软件在各种情况下按预期运行
+
+You've probably heard of beta software.
+你可能听过 "beta 版" 软件
+
+This is a version of software that's mostly complete,
+意思是软件接近完成
+
+but not 100% fully tested.
+但不是 100％ 完全测试过
+
+Companies will sometimes release beta versions to the public to help them identify issues,
+公司有时会向公众发布 beta 版，以帮助发现问题
+
+it's essentially like getting a free QA team.
+用户就像免费的 QA 团队
+
+What you don't hear about as much
+你听过比较少的是 \N beta 版之前的版本：alpha 版本
+
+is the version that comes before the beta: the alpha version.
+你听过比较少的是 \N beta 版之前的版本：alpha 版本
+
+This is usually so rough and buggy, it's only tested internally.
+alpha 版一般很粗糙，错误很多，\N 经常只在公司内部测试
+
+So, that's the tip of the iceberg in terms of the tools, tricks and techniques
+以上只是软件工程师用的工具和技巧的冰山一角
+
+that allow software engineers to construct the huge pieces of software that we know and love today,
+它们帮助软件工程师制作令人喜爱的软件
+
+like YouTube, Grand Theft Auto 5, and Powerpoint.
+如 YouTube，GTA5 和 PPT 等等
+
+As you might expect,
+如你所料
+
+all those millions of lines of code needs some serious processing power to run at useful speeds,
+这些代码要强大的处理能力 才能高速速度运行
+
+so next episode we'll be talking about how computers got so incredibly fast.
+所以下集讨论，计算机怎么发展到如今这么快
+
+See you then.
+到时见
+

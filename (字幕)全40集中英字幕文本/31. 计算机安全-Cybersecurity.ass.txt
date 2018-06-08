@@ -1,0 +1,693 @@
+Hi, I’m Carrie Anne, and welcome to Crash Course Computer Science!
+(｡･∀･)ﾉﾞ嗨，我是 Carrie Anne \N 欢迎收看计算机科学速成课！
+
+Over the last three episodes, we’ve talked about how computers have become interconnected,
+过去3集 我们讲了计算机如何互连
+
+allowing us to communicate near-instantly across the globe.
+让我们能瞬时跨全球沟通
+
+But, not everyone who uses these networks is going to play by the rules,
+但不是每个使用网络的人都会规规矩矩  不损害他人利益
+
+or have our best interests at heart.
+但不是每个使用网络的人都会规规矩矩  不损害他人利益
+
+Just as how we have physical security like locks, fences
+就像现实世界中我们用锁和栅栏保证物理安全
+
+and police officers to minimize crime in the real world,
+有警察减少犯罪
+
+we need cybersecurity to minimize crime and harm in the virtual world.
+我们需要网络安全减少虚拟世界中的犯罪
+
+Computers don’t have ethics.
+计算机没有道德观念
+
+Give them a formally specified problem and
+只要给计算机写清具体问题  它们很乐意地闪电般算出答案
+
+they’ll happily pump out an answer at lightning speed.
+只要给计算机写清具体问题  它们很乐意地闪电般算出答案
+
+Running code that takes down a hospital’s computer systems
+破坏医院计算机系统的代码 和 保持病人心跳的代码 \N 对计算机来说没有区别
+
+is no different to a computer than code that keeps a patient's heart beating.
+破坏医院计算机系统的代码 和 保持病人心跳的代码 \N 对计算机来说没有区别
+
+Like the Force, computers can be pulled to the light side or the dark side.
+就像"原力"一样 \N 计算机可以被拉到"光明面"或"黑暗面"
+
+Cybersecurity is like the Jedi Order, trying to bring peace and justice to the cyber-verse.
+网络安全就像 绝地武士团 \N 给网络世界带来和平与正义
+
+The scope of cybersecurity evolves as fast as the capabilities of computing,
+计算机安全的范围，和计算能力的发展速度一样快
+
+but we can think of it as a set of techniques to protect the secrecy,
+我们可以把计算机安全，看成是保护系统和数据的：
+
+integrity and availability of computer systems and data against threats.
+保密性，完整性和可用性
+
+Let’s unpack those three goals:
+我们逐个细说：
+
+Secrecy, or confidentiality, means that only authorized people
+"保密性"是只有有权限的人 \N 才能读取计算机系统和数据
+
+should be able to access or read specific computer systems and data.
+"保密性"是只有有权限的人 \N 才能读取计算机系统和数据
+
+Data breaches, where hackers reveal people’s credit card information,
+黑客泄露别人的信用卡信息，就是攻击保密性.
+
+is an attack on secrecy.
+黑客泄露别人的信用卡信息，就是攻击保密性.
+
+Integrity means that only authorized people
+"完整性"是只有有权限的人 \N 才能使用和修改系统和数据
+
+should have the ability to use or modify systems and data.
+"完整性"是只有有权限的人 \N 才能使用和修改系统和数据
+
+Hackers who learn your password and send e-mails masquerading as you, is an integrity attack.
+黑客知道你的邮箱密码，假冒你发邮件\N 就是攻击"完整性"
+
+And availability means that authorized people should
+"可用性"是有权限的人 \N 应该随时可以访问系统和数据
+
+always have access to their systems and data.
+"可用性"是有权限的人 \N 应该随时可以访问系统和数据
+
+Think of Denial of Service Attacks, where hackers overload a website
+拒绝服务攻击(DDOS) 就是黑客
+
+with fake requests to make it slow or unreachable for others.
+发大量的假请求到服务器，让网站很慢或者挂掉
+
+That’s attacking the service’s availability.
+这就是攻击"可用性"
+
+To achieve these three general goals, security experts start with
+为了实现这三个目标，安全专家会从 \N 抽象层面想象"敌人"可能是谁，这叫"威胁模型分析"
+
+a specification of who your "enemy" is, at an abstract level, called a threat model.
+为了实现这三个目标，安全专家会从 \N 抽象层面想象"敌人"可能是谁，这叫"威胁模型分析"
+
+This profiles attackers: their capabilities, goals, and probable means of attack
+模型会对攻击者有个大致描述：\N 能力如何，目标可能是什么，可能用什么手段
+
+– what’s called, awesomely enough, an attack vector.
+攻击手段又叫"攻击矢量"
+
+Threat models let you prepare against specific threats, rather than
+"威胁模型分析"让你能为特定情境做准备
+
+being overwhelmed by all the ways hackers could get to your systems and data.
+不被可能的攻击手段数量所淹没 \N 因为手段实在有太多种了
+
+And there are many, many ways.
+不被可能的攻击手段数量所淹没 \N 因为手段实在有太多种了
+
+Let’s say you want to "secure" physical access to your laptop.
+假设你想确保笔记本计算机的"物理安全" \N 你的威胁模型是"好管闲事的室友"
+
+Your threat model is a nosy roommate.
+假设你想确保笔记本计算机的"物理安全" \N 你的威胁模型是"好管闲事的室友"
+
+To preserve the secrecy, integrity and availability of your laptop,
+为了保证保密性，完整性和可用性 \N 你可以藏在脏兮兮的洗衣篮里
+
+you could keep it hidden in your dirty laundry hamper.
+为了保证保密性，完整性和可用性 \N 你可以藏在脏兮兮的洗衣篮里
+
+But, if your threat model is a mischievous younger sibling
+但如果威胁模型是调皮的兄弟姐妹，知道你喜欢藏哪里
+
+who knows your hiding spots,
+但如果威胁模型是调皮的兄弟姐妹，知道你喜欢藏哪里
+
+then you’ll need to do more: maybe lock it in a safe.
+那么你需要更多保护：比如锁在保险箱里
+
+In other words, how a system is secured depends heavily on who it’s being secured against.
+换句话说，要怎么保护，具体看对抗谁
+
+Of course, threat models are typically a bit more formally defined than just "nosy roommate".
+当然，威胁模型通常比"好管闲事的室友"更正式一些
+
+Often you’ll see threat models specified in terms of technical capabilities.
+通常威胁模型分析里 会以能力水平区分
+
+For example, "someone who has physical access to your laptop along with unlimited time".
+比如"某人可以物理接触到笔记本计算机，而且时间无限"
+
+With a given threat model, security architects need to come up
+在给定的威胁模型下，安全架构师要
+
+with a solution that keeps a system secure –
+提供解决方案，保持系统安全
+
+as long as certain assumptions are met,
+只要某些假设不被推翻
+
+like no one reveals their password to the attacker.
+比如没人会告诉攻击者密码
+
+There are many methods for protecting computer systems, networks and data.
+保护计算机系统，网络和数据的方法有很多
+
+A lot of security boils down to two questions:
+很多安全问题可以总结成2个问题：
+
+who are you, and what should you have access to?
+你是谁？你能访问什么？
+
+Clearly, access should be given to the right people, but refused to the wrong people.
+权限应该给合适的人，拒绝错误的人
+
+Like, bank employees should be able to open ATMs to restock them, but not me…
+比如银行员工可以打开取款机来补充现金。\N 但我不应该有权限打开
+
+because I’d take it all... all of it!
+因为我会把钱拿走 全拿走！
+
+That ceramic cat collection doesn’t buy itself!
+陶瓷猫收藏品可不会从天上掉下来哟！
+
+So, to differentiate between right and wrong people, we use authentication
+所以，为了区分谁是谁，\N 我们用 "身份认证"(authentication)
+
+- the process by which a computer understands who it’s interacting with.
+- 让计算机得知使用者是谁
+
+Generally, there are three types, each with their own pros and cons:
+身份认证有三种，各有利弊：
+
+What you know.
+你知道什么
+
+What you have.
+你有什么
+
+And what you are.
+你是什么
+
+What you know authentication is based on knowledge of a secret that
+"你知道什么" 是基于某个秘密
+
+should be known only by the real user and the computer,
+只有用户和计算机知道
+
+for example, a username and password.
+比如 用户名和密码
+
+This is the most widely used today because it’s the easiest to implement.
+这是如今使用最广泛的，因为最容易实现
+
+But, it can be compromised if hackers guess or otherwise come to know your secret.
+但如果黑客通过猜测或其他方式，知道你的密码，就惨了
+
+Some passwords are easy for humans to figure out, like 12356 or qwerty.
+有些密码很容易猜中，比如12356或qwerty
+
+But, there are also ones that are easy for computers.
+但有些密码对计算机很容易
+
+Consider the PIN: 2580.
+比如PIN码：2580
+
+This seems pretty difficult to guess – and it is – for a human.
+看起来很难猜中 - 起码对人类来说是这样
+
+But there are only ten thousand possible combinations of 4-digit PINs.
+但4位数字，只有一万种可能
+
+A computer can try entering 0000, then try 0001, and then 0002,
+一台计算机可以尝试0000，然后0001，然后0002，
+
+all the way up to 9999... in a fraction of a second.
+然后到9999，不到一秒内试完
+
+This is called a brute force attack, because it just tries everything.
+这叫"暴力攻击"，因为只是试遍一切可能
+
+There’s nothing clever to the algorithm.
+这种算法没什么聪明的地方
+
+Some computer systems lock you out, or have you wait a little, after say three wrong attempts.
+如果你错误尝试3次，\N 有些系统会阻止你继续尝试，或让你等一会儿
+
+That’s a common and reasonable strategy,
+这个策略普遍而且合理
+
+and it does make it harder for less sophisticated attackers.
+对于一般的攻击者确实很难
+
+But think about what happens if hackers have already taken over
+但假设黑客控制了
+
+tens of thousands of computers, forming a botnet.
+数以万计的计算机，形成一个僵尸网络
+
+Using all these computers, the same pin – 2580 –
+用这么多计算机尝试密码 2580
+
+can be tried on many tens of thousands of bank accounts simultaneously.
+同时尝试很多银行账户
+
+Even with just a single attempt per account, they’ll very likely
+即使每个账户只试一次，也很可能
+
+get into one or more that just happen to use that PIN.
+碰到某个账户刚好用这个 PIN
+
+In fact, we’ve probably guessed the pin of someone watching this video!
+事实上，看视频的某人可能刚好用这个 PIN
+
+Increasing the length of PINs and passwords can help,
+增加密码长度有帮助
+
+but even 8 digit PINs are pretty easily cracked.
+但即使8位数字的PIN码也很容易破解
+
+This is why so many websites now require you to use a mix of upper and lowercase letters,
+这就是为什么现在很多网站 要求大写+小写字母
+
+special symbols, and so on – it explodes the number of possible password combinations.
+还有特殊符号等，大大增加可能的密码
+
+An 8-digit numerical PIN only has a hundred million combinations
+8位数字的PIN只有一亿种组合
+
+– computers eat that for breakfast!
+对计算机轻而易举
+
+But an 8-character password with all those funky things mixed in
+但包含各种字符的8位长度密码
+
+has more than 600 trillion combinations.
+有超过600万亿种组合
+
+Of course, these passwords are hard for us mere humans to remember,
+当然，这些密码会难以记住，
+
+so a better approach is for websites to let us pick something more memorable,
+所以更好的方法是 选一些更好记的东西
+
+like three words joined together:
+比如三个单词连在一起：
+
+"green brothers rock" or "pizza tasty yum".
+"格林兄弟好厉害"或"披萨尝起来好好吃"
+
+English has around 100,000 words in use,
+英文大约有10万个单词
+
+so putting three together would give you roughly
+所以三个单词连一起大概有
+
+1 quadrillion possible passwords. Good luck trying to guess that!
+1亿亿种可能，想猜中的话，祝你好运！
+
+I should also note here that using non-dictionary words
+另外使用不在字典内的单词
+
+is even better against more sophisticated kinds of attacks,
+被猜中的可能性更低
+
+but we don’t have time to get into that here.
+但我们没时间细说这个
+
+Computerphile has a great video on choosing a password - link in the dooblydoo.
+Computerphile 频道有个视频讲怎么选择好密码 - \N 链接请看 Youtube 描述
+
+What you have authentication, on the other hand,
+"你有什么"这种验证方式
+
+is based on possession of a secret token that only the real user has.
+是基于用户有特定物体
+
+An example is a physical key and lock.
+比如钥匙和锁
+
+You can only unlock the door if you have the key.
+如果你有钥匙，就能开门
+
+This escapes this problem of being "guessable".
+这避免了被人"猜中"的问题
+
+And they typically require physical presence,
+而且通常需要人在现场
+
+so it’s much harder for remote attackers to gain access.
+所以远程攻击就更难了
+
+Someone in another country can’t gain access to your front door in Florida
+另一个国家的人，得先来佛罗里达州
+
+without getting to Florida first.
+才能到你家前门
+
+But, what you have authentication can be compromised if an attacker is physically close.
+但如果攻击者离你比较近，那么也不安全
+
+Keys can be copied, smartphones stolen, and locks picked.
+钥匙可以被复制，手机可能被偷，锁可以撬开
+
+Finally, what you are authentication is based on... you!
+最后，"你是什么"这种验证，是基于你
+
+You authenticate by presenting yourself to the computer.
+把特征展示给计算机进行验证
+
+Biometric authenticators, like fingerprint readers and iris scanners are classic examples.
+生物识别验证器，\N 比如指纹识别器和虹膜扫描仪就是典型例子
+
+These can be very secure, but the best technologies are still quite expensive.
+这些非常安全，但最好的识别技术仍然很贵
+
+Furthermore, data from sensors varies over time.
+而且，来自传感器的数据每次会不同
+
+What you know and what you have authentication have the nice property of being deterministic
+"你知道什么"和"你有什么"。这两种验证是"确定性"的
+
+– either correct or incorrect.
+- 要么正确，要么错误
+
+If you know the secret, or have the key, you’re granted access 100% of the time.
+如果你知道密码，或有钥匙，那么100％能获得访问权限
+
+If you don’t, you get access zero percent of the time.
+如果没有，就绝对进不去
+
+Biometric authentication, however, is probabilistic.There’s some chance the system won’t recognize you…
+但"生物识别"是概率性的，系统有可能认不出你
+
+maybe you’re wearing a hat or the lighting is bad.
+可能你戴了帽子，或者光线不好
+
+Worse, there’s some chance the system will recognize the wrong person as you
+更糟的是，系统可能把别人错认成你
+
+– like your evil twin!
+比如你的邪恶双胞胎
+
+Of course, in production systems, these chances are low, but not zero.
+当然，在现实世界中几率很低，但不是零
+
+Another issue with biometric authentication is it can’t be reset.
+生物认证的另一个问题是无法重设
+
+You only have so many fingers, so what happens if an attacker compromises your fingerprint data?
+你只有这么多手指，如果攻击者拿到你的指纹数据怎么办
+
+This could be a big problem for life.
+你一辈子都麻烦了
+
+And, recently, researchers showed it’s possible to forge your iris
+最近还有研究人员表示，拍个照都有可能伪造虹膜
+
+just by capturing a photo of you, so that’s not promising either.
+所以也不靠谱
+
+Basically, all forms of authentication have strengths and weaknesses,
+所有认证方法都有优缺点，
+
+and all can be compromised in one way or another.
+它们都可以被攻破
+
+So, security experts suggest using two or more forms of authentication
+所以，对于重要账户，\N 安全专家建议用两种或两种以上的认证方式
+
+for important accounts.
+所以，对于重要账户，\N 安全专家建议用两种或两种以上的认证方式
+
+This is known as two-factor or multi-factor authentication.
+这叫"双因素"或"多因素"认证
+
+An attacker may be able to guess your password or steal your phone:
+攻击者可能猜出你密码，或偷走你的手机：
+
+but it’s much harder to do both.
+但两个都做到，会比较难
+
+After authentication comes Access Control.
+"身份验证"后，就来到了"访问控制"
+
+Once a system knows who you are, it needs to know what you should be able to access,
+一旦系统知道你是谁，它需要知道你能访问什么，
+
+and for that there’s a specification of who should be able to see, modify and use what.
+因此应该有个规范，\N 说明谁能访问什么，修改什么，使用什么。
+
+This is done through Permissions or Access Control Lists (ACL),
+这可以通过"权限"或"访问控制列表"（ACL）来实现
+
+which describe what access each user has for every file, folder and program on a computer.
+其中描述了用户对每个文件，文件夹和程序的访问权限
+
+"Read" permission allows a user to see the contents of a file,
+"读"权限允许用户查看文件内容，
+
+"write" permission allows a user to modify the contents,
+"写"权限允许用户修改内容，
+
+and "execute" permission allows a user to run a file, like a program.
+"执行"权限允许用户运行文件，比如程序
+
+For organizations with users at different levels of access privilege
+有些组织需要不同层级的权限
+
+– like a spy agency – it’s especially important for Access Control Lists
+比如间谍机构，"访问控制列表"的正确配置非常重要
+
+to be configured correctly to ensure secrecy, integrity and availability.
+以确保保密性，完整性和可用性
+
+Let’s say we have three levels of access: public, secret and top secret.
+假设我们有三个访问级别：公开，机密，顶级机密
+
+The first general rule of thumb is that people shouldn’t be able to "read up".
+第一个普遍的好做法是，\N 用户不能"读上", 不能读等级更高的信息
+
+If a user is only cleared to read secret files, they shouldn’t be able to read top secret
+如果用户能读"机密"文件\N 那么不应该有权限读"顶级机密"文件
+
+files, but should be able to access secret and public ones.
+但能访问"机密"和"公开"文件
+
+The second general rule of thumb is that people shouldn’t be able to "write down".
+第二个法则是用户不能"写下"
+
+If a member has top secret clearance, then they should be able to
+如果用户等级是"顶级机密"
+
+write or modify top secret files, but not secret or public files.
+那么能写入或修改"顶级机密"文件，\N 但不能修改"机密"或"公共"文件
+
+It may seem weird that even with the highest clearance,
+听起来好像很奇怪 \N 有最高等级也不能改等级更低的文件
+
+you can’t modify less secret files.
+听起来好像很奇怪 \N 有最高等级也不能改等级更低的文件
+
+But, it guarantees that there’s no accidental leakage of
+但这样确保了"顶级机密" \N 不会意外泄露到"机密"文件或"公共"文件里
+
+top secret information into secret or public files.
+但这样确保了"顶级机密" \N 不会意外泄露到"机密"文件或"公共"文件里
+
+This "no read up, no write down" approach is called the Bell-LaPadula model.
+这个"不能向上读，不能向下写"的方法\N 叫 Bell-LaPadula 模型
+
+It was formulated for the U.S. Department of Defense’s Multi-Level Security policy.
+它是为美国国防部"多层安全政策"制定的
+
+There are many other models for access control – like the Chinese Wall model and Biba model.
+还有许多其他的访问控制模型 - 比如"中国墙"模型和"比伯"模型
+
+Which model is best depends on your use-case.
+哪个模型最好，取决于具体情况
+
+Authentication and access control help a computer determine who you are
+"身份验证"和"访问控制"帮助计算机知道"你是谁"
+
+and what you should access,
+以及"你可以访问什么"，
+
+but depend on being able to trust the hardware and software
+但做这些事情的软硬件必须是可信的
+
+that run the authentication and access control programs.
+但做这些事情的软硬件必须是可信的
+
+That’s a big dependence.
+这个依赖很重要
+
+If an attacker installs malicious software – called malware
+如果攻击者给计算机装了恶意软件
+
+– compromising the host computer’s operating system,
+- 控制了计算机的操作系统
+
+how can we be sure security programs don’t have a backdoor that let attackers in?
+我们怎么确定安全程序没有给攻击者留后门？
+
+The short answer is… we can’t.
+短回答是...无法确定
+
+We still have no way to guarantee the security of a program or computing system.
+我们仍然无法保证程序或计算机系统的安全
+
+That’s because even while security software might be "secure" in theory,
+因为安全软件在理论上可能是"安全的"
+
+implementation bugs can still result in vulnerabilities.
+实现时可能会不小心留下漏洞
+
+But, we do have techniques to reduce the likelihood of bugs,
+但我们有办法减少漏洞出现的可能性
+
+like quickly find and patch bugs when they do occur,
+比如一找到就马上修复
+
+and mitigate damage when a program is compromised.
+以及当程序被攻破时尽可能减少损害
+
+Most security errors come from implementation error.
+大部分漏洞都是具体实现的时候出错了
+
+To reduce implementation error, reduce implementation.
+为了减少执行错误，减少执行
+
+One of the holy grails of system level security is a "security kernel"
+系统级安全的圣杯之一是"安全内核"
+
+or a "trusted computing base": a minimal set of operating system software
+或"可信计算基础"：一组尽可能少的操作系统软件
+
+that’s close to provably secure.
+安全性都是接近可验证的
+
+A challenge in constructing these security kernels is deciding what should go into it.
+构建安全内核的挑战在于 决定内核应该有什么
+
+Remember, the less code, the better!
+记住，代码越少越好！
+
+Even after minimizing code bloat, it would be great to "guarantee"
+在最小化代码数量之后，\N 要是能"保证"代码是安全的，会非常棒
+
+that’s code is written in secure.
+在最小化代码数量之后，\N 要是能"保证"代码是安全的，会非常棒
+
+Formally verifying the security of code is an active area of research.
+正式验证代码的安全性 是一个活跃的研究领域
+
+The best we have right now is a process called Independent Verification and Validation.
+我们现在最好的手段，叫"独立安全检查和质量验证"
+
+This works by having code audited by a crowd of security-minded developers.
+让一群安全行业内的软件开发者来审计代码
+
+This is why security code is almost always open-sourced.
+这就是为什么安全型代码几乎都是开源的
+
+It’s often difficult for people who wrote the original code to find bugs,
+写原始代码的人通常很难找到错误
+
+but external developers, with fresh eyes and different expertise, can spot problems.
+但外部开发人员有新鲜的眼光 \N和不同领域的专业知识，可以发现问题.
+
+There are also conferences where like-minded hackers and security experts
+另外还有一些安全大会，安全专家可以相互认识，分享想法.
+
+can mingle and share ideas,
+另外还有一些安全大会，安全专家可以相互认识，分享想法.
+
+the biggest of which is DEF CON, held annually in Las Vegas.
+一年一次在拉斯维加斯举办的 DEF CON \N 是全球最大的安全大会
+
+Finally, even after reducing code and auditing it,
+最后，即便尽可能减少代码 并进行了安全审计
+
+clever attackers are bound to find tricks that let them in.
+聪明的攻击者还是会找到方法入侵
+
+With this in mind, good developers should take the approach that,
+因为如此，优秀的开发人员
+
+not if, but when their programs are compromised,
+应该计划当程序被攻破后，\N如何限制损害，控制损害的最大程度
+
+the damage should be limited and contained,
+应该计划当程序被攻破后，\N如何限制损害，控制损害的最大程度
+
+and not let it compromise other things running on the computer.
+并且不让它危害到计算机上其他东西
+
+This principle is called isolation.
+这叫"隔离"
+
+To achieve isolation, we can "sandbox" applications.
+要实现隔离，我们可以"沙盒"程序
+
+This is like placing an angry kid in a sandbox; when the kid goes ballistic,
+这好比把生气的小孩放在沙箱里，
+
+they only destroy the sandcastle in their own box,
+他们只能摧毁自己的沙堡，不会影响到其他孩子
+
+but other kids in the playground continue having fun.
+他们只能摧毁自己的沙堡，不会影响到其他孩子
+
+Operating Systems attempt to sandbox applications
+操作系统会把程序放到沙盒里
+
+by giving each their own block of memory that others programs can’t touch.
+方法是给每个程序独有的内存块，其他程序不能动
+
+It’s also possible for a single computer to run multiple Virtual Machines, essentially
+一台计算机可以运行多个虚拟机
+
+simulated computers, that each live in their own sandbox.
+虚拟机模拟计算机，每个虚拟机都在自己的沙箱里
+
+If a program goes awry, worst case is that it crashes or
+如果一个程序出错，最糟糕的情况是它自己崩溃
+
+compromises only the virtual machine on which it’s running.
+或者搞坏它处于的虚拟机
+
+All other Virtual Machines running on the computer are isolated and unaffected.
+计算机上其他虚拟机是隔离的，不受影响
+
+Ok, that’s a broad overview of some key computer security topics.
+好，一些重要安全概念的概览 \N 我们到此就介绍完了
+
+And I didn’t even get to network security, like firewalls.
+我都还没讲网络安全，比如防火墙
+
+Next episode, we’ll discuss some methods
+下集我们会讨论  黑客侵入系统的一些方法
+
+hackers use to get into computer systems.
+下集我们会讨论  黑客侵入系统的一些方法
+
+After that, we’ll touch on encryption.
+然后我们学加密
+
+Until then, make your passwords stronger, turn on 2-factor authentication,
+在此之前，别忘了加强你的密码，打开两步验证
+
+and NEVER click links in unsolicited emails!
+永远不要点可疑邮件
+
+I’ll see you next week.
+我们下周见
+

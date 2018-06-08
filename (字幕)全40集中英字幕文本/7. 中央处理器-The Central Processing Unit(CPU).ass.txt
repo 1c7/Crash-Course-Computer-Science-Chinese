@@ -1,0 +1,608 @@
+Hi, I'm Carrie Anne, this is Crash Course Computer Science
+嗨，我是 Carrie Anne，欢迎收看计算机科学速成课！
+
+and today, we're talking about processors.
+今天我们讲 处理器
+
+Just a warning though - this is probably the most complicated episode in the series.
+提示下 - 这集可能是最难的一集
+
+So once you get this, you're golden.
+所以一旦你理解了，就会变得超厉害der~
+
+We've already made a Arithmetic and Logic Unit,
+我们已经做了一个算术逻辑单元（ALU）
+
+which takes in binary numbers and performs calculations,
+输入二进制，它会执行计算
+
+and we've made two types of computer memory:
+我们还做了两种内存：
+
+Registers -- small, linear chunks of memory, useful for storing a single value
+寄存器 - 很小的一块内存，能存一个值
+
+and then we scaled up, and made some RAM,
+之后我们增大做出了 RAM
+
+a larger bank of memory that can store a lot of numbers located at different addresses.
+RAM 是一大块内存，能在不同地址存大量数字
+
+Now it's time to put it all together and build ourselves the heart of any computer,
+现在是时候把这些放在一起，组建计算机的 "心脏" 了
+
+but without any of the emotional baggage that comes with human hearts.
+但这个 "心脏" 不会有任何包袱，比如人类情感.
+
+For computers, this is the Central Processing Unit, most commonly called the CPU.
+计算机的心脏是"中央处理单元"，简称 "CPU"
+
+A CPU's job is to execute programs.
+CPU 负责执行程序
+
+Programs, like Microsoft Office, Safari, or your beloved copy of Half Life: 2,
+比如 Office，Safari 浏览器，你最爱的 《半条命2》
+
+are made up of a series of individual operations,
+程序由一个个操作组成
+
+called instructions, because they "instruct" the computer what to do.
+这些操作叫"指令"(Instruction) \N 因为它们"指示"计算机要做什么
+
+If these are mathematical instructions, like add or subtract,
+如果是数学指令，比如加/减
+
+the CPU will configure its ALU to do the mathematical operation.
+CPU 会让 ALU 进行数学运算
+
+Or it might be a memory instruction,
+也可能是内存指令，CPU 会和内存通信，然后读/写值
+
+in which case the CPU will talk with memory to read and write values.
+也可能是内存指令，CPU 会和内存通信，然后读/写值
+
+There are a lot of parts in a CPU,
+CPU 里有很多组件.
+
+so we're going to lay it out piece by piece, building up as we go.
+所以我们一边说一边建
+
+We'll focus on functional blocks, rather than showing every single wire.
+我们把重点放在功能，而不是一根根线具体怎么连
+
+When we do connect two components with a line,
+当我们用一条线连接两个组件时
+
+this is an abstraction for all of the necessary wires.
+这条线只是所有必须线路的一个抽象
+
+This high level view is called the microarchitecture.
+这种高层次视角叫  "微体系架构"
+
+OK, first, we're going to need some memory.
+好，我们首先要一些内存，把上集做的 RAM 拿来就行
+
+Lets drop in the RAM module we created last episode.
+好，我们首先要一些内存，把上集做的 RAM 拿来就行
+
+To keep things simple, we'll assume it only has 16 memory locations, each containing 8 bits.
+为了保持简单，假设它只有 16 个位置，每个位置存 8 位
+
+Let's also give our processor four, 8-bit memory registers, labeled A, B, C and D
+再来四个 8 位寄存器，叫 A，B，C，D
+
+which will be used to temporarily store and manipulate values.
+寄存器用来 临时存数据 和 操作数据
+
+We already know that data can be stored in memory as binary values
+我们已经知道数据  是以二进制值存在内存里
+
+and programs can be stored in memory too.
+程序也可以存在内存里
+
+We can assign an ID to each instruction supported by our CPU.
+我们可以给 CPU 支持的所有指令，分配一个 ID
+
+指令表
+
+指令
+
+描述
+
+4位操作码
+
+地址或寄存器
+
+In our hypothetical example, we use the first four bits to store the "operation code",
+在这个假设的例子 \N 我们用前四位存 "操作代码" （operation code）
+
+or opcode for short.
+简称 "操作码" （opcode）
+
+The final four bits specify where the data for that operation should come from -
+后四位代表数据来自哪里
+
+this could be registers or an address in memory.
+- 可以是寄存器或内存地址
+
+We also need two more registers to complete our CPU.
+我们还需要两个寄存器，来完成 CPU.
+
+First, we need a register to keep track of where we are in a program.
+1. 一个寄存器追踪程序运行到哪里了，我们叫它  "指令地址寄存器"
+
+For this, we use an instruction address register,
+1. 一个寄存器追踪程序运行到哪里了，我们叫它  "指令地址寄存器"
+
+which as the name suggests, stores the memory address of the current instruction.
+顾名思义，存当前指令的内存地址
+
+And then we need the other register to store the current instruction,
+2. 另一个寄存器存当前指令，叫  "指令寄存器"
+
+which we'll call the instruction register.
+2. 另一个寄存器存当前指令，叫  "指令寄存器"
+
+When we first boot up our computer, all of our registers start at 0.
+当启动计算机时，所有寄存器从 0 开始
+
+As an example, we've initialized our RAM with a simple computer program that we'll to through today.
+为了举例，我们在 RAM 里放了一个程序，我们今天会过一遍
+
+The first phase of a CPU's operation is called the fetch phase.
+CPU 的第一个阶段叫 "取指令阶段"
+
+This is where we retrieve our first instruction.
+负责拿到指令
+
+First, we wire our Instruction Address Register to our RAM module.
+首先，将 "指令地址寄存器" 连到 RAM
+
+The register's value is 0, so the RAM returns whatever value is stored in address 0.
+寄存器的值为 0，因此 RAM 返回地址 0 的值
+
+In this case, 0010 1110.
+0010 1110 会复制到 "指令寄存器" 里
+
+Then this value is copied into our instruction register.
+0010 1110 会复制到 "指令寄存器" 里
+
+Now that we've fetched an instruction from memory,
+现在指令拿到了
+
+we need to figure out what that instruction is
+要弄清是什么指令，才能执行（execute）
+
+so we can execute it.
+要弄清是什么指令，才能执行（execute）
+
+That is run it.
+而不是杀死（kill）它
+
+Not kill it.
+而不是杀死（kill）它
+
+This is called the decode phase.
+这是 "解码阶段"
+
+指令表
+
+指令
+
+描述
+
+4位操作码
+
+地址或寄存器
+
+In this case the opcode, which is the first four bits, is: 0010.
+前 4 位 0010 是 LOAD A 指令
+
+This opcode corresponds to the "LOAD A" instruction,
+前 4 位 0010 是 LOAD A 指令
+
+which loads a value from RAM into Register A.
+意思是，把 RAM 的值放入寄存器 A
+
+The RAM address is the last four bits of our instruction which are 1110, or 14 in decimal.
+后 4 位 1110 是 RAM 的地址, 转成十进制是 14
+
+Next, instructions are decoded and interpreted by a Control Unit.
+接下来，指令由 "控制单元" 进行解码
+
+Like everything else we've built, it too is made out of logic gates.
+就像之前的所有东西 \N  "控制单元" 也是逻辑门组成的
+
+For example, to recognize a LOAD A instruction,
+比如，为了识别 "LOAD A" 指令
+
+we need a circuit that checks if the opcode matches 0010
+需要一个电路，检查操作码是不是 0010
+
+which we can do with a handful of logic gates.
+我们可以用很少的逻辑门来实现.
+
+Now that we know what instruction we're dealing with,
+现在知道了是什么指令
+
+we can go ahead and perform that instruction which is the beginning of the execute phase!
+就可以开始执行了，开始 "执行阶段"
+
+Using the output of our LOAD_A checking circuit,
+用 "检查是否 LOAD_A 指令的电路"
+
+we can turn on the RAM's read enable line and send in address 14.
+可以打开 RAM 的 "允许读取线", 把地址 14 传过去
+
+The RAM retrieves the value at that address, which is 00000011, or 3 in decimal.
+RAM 拿到值，0000 0011，十进制的 3
+
+Now, because this is a LOAD_A instruction,
+因为是 LOAD_A 指令 \N 我们想把这个值只放到寄存器 A，其他寄存器不受影响
+
+we want that value to only be saved into Register A and not any of the other registers.
+因为是 LOAD_A 指令 \N 我们想把这个值只放到寄存器 A，其他寄存器不受影响
+
+So if we connect the RAM's data wires to our four data registers,
+所以需要一根线，把 RAM 连到 4 个寄存器
+
+we can use our LOAD_A check circuit to enable the write enable only for Register A.
+用 "检查是否 LOAD_A 指令的电路" \N 启用寄存器 A 的 "允许写入线"
+
+And there you have it
+这就成功了
+
+-- we've successfully loaded the value at RAM address 14 into Register A.
+- 把 RAM 地址 14 的值，放到了寄存器 A.
+
+We've completed the instruction, so we can turn all of our wires off,
+既然指令完成了，我们可以关掉所有线路
+
+and we are ready to fetch the next instruction in memory.
+去拿下一条指令
+
+To do this, we increment the Instruction Address Register by 1 which completes the execute phase.
+我们把 "指令地址寄存器"+1，"执行阶段"就此结束.
+
+LOAD_A is just one of several possible instructions that our CPU can execute.
+LOAD_A 只是 CPU 可以执行的各种指令之一
+
+Different instructions are decoded by different logic circuits,
+不同指令由不同逻辑电路解码
+
+which configure the CPU's components to perform that action.
+这些逻辑电路会配置 CPU 内的组件来执行对应操作
+
+Looking at all those individual decode circuits is too much detail,
+具体分析这些解码电路太繁琐了
+
+so since we looked at one example,
+既然已经看了 1 个例子，
+
+we're going to go head and package them all up as a single Control Unit to keep things simple.
+干脆把 "控制单元 "包成一个整体，简洁一些.
+
+That's right a new level of abstraction.
+没错，一层新抽象
+
+The Control Unit is comparable to the conductor of an orchestra,
+控制单元就像管弦乐队的指挥
+
+directing all of the different parts of the CPU.
+"指挥" CPU 的所有组件
+
+Having completed one full fetch/decode/execute cycle,
+"取指令→解码→执行" 完成后
+
+we're ready to start all over again, beginning with the fetch phase.
+现在可以再来一次，从 "取指令" 开始
+
+The Instruction Address Register now has the value 1 in it,
+"指令地址寄存器" 现在的值是 1
+
+so the RAM gives us the value stored at address 1, which is 0001 1111.
+所以 RAM 返回地址 1 里的值：0001 1111
+
+On to the decode phase!
+到 "解码" 阶段！
+
+0001 is the "LOAD B" instruction, which moves a value from RAM into Register B.
+0001 是 LOAD B 指令 \N 从 RAM 里把一个值复制到寄存器 B
+
+The memory location this time is 1111, which is 15 in decimal.
+这次内存地址是 1111，十进制的 15
+
+Now to the execute phase!
+现在到 "执行阶段"！
+
+The Control Unit configures the RAM to read address 15 and configures Register B to receive the data.
+"控制单元" 叫 RAM 读地址 15，并配置寄存器 B 接收数据
+
+Bingo, we just saved the value 00001110, or the number 14 in decimal, into Register B.
+成功，我们把值 0000 1110 \N 也就是十进制的 14 存到了寄存器 B
+
+Last thing to do is increment our instruction address register by 1,
+最后一件事是 "指令地址寄存器" +1
+
+and we're done with another cycle.
+我们又完成了一个循环
+
+Our next instruction is a bit different.
+下一条指令有点不同
+
+Let's fetch it.
+来取它吧
+
+1000 0100.
+1000 0100
+
+That opcode 1000 is an ADD instruction.
+1000 是 ADD 指令
+
+Instead of an 4-bit RAM address, this instruction uses two sets of 2 bits.
+这次后面的 4 位不是 RAM 地址，\N 而是 2 位 2 位分别代表 2 个寄存器
+
+Remember that 2 bits can encode 4 values,
+2 位可以表示 4 个值
+
+so 2 bits is enough to select any one of our 4 registers.
+所以足够表示 4 个寄存器
+
+The first set of 2 bits is 01, which in this case corresponds to Register B,
+第一个地址是 01, 代表寄存器B
+
+and 00, which is Register A.
+第二个地址是 00, 代表寄存器A
+
+So "1000 01 00" is the instruction for adding the value in Register B into the value in register A.
+因此，1000 0100，代表把寄存器 B 的值，加到寄存器 A 里
+
+So to execute this instruction, we need to integrate the ALU we made in Episode 5 into our CPU.
+为了执行这个指令，我们要整合第 5 集的 ALU
+
+The Control Unit is responsible for selecting the right registers to pass in as inputs,
+"控制单元" 负责选择正确的寄存器作为输入
+
+and configuring the ALU to perform the right operation.
+并配置 ALU 执行正确的操作
+
+For this ADD instruction, the Control Unit enables Register B
+对于 "ADD" 指令， "控制单元" 会
+
+and feeds its value into the first input of the ALU.
+启用寄存器 B，作为 ALU 的第一个输入
+
+It also enables Register A and feeds it into the second ALU input.
+还启用寄存器 A，作为 ALU 的第二个输入
+
+As we already discussed, the ALU itself can perform several different operations,
+之前说过，ALU 可以执行不同操作
+
+so the Control Unit must configure it to perform an ADD operation by passing in the ADD opcode.
+所以控制单元必须传递 ADD 操作码告诉它要做什么
+
+Finally, the output should be saved into Register A.
+最后，结果应该存到寄存器 A
+
+But it can't be written directly
+但不能直接写入寄存器 A
+
+because the new value would ripple back into the ALU and then keep adding to itself.
+这样新值会进入 ALU ，不断和自己相加
+
+So the Control Unit uses an internal register to temporarily save the output,
+因此，控制单元用一个自己的寄存器暂时保存结果
+
+turn off the ALU, and then write the value into the proper destination register.
+关闭 ALU，然后把值写入正确的寄存器
+
+In this case, our inputs were 3 and 14, and so the sum is 17, or 00010001 in binary,
+这里 3+14=17，二进制是 0001 0001
+
+which is now sitting in Register A.
+现在存到了寄存器 A
+
+As before, the last thing to do is increment our instruction address by 1,
+和之前一样，最后一件事是把指令地址 + 1
+
+and another cycle is complete.
+这个循环就完成了
+
+Okay, so let's fetch one last instruction: 0100 1101.
+好，来看最后一个指令：0100 1101
+
+When we decode it we see that 0100 is a STORE_A instruction, with a RAM address of 13.
+解码得知是 STORE A 指令（把寄存器 A 的值放入内存） \N RAM 地址 13
+
+As usual, we pass the address to the RAM module,
+接下来，把地址传给 RAM
+
+but instead of read-enabling the memory, we write-enable it.
+但这次不是 "允许读取" ，而是 "允许写入"
+
+At the same time, we read-enable Register A.
+同时，打开寄存器 A 的 "允许读取"
+
+This allows us to use the data line to pass in the value stored in register A.
+这样就可以把寄存器 A 里的值，传给 RAM
+
+Congrats, we just ran our first computer program!
+恭喜，我们刚运行了第一个电脑程序！
+
+It loaded two values from memory, added them together,
+它从内存中加载两个值，相加，然后把结果放回内存
+
+and then saved that sum back into memory.
+它从内存中加载两个值，相加，然后把结果放回内存
+
+Of course, by me talking you through the individual steps,
+刚刚是我一步步来讲的,
+
+I was manually transitioning the CPU through its fetch, decode and execute phases.
+我们人工切换 CPU 的状态 "取指令→解码→执行"
+
+But there isn't a mini Carrie Anne inside of every computer.
+但不是每台电脑里都有一个迷你 Carrie Anne
+
+So the responsibility of keeping the CPU ticking along falls to a component called the clock.
+其实是 "时钟" 来负责管理 CPU 的节奏
+
+As it's name suggests, the clock triggers an electrical signal at a precise and regular interval.
+时钟以精确的间隔  触发电信号
+
+Its signal is used by the Control Unit to advance the internal operation of the CPU,
+控制单元会用这个信号，推进 CPU 的内部操作
+
+keeping everything in lock-step
+确保一切按步骤进行
+
+- like the dude on a Roman galley drumming rhythmically at the front,
+- 就像罗马帆船的船头，有一个人负责按节奏的击鼓,
+
+keeping all the rowers synchronized... or a metronome.
+让所有划船的人同步... 就像节拍器一样
+
+Of course you can't go too fast,
+节奏不能太快
+
+because even electricity takes some time to travel down wires and for the signal to settle.
+因为就算是电也要一定时间来传输
+
+The speed at which a CPU can carry out each step of the fetch-decode-execute cycle
+CPU "取指令→解码→执行" 的速度叫 "时钟速度"
+
+is called its Clock Speed.
+CPU "取指令→解码→执行" 的速度叫 "时钟速度"
+
+This speed is measured in Hertz - a unit of frequency.
+单位是赫兹 - 赫兹是用来表示频率的单位
+
+One Hertz means one cycle per second.
+1 赫兹代表一秒 1 个周期
+
+Given that it took me about 6 minutes to talk you through 4 instructions
+因为我花了大概 6 分钟，给你讲了 4 条指令
+
+LOAD, LOAD, ADD and STORE
+读取→读取→相加→存储
+
+that means I have an effective clock speed of roughly .03 Hertz.
+所以我的时钟速度大概是 0.03 赫兹
+
+Admittedly, I'm not a great computer
+我承认我算数不快
+
+but even someone handy with math might only be able to do one calculation in their head every second or 1 Hertz.
+但哪怕有人算数很快，最多也就是一秒一次，或 1 赫兹
+
+The very first, single-chip CPU was the Intel 4004, a 4-bit CPU released in 1971.
+第一个单芯片 CPU 是 "英特尔 4004" \N 1971 年发布的 4 位CPU
+
+It's microarchitecture is actually pretty similar to our example CPU.
+它的微架构 很像我们之前说的 CPU
+
+Despite being the first processor of its kind,
+虽然是第一个单芯片的处理器
+
+it had a mind-blowing clock speed of 740 Kilohertz
+但它的时钟速度达到了 740 千赫兹 - 每秒 74 万次
+
+-- that's 740 thousand cycles per second.
+但它的时钟速度达到了 740 千赫兹 - 每秒 74 万次
+
+You might think that's fast,
+你可能觉得很快
+
+but it's nothing compared to the processors that we use today.
+但和如今的处理器相比不值一提
+
+One megahertz is one million clock cycles per second,
+一兆赫兹是 1 秒 1 百万个时钟周期
+
+and the computer or even phone that you are watching this video on right now is no doubt a few gigahertz
+你现在看视频的电脑或手机，肯定有几千兆赫兹
+
+-- that's BILLIONs of CPU cycles every single... second.
+- 1 秒 10 亿次时钟周期
+
+Also, you may have heard of people overclocking their computers.
+你可能听过有人会把计算机超频
+
+This is when you modify the clock to speed up the tempo of the CPU
+意思是修改时钟速度，加快 CPU 的速度
+
+-- like when the drummer speeds up when the Roman Galley needs to ram another ship.
+- 就像罗马帆船要撞另一艘船时，鼓手会加快敲鼓速度
+
+Chip makers often design CPUs with enough tolerance to handle a little bit of overclocking,
+芯片制造商经常给 CPU 留一点余地，可以接受一点超频
+
+but too much can either overheat the CPU,
+但超频太多会让 CPU 过热
+
+or produce gobbledygook as the signals fall behind the clock.
+或产生乱码，因为信号跟不上时钟
+
+And although you don't hear very much about underclocking,
+你可能很少听说降频
+
+it's actually super useful.
+但降频其实很有用
+
+Sometimes it's not necessary to run the processor at full speed...
+有时没必要让处理器全速运行
+
+maybe the user has stepped away, or just not running a particularly demanding program.
+可能用户走开了，或者在跑一个性能要求较低的程序
+
+By slowing the CPU down, you can save a lot of power,
+把 CPU 的速度降下来，可以省很多电
+
+which is important for computers that run on batteries, like laptops and smartphones.
+省电对用电池的设备很重要，比如笔记本和手机
+
+To meet these needs,
+为了尽可能省电
+
+many modern processors can increase or decrease their clock speed based on demand,
+很多现代处理器可以按需求  加快或减慢时钟速度
+
+which is called dynamic frequency scaling.
+这叫 "动态调整频率"
+
+So, with the addition of a clock, our CPU is complete.
+加上时钟后，CPU 才是完整的.
+
+We can now put a box around it, and make it its own component.
+现在可以放到盒子里，变成一个独立组件
+
+Yup.
+对
+
+A new level of abstraction!
+一层新的抽象！
+
+RAM, as I showed you last episode,
+RAM，上集说过，是在 CPU 外面的独立组件
+
+lies outside the CPU as its own component,
+RAM，上集说过，是在 CPU 外面的独立组件
+
+and they communicate with each other using address, data and enable wires.
+CPU 和 RAM 之间 \N 用 "地址线"  "数据线" 和 "允许读/写线" 进行通信
+
+Although the CPU we designed today is a simplified example,
+虽然今天我们设计的 CPU 是简化版的,
+
+many of the basic mechanics we discussed are still found in modern processors.
+但我们提到的很多机制，依然存在于现代处理器里
+
+Next episode, we're going to beef up our CPU,
+下一集，我们要加强 CPU，给它扩展更多指令.
+
+extending it with more instructions as we take our first baby steps into software.
+同时开始讲软件.
+
+I'll see you next week.
+下周见
+
