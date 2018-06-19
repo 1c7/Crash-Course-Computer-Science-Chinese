@@ -1,2 +1,3 @@
 extract_from_ass_subtitle/node_modules
 extract_from_ass_subtitle/package-lock.json
+*.DS_Store
