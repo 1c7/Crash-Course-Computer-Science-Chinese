@@ -89,7 +89,7 @@ https://www.bilibili.com/video/av21376839/
 
 
 ### 2. 原视频
-[Youtube - Crash Course Computer Science Playlist](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)     
+[Youtube - Crash Course Computer Science Playlist](https://www.youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo)     
 ![Crash Course CS screenshoht](/image/english.png)       
 
 
