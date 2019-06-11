@@ -80,7 +80,7 @@ all of which are operations that would take many many many clock cycles to perfo
 如果用标准操作来实现，要很多个时钟周期.
 
 You may have even heard of processors with MMX, 3DNow!, or SSE.
-你可能听过某些处理器有 MMX, 3DNOW, SEE
+你可能听过某些处理器有 MMX, 3DNOW, SSE
 
 These are processors with additional, fancy circuits that allow them to
 它们有额外电路做更复杂的操作
