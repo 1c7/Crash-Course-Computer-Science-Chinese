@@ -368,10 +368,10 @@ Also, TCP isn’t limited to a back and forth conversation – it can send many 
 还有，TCP 不是只能一个包一个包发
 
 and have many outstanding ACKs, which increases bandwidth significantly, since you aren’t
-可以同时发多个数据包，收多个确认码 \N 这大大增加了效率，不用浪费事件等确认码
+可以同时发多个数据包，收多个确认码 \N 这大大增加了效率，不用浪费时间等确认码
 
 wasting time waiting for acknowledgment packets to return.
-可以同时发多个数据包，收多个确认码 \N 这大大增加了效率，不用浪费事件等确认码
+可以同时发多个数据包，收多个确认码 \N 这大大增加了效率，不用浪费时间等确认码
 
 Interestingly, the success rate of ACKs, and also the round trip time
 有趣的是，确认码的成功率和来回时间 \N 可以推测网络的拥堵程度
