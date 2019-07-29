@@ -470,13 +470,13 @@ to be configured correctly to ensure secrecy, integrity and availability.
 以确保保密性，完整性和可用性
 
 Let’s say we have three levels of access: public, secret and top secret.
-假设我们有三个访问级别：公开，机密，顶级机密
+假设我们有三个访问级别：公开，机密，绝密
 
 The first general rule of thumb is that people shouldn’t be able to "read up".
 第一个普遍的好做法是，\N 用户不能"读上", 不能读等级更高的信息
 
 If a user is only cleared to read secret files, they shouldn’t be able to read top secret
-如果用户能读"机密"文件\N 那么不应该有权限读"顶级机密"文件
+如果用户能读"机密"文件\N 那么不应该有权限读"绝密"文件
 
 files, but should be able to access secret and public ones.
 但能访问"机密"和"公开"文件
@@ -485,10 +485,10 @@ The second general rule of thumb is that people shouldn’t be able to "write do
 第二个法则是用户不能"写下"
 
 If a member has top secret clearance, then they should be able to
-如果用户等级是"顶级机密"
+如果用户等级是"绝密"
 
 write or modify top secret files, but not secret or public files.
-那么能写入或修改"顶级机密"文件，\N 但不能修改"机密"或"公共"文件
+那么能写入或修改"绝密"文件，\N 但不能修改"机密"或"公共"文件
 
 It may seem weird that even with the highest clearance,
 听起来好像很奇怪 \N 有最高等级也不能改等级更低的文件
@@ -497,10 +497,10 @@ you can’t modify less secret files.
 听起来好像很奇怪 \N 有最高等级也不能改等级更低的文件
 
 But, it guarantees that there’s no accidental leakage of
-但这样确保了"顶级机密" \N 不会意外泄露到"机密"文件或"公共"文件里
+但这样确保了"绝密" \N 不会意外泄露到"机密"文件或"公共"文件里
 
 top secret information into secret or public files.
-但这样确保了"顶级机密" \N 不会意外泄露到"机密"文件或"公共"文件里
+但这样确保了"绝密" \N 不会意外泄露到"机密"文件或"公共"文件里
 
 This "no read up, no write down" approach is called the Bell-LaPadula model.
 这个"不能向上读，不能向下写"的方法\N 叫 Bell-LaPadula 模型
