@@ -155,10 +155,10 @@ We’ve also added a special version of JUMP called JUMP_NEGATIVE.
 它只在 ALU 的 "负数标志" 为真时，进行 JUMP
 
 As we talked about in Episode 5, the negative flag is only set
-第5集讲过，算数结果为负，"负数标志"才是真
+第5集讲过，算术结果为负，"负数标志"才是真
 
 when the result of an arithmetic operation is negative.
-第5集讲过，算数结果为负，"负数标志"才是真
+第5集讲过，算术结果为负，"负数标志"才是真
 
 If the result of the arithmetic was zero or positive, the negative flag would not be set.
 结果不是负数时, "负数标志"为假
