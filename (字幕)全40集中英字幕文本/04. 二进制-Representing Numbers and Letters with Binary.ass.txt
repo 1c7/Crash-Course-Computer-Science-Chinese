@@ -434,7 +434,7 @@ and critically, allowed different computers built by different companies to exch
 让不同公司制作的计算机，能互相交换数据
 
 This ability to universally exchange information is called "interoperability".
-这种通用交换信息的能力叫 "互用性"
+这种通用交换信息的能力叫 "互操作性"
 
 However, it did have a major limitation: it was really only designed for English.
 但有个限制：它是为英语设计的
