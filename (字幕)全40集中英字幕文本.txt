@@ -1910,7 +1910,7 @@ and then use the remaining 31 bits for the number itself.
 用剩下 31 位来表示数字
 
 That gives us a range of roughly plus or minus two billion.
-能表示的数字范围是 正 20 亿到负 20 亿
+能表示的数字范围大约是正 20 亿到负 20 亿
 
 While this is a pretty big range of numbers, it's not enough for many tasks.
 虽然是很大的数，但有时还不够用
@@ -1922,7 +1922,7 @@ This is why 64-bit numbers are useful.
 所以 64 位数很有用
 
 The largest value a 64-bit number can represent is around 9.2 quintillion!
-64 位能表达最大数是 9.2x10
+64 位能表达最大数大约是 9.2x10
 
 That's a lot of possible numbers and will hopefully stay above the US national debt for a while!
 希望美国国债在一段时间内不会超过这个数！
