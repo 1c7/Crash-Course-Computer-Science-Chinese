@@ -197,7 +197,7 @@ If you've got 10 bytes, it means you've really got 80 bits.
 如果有 10 个字节，意味着有 80 位
 
 You've heard of kilobytes, megabytes, gigabytes and so on.
-你听过 千字节（kb）兆字节（mb）千兆字节（gb）
+你听过 千字节（KB）兆字节（MB）千兆字节（GB）等等
 
 These prefixes denote different scales of data.
 不同前缀代表不同数量级
@@ -238,8 +238,8 @@ but we should acknowledge it isn't the only correct definition.
 You've probably also heard the term 32-bit or 64-bit computers
 你可能听过 32 位 或 64 位计算机
 
-C you're almost certainly using one right now.
-你现在用的电脑肯定是其中一种
+you're almost certainly using one right now.
+你现在用的电脑几乎肯定是其中一种
 
 What this means is that they operate in chunks of 32 or 64 bits.
 意思是一块块处理数据，每块是 32 位或 64 位
@@ -263,7 +263,7 @@ because computers today use 32-bit color graphics
 因为如今都用 32 位颜色
 
 Of course, not everything is a positive number
-当然，不是所有数字都是正数
+当然，不是所有数都是正数
 
 - like my bank account in college.
 比如我上大学时的银行账户 T_T
@@ -278,13 +278,13 @@ Most computers use the first bit for the sign:
 1 是负，0 是正
 
 and then use the remaining 31 bits for the number itself.
-用剩下 31 位来表示数字
+用剩下 31 位来表示符号外的数值
 
 That gives us a range of roughly plus or minus two billion.
-能表示的数字范围是 正 20 亿到负 20 亿
+能表示的数的范围大约是正 20 亿到负 20 亿
 
 While this is a pretty big range of numbers, it's not enough for many tasks.
-虽然是很大的数，但有时还不够用
+虽然是很大的数，但许多情况下还不够用
 
 There are 7 billion people on the earth, and the US national debt is almost 20 trillion dollars after all.
 全球有 70 亿人口，美国国债近 20 万亿美元
@@ -293,7 +293,7 @@ This is why 64-bit numbers are useful.
 所以 64 位数很有用
 
 The largest value a 64-bit number can represent is around 9.2 quintillion!
-64 位能表达最大数是 9.2x10
+64 位能表达最大数大约是 9.2×10 ^ 18
 
 That's a lot of possible numbers and will hopefully stay above the US national debt for a while!
 希望美国国债在一段时间内不会超过这个数！
@@ -305,7 +305,7 @@ computers must label locations in their memory,
 计算机必须给内存中每一个位置，做一个 "标记"
 
 known as addresses, in order to store and retrieve values.
-这个标记叫 "位址", 目的是为了方便存取数据
+这个标记叫 "地址", 目的是为了方便存取数据
 
 As computer memory has grown to gigabytes and terabytes - that's trillions of bytes
 如今硬盘已经增长到 GB 和 TB，上万亿个字节！
@@ -344,16 +344,16 @@ For example, 625.9 can be written as 0.6259 x 10^3.
 例如，625.9 可以写成 0.6259×10 ^ 3
 
 There are two important numbers here: the .6259 is called the significand.
-这里有两个重要数字：.6259 叫 "有效位数" , 3 是指数
+这里有两个重要的数：.6259 叫 "有效位数" , 3 是指数
 
 And 3 is the exponent.
-这里有两个重要数字：.6259 叫 "有效位数" , 3 是指数
+这里有两个重要的数：.6259 叫 "有效位数" , 3 是指数
 
 In a 32-bit floating point number,
 在 32 位浮点数中
 
 the first bit is used for the sign of the number -- positive or negative.
-第 1 位表示数字的正负
+第 1 位表示数的符号——正或负
 
 The next 8 bits are used to store the exponent
 接下来 8 位存指数
@@ -362,16 +362,16 @@ and the remaining 23 bits are used to store the significand.
 剩下 23 位存有效位数
 
 Ok, we've talked a lot about numbers, but your name is probably composed of letters,
-好了，聊够数字了，但你的名字是字母组成的
+好了，聊够数了，但你的名字是字母组成的
 
 so it's really useful for computers to also have a way to represent text.
 所以我们也要表示文字
 
 However, rather than have a special form of storage for letters,
-与其用特殊方式来表示字母 \N 计算机可以用数字表示字母
+与其用特殊方式来表示字母 \N 计算机可以用数表示字母
 
 computers simply use numbers to represent letters.
-与其用特殊方式来表示字母 \N 计算机可以用数字表示字母
+与其用特殊方式来表示字母 \N 计算机可以用数表示字母
 
 The most straightforward approach might be to simply number the letters of the alphabet:
 最直接的方法是给字母编号：
@@ -434,7 +434,7 @@ and critically, allowed different computers built by different companies to exch
 让不同公司制作的计算机，能互相交换数据
 
 This ability to universally exchange information is called "interoperability".
-这种通用交换信息的能力叫 "互用性"
+这种通用交换信息的能力叫 "互操作性"
 
 However, it did have a major limitation: it was really only designed for English.
 但有个限制：它是为英语设计的
@@ -488,7 +488,7 @@ In response, each country invented multi-byte encoding schemes,
 为了解决这个问题，每个国家都发明了多字节编码方案
 
 all of which were mutually incompatible.
-但不相互兼容
+但相互不兼容
 
 The Japanese were so familiar with this encoding problem that they had a special name for it:
 日本人总是碰到编码问题，以至于专门有词来称呼：
