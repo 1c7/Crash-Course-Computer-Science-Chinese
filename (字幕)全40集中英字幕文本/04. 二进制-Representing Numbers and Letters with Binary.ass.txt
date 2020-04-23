@@ -263,7 +263,7 @@ because computers today use 32-bit color graphics
 因为如今都用 32 位颜色
 
 Of course, not everything is a positive number
-当然，不是所有数字都是正数
+当然，不是所有数都是正数
 
 - like my bank account in college.
 比如我上大学时的银行账户 T_T
@@ -344,16 +344,16 @@ For example, 625.9 can be written as 0.6259 x 10^3.
 例如，625.9 可以写成 0.6259×10 ^ 3
 
 There are two important numbers here: the .6259 is called the significand.
-这里有两个重要数字：.6259 叫 "有效位数" , 3 是指数
+这里有两个重要的数：.6259 叫 "有效位数" , 3 是指数
 
 And 3 is the exponent.
-这里有两个重要数字：.6259 叫 "有效位数" , 3 是指数
+这里有两个重要的数：.6259 叫 "有效位数" , 3 是指数
 
 In a 32-bit floating point number,
 在 32 位浮点数中
 
 the first bit is used for the sign of the number -- positive or negative.
-第 1 位表示数字的正负
+第 1 位表示数的正负
 
 The next 8 bits are used to store the exponent
 接下来 8 位存指数
@@ -362,16 +362,16 @@ and the remaining 23 bits are used to store the significand.
 剩下 23 位存有效位数
 
 Ok, we've talked a lot about numbers, but your name is probably composed of letters,
-好了，聊够数字了，但你的名字是字母组成的
+好了，聊够数了，但你的名字是字母组成的
 
 so it's really useful for computers to also have a way to represent text.
 所以我们也要表示文字
 
 However, rather than have a special form of storage for letters,
-与其用特殊方式来表示字母 \N 计算机可以用数字表示字母
+与其用特殊方式来表示字母 \N 计算机可以用数表示字母
 
 computers simply use numbers to represent letters.
-与其用特殊方式来表示字母 \N 计算机可以用数字表示字母
+与其用特殊方式来表示字母 \N 计算机可以用数表示字母
 
 The most straightforward approach might be to simply number the letters of the alphabet:
 最直接的方法是给字母编号：
