@@ -1934,7 +1934,7 @@ computers must label locations in their memory,
 计算机必须给内存中每一个位置，做一个 "标记"
 
 known as addresses, in order to store and retrieve values.
-这个标记叫 "位址", 目的是为了方便存取数据
+这个标记叫 "地址", 目的是为了方便存取数据
 
 As computer memory has grown to gigabytes and terabytes - that's trillions of bytes
 如今硬盘已经增长到 GB 和 TB，上万亿个字节！
