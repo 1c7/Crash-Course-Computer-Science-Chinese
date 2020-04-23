@@ -488,7 +488,7 @@ In response, each country invented multi-byte encoding schemes,
 为了解决这个问题，每个国家都发明了多字节编码方案
 
 all of which were mutually incompatible.
-但不相互兼容
+但相互不兼容
 
 The Japanese were so familiar with this encoding problem that they had a special name for it:
 日本人总是碰到编码问题，以至于专门有词来称呼：
