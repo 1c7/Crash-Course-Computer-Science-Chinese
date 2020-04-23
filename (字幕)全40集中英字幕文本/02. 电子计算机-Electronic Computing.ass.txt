@@ -26,7 +26,7 @@ and the sophistication of our engineering and scientific endeavors reached new h
 工程和科学的复杂度也达到新高
 
 - we even started to seriously consider visiting other planets.
-- 我们甚至开始考虑登陆其他行星
+- 我们甚至开始考虑造访其他行星
 
 And it was this explosion of complexity, bureaucracy, and ultimately data,
 复杂度的增高导致数据量暴增
