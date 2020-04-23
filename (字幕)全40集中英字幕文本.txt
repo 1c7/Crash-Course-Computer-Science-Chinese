@@ -1907,13 +1907,13 @@ Most computers use the first bit for the sign:
 1 是负，0 是正
 
 and then use the remaining 31 bits for the number itself.
-用剩下 31 位来表示数字
+用剩下 31 位来表示符号外的数值
 
 That gives us a range of roughly plus or minus two billion.
-能表示的数字范围大约是正 20 亿到负 20 亿
+能表示的数的范围大约是正 20 亿到负 20 亿
 
 While this is a pretty big range of numbers, it's not enough for many tasks.
-虽然是很大的数，但有时还不够用
+虽然是很大的数，但许多情况下还不够用
 
 There are 7 billion people on the earth, and the US national debt is almost 20 trillion dollars after all.
 全球有 70 亿人口，美国国债近 20 万亿美元
