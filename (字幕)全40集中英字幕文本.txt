@@ -1826,7 +1826,7 @@ If you've got 10 bytes, it means you've really got 80 bits.
 如果有 10 个字节，意味着有 80 位
 
 You've heard of kilobytes, megabytes, gigabytes and so on.
-你听过 千字节（kb）兆字节（mb）千兆字节（gb）
+你听过 千字节（KB）兆字节（MB）千兆字节（GB）等等
 
 These prefixes denote different scales of data.
 不同前缀代表不同数量级
@@ -1982,7 +1982,7 @@ In a 32-bit floating point number,
 在 32 位浮点数中
 
 the first bit is used for the sign of the number -- positive or negative.
-第 1 位表示数的正负
+第 1 位表示数的符号——正或负
 
 The next 8 bits are used to store the exponent
 接下来 8 位存指数
