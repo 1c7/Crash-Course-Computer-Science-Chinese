@@ -238,7 +238,7 @@ but we should acknowledge it isn't the only correct definition.
 You've probably also heard the term 32-bit or 64-bit computers
 你可能听过 32 位 或 64 位计算机
 
-C you're almost certainly using one right now.
+you're almost certainly using one right now.
 你现在用的电脑几乎肯定是其中一种
 
 What this means is that they operate in chunks of 32 or 64 bits.
