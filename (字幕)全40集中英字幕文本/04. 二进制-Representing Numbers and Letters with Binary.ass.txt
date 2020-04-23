@@ -293,7 +293,7 @@ This is why 64-bit numbers are useful.
 所以 64 位数很有用
 
 The largest value a 64-bit number can represent is around 9.2 quintillion!
-64 位能表达最大数大约是 9.2x10
+64 位能表达最大数大约是 9.2×10 ^ 18
 
 That's a lot of possible numbers and will hopefully stay above the US national debt for a while!
 希望美国国债在一段时间内不会超过这个数！
