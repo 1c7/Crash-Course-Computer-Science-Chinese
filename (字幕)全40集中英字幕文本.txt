@@ -1868,7 +1868,7 @@ You've probably also heard the term 32-bit or 64-bit computers
 你可能听过 32 位 或 64 位计算机
 
 C you're almost certainly using one right now.
-你现在用的电脑肯定是其中一种
+你现在用的电脑几乎肯定是其中一种
 
 What this means is that they operate in chunks of 32 or 64 bits.
 意思是一块块处理数据，每块是 32 位或 64 位
