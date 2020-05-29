@@ -21,7 +21,7 @@ https://www.bilibili.com/video/av21376839/
 是程序员cxuan的个人公众号，主要分享操作系统、计算机网络、计算机基础知识、Java 技术栈，   
 他写了三本超硬核 PDF，《Java核心基础知识》、《HTTP 总结》、《程序员必知的硬核知识》，可关注下面的二维码领取
 
-(二维码图片准备中，可先手动在搜索"Java建设者")
+(二维码图片准备中，可以先手动在微信中搜索 "Java建设者" )
 
 ## 感谢所有翻译人员！
 * 不想膨胀的小R - [Github](https://github.com/coolralf), [微博](https://weibo.com/u/2207493917), [B站](https://space.bilibili.com/5385034#!/video)
