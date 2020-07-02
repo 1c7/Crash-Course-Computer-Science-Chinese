@@ -16,16 +16,6 @@ https://www.bilibili.com/video/av21376839/
 另外，片头总结在 **这篇文章的底部**  
 感谢观看，Don't forget to be Awesome!      
 
-## 合作内容
-* 推荐一个微信公众号 "Java建设者"     
-是程序员cxuan的个人公众号，主要分享操作系统、计算机网络、计算机基础知识、Java 技术栈，   
-他写了三本超硬核 PDF，《Java核心基础知识》、《HTTP 总结》、《程序员必知的硬核知识》，可关注下面的二维码领取
-
-<img src='./image/qr.png' width="180px">
-
-补充说明: 
-* 此合作内容放置时间 2020-5-29 ~ 2020-6-29
-
 ## 感谢所有翻译人员！
 * 不想膨胀的小R - [Github](https://github.com/coolralf), [微博](https://weibo.com/u/2207493917), [B站](https://space.bilibili.com/5385034#!/video)
 * 糖醋陈皮 - [Github](https://github.com/1c7), [微博](https://weibo.com/2004104451), [博客](http://1c7.me/)
