@@ -149,10 +149,10 @@ your web browser opens a TCP connection to a computer
 现在有了IP地址 \N 你的浏览器会打开一个 TCP 连接到这个 IP 地址
 
 that’s running a special piece of software called a web server.
-这个地址运行着"网络服务器"
+这个地址运行着"网页服务器"
 
 The standard port number for web servers is port 80.
-网络服务器的标准端口是 80 端口
+网页服务器的标准端口是 80 端口
 
 At this point, all your computer has done is connect to
 这时，你的计算机连到了 \N thecrashcourse.com 的服务器
