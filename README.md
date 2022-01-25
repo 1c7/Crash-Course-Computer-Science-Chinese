@@ -28,6 +28,11 @@ https://www.bilibili.com/video/av21376839/
 * TMC - RN
 * LCAR979（推特 `_lincr_`）  
 
+## 高赞的课程学习笔记
+* [别人家的孩子小明](https://space.bilibili.com/528566) : [石墨文档(`首发`)](https://shimo.im/docs/vkCKkj3YxGtygrVg/)
+* [汉苍茫茫](https://space.bilibili.com/357394001) : [石墨文档(`很全`)](https://shimo.im/docs/PJAUY30F1uYksv0h/)
+* [GoogTech](https://space.bilibili.com/364361791) : [知识点脑图(`超详细`)](https://www.processon.com/view/link/61ef6e8f0e3e7439ae917672#map)
+
 ### 第一版翻译（不推荐观看，看精校版即可）：
 * 1 - [早期的计算 - Early Computing](https://www.bilibili.com/video/av8861057/)
 * 2 - [电子计算 - Electronic Computing](https://www.bilibili.com/video/av9066628/)
